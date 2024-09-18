@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %}Học Theo Thứ Tự{% endblock %} {%
+block content %}
+<h1>Học Bộ Thủ - Bộ Thủ {{ index }}/{{ total }}</h1>
+
+<div class="flashcard-container">
+  <div class="flashcard">
+    <div class="front">
+      <div class="radical">{{ radical.radical }}</div>
+    </div>
+    <div class="back">
+      <div class="meaning">{{ radical.meaning }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="navigation">
+  {% if prev_index %}
+  <a
+    href="{{ url_for('learn_sequential', index=prev_index) }}"
+    class="button nav-button"
+    >&laquo; Trước</a
+  >
+  {% else %}
+  <span class="button nav-button disabled">&laquo; Trước</span>
+  {% endif %}
+
+  <form
+    action="{{ url_for('learn_sequential') }}"
+    method="get"
+    class="index-form"
+  >
+    <label for="index-input">Chọn bộ thủ:</label>
+    <input
+      type="number"
+      id="index-input"
+      name="index"
+      min="1"
+      max="{{ total }}"
+      value="{{ index }}"
+    />
+  </form>
+
+  {% if next_index %}
+  <a
+    href="{{ url_for('learn_sequential', index=next_index) }}"
+    class="button nav-button"
+    >Tiếp &raquo;</a
+  >
+  {% else %}
+  <span class="button nav-button disabled">Tiếp &raquo;</span>
+  {% endif %}
+</div>
+
+<script>
+  // Hiệu ứng lật thẻ
+  document.querySelector(".flashcard").addEventListener("click", function () {
+    this.classList.toggle("flipped");
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Học{% endblock %} {% block content %}
+<h1 class="text-center mb-4">Chọn chế độ học</h1>
+<div class="d-flex justify-content-center">
+  <a
+    href="{{ url_for('learn_sequential') }}"
+    class="btn btn-primary btn-lg mx-2"
+    >Học theo thứ tự</a
+  >
+  <a href="{{ url_for('learn_random') }}" class="btn btn-success btn-lg mx-2"
+    >Học ngẫu nhiên</a
+  >
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}Quiz{% endblock %} {% block content
+%}
+<h1>Quiz</h1>
+<div class="progress-bar">
+  <div class="progress" style="width: {{ progress }}%;"></div>
+</div>
+<p>Câu hỏi {{ question_number }}/{{ total_questions }}</p>
+<h2>Bộ thủ: <span class="radical">{{ radical }}</span></h2>
+<form method="post" class="quiz-form">
+  {% for choice in choices %}
+  <div class="choice">
+    <input type="radio" name="choice" value="{{ choice }}" required />
+    <label>{{ choice }}</label>
+  </div>
+  {% endfor %}
+  <button type="submit" class="button">Trả lời</button>
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Kiểm Tra{% endblock %} {% block
+content %}
+<h1 class="text-center mb-4">Chọn cách kiểm tra</h1>
+
+<!-- Kiểm tra theo bộ đề -->
+<h2 class="mb-3">Kiểm tra theo bộ đề:</h2>
+<div class="d-flex flex-wrap justify-content-center mb-4">
+  {% for i in range(1, total_sets + 1) %}
+  <a
+    href="{{ url_for('test_set', set_number=i) }}"
+    class="btn btn-outline-primary m-2"
+    >Bộ đề {{ i }}</a
+  >
+  {% endfor %}
+</div>
+
+<!-- Kiểm tra ngẫu nhiên -->
+<h2 class="mb-3">Hoặc kiểm tra ngẫu nhiên:</h2>
+<div class="text-center">
+  <a href="{{ url_for('test_random') }}" class="btn btn-success btn-lg"
+    >Kiểm tra ngẫu nhiên</a
+  >
+</div>
+{% endblock %}

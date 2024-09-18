@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Xem Lại Câu Trả Lời{% endblock %} {%
+block content %}
+<h1>Xem Lại Câu Trả Lời</h1>
+<table>
+  <tr>
+    <th>Câu hỏi</th>
+    <th>Đáp án của bạn</th>
+    <th>Đáp án đúng</th>
+    <th>Kết quả</th>
+  </tr>
+  {% for answer in answers %}
+  <tr>
+    <td>{{ answer.radical }}</td>
+    <td>{{ answer.selected }}</td>
+    <td>{{ answer.correct }}</td>
+    <td>
+      {% if answer.is_correct %}
+      <span style="color: green">Đúng</span>
+      {% else %}
+      <span style="color: red">Sai</span>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('test') }}" class="button">Kiểm tra lại</a>
+{% endblock %}

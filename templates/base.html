@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Học Bộ Thủ Tiếng Trung{% endblock %}</title>
+    <!-- Thêm liên kết đến Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Liên kết đến file CSS của bạn nếu cần -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Thanh điều hướng -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Trang Chủ</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('learn') }}">Học</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('test') }}">Kiểm Tra</a>
+            </li>
+            <!-- Thêm mục "Toàn bộ bộ thủ" -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('all_radicals') }}"
+                >Toàn bộ bộ thủ</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Nội dung chính -->
+      <div class="container my-4">{% block content %}{% endblock %}</div>
+
+      <!-- Footer -->
+      <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">GrazT</p>
+      </footer>
+    </div>
+
+    <!-- Bao gồm JavaScript của Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

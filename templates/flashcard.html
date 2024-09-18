@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %}Flashcard{% endblock %} {% block
+content %}
+<h1>Flashcard</h1>
+<div class="flashcard-container">
+  <div class="flashcard">
+    <div class="front">
+      <div class="radical">{{ radical.radical }}</div>
+    </div>
+    <div class="back">
+      <div class="meaning">{{ radical.meaning }}</div>
+    </div>
+  </div>
+</div>
+<div class="actions">
+  <a href="{{ next_url }}" class="button">Tiếp theo</a>
+  <a href="{{ url_for('learn') }}" class="button">Quay lại</a>
+</div>
+
+<!-- Thêm script vào cuối file -->
+<script>
+  document.querySelector(".flashcard").addEventListener("click", function () {
+    this.classList.toggle("flipped");
+  });
+</script>
+{% endblock %}

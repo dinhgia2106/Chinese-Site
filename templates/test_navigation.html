@@ -1,0 +1,132 @@
+{% extends "base.html" %} {% block title %}Bài Kiểm Tra{% endblock %} {% block
+content %}
+<h1>
+  {% if set_number %} Bài Kiểm Tra - Bộ đề {{ set_number }} {% else %} Kiểm Tra
+  Ngẫu Nhiên {% endif %}
+</h1>
+
+<!-- Danh sách câu hỏi -->
+<div class="question-list">
+  <h2>Danh sách câu hỏi:</h2>
+  <div class="questions">
+    {% for question in test_data.questions %}
+    <a
+      href="{% if set_number %}{{ url_for('test_set', set_number=set_number, q=question.index) }}{% else %}{{ url_for('test_random', q=question.index) }}{% endif %}"
+      class="question-item {% if question.selected_choice %}answered{% endif %} {% if question.is_marked %}marked{% endif %}"
+    >
+      Câu {{ question.index }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Hiển thị câu hỏi hiện tại -->
+<div class="current-question">
+  <h2>
+    Câu {{ current_question.index }}: Bộ thủ {{ current_question.radical }}
+  </h2>
+  <form id="question-form">
+    {% for choice in current_question.choices %}
+    <div class="choice">
+      <input type="radio" name="selected_choice" value="{{ choice }}"
+      id="choice{{ loop.index }}" {% if current_question.selected_choice ==
+      choice %}checked{% endif %}>
+      <label for="choice{{ loop.index }}">{{ choice }}</label>
+    </div>
+    {% endfor %}
+    <input
+      type="hidden"
+      name="question_index"
+      value="{{ current_question.index }}"
+    />
+  </form>
+  <button
+    id="mark-question-button"
+    class="button {% if current_question.is_marked %}marked{% endif %}"
+  >
+    {% if current_question.is_marked %}Bỏ đánh dấu{% else %}Đánh dấu câu hỏi{%
+    endif %}
+  </button>
+</div>
+
+<!-- Nút nộp bài -->
+<form method="post" class="submit-form">
+  <button
+    type="submit"
+    name="action"
+    value="submit_test"
+    class="button submit-button"
+  >
+    Nộp bài
+  </button>
+</form>
+
+<script>
+  // Tự động gửi đáp án khi người dùng chọn một lựa chọn
+  document
+    .querySelectorAll('input[name="selected_choice"]')
+    .forEach(function (input) {
+      input.addEventListener("change", function () {
+        let formData = new FormData();
+        formData.append("action", "save_answer");
+        formData.append(
+          "question_index",
+          document.querySelector('input[name="question_index"]').value
+        );
+        formData.append("selected_choice", this.value);
+
+        fetch(window.location.href, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Cập nhật trạng thái câu hỏi trong danh sách nếu cần
+            document
+              .querySelector(".question-item.answered")
+              ?.classList.remove("answered");
+            document
+              .querySelector(`.question-item:nth-child(${data.question_index})`)
+              .classList.add("answered");
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+    });
+
+  // Xử lý sự kiện đánh dấu câu hỏi
+  document
+    .getElementById("mark-question-button")
+    .addEventListener("click", function () {
+      let formData = new FormData();
+      formData.append("action", "mark_question");
+      formData.append(
+        "question_index",
+        document.querySelector('input[name="question_index"]').value
+      );
+
+      fetch(window.location.href, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Cập nhật trạng thái đánh dấu của nút
+          if (data.is_marked) {
+            this.classList.add("marked");
+            this.textContent = "Bỏ đánh dấu";
+            // Cập nhật trạng thái trong danh sách câu hỏi
+            document
+              .querySelector(`.question-item:nth-child(${data.question_index})`)
+              .classList.add("marked");
+          } else {
+            this.classList.remove("marked");
+            this.textContent = "Đánh dấu câu hỏi";
+            document
+              .querySelector(`.question-item:nth-child(${data.question_index})`)
+              .classList.remove("marked");
+          }
+        })
+        .catch((error) => console.error("Error:", error));
+    });
+</script>
+{% endblock %}
