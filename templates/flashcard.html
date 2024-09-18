@@ -16,15 +16,34 @@ content %}
     </div>
   </div>
 </div>
+
+<!-- Nút nghe đặt bên ngoài thẻ flashcard -->
+<div class="sound-button-container">
+  <!-- Nút nghe -->
+  <button onclick="playSound()" class="sound-button">🔊</button>
+  <!-- Phần âm thanh -->
+  <audio id="audio-player">
+    <source
+      src="{{ url_for('static', filename='audio/' + radical.pinyin + '.mp3') }}"
+      type="audio/mpeg"
+    />
+    Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
+  </audio>
+</div>
+
 <div class="actions">
   <a href="{{ next_url }}" class="button">Tiếp theo</a>
   <a href="{{ url_for('learn') }}" class="button">Quay lại</a>
 </div>
 
-<!-- Thêm script vào cuối file -->
 <script>
   document.querySelector(".flashcard").addEventListener("click", function () {
     this.classList.toggle("flipped");
   });
+
+  function playSound() {
+    var audio = document.getElementById("audio-player");
+    audio.play();
+  }
 </script>
 {% endblock %}

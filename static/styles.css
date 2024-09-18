@@ -138,13 +138,6 @@ h1 {
   color: #000;
 }
 
-/* Các CSS đã có trước đó */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-}
-
 .container {
   width: 80%;
   margin: auto;
@@ -220,7 +213,7 @@ h1 {
   perspective: 1000px;
   display: flex;
   justify-content: center;
-  margin: 50px 0;
+  margin: 50px 0 0 0; /* 50px margin trên, 0px margin dưới */
 }
 
 .flashcard {
@@ -471,4 +464,26 @@ td {
   font-size: 24px;
   color: #555;
   margin-top: 10px;
+}
+
+.sound-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 50px 0; /* 50px margin dưới, 0px margin trên */
+  width: 100%; /* Đảm bảo container chiếm toàn bộ chiều ngang */
+}
+
+.sound-button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.sound-button:hover {
+  color: #007bff; /* Màu xanh khi hover */
+}
+
+.sound-button:focus {
+  outline: none;
 }

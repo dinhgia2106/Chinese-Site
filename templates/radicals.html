@@ -26,6 +26,7 @@ content %}
       <th class="text-center">Bộ Thủ</th>
       <th class="text-center">Pinyin</th>
       <th class="text-center">Nghĩa Hán Việt</th>
+      <th class="text-center">Đọc</th>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +36,23 @@ content %}
       <td class="text-center" style="font-size: 24px">{{ radical.radical }}</td>
       <td class="text-center">{{ radical.pinyin }}</td>
       <td>{{ radical.meaning }}</td>
+      <td class="text-center">
+        <!-- Nút nghe -->
+        <button
+          onclick="playSound('audio-player-{{ loop.index }}')"
+          class="sound-button"
+        >
+          🔊
+        </button>
+        <!-- Phần âm thanh -->
+        <audio id="audio-player-{{ loop.index }}">
+          <source
+            src="{{ url_for('static', filename='audio/' + radical.pinyin + '.mp3') }}"
+            type="audio/mpeg"
+          />
+          Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
+        </audio>
+      </td>
     </tr>
     {% endfor %}
   </tbody>
@@ -84,4 +102,10 @@ content %}
     {% endif %}
   </ul>
 </nav>
+<script>
+  function playSound(audioId) {
+    var audio = document.getElementById(audioId);
+    audio.play();
+  }
+</script>
 {% endblock %}

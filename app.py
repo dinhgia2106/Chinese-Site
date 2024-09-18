@@ -4,13 +4,13 @@ from radicals import radicals
 from flask_session import Session
 import unicodedata
 from math import ceil
+from urllib.parse import quote
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 # Sử dụng server-side session để lưu trữ dữ liệu lớn
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
-
 
 # Chia các bộ thủ thành các bộ đề, mỗi bộ đề 20 bộ thủ
 
