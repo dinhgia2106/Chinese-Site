@@ -1,13 +1,21 @@
-{% extends "base.html" %} {% block title %}Quiz{% endblock %} {% block content
-%}
-<h1>Quiz</h1>
+{% extends "base.html" %} {% block title %}{{ test_title }}{% endblock %} {%
+block content %}
+<h1 class="text-center">
+  {{ test_title }} - {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{%
+  endif %}
+</h1>
 <div class="progress-bar">
   <div class="progress" style="width: {{ progress }}%;"></div>
 </div>
 <p>Câu hỏi {{ question_number }}/{{ total_questions }}</p>
-<h2>Bộ thủ: <span class="radical">{{ radical }}</span></h2>
+<h2>Bộ thủ: <span class="radical">{{ question.radical }}</span></h2>
+{% if test_type == 'meaning' %}
+<p>Chọn nghĩa đúng của bộ thủ này:</p>
+{% else %}
+<p>Chọn pinyin đúng của bộ thủ này:</p>
+{% endif %}
 <form method="post" class="quiz-form">
-  {% for choice in choices %}
+  {% for choice in question.choices %}
   <div class="choice">
     <input type="radio" name="choice" value="{{ choice }}" required />
     <label>{{ choice }}</label>

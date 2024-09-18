@@ -12,7 +12,7 @@ content %}
     type="text"
     name="q"
     class="form-control mr-2"
-    placeholder="Tìm kiếm bộ thủ hoặc nghĩa"
+    placeholder="Tìm kiếm bộ thủ, nghĩa hoặc Pinyin"
     value="{{ query }}"
   />
   <button type="submit" class="btn btn-primary">Tìm kiếm</button>
@@ -24,6 +24,7 @@ content %}
     <tr>
       <th class="text-center">STT</th>
       <th class="text-center">Bộ Thủ</th>
+      <th class="text-center">Pinyin</th>
       <th class="text-center">Nghĩa Hán Việt</th>
     </tr>
   </thead>
@@ -32,6 +33,7 @@ content %}
     <tr>
       <td class="text-center">{{ (page - 1) * per_page + loop.index }}</td>
       <td class="text-center" style="font-size: 24px">{{ radical.radical }}</td>
+      <td class="text-center">{{ radical.pinyin }}</td>
       <td>{{ radical.meaning }}</td>
     </tr>
     {% endfor %}

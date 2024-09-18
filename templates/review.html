@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block title %}Xem Lại Câu Trả Lời{% endblock %} {%
 block content %}
-<h1>Xem Lại Câu Trả Lời</h1>
+<h1>
+  Xem Lại Câu Trả Lời - {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{%
+  endif %}
+</h1>
 <table>
   <tr>
     <th>Câu hỏi</th>

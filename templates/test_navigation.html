@@ -1,17 +1,16 @@
 {% extends "base.html" %} {% block title %}Bài Kiểm Tra{% endblock %} {% block
 content %}
 <h1>
-  {% if set_number %} Bài Kiểm Tra - Bộ đề {{ set_number }} {% else %} Kiểm Tra
-  Ngẫu Nhiên {% endif %}
+  {% if set_number %} Bài Kiểm Tra - Bộ đề {{ set_number }} - {% if test_type ==
+  'meaning' %}Nghĩa{% else %}Pinyin{% endif %} {% else %} Kiểm Tra Ngẫu Nhiên -
+  {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{% endif %} {% endif %}
 </h1>
-
-<!-- Danh sách câu hỏi -->
 <div class="question-list">
   <h2>Danh sách câu hỏi:</h2>
   <div class="questions">
     {% for question in test_data.questions %}
     <a
-      href="{% if set_number %}{{ url_for('test_set', set_number=set_number, q=question.index) }}{% else %}{{ url_for('test_random', q=question.index) }}{% endif %}"
+      href="{% if set_number %}{{ url_for('test_set', set_number=set_number, q=question.index, test_type=test_type) }}{% else %}{{ url_for('test_random', q=question.index, test_type=test_type) }}{% endif %}"
       class="question-item {% if question.selected_choice %}answered{% endif %} {% if question.is_marked %}marked{% endif %}"
     >
       Câu {{ question.index }}
@@ -19,13 +18,16 @@ content %}
     {% endfor %}
   </div>
 </div>
-
-<!-- Hiển thị câu hỏi hiện tại -->
 <div class="current-question">
   <h2>
     Câu {{ current_question.index }}: Bộ thủ {{ current_question.radical }}
   </h2>
-  <form id="question-form">
+  {% if test_type == 'meaning' %}
+  <p>Chọn nghĩa đúng của bộ thủ này:</p>
+  {% else %}
+  <p>Chọn pinyin đúng của bộ thủ này:</p>
+  {% endif %}
+  <form id="question-form" method="post">
     {% for choice in current_question.choices %}
     <div class="choice">
       <input type="radio" name="selected_choice" value="{{ choice }}"
@@ -39,6 +41,7 @@ content %}
       name="question_index"
       value="{{ current_question.index }}"
     />
+    <input type="hidden" name="action" value="save_answer" />
   </form>
   <button
     id="mark-question-button"
@@ -48,21 +51,11 @@ content %}
     endif %}
   </button>
 </div>
-
-<!-- Nút nộp bài -->
 <form method="post" class="submit-form">
-  <button
-    type="submit"
-    name="action"
-    value="submit_test"
-    class="button submit-button"
-  >
-    Nộp bài
-  </button>
+  <input type="hidden" name="action" value="submit_test" />
+  <button type="submit" class="button submit-button">Nộp bài</button>
 </form>
-
 <script>
-  // Tự động gửi đáp án khi người dùng chọn một lựa chọn
   document
     .querySelectorAll('input[name="selected_choice"]')
     .forEach(function (input) {
@@ -75,13 +68,9 @@ content %}
         );
         formData.append("selected_choice", this.value);
 
-        fetch(window.location.href, {
-          method: "POST",
-          body: formData,
-        })
+        fetch(window.location.href, { method: "POST", body: formData })
           .then((response) => response.json())
           .then((data) => {
-            // Cập nhật trạng thái câu hỏi trong danh sách nếu cần
             document
               .querySelector(".question-item.answered")
               ?.classList.remove("answered");
@@ -93,7 +82,6 @@ content %}
       });
     });
 
-  // Xử lý sự kiện đánh dấu câu hỏi
   document
     .getElementById("mark-question-button")
     .addEventListener("click", function () {
@@ -104,17 +92,12 @@ content %}
         document.querySelector('input[name="question_index"]').value
       );
 
-      fetch(window.location.href, {
-        method: "POST",
-        body: formData,
-      })
+      fetch(window.location.href, { method: "POST", body: formData })
         .then((response) => response.json())
         .then((data) => {
-          // Cập nhật trạng thái đánh dấu của nút
           if (data.is_marked) {
             this.classList.add("marked");
             this.textContent = "Bỏ đánh dấu";
-            // Cập nhật trạng thái trong danh sách câu hỏi
             document
               .querySelector(`.question-item:nth-child(${data.question_index})`)
               .classList.add("marked");
