@@ -12,11 +12,11 @@ block content %}
   </tr>
   {% for sentence in sentences %}
   <tr>
-    <td>{{ sentence[0] }}</td>
-    <td>{{ sentence[1] }}</td>
-    <td>{{ sentence[2] }}</td>
-    <td>{{ sentence[3] }}</td>
-    <td>{{ sentence[4] }}</td>
+    <td>{{ sentence.date }}</td>
+    <td>{{ sentence.chinese }}</td>
+    <td>{{ sentence.pinyin }}</td>
+    <td>{{ sentence.sino_vietnamese }}</td>
+    <td>{{ sentence.vietnamese_meaning }}</td>
   </tr>
   {% endfor %}
 </table>

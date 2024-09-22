@@ -5,13 +5,15 @@ from flask_session import Session
 import unicodedata
 from math import ceil
 from urllib.parse import quote
-import sqlite3
 import google.generativeai as genai
 from datetime import datetime
 import os
 from dotenv import load_dotenv
+import json
+import subprocess
 
 load_dotenv()  # Load biến môi trường từ .env
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -20,34 +22,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-# Đường dẫn tuyệt đối đến tệp cơ sở dữ liệu
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(BASE_DIR, 'sentences.db')
-
-
-def init_db():
-    try:
-        print("Khởi tạo cơ sở dữ liệu...")
-        conn = sqlite3.connect('sentences.db')
-        c = conn.cursor()
-        c.execute('''
-            CREATE TABLE IF NOT EXISTS sentences (
-                date TEXT PRIMARY KEY,
-                chinese TEXT,
-                pinyin TEXT,
-                sino_vietnamese TEXT,
-                vietnamese_meaning TEXT
-            )
-        ''')
-        conn.commit()
-        conn.close()
-        print("Khởi tạo cơ sở dữ liệu thành công.")
-    except Exception as e:
-        print(f"Lỗi khi khởi tạo cơ sở dữ liệu: {e}")
-
-
-init_db()
 
 
 def get_sets(radicals, radicals_per_set=20):
@@ -60,6 +35,30 @@ def get_sets(radicals, radicals_per_set=20):
 radical_sets = get_sets(radicals)
 
 
+def push_changes_to_github():
+    GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+    if not GITHUB_TOKEN:
+        print("GITHUB_TOKEN không được thiết lập.")
+        return
+
+    repo_url = f'https://{GITHUB_TOKEN}@github.com/dinhgia2106/radicals.git'
+
+    try:
+        # Thêm tệp vào staging area
+        subprocess.run(['git', 'add', 'sentences.json'], check=True)
+
+        # Tạo commit mới
+        subprocess.run(
+            ['git', 'commit', '-m', 'Cập nhật sentences.json'], check=True)
+
+        # Đẩy thay đổi lên GitHub
+        subprocess.run(['git', 'push', repo_url], check=True)
+
+        print("Thay đổi đã được đẩy lên GitHub thành công.")
+    except subprocess.CalledProcessError as e:
+        print(f"Lỗi khi đẩy thay đổi lên GitHub: {e}")
+
+
 def remove_accents(input_str):
     # Hàm loại bỏ dấu tiếng Việt và dấu trong Pinyin
     nfkd_form = unicodedata.normalize('NFKD', input_str)
@@ -69,22 +68,22 @@ def remove_accents(input_str):
 def get_daily_sentence():
     today = datetime.now().strftime("%Y-%m-%d")
 
-    conn = sqlite3.connect(db_path)
-    c = conn.cursor()
+    # Đường dẫn đến tệp JSON
+    json_path = os.path.join(BASE_DIR, 'sentences.json')
 
-    c.execute('SELECT chinese, pinyin, sino_vietnamese, vietnamese_meaning FROM sentences WHERE date = ?', (today,))
-    row = c.fetchone()
+    # Kiểm tra xem tệp JSON có tồn tại không
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            sentences = json.load(f)
+    else:
+        sentences = {}
 
-    if row:
-        result = {
-            'chinese': row[0],
-            'pinyin': row[1],
-            'sino_vietnamese': row[2],
-            'vietnamese_meaning': row[3]
-        }
+    # Kiểm tra xem câu của ngày hôm nay đã có chưa
+    if today in sentences:
+        result = sentences[today]
     else:
         prompt = f"""
-Hôm nay là {today}. Hãy cung cấp một câu tiếng Trung ngắn có thể không liên quan tới hôm nay, bao gồm:
+Hôm nay là {today}. Hãy cung cấp một câu tiếng Trung ngắn ngẫu nhiên, bao gồm:
 
 - Chữ Hán
 - Pinyin
@@ -120,15 +119,17 @@ Không thêm bất kỳ văn bản nào khác.
                 elif 'Nghĩa tiếng Việt:' in line:
                     result['vietnamese_meaning'] = line.replace(
                         'Nghĩa tiếng Việt:', '').strip()
-            # Lưu câu vào cơ sở dữ liệu
-            c.execute('INSERT INTO sentences (date, chinese, pinyin, sino_vietnamese, vietnamese_meaning) VALUES (?, ?, ?, ?, ?)',
-                      (today, result.get('chinese'), result.get('pinyin'), result.get('sino_vietnamese'), result.get('vietnamese_meaning')))
-            conn.commit()
+            # Lưu câu vào từ điển sentences
+            sentences[today] = result
+
+            # Ghi lại tệp JSON
+            with open(json_path, 'w', encoding='utf-8') as f:
+                json.dump(sentences, f, ensure_ascii=False, indent=4)
+            push_changes_to_github()
         except Exception as e:
             print(f"Lỗi khi gọi Google Generative AI API: {e}")
             result = None
 
-    conn.close()
     return result
 
 
@@ -143,12 +144,24 @@ def home():
 
 @app.route('/history')
 def history():
-    conn = sqlite3.connect('sentences.db')
-    c = conn.cursor()
-    c.execute('SELECT date, chinese, pinyin, sino_vietnamese, vietnamese_meaning FROM sentences ORDER BY date DESC')
-    sentences = c.fetchall()
-    conn.close()
+    # Đường dẫn đến tệp JSON
+    json_path = os.path.join(BASE_DIR, 'sentences.json')
+
+    # Đọc dữ liệu từ tệp JSON
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            sentences_dict = json.load(f)
+    else:
+        sentences_dict = {}
+
+    # Chuyển đổi sang danh sách và sắp xếp
+    sentences = [
+        {'date': date, **data} for date, data in sentences_dict.items()
+    ]
+    sentences.sort(key=lambda x: x['date'], reverse=True)
+
     return render_template('history.html', sentences=sentences)
+
 
 # ================== Phần Học ==================
 
