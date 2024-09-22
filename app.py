@@ -75,9 +75,7 @@ def remove_accents(input_str):
     return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
 
 
-def get_daily_sentence():
-    today = datetime.now().strftime("%Y-%m-%d")
-
+def get_new_sentence():
     # Đường dẫn đến tệp JSON
     json_path = os.path.join(BASE_DIR, 'sentences.json')
 
@@ -496,8 +494,9 @@ Nghĩa tiếng Việt: ánh nước phản chiếu
             break  # Thoát khỏi vòng lặp nếu có lỗi
 
     if result:
-        # Lưu câu vào từ điển sentences
-        sentences[today] = result
+        # Tạo một khóa duy nhất cho câu mới, có thể sử dụng timestamp
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        sentences[timestamp] = result
 
         # Ghi lại tệp JSON
         with open(json_path, 'w', encoding='utf-8') as f:
@@ -512,7 +511,7 @@ Nghĩa tiếng Việt: ánh nước phản chiếu
 
 @app.route('/')
 def home():
-    sentence_data = get_daily_sentence()
+    sentence_data = get_new_sentence()
     return render_template('home.html', sentence=sentence_data)
 
 
