@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 import json
 import subprocess
 from github import Github
+from datetime import datetime, timezone, timedelta
 
 load_dotenv()  # Load biến môi trường từ .env
 
@@ -76,6 +77,8 @@ def remove_accents(input_str):
 
 
 def get_new_sentence():
+    utc_plus_7 = timezone(timedelta(hours=7))
+
     # Đường dẫn đến tệp JSON
     json_path = os.path.join(BASE_DIR, 'sentences.json')
 
@@ -495,7 +498,7 @@ Nghĩa tiếng Việt: ánh nước phản chiếu
 
     if result:
         # Tạo một khóa duy nhất cho câu mới, có thể sử dụng timestamp
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = datetime.now(utc_plus_7).strftime("%Y-%m-%d %H:%M:%S")
         sentences[timestamp] = result
 
         # Ghi lại tệp JSON
