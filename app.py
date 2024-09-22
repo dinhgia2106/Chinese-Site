@@ -582,7 +582,7 @@ Nghĩa tiếng Việt: ánh nước phản chiếu
 """
         try:
             model = genai.GenerativeModel("gemini-1.5-flash")
-            response = model.generate_content(promptgeneration_config=genai.types.GenerationConfig(
+            response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
                 temperature=2),)
             text = response.text
             lines = text.strip().split('\n')
