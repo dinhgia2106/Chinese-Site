@@ -116,136 +116,254 @@ Nghĩa tiếng Việt: ...
 
 Không thêm bất kỳ văn bản nào khác.
 
-Đây là ví dụ:
+Đây là các ví dụ chỉ mang tính chất tham khảo:
 
-Chữ Hán: 你好  
-Pinyin: nǐ hǎo  
-Âm Hán Việt: nhĩ hảo  
-Nghĩa tiếng Việt: xin chào  
+Chữ Hán: 明月高悬  
+Pinyin: míng yuè gāo xuán  
+Âm Hán Việt: minh nguyệt cao huyền  
+Nghĩa tiếng Việt: trăng sáng treo cao  
 
-Chữ Hán: 我是学生  
-Pinyin: wǒ shì xuéshēng  
-Âm Hán Việt: ngã thị học sinh  
-Nghĩa tiếng Việt: tôi là học sinh  
+Chữ Hán: 山川秀丽  
+Pinyin: shān chuān xiù lì  
+Âm Hán Việt: sơn xuyên tú lệ  
+Nghĩa tiếng Việt: núi sông đẹp đẽ  
 
-Chữ Hán: 今天是星期五  
-Pinyin: jīntiān shì xīngqī wǔ  
-Âm Hán Việt: kim thiên thị tinh kỳ ngũ  
-Nghĩa tiếng Việt: hôm nay là thứ sáu  
+Chữ Hán: 风景如画  
+Pinyin: fēng jǐng rú huà  
+Âm Hán Việt: phong cảnh như họa  
+Nghĩa tiếng Việt: phong cảnh đẹp như tranh  
 
-Chữ Hán: 我正在学习汉语  
-Pinyin: wǒ zhèngzài xuéxí hànyǔ  
-Âm Hán Việt: ngã chính tại học tập hán ngữ  
-Nghĩa tiếng Việt: tôi đang học tiếng Trung  
+Chữ Hán: 白云悠悠  
+Pinyin: bái yún yōu yōu  
+Âm Hán Việt: bạch vân du du  
+Nghĩa tiếng Việt: mây trắng lơ lửng  
 
-Chữ Hán: 他正在工作  
-Pinyin: tā zhèngzài gōngzuò  
-Âm Hán Việt: tha chính tại công tác  
-Nghĩa tiếng Việt: anh ấy đang làm việc  
+Chữ Hán: 青春永驻  
+Pinyin: qīng chūn yǒng zhù  
+Âm Hán Việt: thanh xuân vĩnh trú  
+Nghĩa tiếng Việt: thanh xuân mãi mãi  
 
-Chữ Hán: 你知道吗  
-Pinyin: nǐ zhīdào ma  
-Âm Hán Việt: nhĩ tri đạo ma  
-Nghĩa tiếng Việt: bạn có biết không  
+Chữ Hán: 春风得意  
+Pinyin: chūn fēng dé yì  
+Âm Hán Việt: xuân phong đắc ý  
+Nghĩa tiếng Việt: gió xuân đắc ý  
 
-Chữ Hán: 我有一个弟弟  
-Pinyin: wǒ yǒu yī gè dìdì  
-Âm Hán Việt: ngã hữu nhất cá đệ đệ  
-Nghĩa tiếng Việt: tôi có một em trai  
+Chữ Hán: 日出东方  
+Pinyin: rì chū dōng fāng  
+Âm Hán Việt: nhật xuất đông phương  
+Nghĩa tiếng Việt: mặt trời mọc ở phương đông  
 
-Nghĩa tiếng Việt: bạn biết nấu ăn không  
+Chữ Hán: 烟波浩渺  
+Pinyin: yān bō hào miǎo  
+Âm Hán Việt: yên ba hạo miểu  
+Nghĩa tiếng Việt: khói sóng mênh mông  
 
-Chữ Hán: 她很漂亮  
-Pinyin: tā hěn piàoliang  
-Âm Hán Việt: tha ngận phiêu lượng  
-Nghĩa tiếng Việt: cô ấy rất xinh đẹp  
+Chữ Hán: 书香满屋  
+Pinyin: shū xiāng mǎn wū  
+Âm Hán Việt: thư hương mãn ốc  
+Nghĩa tiếng Việt: hương sách đầy nhà  
 
-Chữ Hán: 请给我菜单  
-Pinyin: qǐng gěi wǒ càidān  
-Âm Hán Việt: thỉnh cấp ngã thái đơn  
-Nghĩa tiếng Việt: xin cho tôi thực đơn  
+Chữ Hán: 金玉满堂  
+Pinyin: jīn yù mǎn táng  
+Âm Hán Việt: kim ngọc mãn đường  
+Nghĩa tiếng Việt: vàng ngọc đầy nhà  
 
-Chữ Hán: 我想学习更多  
-Pinyin: wǒ xiǎng xuéxí gèng duō  
-Âm Hán Việt: ngã tưởng học tập cánh đa  
-Nghĩa tiếng Việt: tôi muốn học thêm nữa  
+Chữ Hán: 明德修身  
+Pinyin: míng dé xiū shēn  
+Âm Hán Việt: minh đức tu thân  
+Nghĩa tiếng Việt: giữ đức sáng, tu dưỡng bản thân  
 
-Chữ Hán: 这个多少钱  
-Pinyin: zhège duōshǎo qián  
-Âm Hán Việt: giá cách đa thiểu tiền  
-Nghĩa tiếng Việt: cái này bao nhiêu tiền  
+Chữ Hán: 光明磊落  
+Pinyin: guāng míng lěi luò  
+Âm Hán Việt: quang minh lỗi lạc  
+Nghĩa tiếng Việt: ngay thẳng, quang minh chính đại  
 
-Chữ Hán: 我们去吃晚饭吧  
-Pinyin: wǒmen qù chī wǎnfàn ba  
-Âm Hán Việt: ngã môn khứ cật vãn phạn ba  
-Nghĩa tiếng Việt: chúng ta đi ăn tối đi  
+Chữ Hán: 大海无边  
+Pinyin: dà hǎi wú biān  
+Âm Hán Việt: đại hải vô biên  
+Nghĩa tiếng Việt: biển cả vô biên  
 
-Chữ Hán: 你看过这本书吗  
-Pinyin: nǐ kànguò zhè běn shū ma  
-Âm Hán Việt: nhĩ khán quá giá bổn thư ma  
-Nghĩa tiếng Việt: bạn đã đọc cuốn sách này chưa  
+Chữ Hán: 千秋万代  
+Pinyin: qiān qiū wàn dài  
+Âm Hán Việt: thiên thu vạn đại  
+Nghĩa tiếng Việt: ngàn thu vạn đại  
 
-Chữ Hán: 你喜欢运动吗  
-Pinyin: nǐ xǐhuān yùndòng ma  
-Âm Hán Việt: nhĩ hỉ hoan vận động ma  
-Nghĩa tiếng Việt: bạn có thích thể thao không  
+Chữ Hán: 古道热肠  
+Pinyin: gǔ dào rè cháng  
+Âm Hán Việt: cổ đạo nhiệt trường  
+Nghĩa tiếng Việt: tính tình chân thành, nhiệt huyết  
 
-Chữ Hán: 他是我的老师  
-Pinyin: tā shì wǒ de lǎoshī  
-Âm Hán Việt: tha thị ngã đích lão sư  
-Nghĩa tiếng Việt: anh ấy là thầy giáo của tôi  
+Chữ Hán: 名扬天下  
+Pinyin: míng yáng tiān xià  
+Âm Hán Việt: danh dương thiên hạ  
+Nghĩa tiếng Việt: danh tiếng vang khắp thiên hạ  
 
-Chữ Hán: 你叫什么名字  
-Pinyin: nǐ jiào shénme míngzì  
-Âm Hán Việt: nhĩ khiếu thậm ma danh tự  
-Nghĩa tiếng Việt: bạn tên là gì  
+Chữ Hán: 流水无情  
+Pinyin: liú shuǐ wú qíng  
+Âm Hán Việt: lưu thủy vô tình  
+Nghĩa tiếng Việt: nước trôi vô tình  
 
-Chữ Hán: 我会说英语  
-Pinyin: wǒ huì shuō yīngyǔ  
-Âm Hán Việt: ngã hội thuyết anh ngữ  
-Nghĩa tiếng Việt: tôi biết nói tiếng Anh  
+Chữ Hán: 斗志昂扬  
+Pinyin: dòu zhì áng yáng  
+Âm Hán Việt: đấu chí ng昂 dương  
+Nghĩa tiếng Việt: tinh thần chiến đấu hăng hái  
 
-Chữ Hán: 你要喝水吗  
-Pinyin: nǐ yào hē shuǐ ma  
-Âm Hán Việt: nhĩ yếu hát thủy ma  
-Nghĩa tiếng Việt: bạn có muốn uống nước không  
+Chữ Hán: 国泰民安  
+Pinyin: guó tài mín ān  
+Âm Hán Việt: quốc thái dân an  
+Nghĩa tiếng Việt: quốc gia thịnh vượng, dân chúng an bình  
 
-Chữ Hán: 我有两个妹妹  
-Pinyin: wǒ yǒu liǎng gè mèimèi  
-Âm Hán Việt: ngã hữu lưỡng cá muội muội  
-Nghĩa tiếng Việt: tôi có hai em gái  
+Chữ Hán: 水天一色  
+Pinyin: shuǐ tiān yī sè  
+Âm Hán Việt: thủy thiên nhất sắc  
+Nghĩa tiếng Việt: nước và trời một màu  
 
-Chữ Hán: 这是我的书包  
-Pinyin: zhè shì wǒ de shūbāo  
-Âm Hán Việt: giá thị ngã đích thư bao  
-N
+Chữ Hán: 心如止水  
+Pinyin: xīn rú zhǐ shuǐ  
+Âm Hán Việt: tâm như chỉ thủy  
+Nghĩa tiếng Việt: tâm hồn tĩnh lặng như nước  
 
-ghĩa tiếng Việt: đây là cặp sách của tôi  
+Chữ Hán: 天涯海角  
+Pinyin: tiān yá hǎi jiǎo  
+Âm Hán Việt: thiên nhai hải giác  
+Nghĩa tiếng Việt: chân trời góc bể  
 
-Chữ Hán: 你住在哪里  
-Pinyin: nǐ zhù zài nǎlǐ  
-Âm Hán Việt: nhĩ trú tại nả lý  
-Nghĩa tiếng Việt: bạn sống ở đâu  
+Chữ Hán: 五湖四海  
+Pinyin: wǔ hú sì hǎi  
+Âm Hán Việt: ngũ hồ tứ hải  
+Nghĩa tiếng Việt: khắp nơi trên thế giới  
 
-Chữ Hán: 我们是好朋友  
-Pinyin: wǒmen shì hǎo péngyǒu  
-Âm Hán Việt: ngã môn thị hảo bằng hữu  
-Nghĩa tiếng Việt: chúng tôi là bạn tốt  
+Chữ Hán: 飞鸟在天  
+Pinyin: fēi niǎo zài tiān  
+Âm Hán Việt: phi điểu tại thiên  
+Nghĩa tiếng Việt: chim bay trên trời  
 
-Chữ Hán: 你喜欢看书吗  
-Pinyin: nǐ xǐhuān kànshū ma  
-Âm Hán Việt: nhĩ hỉ hoan khán thư ma  
-Nghĩa tiếng Việt: bạn có thích đọc sách không  
+Chữ Hán: 寒来暑往  
+Pinyin: hán lái shǔ wǎng  
+Âm Hán Việt: hàn lai thử vãng  
+Nghĩa tiếng Việt: đông đến hè đi  
 
-Chữ Hán: 今天很热  
-Pinyin: jīntiān hěn rè  
-Âm Hán Việt: kim thiên ngận nhiệt  
-Nghĩa tiếng Việt: hôm nay rất nóng  
+Chữ Hán: 前程似锦  
+Pinyin: qián chéng sì jǐn  
+Âm Hán Việt: tiền trình tự cẩm  
+Nghĩa tiếng Việt: tương lai tươi sáng  
 
-Chữ Hán: 你吃过饺子吗  
-Pinyin: nǐ chīguò jiǎozi ma  
-Âm Hán Việt: nhĩ cật quá giáo tử ma  
-Nghĩa tiếng Việt: bạn đã ăn bánh bao chưa  
+Chữ Hán: 风雨同舟  
+Pinyin: fēng yǔ tóng zhōu  
+Âm Hán Việt: phong vũ đồng chu  
+Nghĩa tiếng Việt: cùng nhau vượt qua gian khó  
+
+Chữ Hán: 自强不息  
+Pinyin: zì qiáng bù xī  
+Âm Hán Việt: tự cường bất tức  
+Nghĩa tiếng Việt: tự cường không ngừng  
+
+Chữ Hán: 大展宏图  
+Pinyin: dà zhǎn hóng tú  
+Âm Hán Việt: đại triển hồng đồ  
+Nghĩa tiếng Việt: thực hiện kế hoạch lớn  
+
+Chữ Hán: 人杰地灵  
+Pinyin: rén jié dì líng  
+Âm Hán Việt: nhân kiệt địa linh  
+Nghĩa tiếng Việt: đất thiêng sinh người tài  
+
+Chữ Hán: 车水马龙  
+Pinyin: chē shuǐ mǎ lóng  
+Âm Hán Việt: xa thủy mã long  
+Nghĩa tiếng Việt: xe ngựa như nước chảy  
+
+Chữ Hán: 白发苍苍  
+Pinyin: bái fà cāng cāng  
+Âm Hán Việt: bạch phát thương thương  
+Nghĩa tiếng Việt: tóc bạc phơ  
+
+Chữ Hán: 千山万水  
+Pinyin: qiān shān wàn shuǐ  
+Âm Hán Việt: thiên sơn vạn thủy  
+Nghĩa tiếng Việt: ngàn non vạn nước  
+
+Chữ Hán: 竹报平安  
+Pinyin: zhú bào píng ān  
+Âm Hán Việt: trúc báo bình an  
+Nghĩa tiếng Việt: tin vui báo bình an  
+
+Chữ Hán: 笑容满面  
+Pinyin: xiào róng mǎn miàn  
+Âm Hán Việt: tiếu dung mãn diện  
+Nghĩa tiếng Việt: khuôn mặt tràn ngập nụ cười  
+
+Chữ Hán: 烟消云散  
+Pinyin: yān xiāo yún sàn  
+Âm Hán Việt: yên tiêu vân tán  
+Nghĩa tiếng Việt: mây khói tan biến  
+
+Chữ Hán: 龙飞凤舞  
+Pinyin: lóng fēi fèng wǔ  
+Âm Hán Việt: long phi phụng vũ  
+Nghĩa tiếng Việt: rồng bay phượng múa  
+
+Chữ Hán: 天高云淡  
+Pinyin: tiān gāo yún dàn  
+Âm Hán Việt: thiên cao vân đạm  
+Nghĩa tiếng Việt: trời cao mây nhạt  
+
+Chữ Hán: 海纳百川  
+Pinyin: hǎi nà bǎi chuān  
+Âm Hán Việt: hải nạp bách xuyên  
+Nghĩa tiếng Việt: biển nạp trăm sông  
+
+Chữ Hán: 春暖花开  
+Pinyin: chūn nuǎn huā kāi  
+Âm Hán Việt: xuân noãn hoa khai  
+Nghĩa tiếng Việt: xuân về hoa nở  
+
+Chữ Hán: 星火燎原  
+Pinyin: xīng huǒ liáo yuán  
+Âm Hán Việt: tinh
+
+ hỏa liệu nguyên  
+Nghĩa tiếng Việt: ngọn lửa bùng cháy cả cánh đồng  
+
+Chữ Hán: 桃李满园  
+Pinyin: táo lǐ mǎn yuán  
+Âm Hán Việt: đào lý mãn viên  
+Nghĩa tiếng Việt: đào lý đầy vườn  
+
+Chữ Hán: 和风细雨  
+Pinyin: hé fēng xì yǔ  
+Âm Hán Việt: hòa phong tế vũ  
+Nghĩa tiếng Việt: gió nhẹ mưa lành  
+
+Chữ Hán: 日久天长  
+Pinyin: rì jiǔ tiān cháng  
+Âm Hán Việt: nhật cửu thiên trường  
+Nghĩa tiếng Việt: thời gian dài đằng đẵng  
+
+Chữ Hán: 出类拔萃  
+Pinyin: chū lèi bá cuì  
+Âm Hán Việt: xuất loại bạt tụy  
+Nghĩa tiếng Việt: xuất chúng hơn người  
+
+Chữ Hán: 玉树临风  
+Pinyin: yù shù lín fēng  
+Âm Hán Việt: ngọc thụ lâm phong  
+Nghĩa tiếng Việt: người tuấn tú như cây ngọc đón gió  
+
+Chữ Hán: 天下无敌  
+Pinyin: tiān xià wú dí  
+Âm Hán Việt: thiên hạ vô địch  
+Nghĩa tiếng Việt: vô địch khắp thiên hạ  
+
+Chữ Hán: 光阴似箭  
+Pinyin: guāng yīn sì jiàn  
+Âm Hán Việt: quang âm tự tiễn  
+Nghĩa tiếng Việt: thời gian trôi nhanh như tên bay  
+
+Chữ Hán: 名利双收  
+Pinyin: míng lì shuāng shōu  
+Âm Hán Việt: danh lợi song thu  
+Nghĩa tiếng Việt: thu cả danh tiếng và lợi lộc  
 
 Chữ Hán: 我想要一杯水  
 Pinyin: wǒ xiǎng yào yī bēi shuǐ  
@@ -464,7 +582,8 @@ Nghĩa tiếng Việt: ánh nước phản chiếu
 """
         try:
             model = genai.GenerativeModel("gemini-1.5-flash")
-            response = model.generate_content(prompt)
+            response = model.generate_content(promptgeneration_config=genai.types.GenerationConfig(
+                temperature=2),)
             text = response.text
             lines = text.strip().split('\n')
             temp_result = {}
