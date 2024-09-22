@@ -11,9 +11,9 @@ import os
 from dotenv import load_dotenv
 import json
 import subprocess
+from github import Github
 
 load_dotenv()  # Load biến môi trường từ .env
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -41,21 +41,32 @@ def push_changes_to_github():
         print("GITHUB_TOKEN không được thiết lập.")
         return
 
-    repo_url = f'https://{GITHUB_TOKEN}@github.com/dinhgia2106/radicals.git'
-
     try:
-        # Thêm tệp vào staging area
-        subprocess.run(['git', 'add', 'sentences.json'], check=True)
+        # Kết nối tới GitHub
+        g = Github(GITHUB_TOKEN)
 
-        # Tạo commit mới
-        subprocess.run(
-            ['git', 'commit', '-m', 'Cập nhật sentences.json'], check=True)
 
-        # Đẩy thay đổi lên GitHub
-        subprocess.run(['git', 'push', repo_url], check=True)
+        repo = g.get_user().get_repo('radicals')
+
+        # Đường dẫn tới tệp trong kho
+        file_path = 'sentences.json'
+
+        # Nội dung mới của tệp
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+
+        # Kiểm tra xem tệp đã tồn tại trong kho chưa
+        try:
+            contents = repo.get_contents(file_path)
+            # Cập nhật tệp
+            repo.update_file(
+                contents.path, "Cập nhật sentences.json", content, contents.sha)
+        except Exception as e:
+            # Nếu tệp chưa tồn tại, tạo mới
+            repo.create_file(file_path, "Tạo sentences.json", content)
 
         print("Thay đổi đã được đẩy lên GitHub thành công.")
-    except subprocess.CalledProcessError as e:
+    except Exception as e:
         print(f"Lỗi khi đẩy thay đổi lên GitHub: {e}")
 
 
