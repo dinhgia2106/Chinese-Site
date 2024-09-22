@@ -5,6 +5,13 @@ from flask_session import Session
 import unicodedata
 from math import ceil
 from urllib.parse import quote
+import sqlite3
+import google.generativeai as genai
+from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -12,7 +19,35 @@ app.secret_key = 'your_secret_key'
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
-# Chia các bộ thủ thành các bộ đề, mỗi bộ đề 20 bộ thủ
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+# Đường dẫn tuyệt đối đến tệp cơ sở dữ liệu
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, 'sentences.db')
+
+
+def init_db():
+    try:
+        print("Khởi tạo cơ sở dữ liệu...")
+        conn = sqlite3.connect('sentences.db')
+        c = conn.cursor()
+        c.execute('''
+            CREATE TABLE IF NOT EXISTS sentences (
+                date TEXT PRIMARY KEY,
+                chinese TEXT,
+                pinyin TEXT,
+                sino_vietnamese TEXT,
+                vietnamese_meaning TEXT
+            )
+        ''')
+        conn.commit()
+        conn.close()
+        print("Khởi tạo cơ sở dữ liệu thành công.")
+    except Exception as e:
+        print(f"Lỗi khi khởi tạo cơ sở dữ liệu: {e}")
+
+
+init_db()
 
 
 def get_sets(radicals, radicals_per_set=20):
@@ -30,12 +65,90 @@ def remove_accents(input_str):
     nfkd_form = unicodedata.normalize('NFKD', input_str)
     return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
 
+
+def get_daily_sentence():
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    conn = sqlite3.connect(db_path)
+    c = conn.cursor()
+
+    c.execute('SELECT chinese, pinyin, sino_vietnamese, vietnamese_meaning FROM sentences WHERE date = ?', (today,))
+    row = c.fetchone()
+
+    if row:
+        result = {
+            'chinese': row[0],
+            'pinyin': row[1],
+            'sino_vietnamese': row[2],
+            'vietnamese_meaning': row[3]
+        }
+    else:
+        prompt = f"""
+Hôm nay là {today}. Hãy cung cấp một câu tiếng Trung ngắn có thể không liên quan tới hôm nay, bao gồm:
+
+- Chữ Hán
+- Pinyin
+- Âm Hán Việt
+- Nghĩa tiếng Việt
+
+Hãy đảm bảo rằng:
+
+- Câu trả lời chỉ bao gồm các thông tin trên, không thêm nội dung khác.
+- Định dạng kết quả chính xác như sau:
+
+Chữ Hán: ...
+Pinyin: ...
+Âm Hán Việt: ...
+Nghĩa tiếng Việt: ...
+
+Không thêm bất kỳ văn bản nào khác.
+"""
+        try:
+            model = genai.GenerativeModel("gemini-1.5-flash")
+            response = model.generate_content(prompt)
+            text = response.text
+            lines = text.split('\n')
+            result = {}
+            for line in lines:
+                if 'Chữ Hán:' in line:
+                    result['chinese'] = line.replace('Chữ Hán:', '').strip()
+                elif 'Pinyin:' in line:
+                    result['pinyin'] = line.replace('Pinyin:', '').strip()
+                elif 'Âm Hán Việt:' in line:
+                    result['sino_vietnamese'] = line.replace(
+                        'Âm Hán Việt:', '').strip()
+                elif 'Nghĩa tiếng Việt:' in line:
+                    result['vietnamese_meaning'] = line.replace(
+                        'Nghĩa tiếng Việt:', '').strip()
+            # Lưu câu vào cơ sở dữ liệu
+            c.execute('INSERT INTO sentences (date, chinese, pinyin, sino_vietnamese, vietnamese_meaning) VALUES (?, ?, ?, ?, ?)',
+                      (today, result.get('chinese'), result.get('pinyin'), result.get('sino_vietnamese'), result.get('vietnamese_meaning')))
+            conn.commit()
+        except Exception as e:
+            print(f"Lỗi khi gọi Google Generative AI API: {e}")
+            result = None
+
+    conn.close()
+    return result
+
+
 # Trang chủ
 
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    sentence_data = get_daily_sentence()
+    return render_template('home.html', sentence=sentence_data)
+
+
+@app.route('/history')
+def history():
+    conn = sqlite3.connect('sentences.db')
+    c = conn.cursor()
+    c.execute('SELECT date, chinese, pinyin, sino_vietnamese, vietnamese_meaning FROM sentences ORDER BY date DESC')
+    sentences = c.fetchall()
+    conn.close()
+    return render_template('history.html', sentences=sentences)
 
 # ================== Phần Học ==================
 

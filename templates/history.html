@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Lịch Sử Các Câu{% endblock %} {%
+block content %}
+<h1>Lịch Sử Các Câu Tiếng Trung</h1>
+
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Ngày</th>
+    <th>Chữ Hán</th>
+    <th>Pinyin</th>
+    <th>Âm Hán Việt</th>
+    <th>Nghĩa Tiếng Việt</th>
+  </tr>
+  {% for sentence in sentences %}
+  <tr>
+    <td>{{ sentence[0] }}</td>
+    <td>{{ sentence[1] }}</td>
+    <td>{{ sentence[2] }}</td>
+    <td>{{ sentence[3] }}</td>
+    <td>{{ sentence[4] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

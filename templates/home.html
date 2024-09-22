@@ -1,4 +1,18 @@
 {% extends "base.html" %} {% block title %}Trang Chủ{% endblock %} {% block
 content %}
 <h1>Chào mừng đến với ứng dụng học bộ thủ tiếng Trung</h1>
+<p></p>
+
+{% if sentence %}
+<h2>Câu tiếng Trung hôm nay:</h2>
+<p><strong>Chữ Hán:</strong> {{ sentence.chinese }}</p>
+<p><strong>Pinyin:</strong> {{ sentence.pinyin }}</p>
+<p><strong>Âm Hán Việt:</strong> {{ sentence.sino_vietnamese }}</p>
+<p><strong>Nghĩa tiếng Việt:</strong> {{ sentence.vietnamese_meaning }}</p>
+{% else %}
+<p>Không thể tải câu tiếng Trung hôm nay. Vui lòng thử lại sau.</p>
+{% endif %}
+
+<p><a href="{{ url_for('history') }}">Xem lịch sử các câu</a></p>
+
 {% endblock %}
