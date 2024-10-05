@@ -475,31 +475,19 @@ def translate():
 
 def translate_and_analyze(text):
     prompt = f"""
-        Phân biệt đoạn văn và câu văn:
+        Bạn là một chuyên gia ngôn ngữ Trung - Việt, hãy thực hiện các yêu cầu sau:
 
-        Sự khác biệt chính giữa đoạn văn và câu văn nằm ở độ dài và chức năng trong bài viết:
-
-        Câu văn (Sentence):
-
-        Độ dài: Câu văn thường ngắn, chứa một ý hoàn chỉnh, gồm chủ ngữ và vị ngữ diễn đạt hành động hoặc sự kiện.
-        Chức năng: Diễn đạt một thông tin hoặc ý tưởng cụ thể. Câu văn đơn lẻ thường không đủ để diễn đạt vấn đề phức tạp.
-        Ví dụ: "我们不一样."
-        Đoạn văn (Paragraph):
-
-        Độ dài: Dài hơn câu văn, bao gồm nhiều câu liên kết để phát triển một ý tưởng.
-        Chức năng: Giải thích chi tiết một chủ đề. Đoạn văn bắt đầu bằng câu chủ đề, các câu sau đó bổ sung, giải thích, hoặc minh họa cho ý tưởng chính.
-        Ví dụ: "昨天，我和我的朋友一起去了公园。天气非常好，太阳很大，风也不大。我们在公园里走了两个小时，聊了很多有趣的事情。后来，我们在附近的咖啡店喝了一杯咖啡。咖啡很好喝，我们都觉得很开心。晚上回到家，我还看了一部电影，感觉今天很充实。"
-        Yêu cầu khi là đoạn văn bằng tiếng Trung:
-
-        Sau đó đọc đoạn văn bản sau:
-
+        Đọc đoạn văn bản sau:
         {text}
 
-        Nếu đoạn văn là tiếng Trung, trả về bản dịch theo cấu trúc sau:
+        Phân tích đoạn văn và câu văn tiếng Trung:
+
+        Nếu đoạn văn bản chứa một ĐOẠN VĂN (nhiều hơn 1 câu) thì chỉ cần trả về bản dịch với cấu trúc sau (nếu là tiếng Trung, nếu không phải thì trả về kết quả: "Vui lòng nhập tiếng Trung"):
 
         Đây là nội dung bản dịch:
-        [Bản dịch tiếng Việt]
-        Yêu cầu khi là câu văn có tối đa 20 từ:
+        - [Bản dịch tiếng Việt]
+
+        Nếu đoạn văn bản là CÂU VĂN (một câu có tối đa 20 từ) thì thực hiện các bước sau:
 
         Dịch toàn bộ đoạn văn bản sang tiếng Việt.
         Phân tích từng chữ Hán theo các yêu cầu sau:
@@ -510,19 +498,20 @@ def translate_and_analyze(text):
         Gợi ý cách nhớ
         Cách sử dụng
         Các từ liên quan
-        Trình bày kết quả theo định dạng:
+        Trình bày kết quả theo định dạng sau:
 
         Bản dịch: [Bản dịch tiếng Việt]
         Phân tích từng chữ:
         [Chữ Hán]:
-        Nghĩa Hán Việt: [Nghĩa]
-        Bộ thủ: [Danh sách bộ thủ]
-        Pinyin: [Cách đọc]
-        Ý nghĩa tiếng Việt: [Ý nghĩa]
-        Gợi ý cách nhớ: [Gợi ý]
-        Cách sử dụng: [Cách sử dụng]
-        Các từ liên quan: [Các từ liên quan]
+        - Nghĩa Hán Việt: [Nghĩa]
+        - Bộ thủ: [Danh sách bộ thủ]
+        - Pinyin: [Cách đọc]
+        - Ý nghĩa tiếng Việt: [Ý nghĩa]
+        - Gợi ý cách nhớ: [Gợi ý]
+        - Cách sử dụng: [Cách sử dụng]
+        - Các từ liên quan: [Các từ liên quan]
         [Chữ Hán tiếp theo]
+        Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
     """
 
     try:
