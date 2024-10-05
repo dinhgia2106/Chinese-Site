@@ -474,10 +474,19 @@ def translate():
 
 
 def translate_and_analyze(text):
-    prompt = f"""
-    Hãy dịch và phân tích đoạn văn bản tiếng Trung sau đây (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung):
+    prompt = f""" Đọc đoạn văn bản sau:
 
     {text}
+
+    Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung):
+
+    Bản dịch: [Bản dịch tiếng Việt]
+
+    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
+
+    Nếu chỉ có 1 câu thì thực hiện các bước sau, còn không thì không cần:
+
+    Hãy dịch và phân tích:
 
     Yêu cầu:
     1. Dịch toàn bộ đoạn văn bản sang tiếng Việt.
@@ -506,9 +515,6 @@ def translate_and_analyze(text):
     2. [Chữ Hán tiếp theo]
        ...
 
-    Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau:
-
-    Bản dịch: [Bản dịch tiếng Việt]
     Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
     """
 
