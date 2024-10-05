@@ -9,7 +9,9 @@
       name="input_text"
       rows="3"
       required
-    ></textarea>
+    >
+{{ request.form.get('input_text', '') }}</textarea
+    >
   </div>
   <button type="submit" class="btn btn-primary">Dịch và Phân tích</button>
 </form>
