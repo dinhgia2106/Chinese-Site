@@ -2,9 +2,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .container {
@@ -13,9 +10,6 @@ body {
   padding: 20px;
   background-color: white;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h1 {
@@ -69,7 +63,7 @@ h1 {
 .quiz-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
   max-width: 400px;
 }
@@ -133,7 +127,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .sets .button {
@@ -151,9 +144,6 @@ h1 {
   padding: 20px;
   background-color: white;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h1 {
@@ -439,7 +429,6 @@ td {
 
 .index-form {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: 10px;
 }
