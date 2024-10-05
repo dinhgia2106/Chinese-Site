@@ -479,14 +479,29 @@ def translate_and_analyze(text):
 
     {text}
 
-    Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung), trả về với cấu trúc giống với cấu trúc nhập vào:
+    Hãy đọc để phân biệt đoạn văn và câu văn.
+
+    Sự khác biệt chính giữa đoạn văn và câu văn nằm ở độ dài và chức năng của chúng trong một bài viết. Dưới đây là sự so sánh cụ thể:
+
+    Câu văn (Sentence):
+
+    Độ dài: Câu văn thường ngắn, chỉ bao gồm một ý hoàn chỉnh. Nó có thể chứa chủ ngữ và vị ngữ để diễn đạt một hành động hoặc sự kiện.
+    Chức năng: Một câu văn có nhiệm vụ diễn đạt một thông tin, sự kiện, hoặc ý tưởng cụ thể. Một câu văn đơn lẻ thường không thể diễn đạt toàn bộ một vấn đề phức tạp.
+    Ví dụ: "Hôm nay trời nắng đẹp."
+    Đoạn văn (Paragraph):
+
+    Độ dài: Đoạn văn dài hơn câu văn, thường bao gồm nhiều câu liên quan với nhau để phát triển một ý tưởng hoặc chủ đề cụ thể.
+    Chức năng: Đoạn văn được sử dụng để diễn giải chi tiết hơn một vấn đề hoặc chủ đề nhất định. Một đoạn văn có thể bắt đầu bằng câu chủ đề, sau đó các câu còn lại sẽ giải thích, minh họa, hoặc bổ sung cho ý tưởng chính đó.
+    Ví dụ: "Hôm nay trời nắng đẹp. Nhiệt độ ngoài trời khoảng 30 độ C và gió nhẹ, tạo cảm giác rất dễ chịu. Nhiều người đã quyết định ra ngoài để tận hưởng thời tiết này."
+
+    Nếu là đoạn văn thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung), trả về với cấu trúc giống với cấu trúc nhập vào:
 
         - Đây là nội dung bản dịch:
         [Bản dịch tiếng Việt]
 
     Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
 
-    Nếu chỉ có 1 câu và có nhiều nhất 20 từ thì thực hiện các bước sau, còn không thì không cần:
+    Nếu chỉ có 1 câu văb và chỉ có tối đa 20 từ thì thực hiện các bước sau, còn không thì không cần:
 
     Hãy dịch và phân tích:
 
