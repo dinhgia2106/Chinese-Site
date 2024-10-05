@@ -489,8 +489,9 @@ def admin_required(f):
 
 def send_verification_email(email, token):
     msg = Message('Xác minh tài khoản', recipients=[email])
+    verification_link = url_for("verify_email", token=token, _external=True)
     msg.body = f'Vui lòng nhấp vào liên kết sau để xác minh tài khoản của bạn: {
-        url_for("verify_email", token=token, _external=True)}'
+        verification_link}'
     mail.send(msg)
 
 
