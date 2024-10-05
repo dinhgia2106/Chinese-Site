@@ -482,12 +482,12 @@ def translate_and_analyze(text):
 
         Phân tích đoạn văn và câu văn tiếng Trung:
 
-        Nếu đoạn văn bản chứa một ĐOẠN VĂN (nhiều hơn 1 câu) thì chỉ cần trả về bản dịch với cấu trúc sau (nếu là tiếng Trung, nếu không phải thì trả về kết quả: "Vui lòng nhập tiếng Trung"):
+        Nếu đoạn văn bản nhiều hơn 10 từ thì chỉ cần trả về bản dịch với cấu trúc sau (nếu là tiếng Trung, nếu không phải thì trả về kết quả: "Vui lòng nhập tiếng Trung"):
 
         Đây là nội dung bản dịch:
         - [Bản dịch tiếng Việt]
 
-        Nếu đoạn văn bản là CÂU VĂN (một câu có tối đa 20 từ) thì thực hiện các bước sau:
+        Nếu đoạn văn bản có 10 từ trở xuống thì thực hiện các bước sau:
 
         Dịch toàn bộ đoạn văn bản sang tiếng Việt.
         Phân tích từng chữ Hán theo các yêu cầu sau:
@@ -502,7 +502,7 @@ def translate_and_analyze(text):
 
         Bản dịch: [Bản dịch tiếng Việt]
         Phân tích từng chữ:
-        [Chữ Hán]:
+        Chữ [Chữ Hán]:
         - Nghĩa Hán Việt: [Nghĩa]
         - Bộ thủ: [Danh sách bộ thủ]
         - Pinyin: [Cách đọc]
