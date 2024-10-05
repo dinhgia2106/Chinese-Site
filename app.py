@@ -74,25 +74,26 @@ def remove_accents(input_str):
 
 
 def get_new_sentence():
-    utc_plus_7 = timezone(timedelta(hours=7))
-    current_date = datetime.now(utc_plus_7).date()
-    current_datetime = datetime.now(utc_plus_7)
+    try:
+        utc_plus_7 = timezone(timedelta(hours=7))
+        current_date = datetime.now(utc_plus_7).date()
+        current_datetime = datetime.now(utc_plus_7)
 
-    # Kiểm tra xem đã có câu nào được tạo cho ngày hôm nay chưa
-    mycursor.execute(
-        "SELECT * FROM sentences WHERE DATE(created_at) = %s", (current_date,))
-    today_sentence = mycursor.fetchone()
+        # Kiểm tra xem đã có câu nào được tạo cho ngày hôm nay chưa
+        mycursor.execute(
+            "SELECT * FROM sentences WHERE DATE(created_at) = %s", (current_date,))
+        today_sentence = mycursor.fetchone()
 
-    if today_sentence:
-        return today_sentence
+        if today_sentence:
+            return today_sentence
 
-    # Nếu chưa có câu cho ngày hôm nay, tạo câu mới
-    mycursor.execute("SELECT chinese FROM sentences")
-    existing_sentences = set(row['chinese'] for row in mycursor.fetchall())
-    result = None
+        # Nếu chưa có câu cho ngày hôm nay, tạo câu mới
+        mycursor.execute("SELECT chinese FROM sentences")
+        existing_sentences = set(row['chinese'] for row in mycursor.fetchall())
 
-    while True:
-        prompt = """Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
+        max_attempts = 5  # Giới hạn số lần thử
+        for attempt in range(max_attempts):
+            prompt = """Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
 
 - Chữ Hán
 - Pinyin
@@ -111,52 +112,57 @@ Nghĩa tiếng Việt: ...
 
 Không thêm bất kỳ văn bản nào khác.
 """
-        try:
-            model = genai.GenerativeModel("gemini-1.5-flash")
-            response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
-                temperature=1),)
-            text = response.text
-            lines = text.strip().split('\n')
-            temp_result = {}
-            for line in lines:
-                if 'Chữ Hán:' in line:
-                    temp_result['chinese'] = line.replace(
-                        'Chữ Hán:', '').strip()
-                elif 'Pinyin:' in line:
-                    temp_result['pinyin'] = line.replace('Pinyin:', '').strip()
-                elif 'Âm Hán Việt:' in line:
-                    temp_result['sino_vietnamese'] = line.replace(
-                        'Âm Hán Việt:', '').strip()
-                elif 'Nghĩa tiếng Việt:' in line:
-                    temp_result['vietnamese_meaning'] = line.replace(
-                        'Nghĩa tiếng Việt:', '').strip()
+            try:
+                model = genai.GenerativeModel("gemini-1.5-flash")
+                response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
+                    temperature=1),)
+                text = response.text
+                lines = text.strip().split('\n')
+                temp_result = {}
+                for line in lines:
+                    if 'Chữ Hán:' in line:
+                        temp_result['chinese'] = line.replace(
+                            'Chữ Hán:', '').strip()
+                    elif 'Pinyin:' in line:
+                        temp_result['pinyin'] = line.replace(
+                            'Pinyin:', '').strip()
+                    elif 'Âm Hán Việt:' in line:
+                        temp_result['sino_vietnamese'] = line.replace(
+                            'Âm Hán Việt:', '').strip()
+                    elif 'Nghĩa tiếng Việt:' in line:
+                        temp_result['vietnamese_meaning'] = line.replace(
+                            'Nghĩa tiếng Việt:', '').strip()
 
-            # Kiểm tra định dạng kết quả
-            if len(temp_result) < 4:
-                continue  # Nếu thiếu thông tin, chạy lại prompt
+                # Kiểm tra định dạng kết quả
+                if len(temp_result) < 4:
+                    continue  # Nếu thiếu thông tin, chạy lại prompt
 
-            # Kiểm tra xem câu đã tồn tại chưa
-            if temp_result['chinese'] in existing_sentences:
-                continue  # Nếu đã tồn tại, chạy lại prompt
-            else:
-                result = temp_result
-                break  # Thoát khỏi vòng lặp khi có câu mới
-        except Exception as e:
-            print(f"Lỗi khi gọi Google Generative AI API: {e}")
-            result = None
-            break  # Thoát khỏi vòng lặp nếu có lỗi
+                # Kiểm tra xem câu đã tồn tại chưa
+                if temp_result['chinese'] in existing_sentences:
+                    continue  # Nếu đã tồn tại, chạy lại prompt
+                else:
+                    result = temp_result
+                    break  # Thoát khỏi vòng lặp khi có câu mới
+            except Exception as e:
+                print(f"Lỗi khi gọi Google Generative AI API: {e}")
+                continue  # Tiếp tục vòng lặp nếu có lỗi
 
-    if result:
-        # Lưu câu mới vào cơ sở dữ liệu
-        sql = """INSERT INTO sentences 
-                 (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
-                 VALUES (%s, %s, %s, %s, %s, %s)"""
-        values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
-                  result['vietnamese_meaning'], current_datetime, current_date)
-        mycursor.execute(sql, values)
-        mydb.commit()
+            if result:
+                # Lưu câu mới vào cơ sở dữ liệu
+                sql = """INSERT INTO sentences 
+                         (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
+                         VALUES (%s, %s, %s, %s, %s, %s)"""
+                values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
+                          result['vietnamese_meaning'], current_datetime, current_date)
+                mycursor.execute(sql, values)
+                mydb.commit()
+                return result
 
-    return result
+        # Nếu không tạo được câu mới sau số lần thử tối đa
+        return None
+    except Exception as e:
+        print(f"Lỗi khi tạo câu mới: {e}")
+        return None
 
 
 # Trang chủ
@@ -165,6 +171,9 @@ Không thêm bất kỳ văn bản nào khác.
 @app.route('/')
 def home():
     sentence_data = get_new_sentence()
+    if sentence_data is None:
+        sentence_data = {"chinese": "Không thể tạo câu mới", "pinyin": "",
+                         "sino_vietnamese": "", "vietnamese_meaning": "Vui lòng thử lại sau"}
     return render_template('home.html', sentence=sentence_data)
 
 
