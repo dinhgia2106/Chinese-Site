@@ -480,7 +480,7 @@ def translate_and_analyze(text):
 
     Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung):
 
-    Bản dịch: [Bản dịch tiếng Việt]
+    [Bản dịch tiếng Việt]
 
     Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
 
@@ -521,7 +521,7 @@ def translate_and_analyze(text):
     try:
         model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(prompt)
-        return response.text
+        return response.text.replace(". ", ".\n")
     except Exception as e:
         return "Đang lỗi, vui lòng thử lại sau"
 
