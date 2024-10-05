@@ -475,64 +475,54 @@ def translate():
 
 def translate_and_analyze(text):
     prompt = f"""
-    Đọc đoạn văn bản sau:
+        Phân biệt đoạn văn và câu văn:
 
-    {text}
+        Sự khác biệt chính giữa đoạn văn và câu văn nằm ở độ dài và chức năng trong bài viết:
 
-    Hãy đọc để phân biệt đoạn văn và câu văn.
+        Câu văn (Sentence):
 
-    Sự khác biệt chính giữa đoạn văn và câu văn nằm ở độ dài và chức năng của chúng trong một bài viết. Dưới đây là sự so sánh cụ thể:
+        Độ dài: Câu văn thường ngắn, chứa một ý hoàn chỉnh, gồm chủ ngữ và vị ngữ diễn đạt hành động hoặc sự kiện.
+        Chức năng: Diễn đạt một thông tin hoặc ý tưởng cụ thể. Câu văn đơn lẻ thường không đủ để diễn đạt vấn đề phức tạp.
+        Ví dụ: "我们不一样."
+        Đoạn văn (Paragraph):
 
-    Câu văn (Sentence):
+        Độ dài: Dài hơn câu văn, bao gồm nhiều câu liên kết để phát triển một ý tưởng.
+        Chức năng: Giải thích chi tiết một chủ đề. Đoạn văn bắt đầu bằng câu chủ đề, các câu sau đó bổ sung, giải thích, hoặc minh họa cho ý tưởng chính.
+        Ví dụ: "昨天，我和我的朋友一起去了公园。天气非常好，太阳很大，风也不大。我们在公园里走了两个小时，聊了很多有趣的事情。后来，我们在附近的咖啡店喝了一杯咖啡。咖啡很好喝，我们都觉得很开心。晚上回到家，我还看了一部电影，感觉今天很充实。"
+        Yêu cầu khi là đoạn văn bằng tiếng Trung:
 
-    Độ dài: Câu văn thường ngắn, chỉ bao gồm một ý hoàn chỉnh. Nó có thể chứa chủ ngữ và vị ngữ để diễn đạt một hành động hoặc sự kiện.
-    Chức năng: Một câu văn có nhiệm vụ diễn đạt một thông tin, sự kiện, hoặc ý tưởng cụ thể. Một câu văn đơn lẻ thường không thể diễn đạt toàn bộ một vấn đề phức tạp.
-    Ví dụ: "我们不一样."
-    Đoạn văn (Paragraph):
+        Sau đó đọc đoạn văn bản sau:
 
-    Độ dài: Đoạn văn dài hơn câu văn, thường bao gồm nhiều câu liên quan với nhau để phát triển một ý tưởng hoặc chủ đề cụ thể.
-    Chức năng: Đoạn văn được sử dụng để diễn giải chi tiết hơn một vấn đề hoặc chủ đề nhất định. Một đoạn văn có thể bắt đầu bằng câu chủ đề, sau đó các câu còn lại sẽ giải thích, minh họa, hoặc bổ sung cho ý tưởng chính đó.
-    Ví dụ: "昨天，我和我的朋友一起去了公园。天气非常好，太阳很大，风也不大。我们在公园里走了两个小时，聊了很多有趣的事情。后来，我们在附近的咖啡店喝了一杯咖啡。咖啡很好喝，我们都觉得很开心。晚上回到家，我还看了一部电影，感觉今天很充实。"
+        {text}
 
-    Nếu là đoạn văn thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung), trả về với cấu trúc giống với cấu trúc nhập vào:
+        Nếu đoạn văn là tiếng Trung, trả về bản dịch theo cấu trúc sau:
 
-        - Đây là nội dung bản dịch:
+        Đây là nội dung bản dịch:
         [Bản dịch tiếng Việt]
+        Yêu cầu khi là câu văn có tối đa 20 từ:
 
-    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
+        Dịch toàn bộ đoạn văn bản sang tiếng Việt.
+        Phân tích từng chữ Hán theo các yêu cầu sau:
+        Nghĩa Hán Việt
+        Bộ thủ tạo thành chữ đó
+        Pinyin
+        Ý nghĩa tiếng Việt
+        Gợi ý cách nhớ
+        Cách sử dụng
+        Các từ liên quan
+        Trình bày kết quả theo định dạng:
 
-    Nếu chỉ có 1 câu văb và chỉ có tối đa 20 từ thì thực hiện các bước sau, còn không thì không cần:
-
-    Hãy dịch và phân tích:
-
-    Yêu cầu:
-    1. Dịch toàn bộ đoạn văn bản sang tiếng Việt.
-    2. Phân tích từng chữ Hán:
-       - Nghĩa Hán Việt
-       - Các bộ thủ tạo thành chữ đó (liệt kê tất cả)
-       - Cách đọc (pinyin)
-       - Ý nghĩa tiếng Việt
-       - Gợi ý cách nhớ
-       - Cách sử dụng
-       - Các từ liên quan
-
-    Vui lòng trình bày kết quả theo định dạng sau:
-
-    Bản dịch: [Bản dịch tiếng Việt]
-
-    Phân tích từng chữ:
-    [Chữ Hán]:
-       - Nghĩa Hán Việt: [Nghĩa]
-       - Bộ thủ: [Danh sách bộ thủ]
-       - Pinyin: [Cách đọc]
-       - Ý nghĩa tiếng Việt: [Ý nghĩa]
-       - Gợi ý cách nhớ: [Gợi ý]
-       - Cách sử dụng: [Cách sử dụng]
-       - Các từ liên quan: [Các từ liên quan]
-    [Chữ Hán tiếp theo]
-       ...
-
-    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
+        Bản dịch: [Bản dịch tiếng Việt]
+        Phân tích từng chữ:
+        [Chữ Hán]:
+        Nghĩa Hán Việt: [Nghĩa]
+        Bộ thủ: [Danh sách bộ thủ]
+        Pinyin: [Cách đọc]
+        Ý nghĩa tiếng Việt: [Ý nghĩa]
+        Gợi ý cách nhớ: [Gợi ý]
+        Cách sử dụng: [Cách sử dụng]
+        Các từ liên quan: [Các từ liên quan]
+        [Chữ Hán tiếp theo]
     """
 
     try:
