@@ -487,12 +487,12 @@ def translate_and_analyze(text):
 
     Độ dài: Câu văn thường ngắn, chỉ bao gồm một ý hoàn chỉnh. Nó có thể chứa chủ ngữ và vị ngữ để diễn đạt một hành động hoặc sự kiện.
     Chức năng: Một câu văn có nhiệm vụ diễn đạt một thông tin, sự kiện, hoặc ý tưởng cụ thể. Một câu văn đơn lẻ thường không thể diễn đạt toàn bộ một vấn đề phức tạp.
-    Ví dụ: "Hôm nay trời nắng đẹp."
+    Ví dụ: "我们不一样."
     Đoạn văn (Paragraph):
 
     Độ dài: Đoạn văn dài hơn câu văn, thường bao gồm nhiều câu liên quan với nhau để phát triển một ý tưởng hoặc chủ đề cụ thể.
     Chức năng: Đoạn văn được sử dụng để diễn giải chi tiết hơn một vấn đề hoặc chủ đề nhất định. Một đoạn văn có thể bắt đầu bằng câu chủ đề, sau đó các câu còn lại sẽ giải thích, minh họa, hoặc bổ sung cho ý tưởng chính đó.
-    Ví dụ: "Hôm nay trời nắng đẹp. Nhiệt độ ngoài trời khoảng 30 độ C và gió nhẹ, tạo cảm giác rất dễ chịu. Nhiều người đã quyết định ra ngoài để tận hưởng thời tiết này."
+    Ví dụ: "昨天，我和我的朋友一起去了公园。天气非常好，太阳很大，风也不大。我们在公园里走了两个小时，聊了很多有趣的事情。后来，我们在附近的咖啡店喝了一杯咖啡。咖啡很好喝，我们都觉得很开心。晚上回到家，我还看了一部电影，感觉今天很充实。"
 
     Nếu là đoạn văn thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung), trả về với cấu trúc giống với cấu trúc nhập vào:
 
