@@ -103,7 +103,7 @@ def get_new_sentence():
     result = None
 
     while True:
-        prompt = """Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào, bao gồm:
+        prompt = """Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
 
 - Chữ Hán
 - Pinyin
@@ -125,7 +125,7 @@ Không thêm bất kỳ văn bản nào khác.
         try:
             model = genai.GenerativeModel("gemini-1.5-flash")
             response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
-                temperature=2),)
+                temperature=1),)
             text = response.text
             lines = text.strip().split('\n')
             temp_result = {}
@@ -474,7 +474,7 @@ def translate():
 
 def translate_and_analyze(text):
     prompt = f"""
-    Hãy dịch và phân tích đoạn văn bản tiếng Trung sau đây:
+    Hãy dịch và phân tích đoạn văn bản tiếng Trung sau đây (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung):
 
     {text}
 
