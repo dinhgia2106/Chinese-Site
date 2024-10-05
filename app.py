@@ -33,22 +33,6 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 mail = Mail(app)
 
-
-def check_smtp_connection():
-    try:
-        with smtplib.SMTP(app.config['MAIL_SERVER'], app.config['MAIL_PORT']) as server:
-            server.ehlo()
-            server.starttls()
-            server.login(app.config['MAIL_USERNAME'],
-                         app.config['MAIL_PASSWORD'])
-        print("Kết nối SMTP thành công.")
-    except Exception as e:
-        print(f"Lỗi kết nối SMTP: {e}")
-
-
-# Gọi hàm kiểm tra khi khởi động ứng dụng
-check_smtp_connection()
-
 # Lưu trữ token xác minh tạm thời
 verification_tokens = {}
 
