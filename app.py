@@ -1,16 +1,15 @@
-from flask import Flask, render_template, redirect, url_for, session, request, jsonify, flash
+from flask import Flask, render_template, redirect, url_for, session, request, jsonify
+import random
 from radicals import radicals
 from flask_session import Session
 import unicodedata
 from math import ceil
 import google.generativeai as genai
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
 import os
 from dotenv import load_dotenv
+from datetime import datetime, timezone, timedelta
 import mysql.connector
-from flask_bcrypt import Bcrypt
-from functools import wraps
-import random
 
 load_dotenv()  # Load biến môi trường từ .env
 
@@ -19,7 +18,6 @@ app.secret_key = 'your_secret_key'
 # Sử dụng server-side session để lưu trữ dữ liệu lớn
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
-bcrypt = Bcrypt(app)
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -32,16 +30,7 @@ mydb = mysql.connector.connect(
 
 )
 
-try:
-    mycursor = mydb.cursor(dictionary=True)
-    print("Kết nối cơ sở dữ liệu thành công")
-except mysql.connector.Error as e:
-    print(f"Lỗi kết nối cơ sở dữ liệu: {e}")
-
-# ================== Loại Bỏ Mã Hóa Lại Mật Khẩu ==================
-# Đoạn mã dưới đây đã được loại bỏ để tránh mã hóa lại mật khẩu mỗi khi ứng dụng khởi động.
-# Việc này đã được chuyển sang một script riêng (migrate_passwords.py) và chỉ chạy một lần khi cần thiết.
-# ===================================================================
+mycursor = mydb.cursor(dictionary=True)
 
 
 def get_sets(radicals, radicals_per_set=20):
@@ -61,26 +50,25 @@ def remove_accents(input_str):
 
 
 def get_new_sentence():
-    try:
-        utc_plus_7 = timezone(timedelta(hours=7))
-        current_date = datetime.now(utc_plus_7).date()
-        current_datetime = datetime.now(utc_plus_7)
+    utc_plus_7 = timezone(timedelta(hours=7))
+    current_date = datetime.now(utc_plus_7).date()
+    current_datetime = datetime.now(utc_plus_7)
 
-        # Kiểm tra xem đã có câu nào được tạo cho ngày hôm nay chưa
-        mycursor.execute(
-            "SELECT * FROM sentences WHERE DATE(created_at) = %s", (current_date,))
-        today_sentence = mycursor.fetchone()
+    # Kiểm tra xem đã có câu nào được tạo cho ngày hôm nay chưa
+    mycursor.execute(
+        "SELECT * FROM sentences WHERE DATE(created_at) = %s", (current_date,))
+    today_sentence = mycursor.fetchone()
 
-        if today_sentence:
-            return today_sentence
+    if today_sentence:
+        return today_sentence
 
-        # Nếu chưa có câu cho ngày hôm nay, tạo câu mới
-        mycursor.execute("SELECT chinese FROM sentences")
-        existing_sentences = set(row['chinese'] for row in mycursor.fetchall())
+    # Nếu chưa có câu cho ngày hôm nay, tạo câu mới
+    mycursor.execute("SELECT chinese FROM sentences")
+    existing_sentences = set(row['chinese'] for row in mycursor.fetchall())
+    result = None
 
-        max_attempts = 5  # Giới hạn số lần thử
-        for attempt in range(max_attempts):
-            prompt = """Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
+    while True:
+        prompt = """Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
 
 - Chữ Hán
 - Pinyin
@@ -99,61 +87,53 @@ Nghĩa tiếng Việt: ...
 
 Không thêm bất kỳ văn bản nào khác.
 """
-            try:
-                model = genai.GenerativeModel("gemini-1.5-flash")
-                response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
-                    temperature=1),)
-                text = response.text
-                lines = text.strip().split('\n')
-                temp_result = {}
-                for line in lines:
-                    if 'Chữ Hán:' in line:
-                        temp_result['chinese'] = line.replace(
-                            'Chữ Hán:', '').strip()
-                    elif 'Pinyin:' in line:
-                        temp_result['pinyin'] = line.replace(
-                            'Pinyin:', '').strip()
-                    elif 'Âm Hán Việt:' in line:
-                        temp_result['sino_vietnamese'] = line.replace(
-                            'Âm Hán Việt:', '').strip()
-                    elif 'Nghĩa tiếng Việt:' in line:
-                        temp_result['vietnamese_meaning'] = line.replace(
-                            'Nghĩa tiếng Việt:', '').strip()
+        try:
+            model = genai.GenerativeModel("gemini-1.5-flash")
+            response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
+                temperature=1),)
+            text = response.text
+            lines = text.strip().split('\n')
+            temp_result = {}
+            for line in lines:
+                if 'Chữ Hán:' in line:
+                    temp_result['chinese'] = line.replace(
+                        'Chữ Hán:', '').strip()
+                elif 'Pinyin:' in line:
+                    temp_result['pinyin'] = line.replace('Pinyin:', '').strip()
+                elif 'Âm Hán Việt:' in line:
+                    temp_result['sino_vietnamese'] = line.replace(
+                        'Âm Hán Việt:', '').strip()
+                elif 'Nghĩa tiếng Việt:' in line:
+                    temp_result['vietnamese_meaning'] = line.replace(
+                        'Nghĩa tiếng Việt:', '').strip()
 
-                # Kiểm tra định dạng kết quả
-                if len(temp_result) < 4:
-                    continue  # Nếu thiếu thông tin, chạy lại prompt
+            # Kiểm tra định dạng kết quả
+            if len(temp_result) < 4:
+                continue  # Nếu thiếu thông tin, chạy lại prompt
 
-                # Kiểm tra xem câu đã tồn tại chưa
-                if temp_result['chinese'] in existing_sentences:
-                    continue  # Nếu đã tồn tại, chạy lại prompt
-                else:
-                    result = temp_result
-                    break  # Thoát khỏi vòng lặp khi có câu mới
-            except Exception as e:
-                print(f"Lỗi khi gọi Google Generative AI API: {e}")
-                continue  # Tiếp tục vòng lặp nếu có lỗi
+            # Kiểm tra xem câu đã tồn tại chưa
+            if temp_result['chinese'] in existing_sentences:
+                continue  # Nếu đã tồn tại, chạy lại prompt
+            else:
+                result = temp_result
+                break  # Thoát khỏi vòng lặp khi có câu mới
+        except Exception as e:
+            print(f"Lỗi khi gọi Google Generative AI API: {e}")
+            result = None
+            break  # Thoát khỏi vòng lặp nếu có lỗi
 
-        if 'result' in locals():
-            # Lưu câu mới vào cơ sở dữ liệu
-            sql = """INSERT INTO sentences 
-                     (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
-                     VALUES (%s, %s, %s, %s, %s, %s)"""
-            values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
-                      result['vietnamese_meaning'], current_datetime, current_date)
-            try:
-                mycursor.execute(sql, values)
-                mydb.commit()
-                return result
-            except mysql.connector.Error as e:
-                print(f"Lỗi khi lưu câu mới vào cơ sở dữ liệu: {e}")
-                return None
-        else:
-            # Nếu không tạo được câu mới sau số lần thử tối đa
-            return None
-    except Exception as e:
-        print(f"Lỗi khi tạo câu mới: {e}")
-        return None
+    if result:
+        # Lưu câu mới vào cơ sở dữ liệu
+        sql = """INSERT INTO sentences 
+                 (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
+                 VALUES (%s, %s, %s, %s, %s, %s)"""
+        values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
+                  result['vietnamese_meaning'], current_datetime, current_date)
+        mycursor.execute(sql, values)
+        mydb.commit()
+
+    return result
+
 
 # Trang chủ
 
@@ -161,9 +141,6 @@ Không thêm bất kỳ văn bản nào khác.
 @app.route('/')
 def home():
     sentence_data = get_new_sentence()
-    if sentence_data is None:
-        sentence_data = {"chinese": "Không thể tạo câu mới", "pinyin": "",
-                         "sino_vietnamese": "", "vietnamese_meaning": "Vui lòng thử lại sau"}
     return render_template('home.html', sentence=sentence_data)
 
 
@@ -175,6 +152,7 @@ def history():
     sentences = mycursor.fetchall()
 
     return render_template('history.html', sentences=sentences)
+
 
 # ================== Phần Học ==================
 
@@ -262,6 +240,7 @@ def test():
     return render_template('test.html', total_sets=len(radical_sets))
 
 # Kiểm tra theo bộ đề
+
 
 # ... Các import và khai báo khác ...
 
@@ -356,6 +335,7 @@ def generate_choices(correct_answer, test_type):
     random.shuffle(choices)
     return choices
 
+
 # Review
 
 
@@ -437,182 +417,14 @@ def test_random():
     return render_template('test_navigation.html', test_data=test_data, current_question=current_question, total_questions=total_questions, set_number=None, test_type=test_type)
 
 
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if 'user_id' not in session:
-            return redirect(url_for('login'))
-        return f(*args, **kwargs)
-    return decorated_function
-
-
-def admin_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if 'user_id' not in session or not session.get('is_admin'):
-            flash('Bạn không có quyền truy cập trang này.', 'error')
-            return redirect(url_for('home'))
-        return f(*args, **kwargs)
-    return decorated_function
-
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        confirm_password = request.form['confirm_password']
-
-        mycursor.execute(
-            "SELECT * FROM users WHERE username = %s", (username,))
-        existing_user = mycursor.fetchone()
-
-        if existing_user:
-            flash('Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.', 'error')
-        elif password != confirm_password:
-            flash('Mật khẩu không khớp. Vui lòng thử lại.', 'error')
-        else:
-            hashed_password = bcrypt.generate_password_hash(
-                password).decode('utf-8')
-
-            sql = "INSERT INTO users (username, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s)"
-            val = (username, hashed_password, False, 0, datetime.now())
-            mycursor.execute(sql, val)
-            mydb.commit()
-
-            flash('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.', 'success')
-            return redirect(url_for('login'))
-
-    return render_template('register.html')
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-
-        mycursor.execute(
-            "SELECT * FROM users WHERE username = %s", (username,))
-        user = mycursor.fetchone()
-
-        if user and bcrypt.check_password_hash(user['password'], password):
-            session['user_id'] = user['id']
-            session['is_admin'] = user['is_admin']
-
-            # Reset translation count và thời gian reset cuối cùng
-            now = datetime.now()
-            mycursor.execute(
-                "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user['id']))
-            mydb.commit()
-
-            flash('Đăng nhập thành công!', 'success')
-            return redirect(url_for('home'))
-        else:
-            flash('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.', 'error')
-
-    return render_template('login.html')
-
-
-@app.route('/logout')
-def logout():
-    session.clear()
-    flash('Đã đăng xuất thành công!', 'success')
-    return redirect(url_for('home'))
-
-
 @app.route('/translate', methods=['GET', 'POST'])
 def translate():
-    user_id = session.get('user_id')
-    is_admin = session.get('is_admin', False)
-
-    if user_id:
-        mycursor.execute(
-            "SELECT * FROM whitelist WHERE user_id = %s", (user_id,))
-        is_whitelisted = mycursor.fetchone() is not None
-    else:
-        is_whitelisted = False
-
+    input_text = ''
+    result = None
     if request.method == 'POST':
-        if not user_id:
-            if session.get('anonymous_translations', 0) >= 3:
-                flash(
-                    'Bạn đã sử dụng hết số lần dịch. Vui lòng đăng nhập để tiếp tục.', 'error')
-                return redirect(url_for('login'))
-            session['anonymous_translations'] = session.get(
-                'anonymous_translations', 0) + 1
-        elif not is_whitelisted and not is_admin:
-            mycursor.execute(
-                "SELECT translation_count, last_translation_reset FROM users WHERE id = %s", (user_id,))
-            user_data = mycursor.fetchone()
-            translation_count = user_data['translation_count']
-            last_reset = user_data['last_translation_reset']
-
-            now = datetime.now()
-            if last_reset is None or (now - last_reset) > timedelta(hours=24):
-                # Reset translation count sau 24 giờ
-                translation_count = 0
-                mycursor.execute(
-                    "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user_id))
-                mydb.commit()
-
-            if translation_count >= 10:
-                flash(
-                    'Bạn đã sử dụng hết số lần dịch trong 24 giờ. Vui lòng thử lại sau.', 'error')
-                return redirect(url_for('home'))
-
-            # Tăng số lần dịch
-            mycursor.execute(
-                "UPDATE users SET translation_count = translation_count + 1 WHERE id = %s", (user_id,))
-            mydb.commit()
-
         input_text = request.form['input_text']
         result = translate_and_analyze(input_text)
-
-        return render_template('translate.html', result=result, input_text=input_text)
-
-    return render_template('translate.html')
-
-
-@app.route('/admin')
-@admin_required
-def admin_dashboard_route():
-    mycursor.execute(
-        "SELECT * FROM translation_history ORDER BY created_at DESC")
-    history = mycursor.fetchall()
-
-    mycursor.execute("""
-    SELECT u.*, 
-           CASE WHEN w.id IS NOT NULL THEN 1 ELSE 0 END AS is_whitelisted,
-           CASE 
-               WHEN u.is_admin = 1 THEN 'Không giới hạn'
-               WHEN w.id IS NOT NULL THEN 'Không giới hạn'
-               WHEN u.last_translation_reset IS NULL OR TIMESTAMPDIFF(HOUR, u.last_translation_reset, NOW()) > 24 THEN '10'
-               ELSE CAST(10 - u.translation_count AS CHAR)
-           END AS remaining_translations
-    FROM users u 
-    LEFT JOIN whitelist w ON u.id = w.user_id
-    """)
-    users = mycursor.fetchall()
-
-    return render_template('admin_dashboard.html', history=history, users=users)
-
-
-@app.route('/admin/whitelist/<int:user_id>', methods=['POST'])
-@admin_required
-def toggle_whitelist(user_id):
-    action = request.form['action']
-
-    if action == 'add':
-        mycursor.execute(
-            "INSERT INTO whitelist (user_id) VALUES (%s)", (user_id,))
-    elif action == 'remove':
-        mycursor.execute(
-            "DELETE FROM whitelist WHERE user_id = %s", (user_id,))
-
-    mydb.commit()
-    flash('Đã cập nhật whitelist thành công!', 'success')
-    return redirect(url_for('admin_dashboard_route'))
+    return render_template('translate.html', result=result, input_text=input_text)
 
 
 def translate_and_analyze(text):
