@@ -11,30 +11,15 @@ import mysql.connector
 from flask_bcrypt import Bcrypt
 from functools import wraps
 import random
-from flask_mail import Mail, Message
-import secrets
-import smtplib
 
 load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
-app.secret_key = os.getenv('SECRET_KEY')
+app.secret_key = 'your_secret_key'
 # Sử dụng server-side session để lưu trữ dữ liệu lớn
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 bcrypt = Bcrypt(app)
-
-app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
-app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS') == 'True'
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
-
-mail = Mail(app)
-
-# Lưu trữ token xác minh tạm thời
-verification_tokens = {}
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -471,19 +456,10 @@ def admin_required(f):
     return decorated_function
 
 
-def send_verification_email(email, token):
-    msg = Message('Xác minh tài khoản', recipients=[email])
-    verification_link = url_for("verify_email", token=token, _external=True)
-    msg.body = f"""Vui lòng nhấp vào liên kết sau để xác minh tài khoản của bạn:
-    {verification_link}"""
-    mail.send(msg)
-
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         username = request.form['username']
-        email = request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
@@ -496,52 +472,18 @@ def register():
         elif password != confirm_password:
             flash('Mật khẩu không khớp. Vui lòng thử lại.', 'error')
         else:
-            # Kiểm tra xem email đã tồn tại chưa
-            mycursor.execute(
-                "SELECT * FROM users WHERE email = %s", (email,))
-            if mycursor.fetchone():
-                flash('Email đã được sử dụng. Vui lòng chọn email khác.', 'error')
-                return redirect(url_for('register'))
+            hashed_password = bcrypt.generate_password_hash(
+                password).decode('utf-8')
 
-            # Tạo token xác minh
-            token = secrets.token_urlsafe(32)
-            verification_tokens[token] = {
-                'username': username,
-                'email': email,
-                'password': password
-            }
+            sql = "INSERT INTO users (username, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s)"
+            val = (username, hashed_password, False, 0, datetime.now())
+            mycursor.execute(sql, val)
+            mydb.commit()
 
-            # Gửi email xác minh
-            send_verification_email(email, token)
-
-            flash('Một email xác minh đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra và xác nhận để hoàn tất đăng ký.', 'info')
+            flash('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.', 'success')
             return redirect(url_for('login'))
 
     return render_template('register.html')
-
-
-@app.route('/verify_email/<token>')
-def verify_email(token):
-    if token in verification_tokens:
-        user_data = verification_tokens[token]
-
-        # Thêm người dùng vào cơ sở dữ liệu
-        hashed_password = bcrypt.generate_password_hash(
-            user_data['password']).decode('utf-8')
-        sql = "INSERT INTO users (username, email, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s, %s)"
-        val = (user_data['username'], user_data['email'],
-               hashed_password, False, 0, datetime.now())
-        mycursor.execute(sql, val)
-        mydb.commit()
-
-        # Xóa token sau khi sử dụng
-        del verification_tokens[token]
-
-        flash('Tài khoản của bạn đã được xác minh thành công. Bạn có thể đăng nhập ngay bây giờ.', 'success')
-        return redirect(url_for('login'))
-    else:
-        flash('Liên kết xác minh không hợp lệ hoặc đã hết hạn.', 'error')
-        return redirect(url_for('register'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
