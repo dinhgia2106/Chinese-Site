@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="mb-4">Dịch và Tra từ</h1>
+<form method="POST">
+  <div class="form-group">
+    <label for="input_text">Nhập văn bản tiếng Trung:</label>
+    <textarea
+      class="form-control"
+      id="input_text"
+      name="input_text"
+      rows="3"
+      required
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Dịch và Phân tích</button>
+</form>
+
+{% if result %}
+<div class="mt-4">
+  <h2>Kết quả:</h2>
+  <pre>{{ result }}</pre>
+</div>
+{% endif %} {% endblock %}

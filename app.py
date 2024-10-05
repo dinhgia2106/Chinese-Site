@@ -78,6 +78,7 @@ def remove_accents(input_str):
 
 def get_new_sentence():
     utc_plus_7 = timezone(timedelta(hours=7))
+    current_date = datetime.now(utc_plus_7).date()
 
     # Đường dẫn đến tệp JSON
     json_path = os.path.join(BASE_DIR, 'sentences.json')
@@ -89,11 +90,16 @@ def get_new_sentence():
     else:
         sentences = {}
 
-    # Tập hợp các câu đã tồn tại
-    existing_sentences = set()
-    for sentence in sentences.values():
-        existing_sentences.add(sentence['chinese'])
+    # Kiểm tra xem đã có câu nào được tạo cho ngày hôm nay chưa
+    today_sentence = next((sentence for date, sentence in sentences.items()
+                           if datetime.strptime(date, "%Y-%m-%d %H:%M:%S").date() == current_date), None)
 
+    if today_sentence:
+        return today_sentence
+
+    # Nếu chưa có câu cho ngày hôm nay, tạo câu mới
+    existing_sentences = set(sentence['chinese']
+                             for sentence in sentences.values())
     result = None
 
     while True:
@@ -152,7 +158,7 @@ Không thêm bất kỳ văn bản nào khác.
             break  # Thoát khỏi vòng lặp nếu có lỗi
 
     if result:
-        # Tạo một khóa duy nhất cho câu mới, có thể sử dụng timestamp
+        # Tạo một khóa duy nhất cho câu mới, sử dụng timestamp
         timestamp = datetime.now(utc_plus_7).strftime("%Y-%m-%d %H:%M:%S")
         sentences[timestamp] = result
 
@@ -455,6 +461,51 @@ def test_random():
     current_question = test_data['questions'][current_question_index]
 
     return render_template('test_navigation.html', test_data=test_data, current_question=current_question, total_questions=total_questions, set_number=None, test_type=test_type)
+
+
+@app.route('/translate', methods=['GET', 'POST'])
+def translate():
+    if request.method == 'POST':
+        input_text = request.form['input_text']
+        result = translate_and_analyze(input_text)
+        return render_template('translate.html', result=result)
+    return render_template('translate.html')
+
+
+def translate_and_analyze(text):
+    prompt = f"""
+    Hãy dịch và phân tích đoạn văn bản tiếng Trung sau đây:
+
+    {text}
+
+    Yêu cầu:
+    1. Dịch toàn bộ đoạn văn bản sang tiếng Việt.
+    2. Phân tích từng chữ Hán:
+       - Nghĩa Hán Việt
+       - Các bộ thủ tạo thành chữ đó (liệt kê tất cả)
+       - Cách đọc (pinyin)
+
+    Vui lòng trình bày kết quả theo định dạng sau:
+
+    Bản dịch: [Bản dịch tiếng Việt]
+
+    Phân tích từng chữ:
+    1. [Chữ Hán]:
+       - Nghĩa Hán Việt: [Nghĩa]
+       - Bộ thủ: [Danh sách bộ thủ]
+       - Pinyin: [Cách đọc]
+    2. [Chữ Hán tiếp theo]
+       ...
+
+    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác. Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch
+    """
+
+    try:
+        model = genai.GenerativeModel("gemini-1.5-pro")
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"Lỗi khi gọi API: {str(e)}"
 
 
 if __name__ == '__main__':
