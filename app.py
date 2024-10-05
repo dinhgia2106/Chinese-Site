@@ -478,13 +478,13 @@ def translate_and_analyze(text):
 
     {text}
 
-    Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung):
+    Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau (Trong trường hợp đoạn văn sau là tiếng Trung, nếu không thì không cần dịch và trả về kết quả: Vui lòng nhập tiếng Trung), trả về với cấu trúc giống với cấu trúc nhập vào:
 
-    [Bản dịch tiếng Việt]
+        - [Bản dịch tiếng Việt]
 
     Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
 
-    Nếu chỉ có 1 câu thì thực hiện các bước sau, còn không thì không cần:
+    Nếu chỉ có 1 câu và có nhiều nhất 20 từ thì thực hiện các bước sau, còn không thì không cần:
 
     Hãy dịch và phân tích:
 
