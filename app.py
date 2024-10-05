@@ -38,23 +38,10 @@ try:
 except mysql.connector.Error as e:
     print(f"Lỗi kết nối cơ sở dữ liệu: {e}")
 
-# Lấy tất cả người dùng
-mycursor.execute("SELECT id, username, password FROM users")
-users = mycursor.fetchall()
-
-for user in users:
-    # Giả sử mật khẩu hiện tại là plain text, chúng ta sẽ mã hóa nó
-    hashed_password = bcrypt.generate_password_hash(
-        user['password']).decode('utf-8')
-
-    # Cập nhật mật khẩu đã mã hóa vào cơ sở dữ liệu
-    sql = "UPDATE users SET password = %s WHERE id = %s"
-    val = (hashed_password, user['id'])
-    mycursor.execute(sql, val)
-
-mydb.commit()
-
-print(f"{mycursor.rowcount} record(s) affected")
+# ================== Loại Bỏ Mã Hóa Lại Mật Khẩu ==================
+# Đoạn mã dưới đây đã được loại bỏ để tránh mã hóa lại mật khẩu mỗi khi ứng dụng khởi động.
+# Việc này đã được chuyển sang một script riêng (migrate_passwords.py) và chỉ chạy một lần khi cần thiết.
+# ===================================================================
 
 
 def get_sets(radicals, radicals_per_set=20):
@@ -147,23 +134,26 @@ Không thêm bất kỳ văn bản nào khác.
                 print(f"Lỗi khi gọi Google Generative AI API: {e}")
                 continue  # Tiếp tục vòng lặp nếu có lỗi
 
-            if result:
-                # Lưu câu mới vào cơ sở dữ liệu
-                sql = """INSERT INTO sentences 
-                         (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
-                         VALUES (%s, %s, %s, %s, %s, %s)"""
-                values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
-                          result['vietnamese_meaning'], current_datetime, current_date)
+        if 'result' in locals():
+            # Lưu câu mới vào cơ sở dữ liệu
+            sql = """INSERT INTO sentences 
+                     (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
+                     VALUES (%s, %s, %s, %s, %s, %s)"""
+            values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
+                      result['vietnamese_meaning'], current_datetime, current_date)
+            try:
                 mycursor.execute(sql, values)
                 mydb.commit()
                 return result
-
-        # Nếu không tạo được câu mới sau số lần thử tối đa
-        return None
+            except mysql.connector.Error as e:
+                print(f"Lỗi khi lưu câu mới vào cơ sở dữ liệu: {e}")
+                return None
+        else:
+            # Nếu không tạo được câu mới sau số lần thử tối đa
+            return None
     except Exception as e:
         print(f"Lỗi khi tạo câu mới: {e}")
         return None
-
 
 # Trang chủ
 
@@ -185,7 +175,6 @@ def history():
     sentences = mycursor.fetchall()
 
     return render_template('history.html', sentences=sentences)
-
 
 # ================== Phần Học ==================
 
@@ -273,7 +262,6 @@ def test():
     return render_template('test.html', total_sets=len(radical_sets))
 
 # Kiểm tra theo bộ đề
-
 
 # ... Các import và khai báo khác ...
 
@@ -367,7 +355,6 @@ def generate_choices(correct_answer, test_type):
     choices.extend(random.sample(other_options, min(3, len(other_options))))
     random.shuffle(choices)
     return choices
-
 
 # Review
 
@@ -513,7 +500,7 @@ def login():
             session['user_id'] = user['id']
             session['is_admin'] = user['is_admin']
 
-            # Reset translation count and last reset time
+            # Reset translation count và thời gian reset cuối cùng
             now = datetime.now()
             mycursor.execute(
                 "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user['id']))
@@ -563,7 +550,7 @@ def translate():
 
             now = datetime.now()
             if last_reset is None or (now - last_reset) > timedelta(hours=24):
-                # Reset translation count after 24 hours
+                # Reset translation count sau 24 giờ
                 translation_count = 0
                 mycursor.execute(
                     "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user_id))
@@ -574,7 +561,7 @@ def translate():
                     'Bạn đã sử dụng hết số lần dịch trong 24 giờ. Vui lòng thử lại sau.', 'error')
                 return redirect(url_for('home'))
 
-            # Increment translation count
+            # Tăng số lần dịch
             mycursor.execute(
                 "UPDATE users SET translation_count = translation_count + 1 WHERE id = %s", (user_id,))
             mydb.commit()
@@ -587,22 +574,9 @@ def translate():
     return render_template('translate.html')
 
 
-@admin_required
-def admin_dashboard():
-    mycursor.execute(
-        "SELECT * FROM translation_history ORDER BY created_at DESC")
-    history = mycursor.fetchall()
-
-    mycursor.execute(
-        "SELECT u.*, CASE WHEN w.id IS NOT NULL THEN 1 ELSE 0 END AS is_whitelisted FROM users u LEFT JOIN whitelist w ON u.id = w.user_id")
-    users = mycursor.fetchall()
-
-    return render_template('admin_dashboard.html', history=history, users=users)
-
-
 @app.route('/admin')
 @admin_required
-def admin_dashboard():
+def admin_dashboard_route():
     mycursor.execute(
         "SELECT * FROM translation_history ORDER BY created_at DESC")
     history = mycursor.fetchall()
@@ -638,7 +612,7 @@ def toggle_whitelist(user_id):
 
     mydb.commit()
     flash('Đã cập nhật whitelist thành công!', 'success')
-    return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('admin_dashboard_route'))
 
 
 def translate_and_analyze(text):
