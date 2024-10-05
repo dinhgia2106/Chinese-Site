@@ -465,11 +465,12 @@ def test_random():
 
 @app.route('/translate', methods=['GET', 'POST'])
 def translate():
+    input_text = ''
+    result = None
     if request.method == 'POST':
         input_text = request.form['input_text']
         result = translate_and_analyze(input_text)
-        return render_template('translate.html', result=result)
-    return render_template('translate.html')
+    return render_template('translate.html', result=result, input_text=input_text)
 
 
 def translate_and_analyze(text):
@@ -484,6 +485,10 @@ def translate_and_analyze(text):
        - Nghĩa Hán Việt
        - Các bộ thủ tạo thành chữ đó (liệt kê tất cả)
        - Cách đọc (pinyin)
+       - Ý nghĩa tiếng Việt
+       - Gợi ý cách nhớ
+       - Cách sử dụng
+       - Các từ liên quan
 
     Vui lòng trình bày kết quả theo định dạng sau:
 
@@ -494,10 +499,17 @@ def translate_and_analyze(text):
        - Nghĩa Hán Việt: [Nghĩa]
        - Bộ thủ: [Danh sách bộ thủ]
        - Pinyin: [Cách đọc]
+       - Ý nghĩa tiếng Việt: [Ý nghĩa]
+       - Gợi ý cách nhớ: [Gợi ý]
+       - Cách sử dụng: [Cách sử dụng]
+       - Các từ liên quan: [Các từ liên quan]
     2. [Chữ Hán tiếp theo]
        ...
 
-    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác. Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch
+    Nếu nhiều hơn 1 câu thì chỉ cần trả về bản dịch theo định dạng sau:
+
+    Bản dịch: [Bản dịch tiếng Việt]
+    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
     """
 
     try:
@@ -505,7 +517,7 @@ def translate_and_analyze(text):
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
-        return f"Lỗi khi gọi API: {str(e)}"
+        return "Đang lỗi, vui lòng thử lại sau"
 
 
 if __name__ == '__main__':
