@@ -32,7 +32,11 @@ mydb = mysql.connector.connect(
 
 )
 
-mycursor = mydb.cursor(dictionary=True)
+try:
+    mycursor = mydb.cursor(dictionary=True)
+    print("Kết nối cơ sở dữ liệu thành công")
+except mysql.connector.Error as e:
+    print(f"Lỗi kết nối cơ sở dữ liệu: {e}")
 
 # Lấy tất cả người dùng
 mycursor.execute("SELECT id, username, password FROM users")
