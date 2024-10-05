@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <h2>Xác minh email</h2>
+  <p>
+    Một email xác minh đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra
+    hộp thư đến và nhấp vào liên kết xác minh để hoàn tất quá trình đăng ký.
+  </p>
+  <p>
+    Nếu bạn không nhận được email, vui lòng kiểm tra thư mục spam hoặc
+    <a href="{{ url_for('resend_verification') }}"
+      >yêu cầu gửi lại email xác minh</a
+    >.
+  </p>
+</div>
+{% endblock %}

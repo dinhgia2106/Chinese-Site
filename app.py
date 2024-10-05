@@ -1,29 +1,87 @@
-from flask import Flask, render_template, redirect, url_for, session, request, jsonify
-import random
+from flask import Flask, render_template, redirect, url_for, session, request, jsonify, flash
 from radicals import radicals
 from flask_session import Session
 import unicodedata
 from math import ceil
-from urllib.parse import quote
 import google.generativeai as genai
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import os
 from dotenv import load_dotenv
-import json
-import subprocess
-from github import Github
-from datetime import datetime, timezone, timedelta
+import mysql.connector
+from flask_bcrypt import Bcrypt
+from functools import wraps
+import random
+from flask_mail import Mail, Message
+import secrets
+import smtplib
 
 load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.getenv('SECRET_KEY')
 # Sử dụng server-side session để lưu trữ dữ liệu lớn
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
+bcrypt = Bcrypt(app)
+
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
+app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
+app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS') == 'True'
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
+
+mail = Mail(app)
+
+
+def check_smtp_connection():
+    try:
+        with smtplib.SMTP(app.config['MAIL_SERVER'], app.config['MAIL_PORT']) as server:
+            server.ehlo()
+            server.starttls()
+            server.login(app.config['MAIL_USERNAME'],
+                         app.config['MAIL_PASSWORD'])
+        print("Kết nối SMTP thành công.")
+    except Exception as e:
+        print(f"Lỗi kết nối SMTP: {e}")
+
+
+# Gọi hàm kiểm tra khi khởi động ứng dụng
+check_smtp_connection()
+
+# Lưu trữ token xác minh tạm thời
+verification_tokens = {}
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+mydb = mysql.connector.connect(
+    host=os.getenv('DB_CLOUD_HOST'),
+    user=os.getenv('DB_CLOUD_USER'),
+    password=os.getenv('DB_CLOUD_PASSWORD'),
+    database=os.getenv('DB_CLOUD_NAME'),
+
+)
+
+mycursor = mydb.cursor(dictionary=True)
+
+# Lấy tất cả người dùng
+mycursor.execute("SELECT id, username, password FROM users")
+users = mycursor.fetchall()
+
+for user in users:
+    # Giả sử mật khẩu hiện tại là plain text, chúng ta sẽ mã hóa nó
+    hashed_password = bcrypt.generate_password_hash(
+        user['password']).decode('utf-8')
+
+    # Cập nhật mật khẩu đã mã hóa vào cơ sở dữ liệu
+    sql = "UPDATE users SET password = %s WHERE id = %s"
+    val = (hashed_password, user['id'])
+    mycursor.execute(sql, val)
+
+mydb.commit()
+
+print(f"{mycursor.rowcount} record(s) affected")
 
 
 def get_sets(radicals, radicals_per_set=20):
@@ -36,40 +94,6 @@ def get_sets(radicals, radicals_per_set=20):
 radical_sets = get_sets(radicals)
 
 
-def push_changes_to_github():
-    GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-    if not GITHUB_TOKEN:
-        print("GITHUB_TOKEN không được thiết lập.")
-        return
-
-    try:
-        # Kết nối tới GitHub
-        g = Github(GITHUB_TOKEN)
-
-        repo = g.get_user().get_repo('radicals')
-
-        # Đường dẫn tới tệp trong kho
-        file_path = 'sentences.json'
-
-        # Nội dung mới của tệp
-        with open(file_path, 'r', encoding='utf-8') as file:
-            content = file.read()
-
-        # Kiểm tra xem tệp đã tồn tại trong kho chưa
-        try:
-            contents = repo.get_contents(file_path)
-            # Cập nhật tệp
-            repo.update_file(
-                contents.path, "Cập nhật sentences.json", content, contents.sha)
-        except Exception as e:
-            # Nếu tệp chưa tồn tại, tạo mới
-            repo.create_file(file_path, "Tạo sentences.json", content)
-
-        print("Thay đổi đã được đẩy lên GitHub thành công.")
-    except Exception as e:
-        print(f"Lỗi khi đẩy thay đổi lên GitHub: {e}")
-
-
 def remove_accents(input_str):
     # Hàm loại bỏ dấu tiếng Việt và dấu trong Pinyin
     nfkd_form = unicodedata.normalize('NFKD', input_str)
@@ -79,31 +103,23 @@ def remove_accents(input_str):
 def get_new_sentence():
     utc_plus_7 = timezone(timedelta(hours=7))
     current_date = datetime.now(utc_plus_7).date()
-
-    # Đường dẫn đến tệp JSON
-    json_path = os.path.join(BASE_DIR, 'sentences.json')
-
-    # Kiểm tra xem tệp JSON có tồn tại không
-    if os.path.exists(json_path):
-        with open(json_path, 'r', encoding='utf-8') as f:
-            sentences = json.load(f)
-    else:
-        sentences = {}
+    current_datetime = datetime.now(utc_plus_7)
 
     # Kiểm tra xem đã có câu nào được tạo cho ngày hôm nay chưa
-    today_sentence = next((sentence for date, sentence in sentences.items()
-                           if datetime.strptime(date, "%Y-%m-%d %H:%M:%S").date() == current_date), None)
+    mycursor.execute(
+        "SELECT * FROM sentences WHERE DATE(created_at) = %s", (current_date,))
+    today_sentence = mycursor.fetchone()
 
     if today_sentence:
         return today_sentence
 
     # Nếu chưa có câu cho ngày hôm nay, tạo câu mới
-    existing_sentences = set(sentence['chinese']
-                             for sentence in sentences.values())
+    mycursor.execute("SELECT chinese FROM sentences")
+    existing_sentences = set(row['chinese'] for row in mycursor.fetchall())
     result = None
 
     while True:
-        prompt = """Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
+        prompt = """Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
 
 - Chữ Hán
 - Pinyin
@@ -158,14 +174,14 @@ Không thêm bất kỳ văn bản nào khác.
             break  # Thoát khỏi vòng lặp nếu có lỗi
 
     if result:
-        # Tạo một khóa duy nhất cho câu mới, sử dụng timestamp
-        timestamp = datetime.now(utc_plus_7).strftime("%Y-%m-%d %H:%M:%S")
-        sentences[timestamp] = result
-
-        # Ghi lại tệp JSON
-        with open(json_path, 'w', encoding='utf-8') as f:
-            json.dump(sentences, f, ensure_ascii=False, indent=4)
-        push_changes_to_github()
+        # Lưu câu mới vào cơ sở dữ liệu
+        sql = """INSERT INTO sentences 
+                 (chinese, pinyin, sino_vietnamese, vietnamese_meaning, created_at, created_date) 
+                 VALUES (%s, %s, %s, %s, %s, %s)"""
+        values = (result['chinese'], result['pinyin'], result['sino_vietnamese'],
+                  result['vietnamese_meaning'], current_datetime, current_date)
+        mycursor.execute(sql, values)
+        mydb.commit()
 
     return result
 
@@ -181,21 +197,10 @@ def home():
 
 @app.route('/history')
 def history():
-    # Đường dẫn đến tệp JSON
-    json_path = os.path.join(BASE_DIR, 'sentences.json')
-
-    # Đọc dữ liệu từ tệp JSON
-    if os.path.exists(json_path):
-        with open(json_path, 'r', encoding='utf-8') as f:
-            sentences_dict = json.load(f)
-    else:
-        sentences_dict = {}
-
-    # Chuyển đổi sang danh sách và sắp xếp
-    sentences = [
-        {'date': date, **data} for date, data in sentences_dict.items()
-    ]
-    sentences.sort(key=lambda x: x['date'], reverse=True)
+    # Lấy tất cả câu từ cơ sở dữ liệu, sắp xếp theo ngày giảm dần
+    mycursor.execute(
+        "SELECT *, DATE(created_at) as date FROM sentences ORDER BY created_at DESC")
+    sentences = mycursor.fetchall()
 
     return render_template('history.html', sentences=sentences)
 
@@ -463,14 +468,237 @@ def test_random():
     return render_template('test_navigation.html', test_data=test_data, current_question=current_question, total_questions=total_questions, set_number=None, test_type=test_type)
 
 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session or not session.get('is_admin'):
+            flash('Bạn không có quyền truy cập trang này.', 'error')
+            return redirect(url_for('home'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+
+def send_verification_email(email, token):
+    msg = Message('Xác minh tài khoản', recipients=[email])
+    msg.body = f'Vui lòng nhấp vào liên kết sau để xác minh tài khoản của bạn: {
+        url_for("verify_email", token=token, _external=True)}'
+    mail.send(msg)
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
+
+        mycursor.execute(
+            "SELECT * FROM users WHERE username = %s", (username,))
+        existing_user = mycursor.fetchone()
+
+        if existing_user:
+            flash('Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.', 'error')
+        elif password != confirm_password:
+            flash('Mật khẩu không khớp. Vui lòng thử lại.', 'error')
+        else:
+            # Kiểm tra xem email đã tồn tại chưa
+            mycursor.execute(
+                "SELECT * FROM users WHERE email = %s", (email,))
+            if mycursor.fetchone():
+                flash('Email đã được sử dụng. Vui lòng chọn email khác.', 'error')
+                return redirect(url_for('register'))
+
+            # Tạo token xác minh
+            token = secrets.token_urlsafe(32)
+            verification_tokens[token] = {
+                'username': username,
+                'email': email,
+                'password': password
+            }
+
+            # Gửi email xác minh
+            send_verification_email(email, token)
+
+            flash('Một email xác minh đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra và xác nhận để hoàn tất đăng ký.', 'info')
+            return redirect(url_for('login'))
+
+    return render_template('register.html')
+
+
+@app.route('/verify_email/<token>')
+def verify_email(token):
+    if token in verification_tokens:
+        user_data = verification_tokens[token]
+
+        # Thêm người dùng vào cơ sở dữ liệu
+        hashed_password = bcrypt.generate_password_hash(
+            user_data['password']).decode('utf-8')
+        sql = "INSERT INTO users (username, email, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s, %s)"
+        val = (user_data['username'], user_data['email'],
+               hashed_password, False, 0, datetime.now())
+        mycursor.execute(sql, val)
+        mydb.commit()
+
+        # Xóa token sau khi sử dụng
+        del verification_tokens[token]
+
+        flash('Tài khoản của bạn đã được xác minh thành công. Bạn có thể đăng nhập ngay bây giờ.', 'success')
+        return redirect(url_for('login'))
+    else:
+        flash('Liên kết xác minh không hợp lệ hoặc đã hết hạn.', 'error')
+        return redirect(url_for('register'))
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        mycursor.execute(
+            "SELECT * FROM users WHERE username = %s", (username,))
+        user = mycursor.fetchone()
+
+        if user and bcrypt.check_password_hash(user['password'], password):
+            session['user_id'] = user['id']
+            session['is_admin'] = user['is_admin']
+
+            # Reset translation count and last reset time
+            now = datetime.now()
+            mycursor.execute(
+                "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user['id']))
+            mydb.commit()
+
+            flash('Đăng nhập thành công!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.', 'error')
+
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('Đã đăng xuất thành công!', 'success')
+    return redirect(url_for('home'))
+
+
 @app.route('/translate', methods=['GET', 'POST'])
 def translate():
-    input_text = ''
-    result = None
+    user_id = session.get('user_id')
+    is_admin = session.get('is_admin', False)
+
+    if user_id:
+        mycursor.execute(
+            "SELECT * FROM whitelist WHERE user_id = %s", (user_id,))
+        is_whitelisted = mycursor.fetchone() is not None
+    else:
+        is_whitelisted = False
+
     if request.method == 'POST':
+        if not user_id:
+            if session.get('anonymous_translations', 0) >= 3:
+                flash(
+                    'Bạn đã sử dụng hết số lần dịch. Vui lòng đăng nhập để tiếp tục.', 'error')
+                return redirect(url_for('login'))
+            session['anonymous_translations'] = session.get(
+                'anonymous_translations', 0) + 1
+        elif not is_whitelisted and not is_admin:
+            mycursor.execute(
+                "SELECT translation_count, last_translation_reset FROM users WHERE id = %s", (user_id,))
+            user_data = mycursor.fetchone()
+            translation_count = user_data['translation_count']
+            last_reset = user_data['last_translation_reset']
+
+            now = datetime.now()
+            if last_reset is None or (now - last_reset) > timedelta(hours=24):
+                # Reset translation count after 24 hours
+                translation_count = 0
+                mycursor.execute(
+                    "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user_id))
+                mydb.commit()
+
+            if translation_count >= 10:
+                flash(
+                    'Bạn đã sử dụng hết số lần dịch trong 24 giờ. Vui lòng thử lại sau.', 'error')
+                return redirect(url_for('home'))
+
+            # Increment translation count
+            mycursor.execute(
+                "UPDATE users SET translation_count = translation_count + 1 WHERE id = %s", (user_id,))
+            mydb.commit()
+
         input_text = request.form['input_text']
         result = translate_and_analyze(input_text)
-    return render_template('translate.html', result=result, input_text=input_text)
+
+        return render_template('translate.html', result=result, input_text=input_text)
+
+    return render_template('translate.html')
+
+
+@admin_required
+def admin_dashboard():
+    mycursor.execute(
+        "SELECT * FROM translation_history ORDER BY created_at DESC")
+    history = mycursor.fetchall()
+
+    mycursor.execute(
+        "SELECT u.*, CASE WHEN w.id IS NOT NULL THEN 1 ELSE 0 END AS is_whitelisted FROM users u LEFT JOIN whitelist w ON u.id = w.user_id")
+    users = mycursor.fetchall()
+
+    return render_template('admin_dashboard.html', history=history, users=users)
+
+
+@app.route('/admin')
+@admin_required
+def admin_dashboard():
+    mycursor.execute(
+        "SELECT * FROM translation_history ORDER BY created_at DESC")
+    history = mycursor.fetchall()
+
+    mycursor.execute("""
+    SELECT u.*, 
+           CASE WHEN w.id IS NOT NULL THEN 1 ELSE 0 END AS is_whitelisted,
+           CASE 
+               WHEN u.is_admin = 1 THEN 'Không giới hạn'
+               WHEN w.id IS NOT NULL THEN 'Không giới hạn'
+               WHEN u.last_translation_reset IS NULL OR TIMESTAMPDIFF(HOUR, u.last_translation_reset, NOW()) > 24 THEN '10'
+               ELSE CAST(10 - u.translation_count AS CHAR)
+           END AS remaining_translations
+    FROM users u 
+    LEFT JOIN whitelist w ON u.id = w.user_id
+    """)
+    users = mycursor.fetchall()
+
+    return render_template('admin_dashboard.html', history=history, users=users)
+
+
+@app.route('/admin/whitelist/<int:user_id>', methods=['POST'])
+@admin_required
+def toggle_whitelist(user_id):
+    action = request.form['action']
+
+    if action == 'add':
+        mycursor.execute(
+            "INSERT INTO whitelist (user_id) VALUES (%s)", (user_id,))
+    elif action == 'remove':
+        mycursor.execute(
+            "DELETE FROM whitelist WHERE user_id = %s", (user_id,))
+
+    mydb.commit()
+    flash('Đã cập nhật whitelist thành công!', 'success')
+    return redirect(url_for('admin_dashboard'))
 
 
 def translate_and_analyze(text):
@@ -498,6 +726,7 @@ def translate_and_analyze(text):
         Gợi ý cách nhớ
         Cách sử dụng
         Các từ liên quan
+        Sau đó hãy kiểm tra kết quả step by step và trả về kết quả cuối cùng.
         Trình bày kết quả theo định dạng sau:
 
         Bản dịch: [Bản dịch tiếng Việt]
@@ -517,7 +746,15 @@ def translate_and_analyze(text):
     try:
         model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(prompt)
-        return response.text.replace(". ", ".\n")
+        result = response.text.replace(". ", ".\n")
+
+        # Lưu kết quả vào cơ sở dữ liệu
+        sql = "INSERT INTO translation_history (input_text, result, created_at) VALUES (%s, %s, %s)"
+        values = (text, result, datetime.now())
+        mycursor.execute(sql, values)
+        mydb.commit()
+
+        return result
     except Exception as e:
         return "Đang lỗi, vui lòng thử lại sau"
 
