@@ -521,7 +521,7 @@ def translate_and_analyze(text):
     Bản dịch: [Bản dịch tiếng Việt]
 
     Phân tích từng chữ:
-    1. [Chữ Hán]:
+    [Chữ Hán]:
        - Nghĩa Hán Việt: [Nghĩa]
        - Bộ thủ: [Danh sách bộ thủ]
        - Pinyin: [Cách đọc]
@@ -529,7 +529,7 @@ def translate_and_analyze(text):
        - Gợi ý cách nhớ: [Gợi ý]
        - Cách sử dụng: [Cách sử dụng]
        - Các từ liên quan: [Các từ liên quan]
-    2. [Chữ Hán tiếp theo]
+    [Chữ Hán tiếp theo]
        ...
 
     Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
