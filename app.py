@@ -49,23 +49,6 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor(dictionary=True)
 
-# Lấy tất cả người dùng
-mycursor.execute("SELECT id, username, password FROM users")
-users = mycursor.fetchall()
-
-for user in users:
-    # Giả sử mật khẩu hiện tại là plain text, chúng ta sẽ mã hóa nó
-    hashed_password = bcrypt.generate_password_hash(
-        user['password']).decode('utf-8')
-
-    # Cập nhật mật khẩu đã mã hóa vào cơ sở dữ liệu
-    sql = "UPDATE users SET password = %s WHERE id = %s"
-    val = (hashed_password, user['id'])
-    mycursor.execute(sql, val)
-
-mydb.commit()
-
-print(f"{mycursor.rowcount} record(s) affected")
 
 
 def get_sets(radicals, radicals_per_set=20):
@@ -503,12 +486,15 @@ def register():
                 flash('Email đã được sử dụng. Vui lòng chọn email khác.', 'error')
                 return redirect(url_for('register'))
 
+            # Mã hóa mật khẩu
+            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+
             # Tạo token xác minh
             token = secrets.token_urlsafe(32)
             verification_tokens[token] = {
                 'username': username,
                 'email': email,
-                'password': password
+                'password': hashed_password  # Lưu mật khẩu đã mã hóa
             }
 
             # Gửi email xác minh
@@ -525,12 +511,10 @@ def verify_email(token):
     if token in verification_tokens:
         user_data = verification_tokens[token]
 
-        # Thêm người dùng vào cơ sở dữ liệu
-        hashed_password = bcrypt.generate_password_hash(
-            user_data['password']).decode('utf-8')
+        # Thêm người dùng vào cơ sở dữ liệu với mật khẩu đã mã hóa
         sql = "INSERT INTO users (username, email, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s, %s)"
         val = (user_data['username'], user_data['email'],
-               hashed_password, False, 0, datetime.now())
+               user_data['password'], False, 0, datetime.now())
         mycursor.execute(sql, val)
         mydb.commit()
 
