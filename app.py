@@ -793,7 +793,7 @@ def translate_and_analyze(text):
     Trình bày kết quả theo định dạng sau:
 
     Bản dịch: [Bản dịch tiếng Việt]
-    Pinyin: [Phiên âm pinyin của toàn bộ đoạn văn]
+    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
 
     Nếu đoạn văn có 10 từ trở xuống, thêm phần sau:
 
