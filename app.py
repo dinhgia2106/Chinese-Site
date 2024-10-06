@@ -19,6 +19,9 @@ from itsdangerous import URLSafeTimedSerializer
 import uuid
 import requests
 from time import time
+import base64
+import re
+
 load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
@@ -39,8 +42,9 @@ mail = Mail(app)
 
 # Lưu trữ token xác minh tạm thời
 verification_tokens = {}
+api_key=os.getenv("GOOGLE_API_KEY")
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=api_key)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 mydb = mysql.connector.connect(
@@ -48,8 +52,14 @@ mydb = mysql.connector.connect(
     user=os.getenv('DB_CLOUD_USER'),
     password=os.getenv('DB_CLOUD_PASSWORD'),
     database=os.getenv('DB_CLOUD_NAME'),
-
+    buffered=True
 )
+
+
+def execute_query(query, params=None):
+    with mydb.cursor(dictionary=True) as cursor:
+        cursor.execute(query, params)
+        return cursor.fetchall()
 
 mycursor = mydb.cursor(dictionary=True)
 
@@ -661,9 +671,16 @@ def translate():
             mydb.commit()
 
         input_text = request.form['input_text']
-        result = translate_and_analyze(input_text)
-
-        return render_template('translate.html', result=result, input_text=input_text)
+        translation_result = translate_and_analyze(input_text)
+        
+        if 'error' in translation_result:
+            flash(translation_result['error'], 'error')
+            return redirect(url_for('translate'))
+        
+        return render_template('translate.html', 
+                               result=translation_result['result'], 
+                               input_text=input_text,
+                               audio_url=translation_result.get('audio_url'))
 
     return render_template('translate.html')
 
@@ -757,50 +774,95 @@ def add_to_whitelist(user_id):
 
 def translate_and_analyze(text):
     prompt = f"""
-        Bạn là một chuyên gia ngôn ngữ Trung - Việt, hãy thực hiện các yêu cầu sau:
+    Bạn là một chuyên gia ngôn ngữ Trung - Việt, hãy thực hiện các yêu cầu sau:
 
-        Đọc đoạn văn bản sau:
-        {text}
+    Đọc đoạn văn bản sau:
+    {text}
 
-        Phân tích đoạn văn và câu văn tiếng Trung:
+    1. Dịch toàn bộ đoạn văn bản sang tiếng Việt.
+    2. Cung cấp phiên âm pinyin cho toàn bộ đoạn văn bản.
+    3. Nếu đoạn văn bản có 10 từ trở xuống, hãy phân tích từng chữ Hán theo các yêu cầu sau:
+       - Nghĩa Hán Việt
+       - Bộ thủ tạo thành chữ đó
+       - Pinyin
+       - Ý nghĩa tiếng Việt
+       - Gợi ý cách nhớ
+       - Cách sử dụng
+       - Các từ liên quan
 
-        Nếu đoạn văn bản nhiều hơn 10 từ thì chỉ cần trả về bản dịch với cấu trúc sau (nếu là tiếng Trung, nếu không phải thì trả về kết quả: "Vui lòng nhập tiếng Trung"):
+    Trình bày kết quả theo định dạng sau:
 
-        Đây là nội dung bản dịch:
-        - [Bản dịch tiếng Việt]
+    Bản dịch: [Bản dịch tiếng Việt]
+    Pinyin: [Phiên âm pinyin của toàn bộ đoạn văn]
 
-        Nếu đoạn văn bản có 10 từ trở xuống thì thực hiện các bước sau:
+    Nếu đoạn văn có 10 từ trở xuống, thêm phần sau:
 
-        Dịch toàn bộ đoạn văn bản sang tiếng Việt.
-        Phân tích từng chữ Hán theo các yêu cầu sau:
-        Nghĩa Hán Việt
-        Bộ thủ tạo thành chữ đó
-        Pinyin
-        Ý nghĩa tiếng Việt
-        Gợi ý cách nhớ
-        Cách sử dụng
-        Các từ liên quan
-        Sau đó hãy kiểm tra kết quả step by step và trả về kết quả cuối cùng.
-        Trình bày kết quả theo định dạng sau:
+    Phân tích từng chữ:
+    Chữ [Chữ Hán]:
+    - Nghĩa Hán Việt: [Nghĩa]
+    - Bộ thủ: [Danh sách bộ thủ]
+    - Pinyin: [Cách đọc]
+    - Ý nghĩa tiếng Việt: [Ý nghĩa]
+    - Gợi ý cách nhớ: [Gợi ý]
+    - Cách sử dụng: [Cách sử dụng]
+    - Các từ liên quan: [Các từ liên quan]
+    [Chữ Hán tiếp theo]
 
-        Bản dịch: [Bản dịch tiếng Việt]
-        Phân tích từng chữ:
-        Chữ [Chữ Hán]:
-        - Nghĩa Hán Việt: [Nghĩa]
-        - Bộ thủ: [Danh sách bộ thủ]
-        - Pinyin: [Cách đọc]
-        - Ý nghĩa tiếng Việt: [Ý nghĩa]
-        - Gợi ý cách nhớ: [Gợi ý]
-        - Cách sử dụng: [Cách sử dụng]
-        - Các từ liên quan: [Các từ liên quan]
-        [Chữ Hán tiếp theo]
-        Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
+    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
     """
 
     try:
         model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(prompt)
-        result = response.text.replace(". ", ".\n")
+        result = response.text
+
+        # Thêm chức năng nghe cho đoạn văn gốc
+        api_key = os.getenv("GOOGLE_TEXT_TO_SPEECH_API_KEY")
+        url = f'https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}'
+        
+        # Loại bỏ nội dung trong dấu ngoặc
+        clean_text = re.sub(r'\s*\(.*?\)', '', text)
+        
+        payload = {
+            'input': {
+                'text': clean_text
+            },
+            'voice': {
+                'languageCode': 'cmn-CN',
+                'name': 'cmn-CN-Standard-A'
+            },
+            'audioConfig': {
+                'audioEncoding': 'MP3'
+            }
+        }
+        
+        headers = {'Content-Type': 'application/json'}
+        
+        try:
+            tts_response = requests.post(url, json=payload, headers=headers)
+            tts_response.raise_for_status()
+            
+            audio_content = tts_response.json().get('audioContent')
+            if audio_content:
+                filename = f"audio_{uuid.uuid4()}.mp3"
+                file_path = os.path.join('static', 'audio', filename)
+                
+                audio_data = base64.b64decode(audio_content)
+                with open(file_path, 'wb') as f:
+                    f.write(audio_data)
+                
+                audio_url = f'/static/audio/{filename}'
+                # Thay đổi cách trả về kết quả
+                return {
+                    'audio_url': audio_url,
+                    'result': result
+                }
+            else:
+                print("Không nhận được dữ liệu âm thanh từ API")
+                return {'result': result}
+        except requests.RequestException as e:
+            print(f"Lỗi khi gọi API Text-to-Speech: {str(e)}")
+            return {'result': result}
 
         # Lưu kết quả vào cơ sở dữ liệu
         sql = "INSERT INTO translation_history (input_text, result, created_at) VALUES (%s, %s, %s)"
@@ -808,9 +870,8 @@ def translate_and_analyze(text):
         mycursor.execute(sql, values)
         mydb.commit()
 
-        return result
     except Exception as e:
-        return "Đang lỗi, vui lòng thử lại sau"
+        return {'error': f"Đang lỗi, vui lòng thử lại sau. Chi tiết lỗi: {str(e)}"}
 
 # Thêm vào phần cấu hình
 app.config['SECURITY_PASSWORD_SALT'] = 'your-security-password-salt'  # Thay đổi giá trị này

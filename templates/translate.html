@@ -27,8 +27,18 @@
       <button type="submit" class="btn btn-custom-primary btn-lg">
         Dịch và Phân tích
       </button>
+      <button
+        type="button"
+        id="listen-btn"
+        class="btn btn-outline-secondary btn-lg ml-2"
+        style="display: none"
+      >
+        <i class="fas fa-volume-up"></i>
+      </button>
     </div>
   </form>
+
+  <audio id="tts-audio" style="display: none"></audio>
 
   {% if result %}
   <div class="mt-4">
@@ -39,5 +49,52 @@
   </div>
   {% endif %}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const listenBtn = document.getElementById('listen-btn');
+    const audio = document.getElementById('tts-audio');
+
+    {% if audio_url %}
+    listenBtn.style.display = 'inline-block';
+    audio.src = "{{ audio_url }}";
+
+    listenBtn.addEventListener('click', function() {
+      audio.play();
+    });
+    {% endif %}
+  });
+</script>
+
+<style>
+  .listen-btn {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .ml-2 {
+    margin-left: 0.5rem;
+  }
+</style>
 
 {% endblock %}
