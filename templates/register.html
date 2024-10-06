@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
   <h2>Đăng ký</h2>
-  <form method="POST">
+  <form method="POST" id="registerForm">
     <div class="form-group">
       <label for="username">Tên đăng nhập:</label>
       <input
@@ -42,10 +42,80 @@
         required
       />
     </div>
+    <div class="form-group">
+      <label for="verification_code">Mã xác nhận:</label>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          id="verification_code"
+          name="verification_code"
+          required
+        />
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" id="getCodeBtn">
+            Lấy mã
+          </button>
+        </div>
+      </div>
+    </div>
     <button type="submit" class="btn btn-primary">Đăng ký</button>
   </form>
   <p class="mt-3">
     Đã có tài khoản? <a href="{{ url_for('login') }}">Đăng nhập</a>
   </p>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const getCodeBtn = document.getElementById("getCodeBtn");
+    const emailInput = document.getElementById("email");
+    let cooldown = 0;
+
+    getCodeBtn.addEventListener("click", function () {
+      if (cooldown > 0) {
+        alert(`Vui lòng đợi ${cooldown} giây trước khi yêu cầu mã mới.`);
+        return;
+      }
+
+      const email = emailInput.value;
+      if (!email) {
+        alert("Vui lòng nhập email trước khi lấy mã xác nhận.");
+        return;
+      }
+
+      // Gửi yêu cầu lấy mã xác nhận
+      fetch("/get_verification_code", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Mã xác nhận đã được gửi đến email của bạn.");
+            cooldown = 60;
+            getCodeBtn.disabled = true;
+            const interval = setInterval(() => {
+              cooldown--;
+              getCodeBtn.textContent = `Đợi ${cooldown}s`;
+              if (cooldown <= 0) {
+                clearInterval(interval);
+                getCodeBtn.disabled = false;
+                getCodeBtn.textContent = "Lấy mã";
+              }
+            }, 1000);
+          } else {
+            alert("Có lỗi xảy ra khi gửi mã xác nhận. Vui lòng thử lại.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+        });
+    });
+  });
+</script>
 {% endblock %}

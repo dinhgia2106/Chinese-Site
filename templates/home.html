@@ -1,18 +1,39 @@
 {% extends "base.html" %} {% block title %}Trang Chủ{% endblock %} {% block
 content %}
-<h1>Chào mừng đến với ứng dụng học bộ thủ tiếng Trung</h1>
-<p></p>
+<div class="container">
+  <h1 class="text-center mb-4">Chào mừng đến với ứng dụng học tiếng Trung</h1>
 
-{% if sentence %}
-<h2>Câu tiếng Trung ngẫu nhiên cho bạn:</h2>
-<p><strong>Chữ Hán:</strong> {{ sentence.chinese }}</p>
-<p><strong>Pinyin:</strong> {{ sentence.pinyin }}</p>
-<p><strong>Âm Hán Việt:</strong> {{ sentence.sino_vietnamese }}</p>
-<p><strong>Nghĩa tiếng Việt:</strong> {{ sentence.vietnamese_meaning }}</p>
-{% else %}
-<p>Không thể tải câu tiếng Trung hôm nay. Vui lòng thử lại sau.</p>
-{% endif %}
+  {% if sentence %}
+  <div class="random-sentence">
+    <h2 class="text-center">Câu tiếng Trung ngẫu nhiên cho bạn</h2>
+    <p><strong>Chữ Hán:</strong> {{ sentence.chinese }}</p>
+    <p><strong>Pinyin:</strong> {{ sentence.pinyin }}</p>
+    <p><strong>Âm Hán Việt:</strong> {{ sentence.sino_vietnamese }}</p>
+    <p><strong>Nghĩa tiếng Việt:</strong> {{ sentence.vietnamese_meaning }}</p>
+    <p class="text-center">
+      <a href="{{ url_for('history') }}">Xem lịch sử các câu</a>
+    </p>
+  </div>
+  {% else %}
+  <p class="text-center">
+    Không thể tải câu tiếng Trung hôm nay. Vui lòng thử lại sau.
+  </p>
+  {% endif %}
 
-<p><a href="{{ url_for('history') }}">Xem lịch sử các câu</a></p>
-
+  <div class="contact-info mt-5">
+    <h3 class="text-center mb-3">Thông tin liên hệ Admin</h3>
+    <p class="text-center">
+      Nếu bạn cần mua thêm lượt dịch hoặc có bất kỳ thắc mắc nào, vui lòng liên
+      hệ:
+    </p>
+    <ul class="list-unstyled text-center">
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
+      </li>
+      <!-- <li><strong>Facebook:</strong> <a href="{{ contact_info.facebook }}" target="_blank">{{ contact_info.facebook }}</a></li> -->
+      <!-- <li><strong>Số điện thoại:</strong> {{ contact_info.phone }}</li> -->
+    </ul>
+  </div>
+</div>
 {% endblock %}

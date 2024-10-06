@@ -1,29 +1,43 @@
 {% extends "base.html" %} {% block content %}
-<h1 class="mb-4">Dịch và Tra từ</h1>
-<p class="mb-3">
-  Ứng dụng này dùng để dịch và phân tích chi tiết các từ tiếng Trung cho các từ
-  đơn và câu đơn. <br />
-  Trong trường hợp là một đoạn văn thì chỉ trả về bản dịch.
-</p>
-<form method="POST">
-  <div class="form-group">
-    <label for="input_text">Nhập văn bản tiếng Trung:</label>
-    <textarea
-      class="form-control"
-      id="input_text"
-      name="input_text"
-      rows="3"
-      required
-    >
-{{ request.form.get('input_text', '') }}</textarea
-    >
-  </div>
-  <button type="submit" class="btn btn-primary">Dịch và Phân tích</button>
-</form>
+<div class="container">
+  <h2 class="text-center mb-4">Dịch và Tra từ</h2>
 
-{% if result %}
-<div class="mt-4">
-  <h2>Kết quả:</h2>
-  <pre>{{ result }}</pre>
+  <div class="text-center mb-4">
+    <p>
+      Ứng dụng này dùng để dịch và phân tích chi tiết các từ tiếng Trung cho các
+      từ đơn và câu đơn.
+    </p>
+    <p>Trong trường hợp là một đoạn văn thì chỉ trả về bản dịch.</p>
+  </div>
+
+  <form method="POST" class="mb-4">
+    <div class="form-group">
+      <label for="input_text">Nhập văn bản tiếng Trung:</label>
+      <textarea
+        class="form-control"
+        id="input_text"
+        name="input_text"
+        rows="5"
+        required
+      >
+{{ request.form.get('input_text', '') }}</textarea
+      >
+    </div>
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-custom-primary btn-lg">
+        Dịch và Phân tích
+      </button>
+    </div>
+  </form>
+
+  {% if result %}
+  <div class="mt-4">
+    <h3 class="text-center mb-3">Kết quả:</h3>
+    <div class="result-container">
+      <pre>{{ result }}</pre>
+    </div>
+  </div>
+  {% endif %}
 </div>
-{% endif %} {% endblock %}
+
+{% endblock %}

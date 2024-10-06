@@ -14,6 +14,8 @@ import random
 from flask_mail import Mail, Message
 import secrets
 import smtplib
+import string
+from itsdangerous import URLSafeTimedSerializer
 
 load_dotenv()  # Load biến môi trường từ .env
 
@@ -158,8 +160,13 @@ Không thêm bất kỳ văn bản nào khác.
 
 @app.route('/')
 def home():
-    sentence_data = get_new_sentence()
-    return render_template('home.html', sentence=sentence_data)
+    sentence = get_new_sentence()
+    contact_info = {
+        #'facebook': 'facebook.com/GrazT.2106',
+        'email': 'tiengtrungtg@gmail.com',
+        #'phone': '0948388213'
+    }
+    return render_template('home.html', sentence=sentence, contact_info=contact_info)
 
 
 @app.route('/history')
@@ -461,6 +468,42 @@ def send_verification_email(email, token):
     {verification_link}"""
     mail.send(msg)
 
+def send_verification_code(email, code):
+    msg = Message('Mã xác minh tài khoản', recipients=[email])
+    msg.body = f"""Mã xác minh của bạn là: {code}
+    Mã này có hiệu lực trong vòng 5 phút."""
+    mail.send(msg)
+
+@app.route('/get_verification_code', methods=['POST'])
+def get_verification_code():
+    email = request.json.get('email')
+    if not email:
+        return jsonify({'success': False, 'message': 'Email không được để trống'}), 400
+
+    # Kiểm tra xem email đã tồn tại chưa
+    mycursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+    if mycursor.fetchone():
+        return jsonify({'success': False, 'message': 'Email đã được sử dụng'}), 400
+
+    # Tạo mã xác minh
+    verification_code = ''.join(random.choices(string.digits, k=6))
+    expiration_time = datetime.now() + timedelta(minutes=5)
+
+    # Lưu mã xác minh vào session
+    session['verification'] = {
+        'email': email,
+        'code': verification_code,
+        'expiration_time': expiration_time
+    }
+
+    try:
+        # Gửi email xác minh
+        send_verification_code(email, verification_code)
+        return jsonify({'success': True, 'message': 'Mã xác nhận đã được gửi'})
+    except Exception as e:
+        app.logger.error(f"Lỗi khi gửi email: {str(e)}")
+        return jsonify({'success': False, 'message': 'Có lỗi xảy ra khi gửi mã xác nhận. Vui lòng thử lại.'}), 500
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -469,9 +512,18 @@ def register():
         email = request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
+        verification_code = request.form['verification_code']
 
-        mycursor.execute(
-            "SELECT * FROM users WHERE username = %s", (username,))
+        # Kiểm tra mã xác nhận
+        if 'verification' not in session or session['verification']['email'] != email or session['verification']['code'] != verification_code:
+            flash('Mã xác nhận không hợp lệ hoặc đã hết hạn', 'error')
+            return redirect(url_for('register'))
+
+        if datetime.now() > session['verification']['expiration_time']:
+            flash('Mã xác nhận đã hết hạn. Vui lòng yêu cầu mã mới.', 'error')
+            return redirect(url_for('register'))
+
+        mycursor.execute("SELECT * FROM users WHERE username = %s", (username,))
         existing_user = mycursor.fetchone()
 
         if existing_user:
@@ -479,28 +531,16 @@ def register():
         elif password != confirm_password:
             flash('Mật khẩu không khớp. Vui lòng thử lại.', 'error')
         else:
-            # Kiểm tra xem email đã tồn tại chưa
-            mycursor.execute(
-                "SELECT * FROM users WHERE email = %s", (email,))
-            if mycursor.fetchone():
-                flash('Email đã được sử dụng. Vui lòng chọn email khác.', 'error')
-                return redirect(url_for('register'))
-
-            # Mã hóa mật khẩu
             hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
-            # Tạo token xác minh
-            token = secrets.token_urlsafe(32)
-            verification_tokens[token] = {
-                'username': username,
-                'email': email,
-                'password': hashed_password  # Lưu mật khẩu đã mã hóa
-            }
+            # Thêm người dùng vào cơ sở dữ liệu
+            sql = "INSERT INTO users (username, email, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s, %s)"
+            val = (username, email, hashed_password, False, 0, datetime.now())
+            mycursor.execute(sql, val)
+            mydb.commit()
 
-            # Gửi email xác minh
-            send_verification_email(email, token)
-
-            flash('Một email xác minh đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra và xác nhận để hoàn tất đăng ký.', 'info')
+            session.pop('verification', None)
+            flash('Tài khoản của bạn đã được tạo thành công. Bạn có thể đăng nhập ngay bây giờ.', 'success')
             return redirect(url_for('login'))
 
     return render_template('register.html')
@@ -563,58 +603,48 @@ def logout():
     return redirect(url_for('home'))
 
 
-@app.route('/translate', methods=['GET', 'POST'])
+def is_whitelisted(user_id):
+    mycursor.execute("SELECT expiration_date, is_permanent FROM whitelist WHERE user_id = %s", (user_id,))
+    result = mycursor.fetchone()
+    if result:
+        if result['is_permanent']:
+            return True
+        expiration_date = result['expiration_date']
+        return datetime.now().date() <= expiration_date if expiration_date else False
+    return False
+
+@app.route('/translate', methods=['POST'])
+@login_required
 def translate():
-    user_id = session.get('user_id')
-    is_admin = session.get('is_admin', False)
-
-    if user_id:
-        mycursor.execute(
-            "SELECT * FROM whitelist WHERE user_id = %s", (user_id,))
-        is_whitelisted = mycursor.fetchone() is not None
+    user_id = session['user_id']
+    if is_whitelisted(user_id):
+        # Xử lý dịch không giới hạn
+        pass
     else:
-        is_whitelisted = False
+        # Kiểm tra số lần dịch còn lại và xử lý như bình thường
+        mycursor.execute("SELECT translation_count, last_translation_reset FROM users WHERE id = %s", (user_id,))
+        user_data = mycursor.fetchone()
+        translation_count = user_data['translation_count']
+        last_reset = user_data['last_translation_reset']
 
-    if request.method == 'POST':
-        if not user_id:
-            if session.get('anonymous_translations', 0) >= 3:
-                flash(
-                    'Bạn đã sử dụng hết số lần dịch. Vui lòng đăng nhập để tiếp tục.', 'error')
-                return redirect(url_for('login'))
-            session['anonymous_translations'] = session.get(
-                'anonymous_translations', 0) + 1
-        elif not is_whitelisted and not is_admin:
-            mycursor.execute(
-                "SELECT translation_count, last_translation_reset FROM users WHERE id = %s", (user_id,))
-            user_data = mycursor.fetchone()
-            translation_count = user_data['translation_count']
-            last_reset = user_data['last_translation_reset']
-
-            now = datetime.now()
-            if last_reset is None or (now - last_reset) > timedelta(hours=24):
-                # Reset translation count after 24 hours
-                translation_count = 0
-                mycursor.execute(
-                    "UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", (now, user_id))
-                mydb.commit()
-
-            if translation_count >= 10:
-                flash(
-                    'Bạn đã sử dụng hết số lần dịch trong 24 giờ. Vui lòng thử lại sau.', 'error')
-                return redirect(url_for('home'))
-
-            # Increment translation count
-            mycursor.execute(
-                "UPDATE users SET translation_count = translation_count + 1 WHERE id = %s", (user_id,))
+        # Kiểm tra và reset nếu cần
+        if datetime.now() - last_reset > timedelta(hours=24):
+            translation_count = 0
+            mycursor.execute("UPDATE users SET translation_count = 0, last_translation_reset = %s WHERE id = %s", 
+                             (datetime.now(), user_id))
             mydb.commit()
 
-        input_text = request.form['input_text']
-        result = translate_and_analyze(input_text)
+        if translation_count >= 10:
+            flash('Bạn đã sử dụng hết số lần dịch trong 24 giờ. Vui lòng liên hệ admin để mua thêm lượt dịch.', 'error')
+            return redirect(url_for('home'))
 
-        return render_template('translate.html', result=result, input_text=input_text)
+        # Tiếp tục xử lý dịch và cập nhật translation_count
+        translation_count += 1
+        mycursor.execute("UPDATE users SET translation_count = %s WHERE id = %s", (translation_count, user_id))
+        mydb.commit()
 
-    return render_template('translate.html')
-
+    # Xử lý dịch và trả về kết quả
+    # ...
 
 @admin_required
 def admin_dashboard():
@@ -638,10 +668,16 @@ def admin_dashboard():
 
     mycursor.execute("""
     SELECT u.*, 
-           CASE WHEN w.id IS NOT NULL THEN 1 ELSE 0 END AS is_whitelisted,
+           w.id AS whitelist_id,
+           w.expiration_date,
+           w.is_permanent,
            CASE 
-               WHEN u.is_admin = 1 THEN 'Không giới hạn'
-               WHEN w.id IS NOT NULL THEN 'Không giới hạn'
+               WHEN u.is_admin = 1 THEN 'Admin'
+               WHEN w.id IS NOT NULL THEN 
+                   CASE
+                       WHEN w.is_permanent = 1 THEN 'Vĩnh viễn'
+                       ELSE CONCAT('Đến ', DATE_FORMAT(w.expiration_date, '%d-%m-%Y'))
+                   END
                WHEN u.last_translation_reset IS NULL OR TIMESTAMPDIFF(HOUR, u.last_translation_reset, NOW()) > 24 THEN '10'
                ELSE CAST(10 - u.translation_count AS CHAR)
            END AS remaining_translations
@@ -652,20 +688,48 @@ def admin_dashboard():
 
     return render_template('admin_dashboard.html', history=history, users=users)
 
+@app.route('/admin/remove_from_whitelist/<int:whitelist_id>', methods=['POST'])
+@admin_required
+def remove_from_whitelist(whitelist_id):
+    mycursor.execute("DELETE FROM whitelist WHERE id = %s", (whitelist_id,))
+    mydb.commit()
+    flash('Đã xóa người dùng khỏi whitelist', 'success')
+    return redirect(url_for('admin_dashboard'))
 
 @app.route('/admin/whitelist/<int:user_id>', methods=['POST'])
 @admin_required
-def toggle_whitelist(user_id):
-    action = request.form['action']
+def add_to_whitelist(user_id):
+    duration_type = request.form['duration_type']
 
-    if action == 'add':
-        mycursor.execute(
-            "INSERT INTO whitelist (user_id) VALUES (%s)", (user_id,))
-    elif action == 'remove':
-        mycursor.execute(
-            "DELETE FROM whitelist WHERE user_id = %s", (user_id,))
+    if duration_type == 'permanent':
+        expiration_date = None
+        is_permanent = True
+    else:
+        duration = int(request.form['duration'])
+        duration_unit = request.form['duration_unit']
+        is_permanent = False
 
+        if duration_unit == 'days':
+            expiration_date = datetime.now() + timedelta(days=duration)
+        elif duration_unit == 'months':
+            expiration_date = datetime.now() + timedelta(days=duration*30)
+        elif duration_unit == 'years':
+            expiration_date = datetime.now() + timedelta(days=duration*365)
+
+    # Kiểm tra xem user_id đã tồn tại trong whitelist chưa
+    mycursor.execute("SELECT id FROM whitelist WHERE user_id = %s", (user_id,))
+    existing = mycursor.fetchone()
+
+    if existing:
+        # Cập nhật nếu đã tồn tại
+        mycursor.execute("UPDATE whitelist SET expiration_date = %s, is_permanent = %s WHERE user_id = %s", 
+                         (expiration_date, is_permanent, user_id))
+    else:
+        # Thêm mới nếu chưa tồn tại
+        mycursor.execute("INSERT INTO whitelist (user_id, expiration_date, is_permanent) VALUES (%s, %s, %s)", 
+                         (user_id, expiration_date, is_permanent))
     mydb.commit()
+
     flash('Đã cập nhật whitelist thành công!', 'success')
     return redirect(url_for('admin_dashboard'))
 
@@ -727,6 +791,48 @@ def translate_and_analyze(text):
     except Exception as e:
         return "Đang lỗi, vui lòng thử lại sau"
 
+# Thêm vào phần cấu hình
+app.config['SECURITY_PASSWORD_SALT'] = 'your-security-password-salt'  # Thay đổi giá trị này
+serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
+
+@app.route('/forgot_password', methods=['GET', 'POST'])
+def forgot_password():
+    if request.method == 'POST':
+        email = request.form['email']
+        mycursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        user = mycursor.fetchone()
+        if user:
+            token = serializer.dumps(email, salt=app.config['SECURITY_PASSWORD_SALT'])
+            reset_url = url_for('reset_password', token=token, _external=True)
+            msg = Message('Đặt lại mật khẩu', recipients=[email])
+            msg.body = f'Để đặt lại mật khẩu, vui lòng truy cập liên kết sau: {reset_url}'
+            mail.send(msg)
+            flash('Hướng dẫn đặt lại mật khẩu đã được gửi đến email của bạn.', 'info')
+            return redirect(url_for('login'))
+        else:
+            flash('Không tìm thấy tài khoản với email này.', 'error')
+    return render_template('forgot_password.html')
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    try:
+        email = serializer.loads(token, salt=app.config['SECURITY_PASSWORD_SALT'], max_age=3600)
+    except:
+        flash('Liên kết đặt lại mật khẩu không hợp lệ hoặc đã hết hạn.', 'error')
+        return redirect(url_for('forgot_password'))
+    
+    if request.method == 'POST':
+        new_password = request.form['new_password']
+        confirm_password = request.form['confirm_password']
+        if new_password != confirm_password:
+            flash('Mật khẩu không khớp.', 'error')
+        else:
+            hashed_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
+            mycursor.execute("UPDATE users SET password = %s WHERE email = %s", (hashed_password, email))
+            mydb.commit()
+            flash('Mật khẩu của bạn đã được đặt lại thành công.', 'success')
+            return redirect(url_for('login'))
+    return render_template('reset_password.html')
 
 if __name__ == '__main__':
     app.run(debug=False)
