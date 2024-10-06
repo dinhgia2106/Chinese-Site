@@ -43,6 +43,8 @@
       <thead>
         <tr>
           <th class="text-center">Tên đăng nhập</th>
+          <th class="text-center">Email</th>
+          <!-- Thêm cột Email -->
           <th class="text-center">Admin</th>
           <th class="text-center">Số lần dịch còn lại</th>
           <th class="text-center">Whitelist</th>
@@ -53,6 +55,8 @@
         {% for user in users %}
         <tr>
           <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <!-- Hiển thị Email -->
           <td class="text-center">{{ 'Có' if user.is_admin else 'Không' }}</td>
           <td class="text-center">{{ user.remaining_translations }}</td>
           <td class="text-center">
