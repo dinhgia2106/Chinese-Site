@@ -795,7 +795,7 @@ def translate_and_analyze(text):
     Bản dịch: [Bản dịch tiếng Việt]
     Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
 
-    Nếu đoạn văn có 10 từ trở xuống, thêm phần sau:
+    Nếu đoạn văn có 10 từ trở xuống, thực hiện phần sau:
 
     Phân tích từng chữ:
     Chữ [Chữ Hán]:
@@ -815,6 +815,12 @@ def translate_and_analyze(text):
         model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(prompt)
         result = response.text
+
+        # Lưu kết quả vào cơ sở dữ liệu
+        sql = "INSERT INTO translation_history (input_text, result, created_at) VALUES (%s, %s, %s)"
+        values = (text, result, datetime.now())
+        mycursor.execute(sql, values)
+        mydb.commit()
 
         # Thêm chức năng nghe cho đoạn văn gốc
         api_key = os.getenv("GOOGLE_TEXT_TO_SPEECH_API_KEY")
@@ -852,7 +858,6 @@ def translate_and_analyze(text):
                     f.write(audio_data)
                 
                 audio_url = f'/static/audio/{filename}'
-                # Thay đổi cách trả về kết quả
                 return {
                     'audio_url': audio_url,
                     'result': result
@@ -863,12 +868,6 @@ def translate_and_analyze(text):
         except requests.RequestException as e:
             print(f"Lỗi khi gọi API Text-to-Speech: {str(e)}")
             return {'result': result}
-
-        # Lưu kết quả vào cơ sở dữ liệu
-        sql = "INSERT INTO translation_history (input_text, result, created_at) VALUES (%s, %s, %s)"
-        values = (text, result, datetime.now())
-        mycursor.execute(sql, values)
-        mydb.commit()
 
     except Exception as e:
         return {'error': f"Đang lỗi, vui lòng thử lại sau. Chi tiết lỗi: {str(e)}"}
