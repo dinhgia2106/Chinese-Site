@@ -17,7 +17,8 @@ def test_sql_connection():
             host=os.getenv('DB_CLOUD_HOST'),
             database=os.getenv('DB_CLOUD_NAME'),
             user=os.getenv('DB_CLOUD_USER'),
-            password=os.getenv('DB_CLOUD_PASSWORD')
+            password=os.getenv('DB_CLOUD_PASSWORD'),
+            connect_timeout=5  # Thêm timeout 5 giây
         )
 
         if connection.is_connected():
