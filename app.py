@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, session, request, jsonify, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, make_response
 from radicals import radicals
 from flask_session import Session
 import unicodedata
@@ -16,7 +16,9 @@ import secrets
 import smtplib
 import string
 from itsdangerous import URLSafeTimedSerializer
-
+import uuid
+import requests
+from time import time
 load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
@@ -852,6 +854,209 @@ def reset_password(token):
             flash('Mật khẩu của bạn đã được đặt lại thành công.', 'success')
             return redirect(url_for('login'))
     return render_template('reset_password.html')
+
+# Check transaction
+api_token = os.getenv('SEPAY_API_TOKEN')
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {api_token}"
+}
+
+def check_transaction(reference_code, amount):
+    url = "https://my.sepay.vn/userapi/transactions/list"
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        data = response.json()
+        
+        for transaction in data.get('transactions', []):
+            if (f"TTGP {reference_code}" in transaction['transaction_content'] and 
+                float(transaction['amount_in']) == amount):
+                return True
+        return False
+    except requests.exceptions.RequestException as e:
+        print(f"Lỗi khi gọi API: {e}")
+        return False
+    
+@app.route('/premium')
+@login_required
+def premium():
+    if 'user_id' not in session:
+        flash('Vui lòng đăng nhập để truy cập trang Premium.', 'error')
+        return redirect(url_for('login'))
+    
+    if is_whitelisted(session['user_id']):
+        flash('Bạn đã là thành viên Premium.', 'info')
+        return redirect(url_for('home'))
+    
+    plans = [
+        {'name': '1 tuần', 'price': 15000, 'duration': 7},
+        {'name': '1 tháng', 'price': 49000, 'duration': 30},
+        {'name': '1 năm', 'price': 499000, 'duration': 365}
+    ]
+    return render_template('premium.html', plans=plans)
+
+@app.route('/payment/<int:plan_id>')
+@login_required
+def payment(plan_id):
+    if 'user_id' not in session:
+        flash('Vui lòng đăng nhập để truy cập trang thanh toán.', 'error')
+        return redirect(url_for('login'))
+    
+    if is_whitelisted(session['user_id']):
+        flash('Bạn đã là thành viên Premium.', 'info')
+        return redirect(url_for('home'))
+    
+    plans = [
+        {'id': 0, 'name': '1 tuần', 'price': 15000, 'duration': 7},
+        {'id': 1, 'name': '1 tháng', 'price': 49000, 'duration': 30},
+        {'id': 2, 'name': '1 năm', 'price': 499000, 'duration': 365}
+    ]
+    
+    if plan_id < 0 or plan_id >= len(plans):
+        flash('Gói không hợp lệ', 'error')
+        return redirect(url_for('premium'))
+    
+    selected_plan = plans[plan_id]
+    
+    # Kiểm tra xem có yêu cầu thanh toán đang chờ xử lý không
+    mycursor.execute("SELECT * FROM payment_requests WHERE user_id = %s AND status = 'pending'", (session['user_id'],))
+    existing_request = mycursor.fetchone()
+    
+    if existing_request and existing_request['plan_id'] == plan_id:
+        # Nếu có yêu cầu hiện tại với cùng gói, sử dụng lại
+        reference_code = existing_request['reference_code']
+        so_tien = existing_request['amount']
+    else:
+        # Nếu không, tạo mới hoặc cập nhật
+        reference_code = str(uuid.uuid4())[:8].upper()
+        so_tien = selected_plan['price']
+        
+        if existing_request:
+            sql = "UPDATE payment_requests SET plan_id = %s, reference_code = %s, amount = %s WHERE id = %s"
+            val = (plan_id, reference_code, so_tien, existing_request['id'])
+        else:
+            sql = "INSERT INTO payment_requests (user_id, plan_id, reference_code, amount) VALUES (%s, %s, %s, %s)"
+            val = (session['user_id'], plan_id, reference_code, so_tien)
+        
+        mycursor.execute(sql, val)
+        mydb.commit()
+    
+    so_tai_khoan = os.getenv('SEPAY_ACCOUNT_NUMBER')
+    ngan_hang = os.getenv('SEPAY_BANK_NAME')
+    noi_dung = f"TTGP {reference_code}"
+    
+    qr_link = f"https://qr.sepay.vn/img?acc={so_tai_khoan}&bank={ngan_hang}&amount={so_tien}&des={noi_dung}"
+    
+    payment_info = {
+        'account_number': so_tai_khoan,
+        'bank': ngan_hang,
+        'amount': so_tien,
+        'reference_code': reference_code,
+        'qr_link': qr_link
+    }
+    
+    # Thêm no-cache headers
+    response = make_response(render_template('payment.html', plan=selected_plan, payment_info=payment_info))
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    return response
+
+@app.route('/check_payment_status')
+@login_required
+def check_payment_status():
+    mycursor.execute("""
+    SELECT * 
+    FROM payment_requests 
+    WHERE user_id = %s AND status = 'pending' 
+    ORDER BY id DESC LIMIT 1
+    """, (session['user_id'],))
+    payment_request = mycursor.fetchone()
+    if payment_request:
+        plans = [
+            {'id': 0, 'name': '1 tuần', 'price': 15000, 'duration': 7},
+            {'id': 1, 'name': '1 tháng', 'price': 49000, 'duration': 30},
+            {'id': 2, 'name': '1 năm', 'price': 499000, 'duration': 365}
+        ]
+        plan = plans[payment_request['plan_id']]
+        return jsonify({
+            'plan_id': payment_request['plan_id'],
+            'plan_name': plan['name'],
+            'amount': payment_request['amount'],
+            'reference_code': payment_request['reference_code']
+        })
+    return jsonify({}), 404
+
+@app.route('/verify_payment')
+@login_required
+def verify_payment():
+    if 'user_id' not in session:
+        flash('Vui lòng đăng nhập để xác nhận thanh toán.', 'error')
+        return redirect(url_for('login'))
+    
+    if is_whitelisted(session['user_id']):
+        flash('Bạn đã là thành viên Premium.', 'info')
+        return redirect(url_for('home'))
+    
+    # Lấy thông tin thanh toán từ cơ sở dữ liệu
+    mycursor.execute("SELECT * FROM payment_requests WHERE user_id = %s AND status = 'pending'", (session['user_id'],))
+    payment_request = mycursor.fetchone()
+    
+    if not payment_request:
+        flash('Không tìm thấy yêu cầu thanh toán.', 'error')
+        return redirect(url_for('premium'))
+    
+    if check_transaction(payment_request['reference_code'], payment_request['amount']):
+        # Giao dịch thành công, thêm người dùng vào whitelist
+        plans = [
+            {'id': 0, 'name': '1 tuần', 'price': 15000, 'duration': 7},
+            {'id': 1, 'name': '1 tháng', 'price': 49000, 'duration': 30},
+            {'id': 2, 'name': '1 năm', 'price': 499000, 'duration': 365}
+        ]
+        selected_plan = plans[payment_request['plan_id']]
+        expiration_date = datetime.now() + timedelta(days=selected_plan['duration'])
+        
+        mycursor.execute("SELECT id FROM whitelist WHERE user_id = %s", (session['user_id'],))
+        existing = mycursor.fetchone()
+        
+        if existing:
+            mycursor.execute("UPDATE whitelist SET expiration_date = %s, is_permanent = 0 WHERE user_id = %s", 
+                             (expiration_date, session['user_id']))
+        else:
+            mycursor.execute("INSERT INTO whitelist (user_id, expiration_date, is_permanent) VALUES (%s, %s, 0)", 
+                             (session['user_id'], expiration_date))
+        
+        # Cập nhật trạng thái yêu cầu thanh toán
+        mycursor.execute("UPDATE payment_requests SET status = 'completed' WHERE id = %s", (payment_request['id'],))
+        mydb.commit()
+        
+        flash(f'Thanh toán thành công! Bạn đã được nâng cấp lên gói {selected_plan["name"]}.', 'success')
+        return redirect(url_for('home'))
+    else:
+        flash('Không tìm thấy giao dịch hoặc giao dịch chưa được xác nhận. Vui lòng thử lại sau.', 'error')
+        # Ở lại trang thanh toán hiện tại
+        return redirect(url_for('payment', plan_id=payment_request['plan_id']))
+
+
+@app.template_filter('format_number')
+def format_number(value):
+    try:
+        # Chuyển đổi giá trị thành số nguyên
+        number = int(float(value))
+        # Định dạng số với dấu phẩy ngăn cách hàng nghìn
+        return "{:,}".format(number)
+    except ValueError:
+        # Nếu không thể chuyển đổi thành số, trả về giá trị gốc
+        return value
+
+@app.context_processor
+def utility_processor():
+    def user_is_whitelisted():
+        if 'user_id' in session:
+            return is_whitelisted(session['user_id'])
+        return False
+    return dict(user_is_whitelisted=user_is_whitelisted, user_is_authenticated='user_id' in session)
 
 if __name__ == '__main__':
     app.run(debug=False)

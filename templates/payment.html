@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+<meta
+  http-equiv="Cache-Control"
+  content="no-cache, no-store, must-revalidate"
+/>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+{% endblock %} {% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Thanh toán gói <span id="plan-name">{{ plan.name }}</span></h2>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <h4>Thông tin thanh toán</h4>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <strong>Số tiền:</strong>
+                <span id="amount">{{ payment_info.amount|format_number }}</span>
+                VNĐ
+              </p>
+              <p>
+                <strong>Số tài khoản:</strong> {{ payment_info.account_number }}
+              </p>
+              <p><strong>Ngân hàng:</strong> {{ payment_info.bank }}</p>
+              <p>
+                <strong>Nội dung chuyển khoản:</strong> TTGP
+                <span id="reference-code"
+                  >{{ payment_info.reference_code }}</span
+                >
+              </p>
+            </div>
+            <div class="col-md-6 text-center">
+              <img
+                id="qr-code"
+                src="{{ payment_info.qr_link }}"
+                alt="QR Code thanh toán"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <p>Sau khi chuyển khoản, vui lòng nhấn nút bên dưới để xác nhận:</p>
+            <a href="{{ url_for('verify_payment') }}" class="btn btn-primary"
+              >Xác nhận đã thanh toán</a
+            >
+          </div>
+          <div class="text-center mt-4">
+            <p>
+              Nếu quá 5 phút chưa xác nhận được, vui lòng liên hệ admin tại
+              <a href="https://fb.com/grazt.2106" target="_blank">đây</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkPaymentStatus() {
+      fetch('{{ url_for("check_payment_status") }}')
+          .then(response => response.json())
+          .then(data => {
+              if (data.plan_id !== {{ plan.id }} || data.amount !== {{ payment_info.amount }} || data.reference_code !== '{{ payment_info.reference_code }}') {
+                  // Cập nhật thông tin trên trang
+                  document.getElementById('plan-name').textContent = data.plan_name;
+                  document.getElementById('amount').textContent = new Intl.NumberFormat('vi-VN').format(data.amount);
+                  document.getElementById('reference-code').textContent = data.reference_code;
+                  document.getElementById('qr-code').src = `https://qr.sepay.vn/img?acc=0948388213&bank=KienLongBank&amount=${data.amount}&des=TTGP ${data.reference_code}`;
+              }
+          });
+  }
+
+  // Kiểm tra mỗi 30 giây
+  setInterval(checkPaymentStatus, 30000);
+</script>
+{% endblock %}

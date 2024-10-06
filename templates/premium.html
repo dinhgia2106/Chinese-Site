@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-5">Gói Premium</h1>
+  <div class="row justify-content-center">
+    {% for plan in plans %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header bg-primary text-white text-center py-3">
+          <h3 class="my-0 font-weight-bold">{{ plan.name }}</h3>
+        </div>
+        <div class="card-body d-flex flex-column">
+          <h2 class="card-title pricing-card-title text-center mb-3">
+            {{ plan.price|format_number }} <small class="text-muted">VNĐ</small>
+          </h2>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li class="text-center">Truy cập không giới hạn</li>
+            <li class="text-center">Hỗ trợ 24/7</li>
+            <li class="text-center">Cập nhật liên tục</li>
+          </ul>
+          <button
+            onclick="loadPayment({{ loop.index0 }})"
+            class="btn btn-lg btn-block btn-outline-primary mt-auto"
+          >
+            Chọn gói
+          </button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  function loadPayment(planId) {
+    window.location.href =
+      "{{ url_for('payment', plan_id=0) }}".replace("0", planId) +
+      "?t=" +
+      new Date().getTime();
+  }
+</script>
+{% endblock %}
