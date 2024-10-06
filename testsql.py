@@ -1,6 +1,11 @@
 import mysql.connector
 from mysql.connector import Error
 from flask import Flask, jsonify
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 app = Flask(__name__)
 
@@ -9,10 +14,10 @@ def test_sql_connection():
     try:
         # Thay đổi các thông số kết nối theo cấu hình của bạn
         connection = mysql.connector.connect(
-            host='localhost',
-            database='ten_database_cua_ban',
-            user='ten_nguoi_dung',
-            password='mat_khau_cua_ban'
+            host=os.getenv('DB_CLOUD_HOST'),
+            database=os.getenv('DB_CLOUD_NAME'),
+            user=os.getenv('DB_CLOUD_USER'),
+            password=os.getenv('DB_CLOUD_PASSWORD')
         )
 
         if connection.is_connected():
