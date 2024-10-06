@@ -1,1 +1,1 @@
-web: gunicorn app:testsql
+web: gunicorn testsql:app
