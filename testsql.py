@@ -1,45 +1,47 @@
-import mysql.connector
-from mysql.connector import Error
-from flask import Flask, jsonify
 import os
+import sqlalchemy
+from flask import Flask, jsonify
 from dotenv import load_dotenv
+from google.cloud.sql.connector import Connector
 
 load_dotenv()
 
-
 app = Flask(__name__)
+
+# Lấy thông tin kết nối Cloud SQL từ biến môi trường
+instance_connection_name = os.getenv('DB_CLOUD_HOST')
+db_user = os.getenv('DB_CLOUD_USER')
+db_pass = os.getenv('DB_CLOUD_PASSWORD')
+db_name = os.getenv('DB_CLOUD_NAME')
+
+# Tạo chuỗi kết nối Cloud SQL
+connection_string = (
+    f'mysql+pymysql://{db_user}:{db_pass}@{instance_connection_name}/{db_name}')
+
+# Tạo pool kết nối
+pool = sqlalchemy.create_engine(
+    connection_string,
+    pool_size=5,
+    max_overflow=2,
+    pool_timeout=30,
+    pool_recycle=1800
+)
 
 def test_sql_connection():
     result = {}
     try:
-        # Thay đổi các thông số kết nối theo cấu hình của bạn
-        connection = mysql.connector.connect(
-            host=os.getenv('DB_CLOUD_HOST'),
-            database=os.getenv('DB_CLOUD_NAME'),
-            user=os.getenv('DB_CLOUD_USER'),
-            password=os.getenv('DB_CLOUD_PASSWORD'),
-            connect_timeout=5  # Thêm timeout 5 giây
-        )
-
-        if connection.is_connected():
-            db_info = connection.get_server_info()
-            result['server_info'] = f"Đã kết nối thành công đến MySQL Server phiên bản {db_info}"
+        with pool.connect() as conn:
+            # Sử dụng sqlalchemy.text để tạo đối tượng SQL Expression
+            db_info = conn.execute(sqlalchemy.text('SELECT VERSION()')).fetchone()
+            result['server_info'] = f"Đã kết nối thành công đến MySQL Server phiên bản {db_info[0]}"
             
-            cursor = connection.cursor()
-            cursor.execute("SELECT DATABASE();")
-            record = cursor.fetchone()
-            result['database'] = f"Bạn đã kết nối đến database: {record[0]}"
+            current_db = conn.execute(sqlalchemy.text('SELECT DATABASE()')).fetchone()
+            result['database'] = f"Bạn đã kết nối đến database: {current_db[0]}"
             result['status'] = 'success'
 
-    except Error as e:
+    except Exception as e:
         result['error'] = f"Lỗi khi kết nối đến MySQL: {str(e)}"
         result['status'] = 'error'
-    
-    finally:
-        if 'connection' in locals() and connection.is_connected():
-            cursor.close()
-            connection.close()
-            result['connection_closed'] = "Kết nối MySQL đã đóng"
 
     return result
 
