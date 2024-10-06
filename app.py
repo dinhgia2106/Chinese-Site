@@ -774,47 +774,56 @@ def add_to_whitelist(user_id):
 
 def translate_and_analyze(text):
     prompt = f"""
-    Bạn là một chuyên gia ngôn ngữ Trung - Việt, hãy thực hiện các yêu cầu sau:
+        Bạn là một chuyên gia ngôn ngữ Trung - Việt, hãy thực hiện các yêu cầu sau:
 
-    Đọc đoạn văn bản sau:
-    {text}
+        Đọc đoạn văn bản sau:
+        {text}
 
-    1. Dịch toàn bộ đoạn văn bản sang tiếng Việt.
-    2. Cung cấp phiên âm pinyin cho toàn bộ đoạn văn bản.
-    3. Nếu đoạn văn bản có 10 từ trở xuống, hãy phân tích từng chữ Hán theo các yêu cầu sau:
-       - Nghĩa Hán Việt
-       - Bộ thủ tạo thành chữ đó
-       - Pinyin
-       - Ý nghĩa tiếng Việt
-       - Gợi ý cách nhớ
-       - Cách sử dụng
-       - Các từ liên quan
+        Phân tích đoạn văn và câu văn tiếng Trung:
 
-    Trình bày kết quả theo định dạng sau:
+        Nếu đoạn văn bản nhiều hơn 10 từ thì chỉ cần trả về bản dịch với cấu trúc sau (nếu là tiếng Trung, nếu không phải thì trả về kết quả: "Vui lòng nhập tiếng Trung"):
 
-    Bản dịch: [Bản dịch tiếng Việt]
-    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
+        Đây là nội dung bản dịch:
+        - [Bản dịch tiếng Việt]
 
-    Nếu đoạn văn có 10 từ trở xuống, thực hiện phần sau:
+        Nếu đoạn văn bản có 10 từ trở xuống thì thực hiện các bước sau:
 
-    Phân tích từng chữ:
-    Chữ [Chữ Hán]:
-    - Nghĩa Hán Việt: [Nghĩa]
-    - Bộ thủ: [Danh sách bộ thủ]
-    - Pinyin: [Cách đọc]
-    - Ý nghĩa tiếng Việt: [Ý nghĩa]
-    - Gợi ý cách nhớ: [Gợi ý]
-    - Cách sử dụng: [Cách sử dụng]
-    - Các từ liên quan: [Các từ liên quan]
-    [Chữ Hán tiếp theo]
+        Dịch toàn bộ đoạn văn bản sang tiếng Việt.
+        Phân tích từng chữ Hán theo các yêu cầu sau:
+        Nghĩa Hán Việt
+        Bộ thủ tạo thành chữ đó
+        Pinyin
+        Ý nghĩa tiếng Việt
+        Gợi ý cách nhớ
+        Cách sử dụng
+        Các từ liên quan
+        Sau đó hãy kiểm tra kết quả step by step và trả về kết quả cuối cùng.
+        Trình bày kết quả theo định dạng sau:
 
-    Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
+        Bản dịch: [Bản dịch tiếng Việt]
+        Phân tích từng chữ:
+        Chữ [Chữ Hán]:
+        - Nghĩa Hán Việt: [Nghĩa]
+        - Bộ thủ: [Danh sách bộ thủ]
+        - Pinyin: [Cách đọc]
+        - Ý nghĩa tiếng Việt: [Ý nghĩa]
+        - Gợi ý cách nhớ: [Gợi ý]
+        - Cách sử dụng: [Cách sử dụng]
+        - Các từ liên quan: [Các từ liên quan]
+        [Chữ Hán tiếp theo]
+        Chỉ cung cấp thông tin được yêu cầu, không thêm bất kỳ giải thích nào khác.
     """
 
     try:
         model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(prompt)
-        result = response.text
+        
+        # Kiểm tra xem response có thuộc tính text không
+        if hasattr(response, 'text'):
+            result = response.text
+        else:
+            # Nếu không có thuộc tính text, thử lấy nội dung từ parts
+            result = ''.join([part.text for part in response.parts])
 
         # Lưu kết quả vào cơ sở dữ liệu
         sql = "INSERT INTO translation_history (input_text, result, created_at) VALUES (%s, %s, %s)"
