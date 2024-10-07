@@ -21,7 +21,6 @@ import requests
 from time import time
 import base64
 import re
-from flask_talisman import Talisman
 
 load_dotenv()  # Load biến môi trường từ .env
 
@@ -31,7 +30,6 @@ app.secret_key = os.getenv('SECRET_KEY')
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 bcrypt = Bcrypt(app)
-Talisman(app, content_security_policy=None)
 
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
 app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
