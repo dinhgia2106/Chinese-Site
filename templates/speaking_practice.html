@@ -228,14 +228,23 @@
 
     async function toggleRecording() {
       if (!isRecording) {
-        startRecording();
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+          });
+          startRecording(stream);
+        } catch (err) {
+          console.error("Lỗi khi truy cập microphone:", err);
+          alert(
+            "Không thể truy cập microphone. Vui lòng kiểm tra quyền truy cập và thử lại."
+          );
+        }
       } else {
         stopRecording();
       }
     }
 
-    async function startRecording() {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    function startRecording(stream) {
       mediaRecorder = new MediaRecorder(stream);
 
       mediaRecorder.ondataavailable = (event) => {
