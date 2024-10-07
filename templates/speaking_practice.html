@@ -92,6 +92,7 @@
   let vocabData = {};
   let usedSentences = new Set();
   let currentHSKLevel = 1;
+  let recordingTimer;
 
   document.addEventListener("DOMContentLoaded", function () {
     const chatMessages = document.getElementById("chat-messages");
@@ -226,42 +227,52 @@
 
     recordButton.addEventListener("click", toggleRecording);
 
-    async function toggleRecording() {
+    function toggleRecording() {
       if (!isRecording) {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({
-            audio: true,
-          });
-          startRecording(stream);
-        } catch (err) {
-          console.error("Lỗi khi truy cập microphone:", err);
-          alert(
-            "Không thể truy cập microphone. Vui lòng kiểm tra quyền truy cập và thử lại."
-          );
-        }
+        startRecording();
       } else {
         stopRecording();
       }
     }
 
-    function startRecording(stream) {
-      mediaRecorder = new MediaRecorder(stream);
+    async function startRecording() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+        });
+        mediaRecorder = new MediaRecorder(stream);
 
-      mediaRecorder.ondataavailable = (event) => {
-        audioChunks.push(event.data);
-      };
+        mediaRecorder.ondataavailable = (event) => {
+          audioChunks.push(event.data);
+        };
 
-      mediaRecorder.onstop = sendAudioToServer;
+        mediaRecorder.onstop = sendAudioToServer;
 
-      mediaRecorder.start();
-      isRecording = true;
-      recordButton.innerHTML = '<i class="fas fa-stop"></i>';
+        mediaRecorder.start();
+        isRecording = true;
+        recordButton.innerHTML = '<i class="fas fa-stop"></i>';
+
+        // Bắt đầu đếm thời gian và tự động dừng sau 10 giây
+        recordingTimer = setTimeout(() => {
+          if (isRecording) {
+            stopRecording();
+          }
+        }, 10000);
+      } catch (err) {
+        console.error("Lỗi khi truy cập microphone:", err);
+        alert(
+          "Không thể truy cập microphone. Vui lòng kiểm tra quyền truy cập và thử lại."
+        );
+      }
     }
 
     function stopRecording() {
-      mediaRecorder.stop();
-      isRecording = false;
-      recordButton.innerHTML = '<i class="fas fa-microphone"></i>';
+      if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+        isRecording = false;
+        recordButton.style.display = "none"; // Ẩn nút sau khi dừng ghi âm
+        clearTimeout(recordingTimer); // Xóa bộ đếm thời gian
+      }
     }
 
     function sendAudioToServer() {
@@ -280,30 +291,20 @@
             addMessage("Error: " + data.error, "bot");
           } else {
             addMessage(data.transcript, "user");
-
-            // Xử lý và định dạng phản hồi
-            let formattedFeedback = data.feedback;
-            formattedFeedback = formattedFeedback.replace(
-              "Nhận xét:",
-              "<br><strong>Nhận xét:</strong><br>"
-            );
-            formattedFeedback = formattedFeedback.replace(
-              "Cách sửa:",
-              "<br><strong>Cách sửa:</strong><br>"
-            );
-
-            addMessage(formattedFeedback, "bot");
+            addMessage(data.feedback, "bot");
             if (data.feedback.includes("Tuyệt vời!")) {
               getNextSentence();
             }
           }
-
-          // Prepare for the next recording
+          recordButton.style.display = "inline-block"; // Hiện lại nút sau khi nhận kết quả
+          recordButton.innerHTML = '<i class="fas fa-microphone"></i>'; // Đặt lại icon microphone
           audioChunks = [];
         })
         .catch((error) => {
           console.error("Error:", error);
           addMessage("An error occurred while sending the audio", "bot");
+          recordButton.style.display = "inline-block"; // Hiện lại nút nếu có lỗi
+          recordButton.innerHTML = '<i class="fas fa-microphone"></i>'; // Đặt lại icon microphone
         });
     }
 
