@@ -1173,7 +1173,7 @@ def speaking_practice():
 
                 Câu yêu cầu đọc: "{text_to_read}"
                 Câu người học đã đọc: "{transcript}"
-                Chuyển cả 2 sang pinyin vì chỉ kiểm tra phát âm (Lưu ý: pinyin là để bạn kiểm tra, sau khi kiểm tra xong thì không cần dùng pinyin nữa)
+                Chuyển cả 2 sang pinyin vì chỉ kiểm tra phát âm ví dụ như "他" và "她" đều đọc là "tā" nên người học đọc vẫn đúng (Lưu ý: pinyin là để bạn kiểm tra, sau khi kiểm tra xong thì không cần dùng pinyin nữa)
                 Hãy kiểm tra và đưa ra phản hồi theo mẫu sau:
 
                 Nếu đọc sai:
