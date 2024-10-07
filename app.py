@@ -604,6 +604,12 @@ def login():
         if user and bcrypt.check_password_hash(user['password'], password):
             session['user_id'] = user['id']
             session['is_admin'] = user['is_admin']
+            
+            # Truy vấn lại địa chỉ email từ cột email của bảng users
+            mycursor.execute("SELECT email FROM users WHERE id = %s", (user['id'],))
+            email_result = mycursor.fetchone()
+            if email_result:
+                session['user_email'] = email_result['email']
 
             # Reset translation count and last reset time
             now = datetime.now()
