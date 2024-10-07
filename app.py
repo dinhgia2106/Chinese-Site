@@ -586,11 +586,19 @@ def verify_email(token):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
+        username_or_email = request.form['username']
         password = request.form['password']
 
-        mycursor.execute(
-            "SELECT * FROM users WHERE username = %s", (username,))
+        # Kiểm tra xem đầu vào là email hay username
+        if '@' in username_or_email:
+            # Nếu là email
+            mycursor.execute(
+                "SELECT * FROM users WHERE email = %s", (username_or_email,))
+        else:
+            # Nếu là username
+            mycursor.execute(
+                "SELECT * FROM users WHERE username = %s", (username_or_email,))
+        
         user = mycursor.fetchone()
 
         if user and bcrypt.check_password_hash(user['password'], password):
