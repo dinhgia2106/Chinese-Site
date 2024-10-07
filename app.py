@@ -21,12 +21,10 @@ import requests
 from time import time
 import base64
 import re
-from flask_talisman import Talisman
 
 load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
-Talisman(app, content_security_policy=None)
 app.secret_key = os.getenv('SECRET_KEY')
 # Sử dụng server-side session để lưu trữ dữ liệu lớn
 app.config['SESSION_TYPE'] = 'filesystem'
