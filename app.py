@@ -21,16 +21,8 @@ import requests
 from time import time
 import base64
 import re
-import ssl
+from flask_talisman import Talisman
 
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-except AttributeError:
-    # Legacy Python that doesn't verify HTTPS certificates by default
-    pass
-else:
-    # Handle target environment that doesn't support HTTPS verification
-    ssl._create_default_https_context = _create_unverified_https_context
 load_dotenv()  # Load biến môi trường từ .env
 
 app = Flask(__name__)
@@ -39,6 +31,7 @@ app.secret_key = os.getenv('SECRET_KEY')
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 bcrypt = Bcrypt(app)
+Talisman(app, content_security_policy=None)
 
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
 app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
