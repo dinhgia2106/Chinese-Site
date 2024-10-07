@@ -100,7 +100,7 @@ def get_new_sentence():
     result = None
 
     while True:
-        prompt = """Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
+        prompt = f"""Bạn là 1 người trung. Tôi là người Việt và tôi đặt câu hỏi như sau: Hãy tạo một câu tiếng Trung ngắn, hoàn toàn ngẫu nhiên và không giới hạn trong bất kỳ chủ đề nào nhưng dành cho người Việt học tiếng Trung, bao gồm:
 
 - Chữ Hán
 - Pinyin
@@ -118,6 +118,9 @@ Pinyin: ...
 Nghĩa tiếng Việt: ...
 
 Không thêm bất kỳ văn bản nào khác.
+
+Lưu ý: Câu được tạo ra phải khác với các câu sau đây:
+{', '.join(existing_sentences)}
 """
         try:
             model = genai.GenerativeModel("gemini-1.5-flash")
