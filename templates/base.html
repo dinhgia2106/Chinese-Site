@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Ứng dụng dịch và học bộ thủ{% endblock %}</title>
+    <title>{% block title %}Tiếng Trung TG{% endblock %}</title>
     <!-- Thêm liên kết đến Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -49,10 +49,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('learn') }}">Học</a>
+              <a class="nav-link" href="{{ url_for('learn') }}">Học BT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('test') }}">Kiểm Tra</a>
+              <a class="nav-link" href="{{ url_for('test') }}">Kiểm Tra BT</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('all_radicals') }}"
@@ -62,6 +62,11 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('translate') }}"
                 >Dịch và Tra từ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('speaking_practice') }}"
+                >Luyện nói</a
               >
             </li>
             {% if user_is_authenticated and not user_is_whitelisted() %}

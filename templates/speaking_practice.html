@@ -1,0 +1,310 @@
+{% extends "base.html" %} {% block content %}
+<div class="chat-container">
+  <div id="chat-messages">
+    <div class="message bot" id="hsk-selection">
+      Chào mừng đến với phần luyện nói! Hãy chọn cấp độ HSK:
+      <select id="hsk-level">
+        <option value="1">HSK 1</option>
+        <option value="2">HSK 2</option>
+        <option value="3">HSK 3</option>
+        <option value="4">HSK 4</option>
+        <option value="5">HSK 5</option>
+        <option value="6">HSK 6</option>
+      </select>
+    </div>
+  </div>
+  <div class="input-area">
+    <button id="record-button" class="btn btn-primary">
+      <i class="fas fa-microphone"></i>
+    </button>
+    <button id="hint-button" class="btn btn-secondary">Gợi ý Pinyin</button>
+  </div>
+</div>
+
+<style>
+  .chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+
+  #chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .message {
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    clear: both;
+  }
+
+  .bot {
+    background-color: #e0e0e0;
+    float: left;
+  }
+
+  .user {
+    background-color: #007bff;
+    color: white;
+    float: right;
+  }
+
+  .input-area {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #hsk-selection {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  #hsk-level {
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+
+  #hint-button {
+    background-color: #6c757d;
+    color: white;
+  }
+</style>
+
+<script>
+  let mediaRecorder;
+  let audioChunks = [];
+  let isRecording = false;
+  let currentSentence = null;
+  let vocabData = {};
+  let usedSentences = new Set();
+  let currentHSKLevel = 1;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const chatMessages = document.getElementById("chat-messages");
+    const recordButton = document.getElementById("record-button");
+    const hskLevelSelect = document.getElementById("hsk-level");
+    const hintButton = document.getElementById("hint-button");
+
+    // Tải dữ liệu từ vocab.json
+    fetch("/static/vocab.json")
+      .then((response) => response.json())
+      .then((data) => {
+        vocabData = data;
+        clearMessages(); // Thêm dòng này để hiển thị tin nhắn chào mừng ban đầu
+        getNextSentence();
+      });
+
+    function clearMessages() {
+      // Xóa tất cả tin nhắn
+      chatMessages.innerHTML = "";
+      // Thêm lại phần chọn bậc HSK
+      addHSKSelection();
+    }
+
+    function addHSKSelection() {
+      const hskSelectionHTML = `
+        <div class="message bot" id="hsk-selection">
+          Chào mừng đến với phần luyện nói! Hãy chọn cấp độ HSK:
+          <select id="hsk-level">
+            <option value="1" ${
+              currentHSKLevel === 1 ? "selected" : ""
+            }>HSK 1</option>
+            <option value="2" ${
+              currentHSKLevel === 2 ? "selected" : ""
+            }>HSK 2</option>
+            <option value="3" ${
+              currentHSKLevel === 3 ? "selected" : ""
+            }>HSK 3</option>
+            <option value="4" ${
+              currentHSKLevel === 4 ? "selected" : ""
+            }>HSK 4</option>
+            <option value="5" ${
+              currentHSKLevel === 5 ? "selected" : ""
+            }>HSK 5</option>
+            <option value="6" ${
+              currentHSKLevel === 6 ? "selected" : ""
+            }>HSK 6</option>
+          </select>
+        </div>
+      `;
+      chatMessages.innerHTML += hskSelectionHTML;
+      // Cập nhật lại sự kiện cho select mới
+      document
+        .getElementById("hsk-level")
+        .addEventListener("change", function () {
+          currentHSKLevel = parseInt(this.value);
+          usedSentences.clear();
+          clearMessages();
+          getNextSentence();
+        });
+    }
+
+    function getNextSentence() {
+      const hskKey = `HSK${currentHSKLevel}`;
+      const availableSentences = vocabData[hskKey].filter(
+        (item) => !usedSentences.has(item.id)
+      );
+
+      if (availableSentences.length === 0) {
+        const completionMessage =
+          "Chúc mừng! Bạn đã hoàn thành tất cả câu ở cấp độ này. Hãy chọn một cấp độ khác để tiếp tục.";
+        addMessage(completionMessage + addHSKSelectionInline(), "bot");
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * availableSentences.length);
+      currentSentence = availableSentences[randomIndex];
+      usedSentences.add(currentSentence.id);
+
+      addMessage("Hãy đọc câu sau:", "bot");
+      addMessage(currentSentence.sentence, "bot");
+
+      // Ẩn nút gợi ý Pinyin khi hiển thị câu mới
+      hintButton.style.display = "inline-block";
+    }
+
+    function addHSKSelectionInline() {
+      return `
+        <div id="hsk-selection" style="margin-top: 10px;">
+          Chọn cấp độ HSK:
+          <select id="hsk-level">
+            <option value="1" ${
+              currentHSKLevel === 1 ? "selected" : ""
+            }>HSK 1</option>
+            <option value="2" ${
+              currentHSKLevel === 2 ? "selected" : ""
+            }>HSK 2</option>
+            <option value="3" ${
+              currentHSKLevel === 3 ? "selected" : ""
+            }>HSK 3</option>
+            <option value="4" ${
+              currentHSKLevel === 4 ? "selected" : ""
+            }>HSK 4</option>
+            <option value="5" ${
+              currentHSKLevel === 5 ? "selected" : ""
+            }>HSK 5</option>
+            <option value="6" ${
+              currentHSKLevel === 6 ? "selected" : ""
+            }>HSK 6</option>
+          </select>
+        </div>
+      `;
+    }
+
+    document.addEventListener("click", function (e) {
+      if (e.target && e.target.id === "hsk-level") {
+        e.target.addEventListener("change", function () {
+          currentHSKLevel = parseInt(this.value);
+          usedSentences.clear();
+          clearMessages();
+          getNextSentence();
+        });
+      }
+    });
+
+    function addMessage(message, sender) {
+      const messageElement = document.createElement("div");
+      messageElement.classList.add("message", sender);
+      messageElement.innerHTML = message;
+      chatMessages.appendChild(messageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    recordButton.addEventListener("click", toggleRecording);
+
+    async function toggleRecording() {
+      if (!isRecording) {
+        startRecording();
+      } else {
+        stopRecording();
+      }
+    }
+
+    async function startRecording() {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+
+      mediaRecorder.ondataavailable = (event) => {
+        audioChunks.push(event.data);
+      };
+
+      mediaRecorder.onstop = sendAudioToServer;
+
+      mediaRecorder.start();
+      isRecording = true;
+      recordButton.innerHTML = '<i class="fas fa-stop"></i>';
+    }
+
+    function stopRecording() {
+      mediaRecorder.stop();
+      isRecording = false;
+      recordButton.innerHTML = '<i class="fas fa-microphone"></i>';
+    }
+
+    function sendAudioToServer() {
+      const audioBlob = new Blob(audioChunks, { type: "audio/mp3" });
+      const formData = new FormData();
+      formData.append("audio", audioBlob, "recording.mp3");
+      formData.append("text_to_read", currentSentence.sentence);
+
+      fetch("/speaking-practice", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.error) {
+            addMessage("Error: " + data.error, "bot");
+          } else {
+            addMessage(data.transcript, "user");
+
+            // Xử lý và định dạng phản hồi
+            let formattedFeedback = data.feedback;
+            formattedFeedback = formattedFeedback.replace(
+              "Nhận xét:",
+              "<br><strong>Nhận xét:</strong><br>"
+            );
+            formattedFeedback = formattedFeedback.replace(
+              "Cách sửa:",
+              "<br><strong>Cách sửa:</strong><br>"
+            );
+
+            addMessage(formattedFeedback, "bot");
+            if (data.feedback.includes("Tuyệt vời!")) {
+              getNextSentence();
+            }
+          }
+
+          // Prepare for the next recording
+          audioChunks = [];
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          addMessage("An error occurred while sending the audio", "bot");
+        });
+    }
+
+    hintButton.addEventListener("click", function () {
+      if (currentSentence) {
+        addMessage(`Pinyin: ${currentSentence.pinyin}`, "bot");
+        // Ẩn nút gợi ý sau khi đã hiển thị
+        hintButton.style.display = "none";
+      }
+    });
+  });
+</script>
+{% endblock %}
