@@ -43,6 +43,7 @@ content %}
     />
     <input type="hidden" name="action" value="save_answer" />
   </form>
+  <button id="clear-answer-button" class="button">Xóa câu trả lời</button>
   <button
     id="mark-question-button"
     class="button {% if current_question.is_marked %}marked{% endif %}"
@@ -60,56 +61,84 @@ content %}
     .querySelectorAll('input[name="selected_choice"]')
     .forEach(function (input) {
       input.addEventListener("change", function () {
+        let questionIndex = document.querySelector(
+          'input[name="question_index"]'
+        ).value;
+
+        // Cập nhật giao diện ngay lập tức
+        document
+          .querySelector(`.question-item:nth-child(${questionIndex})`)
+          .classList.add("answered");
+
         let formData = new FormData();
         formData.append("action", "save_answer");
-        formData.append(
-          "question_index",
-          document.querySelector('input[name="question_index"]').value
-        );
+        formData.append("question_index", questionIndex);
         formData.append("selected_choice", this.value);
 
         fetch(window.location.href, { method: "POST", body: formData })
           .then((response) => response.json())
-          .then((data) => {
-            document
-              .querySelector(".question-item.answered")
-              ?.classList.remove("answered");
-            document
-              .querySelector(`.question-item:nth-child(${data.question_index})`)
-              .classList.add("answered");
-          })
-          .catch((error) => console.error("Error:", error));
+          .catch((error) => console.error("Lỗi:", error));
       });
     });
 
   document
     .getElementById("mark-question-button")
     .addEventListener("click", function () {
+      let questionIndex = document.querySelector(
+        'input[name="question_index"]'
+      ).value;
+      let questionItem = document.querySelector(
+        `.question-item:nth-child(${questionIndex})`
+      );
+
+      // Cập nhật giao diện ngay lập tức
+      if (this.classList.contains("marked")) {
+        this.classList.remove("marked");
+        this.textContent = "Đánh dấu câu hỏi";
+        questionItem.classList.remove("marked");
+      } else {
+        this.classList.add("marked");
+        this.textContent = "Bỏ đánh dấu";
+        questionItem.classList.add("marked");
+      }
+
       let formData = new FormData();
       formData.append("action", "mark_question");
-      formData.append(
-        "question_index",
-        document.querySelector('input[name="question_index"]').value
-      );
+      formData.append("question_index", questionIndex);
 
       fetch(window.location.href, { method: "POST", body: formData })
         .then((response) => response.json())
-        .then((data) => {
-          if (data.is_marked) {
-            this.classList.add("marked");
-            this.textContent = "Bỏ đánh dấu";
-            document
-              .querySelector(`.question-item:nth-child(${data.question_index})`)
-              .classList.add("marked");
-          } else {
-            this.classList.remove("marked");
-            this.textContent = "Đánh dấu câu hỏi";
-            document
-              .querySelector(`.question-item:nth-child(${data.question_index})`)
-              .classList.remove("marked");
-          }
-        })
-        .catch((error) => console.error("Error:", error));
+        .catch((error) => console.error("Lỗi:", error));
+    });
+
+  document
+    .getElementById("clear-answer-button")
+    .addEventListener("click", function () {
+      let questionIndex = document.querySelector(
+        'input[name="question_index"]'
+      ).value;
+      let questionItem = document.querySelector(
+        `.question-item:nth-child(${questionIndex})`
+      );
+
+      // Bỏ chọn tất cả các radio button
+      document
+        .querySelectorAll('input[name="selected_choice"]')
+        .forEach((input) => {
+          input.checked = false;
+        });
+
+      // Xóa lớp "answered" khỏi câu hỏi trong danh sách
+      questionItem.classList.remove("answered");
+
+      // Gửi yêu cầu xóa câu trả lời đến máy chủ
+      let formData = new FormData();
+      formData.append("action", "clear_answer");
+      formData.append("question_index", questionIndex);
+
+      fetch(window.location.href, { method: "POST", body: formData })
+        .then((response) => response.json())
+        .catch((error) => console.error("Lỗi:", error));
     });
 </script>
 {% endblock %}

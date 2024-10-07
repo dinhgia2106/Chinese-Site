@@ -80,6 +80,19 @@ def remove_accents(input_str):
     nfkd_form = unicodedata.normalize('NFKD', input_str)
     return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
 
+def update_whitelist_status(user_id):
+    mycursor.execute("SELECT expiration_date, is_permanent FROM whitelist WHERE user_id = %s", (user_id,))
+    result = mycursor.fetchone()
+    if result:
+        if result['is_permanent']:
+            return True
+        expiration_date = result['expiration_date']
+        return datetime.now().date() <= expiration_date if expiration_date else False
+    return False
+
+# Cập nhật hàm is_whitelisted
+def is_whitelisted(user_id):
+    return update_whitelist_status(user_id)
 
 def get_new_sentence():
     utc_plus_7 = timezone(timedelta(hours=7))
@@ -648,9 +661,7 @@ def translate():
     is_admin = session.get('is_admin', False)
 
     if user_id:
-        mycursor.execute(
-            "SELECT * FROM whitelist WHERE user_id = %s", (user_id,))
-        is_whitelisted = mycursor.fetchone() is not None
+        is_whitelisted = update_whitelist_status(user_id)
     else:
         is_whitelisted = False
 
@@ -731,7 +742,7 @@ def admin_dashboard():
                WHEN w.id IS NOT NULL THEN 
                    CASE
                        WHEN w.is_permanent = 1 THEN 'Vĩnh viễn'
-                       ELSE CONCAT('Đến ', DATE_FORMAT(w.expiration_date, '%d-%m-%Y'))
+                       ELSE CONCAT('Đến hết ', DATE_FORMAT(w.expiration_date, '%d-%m-%Y'))
                    END
                WHEN u.last_translation_reset IS NULL OR TIMESTAMPDIFF(HOUR, u.last_translation_reset, NOW()) > 24 THEN '10'
                ELSE CAST(10 - u.translation_count AS CHAR)
@@ -971,9 +982,11 @@ def premium():
         flash('Vui lòng đăng nhập để truy cập trang Premium.', 'error')
         return redirect(url_for('login'))
     
-    if is_whitelisted(session['user_id']):
-        flash('Bạn đã là thành viên Premium.', 'info')
-        return redirect(url_for('home'))
+    mycursor.execute("SELECT * FROM whitelist WHERE user_id = %s", (session['user_id'],))
+    whitelist_info = mycursor.fetchone()
+    
+    if whitelist_info:
+        return render_template('premium_status.html', whitelist_info=whitelist_info)
     
     plans = [
         {'name': '1 tuần', 'price': 15000, 'duration': 7},
@@ -1140,14 +1153,14 @@ def format_number(value):
 def utility_processor():
     def user_is_whitelisted():
         if 'user_id' in session:
-            return is_whitelisted(session['user_id'])
+            return update_whitelist_status(session['user_id'])
         return False
     return dict(user_is_whitelisted=user_is_whitelisted, user_is_authenticated='user_id' in session)
 
 @app.route('/speaking-practice', methods=['GET', 'POST'])
 @login_required
 def speaking_practice():
-    if not is_whitelisted(session['user_id']) and not session.get('is_admin'):
+    if not update_whitelist_status(session['user_id']) and not session.get('is_admin'):
         flash('Vui lòng đăng ký Premium để có thể sử dụng chức năng này', 'error')
         return redirect(url_for('premium'))
 

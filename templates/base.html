@@ -73,11 +73,9 @@
                 >Luyện nói</a
               >
             </li>
-            {% if user_is_authenticated and not user_is_whitelisted() %}
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('premium') }}">Premium</a>
             </li>
-            {% endif %}
           </ul>
           <ul class="navbar-nav">
             {% if session.get('user_id') %} {% if session.get('is_admin') %}

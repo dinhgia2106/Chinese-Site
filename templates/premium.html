@@ -1,6 +1,14 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
   <h1 class="text-center mb-5">Gói Premium</h1>
+  {% if user_is_whitelisted() %}
+  <div class="text-center mb-4">
+    <p>Bạn đang sử dụng gói Premium.</p>
+    <a href="{{ url_for('premium') }}" class="btn btn-primary"
+      >Xem thông tin gói Premium</a
+    >
+  </div>
+  {% endif %}
   <div class="row justify-content-center">
     {% for plan in plans %}
     <div class="col-md-3 mb-4">
@@ -20,8 +28,15 @@
           <button
             onclick="loadPayment({{ loop.index0 }})"
             class="btn btn-lg btn-block btn-outline-primary mt-auto"
+            {%
+            if
+            user_is_whitelisted()
+            %}disabled{%
+            endif
+            %}
           >
-            Chọn gói
+            {% if user_is_whitelisted() %}Đã đăng ký{% else %}Chọn gói{% endif
+            %}
           </button>
         </div>
       </div>
