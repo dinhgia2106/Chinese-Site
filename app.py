@@ -80,14 +80,22 @@ def remove_accents(input_str):
     nfkd_form = unicodedata.normalize('NFKD', input_str)
     return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
 
+utc_plus_7 = timezone(timedelta(hours=7))
+
 def update_whitelist_status(user_id):
+    now = datetime.now(utc_plus_7)
     mycursor.execute("SELECT expiration_date, is_permanent FROM whitelist WHERE user_id = %s", (user_id,))
     result = mycursor.fetchone()
     if result:
         if result['is_permanent']:
             return True
         expiration_date = result['expiration_date']
-        return datetime.now().date() <= expiration_date if expiration_date else False
+        if expiration_date and now.date() > expiration_date:
+            # Xóa khỏi whitelist nếu đã hết hạn
+            mycursor.execute("DELETE FROM whitelist WHERE user_id = %s", (user_id,))
+            mydb.commit()
+            return False
+        return now.date() <= expiration_date if expiration_date else False
     return False
 
 # Cập nhật hàm is_whitelisted
@@ -982,10 +990,12 @@ def premium():
         flash('Vui lòng đăng nhập để truy cập trang Premium.', 'error')
         return redirect(url_for('login'))
     
-    mycursor.execute("SELECT * FROM whitelist WHERE user_id = %s", (session['user_id'],))
-    whitelist_info = mycursor.fetchone()
+    # Kiểm tra và cập nhật trạng thái whitelist
+    is_whitelisted = update_whitelist_status(session['user_id'])
     
-    if whitelist_info:
+    if is_whitelisted:
+        mycursor.execute("SELECT * FROM whitelist WHERE user_id = %s", (session['user_id'],))
+        whitelist_info = mycursor.fetchone()
         return render_template('premium_status.html', whitelist_info=whitelist_info)
     
     plans = [
