@@ -548,36 +548,42 @@ def register():
         email = request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
-        verification_code = request.form['verification_code']
 
-        # Kiểm tra mã xác nhận
-        if 'verification' not in session or session['verification']['email'] != email or session['verification']['code'] != verification_code:
-            flash('Mã xác nhận không hợp lệ hoặc đã hết hạn', 'error')
-            return redirect(url_for('register'))
-
-        if datetime.now() > session['verification']['expiration_time']:
-            flash('Mã xác nhận đã hết hạn. Vui lòng yêu cầu mã mới.', 'error')
-            return redirect(url_for('register'))
-
+        # Kiểm tra xem username đã tồn tại chưa
         mycursor.execute("SELECT * FROM users WHERE username = %s", (username,))
-        existing_user = mycursor.fetchone()
+        if mycursor.fetchone():
+            flash('Tên người dùng đã tồn tại', 'error')
+            return redirect(url_for('register'))
 
-        if existing_user:
-            flash('Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.', 'error')
-        elif password != confirm_password:
-            flash('Mật khẩu không khớp. Vui lòng thử lại.', 'error')
-        else:
-            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        # Kiểm tra xem email đã tồn tại chưa
+        mycursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        if mycursor.fetchone():
+            flash('Email đã được sử dụng', 'error')
+            return redirect(url_for('register'))
 
-            # Thêm người dùng vào cơ sở dữ liệu
-            sql = "INSERT INTO users (username, email, password, is_admin, translation_count, last_translation_reset) VALUES (%s, %s, %s, %s, %s, %s)"
-            val = (username, email, hashed_password, False, 0, datetime.now())
-            mycursor.execute(sql, val)
-            mydb.commit()
+        # Kiểm tra mật khẩu xác nhận
+        if password != confirm_password:
+            flash('Mật khẩu xác nhận không khớp', 'error')
+            return redirect(url_for('register'))
 
-            session.pop('verification', None)
-            flash('Tài khoản của bạn đã được tạo thành công. Bạn có thể đăng nhập ngay bây giờ.', 'success')
-            return redirect(url_for('login'))
+        # Mã hóa mật khẩu
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+        # Thêm người dùng mới vào cơ sở dữ liệu
+        sql = "INSERT INTO users (username, email, password) VALUES (%s, %s, %s)"
+        val = (username, email, hashed_password)
+        mycursor.execute(sql, val)
+        mydb.commit()
+
+        # Lấy ID của người dùng mới đăng ký
+        new_user_id = mycursor.lastrowid
+
+        # Tạo các yêu cầu thanh toán cho người dùng mới
+        mycursor.execute("CALL create_payment_requests(%s)", (new_user_id,))
+        mydb.commit()
+
+        flash('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.', 'success')
+        return redirect(url_for('login'))
 
     return render_template('register.html')
 
@@ -967,7 +973,7 @@ headers = {
     "Authorization": f"Bearer {api_token}"
 }
 
-def check_transaction(reference_code, amount):
+def check_transaction(reference_code):
     url = "https://my.sepay.vn/userapi/transactions/list"
     try:
         response = requests.get(url, headers=headers)
@@ -975,13 +981,12 @@ def check_transaction(reference_code, amount):
         data = response.json()
         
         for transaction in data.get('transactions', []):
-            if (f"TTGP {reference_code}" in transaction['transaction_content'] and 
-                float(transaction['amount_in']) == amount):
-                return True
-        return False
+            if f"TTGP {reference_code}" in transaction['transaction_content']:
+                return float(transaction['amount_in'])
+        return None
     except requests.exceptions.RequestException as e:
         print(f"Lỗi khi gọi API: {e}")
-        return False
+        return None
     
 @app.route('/premium')
 @login_required
@@ -1008,64 +1013,41 @@ def premium():
 @app.route('/payment/<int:plan_id>')
 @login_required
 def payment(plan_id):
-    if 'user_id' not in session:
-        flash('Vui lòng đăng nhập để truy cập trang thanh toán.', 'error')
-        return redirect(url_for('login'))
-    
     if is_whitelisted(session['user_id']):
         flash('Bạn đã là thành viên Premium.', 'info')
         return redirect(url_for('home'))
+    
+    mycursor.execute("""
+    SELECT * FROM payment_requests 
+    WHERE user_id = %s AND plan_id = %s AND is_active = TRUE
+    """, (session['user_id'], plan_id))
+    payment_request = mycursor.fetchone()
+    
+    if not payment_request:
+        flash('Không tìm thấy yêu cầu thanh toán hợp lệ.', 'error')
+        return redirect(url_for('premium'))
     
     plans = [
         {'id': 0, 'name': '1 tuần', 'price': 15000, 'duration': 7},
         {'id': 1, 'name': '1 tháng', 'price': 49000, 'duration': 30},
         {'id': 2, 'name': '1 năm', 'price': 499000, 'duration': 365}
     ]
-    
-    if plan_id < 0 or plan_id >= len(plans):
-        flash('Gói không hợp lệ', 'error')
-        return redirect(url_for('premium'))
-    
     selected_plan = plans[plan_id]
-    
-    # Kiểm tra xem có yêu cầu thanh toán đang chờ xử lý không
-    mycursor.execute("SELECT * FROM payment_requests WHERE user_id = %s AND status = 'pending'", (session['user_id'],))
-    existing_request = mycursor.fetchone()
-    
-    if existing_request and existing_request['plan_id'] == plan_id:
-        # Nếu có yêu cầu hiện tại với cùng gói, sử dụng lại
-        reference_code = existing_request['reference_code']
-        so_tien = existing_request['amount']
-    else:
-        # Nếu không, tạo mới hoặc cập nhật
-        reference_code = str(uuid.uuid4())[:8].upper()
-        so_tien = selected_plan['price']
-        
-        if existing_request:
-            sql = "UPDATE payment_requests SET plan_id = %s, reference_code = %s, amount = %s WHERE id = %s"
-            val = (plan_id, reference_code, so_tien, existing_request['id'])
-        else:
-            sql = "INSERT INTO payment_requests (user_id, plan_id, reference_code, amount) VALUES (%s, %s, %s, %s)"
-            val = (session['user_id'], plan_id, reference_code, so_tien)
-        
-        mycursor.execute(sql, val)
-        mydb.commit()
     
     so_tai_khoan = os.getenv('SEPAY_ACCOUNT_NUMBER')
     ngan_hang = os.getenv('SEPAY_BANK_NAME')
-    noi_dung = f"TTGP {reference_code}"
+    noi_dung = f"TTGP {payment_request['reference_code']}"
     
-    qr_link = f"https://qr.sepay.vn/img?acc={so_tai_khoan}&bank={ngan_hang}&amount={so_tien}&des={noi_dung}"
+    qr_link = f"https://qr.sepay.vn/img?acc={so_tai_khoan}&bank={ngan_hang}&amount={payment_request['amount']}&des={noi_dung}"
     
     payment_info = {
         'account_number': so_tai_khoan,
         'bank': ngan_hang,
-        'amount': so_tien,
-        'reference_code': reference_code,
+        'amount': payment_request['amount'],
+        'reference_code': payment_request['reference_code'],
         'qr_link': qr_link
     }
     
-    # Thêm no-cache headers
     response = make_response(render_template('payment.html', plan=selected_plan, payment_info=payment_info))
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     response.headers['Pragma'] = 'no-cache'
@@ -1078,7 +1060,7 @@ def check_payment_status():
     mycursor.execute("""
     SELECT * 
     FROM payment_requests 
-    WHERE user_id = %s AND status = 'pending' 
+    WHERE user_id = %s AND is_active = TRUE 
     ORDER BY id DESC LIMIT 1
     """, (session['user_id'],))
     payment_request = mycursor.fetchone()
@@ -1100,53 +1082,53 @@ def check_payment_status():
 @app.route('/verify_payment')
 @login_required
 def verify_payment():
-    if 'user_id' not in session:
-        flash('Vui lòng đăng nhập để xác nhận thanh toán.', 'error')
-        return redirect(url_for('login'))
-    
     if is_whitelisted(session['user_id']):
         flash('Bạn đã là thành viên Premium.', 'info')
         return redirect(url_for('home'))
     
-    # Lấy thông tin thanh toán từ cơ sở dữ liệu
-    mycursor.execute("SELECT * FROM payment_requests WHERE user_id = %s AND status = 'pending'", (session['user_id'],))
-    payment_request = mycursor.fetchone()
+    mycursor.execute("""
+    SELECT * FROM payment_requests 
+    WHERE user_id = %s AND is_active = TRUE
+    """, (session['user_id'],))
+    payment_requests = mycursor.fetchall()
     
-    if not payment_request:
-        flash('Không tìm thấy yêu cầu thanh toán.', 'error')
-        return redirect(url_for('premium'))
+    plans = [
+        {'id': 0, 'name': '1 tuần', 'price': 15000, 'duration': 7},
+        {'id': 1, 'name': '1 tháng', 'price': 49000, 'duration': 30},
+        {'id': 2, 'name': '1 năm', 'price': 499000, 'duration': 365}
+    ]
     
-    if check_transaction(payment_request['reference_code'], payment_request['amount']):
-        # Giao dịch thành công, thêm người dùng vào whitelist
-        plans = [
-            {'id': 0, 'name': '1 tuần', 'price': 15000, 'duration': 7},
-            {'id': 1, 'name': '1 tháng', 'price': 49000, 'duration': 30},
-            {'id': 2, 'name': '1 năm', 'price': 499000, 'duration': 365}
-        ]
-        selected_plan = plans[payment_request['plan_id']]
-        expiration_date = datetime.now() + timedelta(days=selected_plan['duration'])
-        
-        mycursor.execute("SELECT id FROM whitelist WHERE user_id = %s", (session['user_id'],))
-        existing = mycursor.fetchone()
-        
-        if existing:
-            mycursor.execute("UPDATE whitelist SET expiration_date = %s, is_permanent = 0 WHERE user_id = %s", 
-                             (expiration_date, session['user_id']))
-        else:
-            mycursor.execute("INSERT INTO whitelist (user_id, expiration_date, is_permanent) VALUES (%s, %s, 0)", 
-                             (session['user_id'], expiration_date))
-        
-        # Cập nhật trạng thái yêu cầu thanh toán
-        mycursor.execute("UPDATE payment_requests SET status = 'completed' WHERE id = %s", (payment_request['id'],))
-        mydb.commit()
-        
-        flash(f'Thanh toán thành công! Bạn đã được nâng cấp lên gói {selected_plan["name"]}.', 'success')
-        return redirect(url_for('home'))
-    else:
-        flash('Không tìm thấy giao dịch hoặc giao dịch chưa được xác nhận. Vui lòng thử lại sau.', 'error')
-        # Ở lại trang thanh toán hiện tại
-        return redirect(url_for('payment', plan_id=payment_request['plan_id']))
-
+    for payment_request in payment_requests:
+        actual_amount = check_transaction(payment_request['reference_code'])
+        if actual_amount is not None:
+            selected_plan = next((plan for plan in plans if plan['price'] <= actual_amount), None)
+            if selected_plan:
+                expiration_date = datetime.now() + timedelta(days=selected_plan['duration'])
+                
+                mycursor.execute("""
+                INSERT INTO whitelist (user_id, expiration_date, is_permanent) 
+                VALUES (%s, %s, 0) 
+                ON DUPLICATE KEY UPDATE expiration_date = %s, is_permanent = 0
+                """, (session['user_id'], expiration_date, expiration_date))
+                
+                # Cập nhật reference code mới cho tất cả các payment requests của user
+                for plan in plans:
+                    new_reference_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+                    mycursor.execute("""
+                    UPDATE payment_requests 
+                    SET reference_code = %s
+                    WHERE user_id = %s AND plan_id = %s
+                    """, (new_reference_code, session['user_id'], plan['id']))
+                
+                mydb.commit()
+                
+                flash(f'Thanh toán thành công! Bạn đã được nâng cấp lên gói {selected_plan["name"]}.', 'success')
+                return redirect(url_for('home'))
+            else:
+                flash('Số tiền thanh toán không đúng. Vui lòng liên hệ hỗ trợ.', 'error')
+                
+    flash('Không tìm thấy giao dịch hoặc số tiền không đúng. Vui lòng thử lại.', 'error')
+    return redirect(request.referrer or url_for('premium'))
 
 @app.template_filter('format_number')
 def format_number(value):
