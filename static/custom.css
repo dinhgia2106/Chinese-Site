@@ -726,3 +726,17 @@ h6 {
 .premium-status-body strong {
   font-weight: bold;
 }
+
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .navbar-toggler-icon {
+    background-image: none;
+  }
+
+  .navbar-toggler-icon i {
+    line-height: 1.5;
+  }
+}
