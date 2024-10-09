@@ -1,40 +1,27 @@
 {% extends "base.html" %} {% block content %}
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header bg-secondary text-white">
-          <h3
-            class="text-center mb-0 text-black d-flex align-items-center justify-content-center"
-          >
-            Thông tin gói
-            <img
-              src="{{ url_for('static', filename='premium_badge.png') }}"
-              alt="Premium Badge"
-              class="ml-3"
-              style="width: 120px; height: auto"
-            />
-          </h3>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title text-center mb-4">
-            Cảm ơn bạn đã sử dụng dịch vụ Premium của chúng tôi!
-          </h4>
-          {% if whitelist_info.is_permanent %}
-          <p class="text-center">Bạn đang sử dụng gói Premium vĩnh viễn.</p>
-          {% else %}
-          <p class="text-center">
-            Gói Premium của bạn sẽ hết hạn sau ngày:
-            <strong
-              >{{ whitelist_info.expiration_date.strftime('%d/%m/%Y') }}</strong
-            >
-          </p>
-          {% endif %}
-          <p class="text-center mt-4">
-            Chúc bạn có trải nghiệm học tập tuyệt vời!
-          </p>
-        </div>
-      </div>
+<div class="premium-status-container">
+  <div class="premium-status-card">
+    <div class="premium-status-header">
+      <h2>Thông tin gói</h2>
+      <img
+        src="{{ url_for('static', filename='premium_badge.png') }}"
+        alt="Premium Badge"
+        class="premium-badge"
+      />
+    </div>
+    <div class="premium-status-body">
+      <h3>Cảm ơn bạn đã sử dụng dịch vụ Premium của chúng tôi!</h3>
+      {% if whitelist_info.is_permanent %}
+      <p>Bạn đang sử dụng gói Premium vĩnh viễn.</p>
+      {% else %}
+      <p>
+        Gói Premium của bạn sẽ hết hạn sau ngày:
+        <strong
+          >{{ whitelist_info.expiration_date.strftime('%d/%m/%Y') }}</strong
+        >
+      </p>
+      {% endif %}
+      <p>Chúc bạn có trải nghiệm học tập tuyệt vời!</p>
     </div>
   </div>
 </div>

@@ -1,25 +1,27 @@
 {% extends "base.html" %} {% block content %}
-<h1>Lịch sử câu</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th class="text-center">Ngày</th>
-      <th class="text-center">Chữ Hán</th>
-      <th class="text-center">Pinyin</th>
-      <th class="text-center">Âm Hán Việt</th>
-      <th class="text-center">Nghĩa Tiếng Việt</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for sentence in sentences %}
-    <tr>
-      <td>{{ sentence.date.strftime('%d/%m/%Y') }}</td>
-      <td>{{ sentence.chinese }}</td>
-      <td>{{ sentence.pinyin }}</td>
-      <td>{{ sentence.sino_vietnamese }}</td>
-      <td>{{ sentence.vietnamese_meaning }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<h1 class="text-center mb-4">Lịch sử câu</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="text-center">Ngày</th>
+        <th class="text-center">Chữ Hán</th>
+        <th class="text-center">Pinyin</th>
+        <th class="text-center">Âm Hán Việt</th>
+        <th class="text-center">Nghĩa Tiếng Việt</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sentence in sentences %}
+      <tr>
+        <td class="text-center">{{ sentence.date.strftime('%d/%m/%Y') }}</td>
+        <td class="text-center">{{ sentence.chinese }}</td>
+        <td class="text-center">{{ sentence.pinyin }}</td>
+        <td class="text-center">{{ sentence.sino_vietnamese }}</td>
+        <td class="text-center">{{ sentence.vietnamese_meaning }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}

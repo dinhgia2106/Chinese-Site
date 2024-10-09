@@ -288,8 +288,29 @@ def next_flashcard_sequential():
 
 @app.route('/learn/random')
 def learn_random():
-    radical = random.choice(radicals)
-    return render_template('flashcard.html', radical=radical, next_url=url_for('learn_random'))
+    go_back = request.args.get('back') == '1'
+    current_radical = session.get('current_radical')
+    prev_radical = session.get('previous_radical')
+    
+    if go_back and prev_radical:
+        # Nếu quay lại, đổi chỗ current và previous
+        current_radical, prev_radical = prev_radical, current_radical
+    elif not go_back:
+        # Nếu không quay lại, chọn radical mới và cập nhật previous
+        prev_radical = current_radical
+        current_radical = random.choice(radicals)
+    
+    # Cập nhật session
+    session['current_radical'] = current_radical
+    session['previous_radical'] = prev_radical
+
+    next_url = url_for('learn_random')
+    back_url = url_for('learn_random', back=1) if prev_radical else None
+
+    return render_template('flashcard.html',
+                           radical=current_radical,
+                           next_url=next_url,
+                           back_url=back_url)
 
 # ================== Phần Kiểm Tra ==================
 

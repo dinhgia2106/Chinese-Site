@@ -1,32 +1,45 @@
-{% extends "base.html" %} {% block title %}Kiểm Tra{% endblock %} {% block
-content %}
-<h1 class="text-center mb-4">Chọn cách kiểm tra</h1>
-<h2 class="mb-3">Kiểm tra theo bộ đề:</h2>
-<div class="d-flex flex-wrap justify-content-center mb-4">
-  {% for i in range(1, total_sets + 1) %}
-  <a
-    href="{{ url_for('test_set', set_number=i, test_type='meaning') }}"
-    class="btn btn-outline-primary m-2"
-    >Bộ đề {{ i }} - Nghĩa</a
-  >
-  <a
-    href="{{ url_for('test_set', set_number=i, test_type='pinyin') }}"
-    class="btn btn-outline-secondary m-2"
-    >Bộ đề {{ i }} - Pinyin</a
-  >
-  {% endfor %}
-</div>
-<h2 class="mb-3">Hoặc kiểm tra ngẫu nhiên:</h2>
-<div class="text-center">
-  <a
-    href="{{ url_for('test_random', test_type='meaning') }}"
-    class="btn btn-custom-success btn-lg m-2"
-    >Kiểm tra ngẫu nhiên - Nghĩa</a
-  >
-  <a
-    href="{{ url_for('test_random', test_type='pinyin') }}"
-    class="btn btn-custom-info btn-lg m-2"
-    >Kiểm tra ngẫu nhiên - Pinyin</a
-  >
+{% extends "base.html" %} {% block title %}Kiểm Tra{% endblock %} {% block head
+%} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='test_selection.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="test-selection-container">
+  <div class="test-selection-options">
+    <div class="test-selection-section">
+      <h2 class="test-selection-subtitle">Kiểm tra theo bộ đề:</h2>
+      <div class="test-selection-grid">
+        {% for i in range(1, total_sets + 1) %}
+        <a
+          href="{{ url_for('test_set', set_number=i, test_type='meaning') }}"
+          class="test-selection-button test-selection-button-primary"
+          >Bộ đề {{ i }} - Nghĩa</a
+        >
+        <a
+          href="{{ url_for('test_set', set_number=i, test_type='pinyin') }}"
+          class="test-selection-button test-selection-button-secondary"
+          >Bộ đề {{ i }} - Pinyin</a
+        >
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="test-selection-section">
+      <h2 class="test-selection-subtitle">Kiểm tra ngẫu nhiên:</h2>
+      <div class="test-selection-grid">
+        <a
+          href="{{ url_for('test_random', test_type='meaning') }}"
+          class="test-selection-button test-selection-button-primary"
+          >Kiểm tra ngẫu nhiên - Nghĩa</a
+        >
+        <a
+          href="{{ url_for('test_random', test_type='pinyin') }}"
+          class="test-selection-button test-selection-button-secondary"
+          >Kiểm tra ngẫu nhiên - Pinyin</a
+        >
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

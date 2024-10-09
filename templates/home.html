@@ -1,38 +1,40 @@
 {% extends "base.html" %} {% block title %}Tiếng Trung TG{% endblock %} {% block
 content %}
-<div class="container">
-  <h1 class="text-center mb-4">Chào mừng đến với ứng dụng học tiếng Trung</h1>
+<h1 class="text-center mb-4">Chào mừng đến với ứng dụng học tiếng Trung</h1>
 
-  {% if sentence %}
-  <div class="random-sentence">
-    <h2 class="text-center">Câu tiếng Trung ngẫu nhiên hôm nay</h2>
+{% if sentence %}
+<div class="card mb-4">
+  <div class="card-header">
+    <h2 class="text-center mb-0">Câu tiếng Trung ngẫu nhiên hôm nay</h2>
+  </div>
+  <div class="card-body text-center">
     <p><strong>Chữ Hán:</strong> {{ sentence.chinese }}</p>
     <p><strong>Pinyin:</strong> {{ sentence.pinyin }}</p>
     <p><strong>Âm Hán Việt:</strong> {{ sentence.sino_vietnamese }}</p>
     <p><strong>Nghĩa tiếng Việt:</strong> {{ sentence.vietnamese_meaning }}</p>
-    <p class="text-center">
-      <a href="{{ url_for('history') }}">Xem lịch sử các câu</a>
-    </p>
+    <a href="{{ url_for('history') }}" class="btn btn-primary mt-3"
+      >Xem lịch sử các câu</a
+    >
   </div>
-  {% else %}
-  <p class="text-center">
-    Không thể tải câu tiếng Trung hôm nay. Vui lòng thử lại sau.
-  </p>
-  {% endif %}
+</div>
+{% else %}
+<p class="text-center">
+  Không thể tải câu tiếng Trung hôm nay. Vui lòng thử lại sau.
+</p>
+{% endif %}
 
-  <div class="contact-info mt-5">
-    <h3 class="text-center mb-3">Thông tin liên hệ Admin</h3>
-    <p class="text-center">
+<div class="card mt-4">
+  <div class="card-header">
+    <h3 class="text-center mb-0">Thông tin liên hệ Admin</h3>
+  </div>
+  <div class="card-body text-center">
+    <p>
       Nếu bạn cần mua premium hoặc có bất kỳ thắc mắc nào, vui lòng liên hệ:
     </p>
-    <ul class="list-unstyled text-center">
-      <li>
-        <strong>Email:</strong>
-        <a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
-      </li>
-      <!-- <li><strong>Facebook:</strong> <a href="{{ contact_info.facebook }}" target="_blank">{{ contact_info.facebook }}</a></li> -->
-      <!-- <li><strong>Số điện thoại:</strong> {{ contact_info.phone }}</li> -->
-    </ul>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
+    </p>
   </div>
 </div>
 {% endblock %}

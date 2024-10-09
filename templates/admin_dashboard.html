@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block content %}
-<h1>Admin Dashboard</h1>
+<div class="admin-dashboard">
+  <h1 class="text-center mb-4">Admin Dashboard</h1>
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-  <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+  <ul class="nav nav-tabs mb-3" id="adminTabs" role="tablist">
     <li class="nav-item" role="presentation">
       <button
         class="nav-link active"
@@ -32,88 +32,96 @@
       </button>
     </li>
   </ul>
-  <button id="reloadButton" class="btn btn-primary">
-    <i class="fas fa-sync-alt"></i> Tải lại dữ liệu
-  </button>
-</div>
 
-<div class="tab-content" id="adminTabsContent">
-  <div
-    class="tab-pane fade show active"
-    id="users"
-    role="tabpanel"
-    aria-labelledby="users-tab"
-  >
-    <div class="table-responsive">
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th class="text-center" style="width: 5%">ID</th>
-            <th class="text-center" style="width: 20%">Tên người dùng</th>
-            <th class="text-center" style="width: 25%">Email</th>
-            <th class="text-center" style="width: 20%">Trạng thái</th>
-            <th class="text-center" style="width: 30%">Hành động</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for user in users %}
-          <tr>
-            <td class="text-center">{{ user.id }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-            <td class="text-center">{{ user.remaining_translations }}</td>
-            <td class="text-center">
-              {% if not user.is_admin %} {% if user.whitelist_id %}
-              <form
-                method="POST"
-                action="{{ url_for('remove_from_whitelist', whitelist_id=user.whitelist_id) }}"
-              >
-                <button type="submit" class="btn btn-danger btn-sm">
-                  Xóa khỏi Whitelist
+  <div class="tab-content" id="adminTabsContent">
+    <div
+      class="tab-pane fade show active"
+      id="users"
+      role="tabpanel"
+      aria-labelledby="users-tab"
+    >
+      <button id="reloadButton" class="btn btn-primary mb-3">
+        <i class="fas fa-sync-alt"></i> Tải lại dữ liệu
+      </button>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 5%">ID</th>
+              <th class="text-center" style="width: 20%">Tên người dùng</th>
+              <th class="text-center" style="width: 25%">Email</th>
+              <th class="text-center" style="width: 20%">Trạng thái</th>
+              <th class="text-center" style="width: 30%">Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td class="text-center">{{ user.id }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td class="text-center">{{ user.remaining_translations }}</td>
+              <td class="text-center">
+                {% if not user.is_admin %} {% if user.whitelist_id %}
+                <form
+                  method="POST"
+                  action="{{ url_for('remove_from_whitelist', whitelist_id=user.whitelist_id) }}"
+                >
+                  <button type="submit" class="btn btn-danger btn-sm">
+                    Xóa khỏi Whitelist
+                  </button>
+                </form>
+                {% else %}
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#whitelistModal{{ user.id }}"
+                >
+                  Thêm vào Whitelist
                 </button>
-              </form>
-              {% else %}
-              <button
-                type="button"
-                class="btn btn-primary btn-sm"
-                data-toggle="modal"
-                data-target="#whitelistModal{{ user.id }}"
-              >
-                Thêm vào Whitelist
-              </button>
-              {% endif %} {% endif %}
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+                {% endif %} {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
 
-  <div
-    class="tab-pane fade"
-    id="history"
-    role="tabpanel"
-    aria-labelledby="history-tab"
-  >
-    <table class="table table-bordered table-striped table-hover">
-      <thead>
-        <tr>
-          <th class="text-center" style="width: 15%">Thời gian</th>
-          <th class="text-center" style="width: 20%">Văn bản gốc</th>
-          <th class="text-center" style="width: 65%">Kết quả</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in history %}
-        <tr>
-          <td class="text-center">{{ item.created_at }}</td>
-          <td>{{ item.input_text }}</td>
-          <td>{{ item.result }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <div
+      class="tab-pane fade"
+      id="history"
+      role="tabpanel"
+      aria-labelledby="history-tab"
+    >
+      <h3>Lịch sử dịch</h3>
+      <div
+        class="table-responsive"
+        id="history"
+        role="tabpanel"
+        aria-labelledby="history-tab"
+      >
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 15%">Thời gian</th>
+              <th class="text-center" style="width: 20%">Văn bản gốc</th>
+              <th class="text-center" style="width: 65%">Kết quả</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in history %}
+            <tr>
+              <td class="text-center">{{ item.created_at }}</td>
+              <td>{{ item.input_text }}</td>
+              <td>{{ item.result }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 

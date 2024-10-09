@@ -1,61 +1,73 @@
 {% extends "base.html" %} {% block title %}Bài Kiểm Tra{% endblock %} {% block
 content %}
-<h1>
-  {% if set_number %} Bài Kiểm Tra - Bộ đề {{ set_number }} - {% if test_type ==
-  'meaning' %}Nghĩa{% else %}Pinyin{% endif %} {% else %} Kiểm Tra Ngẫu Nhiên -
-  {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{% endif %} {% endif %}
-</h1>
-<div class="question-list">
-  <h2>Danh sách câu hỏi:</h2>
-  <div class="questions">
-    {% for question in test_data.questions %}
-    <a
-      href="{% if set_number %}{{ url_for('test_set', set_number=set_number, q=question.index, test_type=test_type) }}{% else %}{{ url_for('test_random', q=question.index, test_type=test_type) }}{% endif %}"
-      class="question-item {% if question.selected_choice %}answered{% endif %} {% if question.is_marked %}marked{% endif %}"
-    >
-      Câu {{ question.index }}
-    </a>
-    {% endfor %}
-  </div>
-</div>
-<div class="current-question">
-  <h2>
-    Câu {{ current_question.index }}: Bộ thủ {{ current_question.radical }}
-  </h2>
-  {% if test_type == 'meaning' %}
-  <p>Chọn nghĩa đúng của bộ thủ này:</p>
-  {% else %}
-  <p>Chọn pinyin đúng của bộ thủ này:</p>
-  {% endif %}
-  <form id="question-form" method="post">
-    {% for choice in current_question.choices %}
-    <div class="choice">
-      <input type="radio" name="selected_choice" value="{{ choice }}"
-      id="choice{{ loop.index }}" {% if current_question.selected_choice ==
-      choice %}checked{% endif %}>
-      <label for="choice{{ loop.index }}">{{ choice }}</label>
-    </div>
-    {% endfor %}
-    <input
-      type="hidden"
-      name="question_index"
-      value="{{ current_question.index }}"
-    />
-    <input type="hidden" name="action" value="save_answer" />
-  </form>
-  <button id="clear-answer-button" class="button">Xóa câu trả lời</button>
-  <button
-    id="mark-question-button"
-    class="button {% if current_question.is_marked %}marked{% endif %}"
-  >
-    {% if current_question.is_marked %}Bỏ đánh dấu{% else %}Đánh dấu câu hỏi{%
+<div class="test-container">
+  <h1 class="text-center mb-4">
+    {% if set_number %} Bài Kiểm Tra - Bộ đề {{ set_number }} - {% if test_type
+    == 'meaning' %}Nghĩa{% else %}Pinyin{% endif %} {% else %} Kiểm Tra Ngẫu
+    Nhiên - {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{% endif %} {%
     endif %}
-  </button>
+  </h1>
+
+  <div class="test-content">
+    <div class="question-list">
+      <h2>Danh sách câu hỏi:</h2>
+      <div class="question-grid">
+        {% for question in test_data.questions %}
+        <a
+          href="{% if set_number %}{{ url_for('test_set', set_number=set_number, q=question.index, test_type=test_type) }}{% else %}{{ url_for('test_random', q=question.index, test_type=test_type) }}{% endif %}"
+          class="question-item {% if question.selected_choice %}answered{% endif %} {% if question.is_marked %}marked{% endif %}"
+        >
+          {{ question.index }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="current-question">
+      <h2>
+        Câu {{ current_question.index }}: Bộ thủ {{ current_question.radical }}
+      </h2>
+      <p>
+        {% if test_type == 'meaning' %}Chọn nghĩa đúng của bộ thủ này:{% else
+        %}Chọn pinyin đúng của bộ thủ này:{% endif %}
+      </p>
+      <form id="question-form" method="post">
+        {% for choice in current_question.choices %}
+        <div class="choice">
+          <input type="radio" name="selected_choice" value="{{ choice }}"
+          id="choice{{ loop.index }}" {% if current_question.selected_choice ==
+          choice %}checked{% endif %}>
+          <label for="choice{{ loop.index }}">{{ choice }}</label>
+        </div>
+        {% endfor %}
+        <input
+          type="hidden"
+          name="question_index"
+          value="{{ current_question.index }}"
+        />
+        <input type="hidden" name="action" value="save_answer" />
+      </form>
+      <div class="question-actions">
+        <button id="clear-answer-button" class="nav-button">
+          Xóa câu trả lời
+        </button>
+        <button
+          id="mark-question-button"
+          class="nav-button {% if current_question.is_marked %}marked{% endif %}"
+        >
+          {% if current_question.is_marked %}Bỏ đánh dấu{% else %}Đánh dấu câu
+          hỏi{% endif %}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <form method="post" class="submit-form">
+    <input type="hidden" name="action" value="submit_test" />
+    <button type="submit" class="button submit-button">Nộp bài</button>
+  </form>
 </div>
-<form method="post" class="submit-form">
-  <input type="hidden" name="action" value="submit_test" />
-  <button type="submit" class="button submit-button">Nộp bài</button>
-</form>
+
 <script>
   document
     .querySelectorAll('input[name="selected_choice"]')

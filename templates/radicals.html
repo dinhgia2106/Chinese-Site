@@ -6,60 +6,66 @@ content %}
 <form
   method="get"
   action="{{ url_for('all_radicals') }}"
-  class="form-inline mb-4 justify-content-center"
+  class="mb-4 d-flex justify-content-center"
 >
-  <input
-    type="text"
-    name="q"
-    class="form-control mr-2"
-    placeholder="Tìm kiếm bộ thủ, nghĩa hoặc Pinyin"
-    value="{{ query }}"
-  />
-  <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+  <div class="search-container">
+    <input
+      type="text"
+      name="q"
+      class="search-input"
+      placeholder="Tìm kiếm bộ thủ, nghĩa hoặc Pinyin"
+      value="{{ query }}"
+    />
+    <button type="submit" class="search-button">Tìm kiếm</button>
+  </div>
 </form>
 
 <!-- Bảng hiển thị bộ thủ -->
-<table class="table table-striped table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <th class="text-center">STT</th>
-      <th class="text-center">Bộ Thủ</th>
-      <th class="text-center">Pinyin</th>
-      <th class="text-center">Nghĩa Hán Việt</th>
-      <th class="text-center">Đọc</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for radical in radicals %}
-    <tr>
-      <td class="text-center">{{ (page - 1) * per_page + loop.index }}</td>
-      <td class="text-center" style="font-size: 24px">{{ radical.radical }}</td>
-      <td class="text-center">{{ radical.pinyin }}</td>
-      <td>{{ radical.meaning }}</td>
-      <td class="text-center">
-        <!-- Nút nghe -->
-        <button
-          onclick="playSound('audio-player-{{ loop.index }}')"
-          class="sound-button"
-        >
-          🔊
-        </button>
-        <!-- Phần âm thanh -->
-        <audio id="audio-player-{{ loop.index }}">
-          <source
-            src="{{ url_for('static', filename='audio/' + radical.pinyin + '.mp3') }}"
-            type="audio/mpeg"
-          />
-          Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
-        </audio>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-dark table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">STT</th>
+        <th class="text-center">Bộ Thủ</th>
+        <th class="text-center">Pinyin</th>
+        <th class="text-center">Nghĩa Hán Việt</th>
+        <th class="text-center">Đọc</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for radical in radicals %}
+      <tr>
+        <td class="text-center">{{ (page - 1) * per_page + loop.index }}</td>
+        <td class="text-center" style="font-size: 24px">
+          {{ radical.radical }}
+        </td>
+        <td class="text-center">{{ radical.pinyin }}</td>
+        <td>{{ radical.meaning }}</td>
+        <td class="text-center">
+          <!-- Nút nghe -->
+          <button
+            onclick="playSound('audio-player-{{ loop.index }}')"
+            class="sound-button"
+          >
+            🔊
+          </button>
+          <!-- Phần âm thanh -->
+          <audio id="audio-player-{{ loop.index }}">
+            <source
+              src="{{ url_for('static', filename='audio/' + radical.pinyin + '.mp3') }}"
+              type="audio/mpeg"
+            />
+            Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
+          </audio>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 <!-- Phân trang -->
-<nav aria-label="Page navigation">
+<nav aria-label="Page navigation" class="mt-4">
   <ul class="pagination justify-content-center">
     {% if page > 1 %}
     <li class="page-item">
@@ -102,6 +108,7 @@ content %}
     {% endif %}
   </ul>
 </nav>
+
 <script>
   function playSound(audioId) {
     var audio = document.getElementById(audioId);

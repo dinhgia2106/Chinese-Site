@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block title %}Flashcard{% endblock %} {% block
 content %}
-<h1>Flashcard</h1>
+<h1 class="text-center mb-4">Flashcard</h1>
+
 <div class="flashcard-container">
   <div class="flashcard">
     <div class="front">
@@ -17,11 +18,8 @@ content %}
   </div>
 </div>
 
-<!-- Nút nghe đặt bên ngoài thẻ flashcard -->
-<div class="sound-button-container">
-  <!-- Nút nghe -->
+<div class="sound-button-container text-center mb-4">
   <button onclick="playSound()" class="sound-button">🔊</button>
-  <!-- Phần âm thanh -->
   <audio id="audio-player">
     <source
       src="{{ url_for('static', filename='audio/' + radical.pinyin + '.mp3') }}"
@@ -31,9 +29,16 @@ content %}
   </audio>
 </div>
 
-<div class="actions">
-  <a href="{{ next_url }}" class="button">Tiếp theo</a>
-  <a href="{{ url_for('learn') }}" class="button">Quay lại</a>
+<div
+  class="navigation d-flex justify-content-center align-items-center flex-wrap"
+>
+  {% if back_url %}
+  <a href="{{ back_url }}" class="nav-button m-2">&laquo; Trước</a>
+  {% else %}
+  <span class="nav-button disabled m-2">&laquo; Trước</span>
+  {% endif %}
+
+  <a href="{{ next_url }}" class="nav-button m-2">Tiếp theo</a>
 </div>
 
 <script>

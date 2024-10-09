@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Học Theo Thứ Tự{% endblock %} {%
 block content %}
-<h1>Học Bộ Thủ - Bộ Thủ {{ index }}/{{ total }}</h1>
+<h1 class="text-center mb-4">Học Bộ Thủ - Bộ Thủ {{ index }}/{{ total }}</h1>
 
 <div class="flashcard-container">
   <div class="flashcard">
@@ -19,7 +19,7 @@ block content %}
 </div>
 
 <!-- Nút nghe được đặt bên ngoài thẻ flashcard -->
-<div class="sound-button-container">
+<div class="sound-button-container text-center mb-4">
   <!-- Nút nghe -->
   <button onclick="playSound()" class="sound-button">🔊</button>
   <!-- Phần âm thanh -->
@@ -32,21 +32,23 @@ block content %}
   </audio>
 </div>
 
-<div class="navigation">
+<div
+  class="navigation d-flex justify-content-center align-items-center flex-wrap"
+>
   {% if prev_index %}
   <a
     href="{{ url_for('learn_sequential', index=prev_index) }}"
-    class="button nav-button"
+    class="nav-button m-2"
     >&laquo; Trước</a
   >
   {% else %}
-  <span class="button nav-button disabled">&laquo; Trước</span>
+  <span class="nav-button disabled m-2">&laquo; Trước</span>
   {% endif %}
 
   <form
     action="{{ url_for('learn_sequential') }}"
     method="get"
-    class="index-form"
+    class="index-form m-2"
   >
     <label for="index-input">Chọn bộ thủ:</label>
     <input
@@ -62,11 +64,11 @@ block content %}
   {% if next_index %}
   <a
     href="{{ url_for('learn_sequential', index=next_index) }}"
-    class="button nav-button"
+    class="nav-button m-2"
     >Tiếp &raquo;</a
   >
   {% else %}
-  <span class="button nav-button disabled">Tiếp &raquo;</span>
+  <span class="nav-button disabled m-2">Tiếp &raquo;</span>
   {% endif %}
 </div>
 
