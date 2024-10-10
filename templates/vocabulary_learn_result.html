@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Học từ vựng</h1>
+  {% for word in words %}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h2 class="card-title">{{ word.Chinese }}</h2>
+      <p class="card-text">Pinyin: {{ word.Pinyin }}</p>
+      <p class="card-text">Nghĩa: {{ word.VietnameseMeaning }}</p>
+      <p class="card-text">Ví dụ: {{ word.ExampleSentence }}</p>
+      <p class="card-text">Pinyin ví dụ: {{ word.ExamplePinyin }}</p>
+      <p class="card-text">Dịch ví dụ: {{ word.ExampleTranslation }}</p>
+      {% for char in word.Chinese %} {% if word['stroke_order_' ~ char] %}
+      <img
+        src="{{ word['stroke_order_' ~ char].stroke_order_animation }}"
+        alt="Stroke order for {{ char }}"
+        style="width: 150px; height: auto"
+      />
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -755,6 +755,56 @@ h6 {
   text-decoration: none;
 }
 
-.navbar .nav-item:hover {
-  background-color: #ddd;
-  colo
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.card-body {
+  color: #fff;
+}
+
+.card-title {
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #8a2be2;
+  border-color: #8a2be2;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #9b30ff;
+  border-color: #9b30ff;
+  transform: scale(1.05);
+}
+
+.form-check-label {
+  color: #fff;
+}
+
+.border-success {
+  border-color: #28a745 !important;
+}
+
+.border-danger {
+  border-color: #dc3545 !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}

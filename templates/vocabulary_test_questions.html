@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">
+    Kiểm tra từ vựng HSK {{ hsk_level }} - Bộ đề {{ set_number }}
+  </h1>
+  <form action="{{ url_for('vocabulary_test_result') }}" method="post">
+    {% for question in questions %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ loop.index }}. {{ question.word }} ({{ question.pinyin }})
+        </h5>
+        <p class="card-text">Chọn nghĩa đúng:</p>
+        {% for answer in question.answers %}
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="answer_{{ question.id }}"
+            id="answer_{{ question.id }}_{{ loop.index }}"
+            value="{{ answer }}"
+            required
+          />
+          <label
+            class="form-check-label"
+            for="answer_{{ question.id }}_{{ loop.index }}"
+          >
+            {{ answer }}
+          </label>
+        </div>
+        {% endfor %}
+        <input
+          type="hidden"
+          name="word_{{ question.id }}"
+          value="{{ question.word }}"
+        />
+        <input
+          type="hidden"
+          name="correct_answer_{{ question.id }}"
+          value="{{ question.correct_answer }}"
+        />
+      </div>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Nộp bài</button>
+  </form>
+</div>
+{% endblock %}

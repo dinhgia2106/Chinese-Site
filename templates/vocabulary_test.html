@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Kiểm tra từ vựng</h1>
+  <form action="{{ url_for('vocabulary_test') }}" method="post">
+    <div class="form-group">
+      <label for="hsk_level">Chọn bậc HSK:</label>
+      <select class="form-control" id="hsk_level" name="hsk_level">
+        <option value="1">HSK 1</option>
+        <!-- Thêm các bậc HSK khác nếu cần -->
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Bắt đầu kiểm tra</button>
+  </form>
+</div>
+{% endblock %}

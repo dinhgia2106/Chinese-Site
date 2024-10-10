@@ -1,0 +1,554 @@
+{
+  "HSK1": [
+    {
+      "id": 1,
+      "sentence": "你好。",
+      "pinyin": "Nǐ hǎo.",
+      "meaning": "Xin chào."
+    },
+    {
+      "id": 2,
+      "sentence": "我是学生。",
+      "pinyin": "Wǒ shì xuéshēng.",
+      "meaning": "Tôi là học sinh."
+    },
+    {
+      "id": 3,
+      "sentence": "他喜欢吃苹果。",
+      "pinyin": "Tā xǐhuan chī píngguǒ.",
+      "meaning": "Anh ấy thích ăn táo."
+    },
+    {
+      "id": 4,
+      "sentence": "今天天气很好。",
+      "pinyin": "Jīntiān tiānqì hěn hǎo.",
+      "meaning": "Hôm nay thời tiết rất đẹp."
+    },
+    {
+      "id": 5,
+      "sentence": "我的朋友很多。",
+      "pinyin": "Wǒ de péngyou hěn duō.",
+      "meaning": "Tôi có nhiều bạn bè."
+    },
+    {
+      "id": 6,
+      "sentence": "这是我的书。",
+      "pinyin": "Zhè shì wǒ de shū.",
+      "meaning": "Đây là sách của tôi."
+    },
+    {
+      "id": 7,
+      "sentence": "你喝茶吗？",
+      "pinyin": "Nǐ hē chá ma?",
+      "meaning": "Bạn uống trà không?"
+    },
+    {
+      "id": 8,
+      "sentence": "我们去学校。",
+      "pinyin": "Wǒmen qù xuéxiào.",
+      "meaning": "Chúng ta đi học."
+    },
+    {
+      "id": 9,
+      "sentence": "她很漂亮。",
+      "pinyin": "Tā hěn piàoliang.",
+      "meaning": "Cô ấy rất xinh đẹp."
+    },
+    {
+      "id": 10,
+      "sentence": "我爱我的家。",
+      "pinyin": "Wǒ ài wǒ de jiā.",
+      "meaning": "Tôi yêu gia đình tôi."
+    }
+  ],
+  "HSK2": [
+    {
+      "id": 11,
+      "sentence": "我每天都去图书馆。",
+      "pinyin": "Wǒ měitiān dōu qù túshūguǎn.",
+      "meaning": "Tôi đi thư viện mỗi ngày."
+    },
+    {
+      "id": 12,
+      "sentence": "你的生日是几月几号？",
+      "pinyin": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
+      "meaning": "Sinh nhật của bạn là ngày mấy tháng mấy?"
+    },
+    {
+      "id": 13,
+      "sentence": "我们周末去看电影吧。",
+      "pinyin": "Wǒmen zhōumò qù kàn diànyǐng ba.",
+      "meaning": "Chúng ta đi xem phim vào cuối tuần nhé."
+    },
+    {
+      "id": 14,
+      "sentence": "这件衣服很便宜。",
+      "pinyin": "Zhè jiàn yīfu hěn piányi.",
+      "meaning": "Bộ quần áo này rất rẻ."
+    },
+    {
+      "id": 15,
+      "sentence": "我喜欢听音乐和跳舞。",
+      "pinyin": "Wǒ xǐhuan tīng yīnyuè hé tiàowǔ.",
+      "meaning": "Tôi thích nghe nhạc và nhảy múa."
+    },
+    {
+      "id": 16,
+      "sentence": "他的汉语说得很好。",
+      "pinyin": "Tā de hànyǔ shuō de hěn hǎo.",
+      "meaning": "Anh ấy nói tiếng Trung rất giỏi."
+    },
+    {
+      "id": 17,
+      "sentence": "我们一起吃晚饭吧。",
+      "pinyin": "Wǒmen yìqǐ chī wǎnfàn ba.",
+      "meaning": "Chúng ta cùng ăn tối nhé."
+    },
+    {
+      "id": 18,
+      "sentence": "你最喜欢什么运动？",
+      "pinyin": "Nǐ zuì xǐhuan shénme yùndòng?",
+      "meaning": "Bạn thích môn thể thao nào nhất?"
+    },
+    {
+      "id": 19,
+      "sentence": "我想去中国旅游。",
+      "pinyin": "Wǒ xiǎng qù Zhōngguó lǚyóu.",
+      "meaning": "Tôi muốn đi du lịch Trung Quốc."
+    },
+    {
+      "id": 20,
+      "sentence": "这个城市很干净。",
+      "pinyin": "Zhège chéngshì hěn gānjìng.",
+      "meaning": "Thành phố này rất sạch sẽ."
+    }
+  ],
+  "HSK3": [
+    {
+      "id": 21,
+      "sentence": "我们应该保护环境。",
+      "pinyin": "Wǒmen yīnggāi bǎohù huánjìng.",
+      "meaning": "Chúng ta nên bảo vệ môi trường."
+    },
+    {
+      "id": 22,
+      "sentence": "这个问题很难回答。",
+      "pinyin": "Zhège wèntí hěn nán huídá.",
+      "meaning": "Câu hỏi này rất khó trả lời."
+    },
+    {
+      "id": 23,
+      "sentence": "我们需要互相帮助。",
+      "pinyin": "Wǒmen xūyào hùxiāng bāngzhù.",
+      "meaning": "Chúng ta cần giúp đỡ lẫn nhau."
+    },
+    {
+      "id": 24,
+      "sentence": "你能给我一些建议吗？",
+      "pinyin": "Nǐ néng gěi wǒ yìxiē jiànyì ma?",
+      "meaning": "Bạn có thể cho tôi một số lời khuyên không?"
+    },
+    {
+      "id": 25,
+      "sentence": "我们应该珍惜时间。",
+      "pinyin": "Wǒmen yīnggāi zhēnxī shíjiān.",
+      "meaning": "Chúng ta nên trân trọng thời gian."
+    },
+    {
+      "id": 26,
+      "sentence": "这个故事很有意思。",
+      "pinyin": "Zhège gùshi hěn yǒu yìsi.",
+      "meaning": "Câu chuyện này rất thú vị."
+    },
+    {
+      "id": 27,
+      "sentence": "我们要互相尊重。",
+      "pinyin": "Wǒmen yào hùxiāng zūnzhòng.",
+      "meaning": "Chúng ta phải tôn trọng lẫn nhau."
+    },
+    {
+      "id": 28,
+      "sentence": "你对这个决定有什么看法？",
+      "pinyin": "Nǐ duì zhège juédìng yǒu shénme kànfǎ?",
+      "meaning": "Bạn có ý kiến gì về quyết định này?"
+    },
+    {
+      "id": 29,
+      "sentence": "我们应该勇于面对困难。",
+      "pinyin": "Wǒmen yīnggāi yǒngyú miànduì kùnnan.",
+      "meaning": "Chúng ta nên dũng cảm đối mặt với khó khăn."
+    },
+    {
+      "id": 30,
+      "sentence": "这个城市的交通很方便。",
+      "pinyin": "Zhège chéngshì de jiāotōng hěn fāngbiàn.",
+      "meaning": "Giao thông của thành phố này rất thuận tiện."
+    }
+  ],
+  "HSK4": [
+    {
+      "id": 31,
+      "sentence": "我们应该培养良好的学习习惯。",
+      "pinyin": "Wǒmen yīnggāi péiyǎng liánghǎo de xuéxí xíguàn.",
+      "meaning": "Chúng ta nên rèn luyện thói quen học tập tốt."
+    },
+    {
+      "id": 32,
+      "sentence": "这项研究对社会发展有重要意义。",
+      "pinyin": "Zhè xiàng yánjiū duì shèhuì fāzhǎn yǒu zhòngyào yìyì.",
+      "meaning": "Nghiên cứu này có ý nghĩa quan trọng đối với sự phát triển xã hội."
+    },
+    {
+      "id": 33,
+      "sentence": "我们需要制定一个长期的发展计划。",
+      "pinyin": "Wǒmen xūyào zhìdìng yí gè chángqī de fāzhǎn jìhuà.",
+      "meaning": "Chúng ta cần lập một kế hoạch phát triển dài hạn."
+    },
+    {
+      "id": 34,
+      "sentence": "这种新技术将彻底改变我们的生活方式。",
+      "pinyin": "Zhè zhǒng xīn jìshù jiāng chèdǐ gǎibiàn wǒmen de shēnghuó fāngshì.",
+      "meaning": "Công nghệ mới này sẽ thay đổi hoàn toàn cách sống của chúng ta."
+    },
+    {
+      "id": 35,
+      "sentence": "我们应该尊重每个人的观点和选择。",
+      "pinyin": "Wǒmen yīnggāi zūnzhòng měi gè rén de guāndiǎn hé xuǎnzé.",
+      "meaning": "Chúng ta nên tôn trọng quan điểm và lựa chọn của mỗi người."
+    },
+    {
+      "id": 36,
+      "sentence": "这个问题需要我们深入思考和讨论。",
+      "pinyin": "Zhège wèntí xūyào wǒmen shēnrù sīkǎo hé tǎolùn.",
+      "meaning": "Vấn đề này cần chúng ta suy nghĩ và thảo luận sâu sắc."
+    },
+    {
+      "id": 37,
+      "sentence": "我们应该珍惜现在拥有的一切。",
+      "pinyin": "Wǒmen yīnggāi zhēnxī xiànzài yǒngyǒu de yíqiè.",
+      "meaning": "Chúng ta nên trân trọng tất cả những gì mình đang có."
+    },
+    {
+      "id": 38,
+      "sentence": "这个城市的文化底蕴非常丰富。",
+      "pinyin": "Zhège chéngshì de wénhuà dǐyùn fēicháng fēngfù.",
+      "meaning": "Nền tảng văn hóa của thành phố này rất phong phú."
+    },
+    {
+      "id": 39,
+      "sentence": "我们需要采取措施来保护濒危物种。",
+      "pinyin": "Wǒmen xūyào cǎiqǔ cuòshī lái bǎohù bīnwēi wùzhǒng.",
+      "meaning": "Chúng ta cần thực hiện các biện pháp để bảo vệ các loài động vật có nguy cơ tuyệt chủng."
+    },
+    {
+      "id": 40,
+      "sentence": "这种新型材料具有很高的实用价值。",
+      "pinyin": "Zhè zhǒng xīnxíng cáiliào jùyǒu hěn gāo de shíyòng jiàzhí.",
+      "meaning": "Loại vật liệu mới này có giá trị thực tiễn rất cao."
+    },
+    {
+      "id": 41,
+      "sentence": "我们应该努力实现自己的梦想。",
+      "pinyin": "Wǒmen yīnggāi nǔlì shíxiàn zìjǐ de mèngxiǎng.",
+      "meaning": "Chúng ta nên cố gắng thực hiện ước mơ của mình."
+    },
+    {
+      "id": 42,
+      "sentence": "这个项目需要大量的人力和物力投入。",
+      "pinyin": "Zhège xiàngmù xūyào dàliàng de rénlì hé wùlì tóurù.",
+      "meaning": "Dự án này cần đầu tư nhiều nhân lực và vật lực."
+    },
+    {
+      "id": 43,
+      "sentence": "我们应该学会换位思考，理解他人。",
+      "pinyin": "Wǒmen yīnggāi xuéhuì huànwèi sīkǎo, lǐjiě tārén.",
+      "meaning": "Chúng ta nên học cách đặt mình vào vị trí của người khác để hiểu họ."
+    },
+    {
+      "id": 44,
+      "sentence": "这种新型能源将为环保事业做出巨大贡献。",
+      "pinyin": "Zhè zhǒng xīnxíng néngyuán jiāng wèi huánbǎo shìyè zuò chū jùdà gòngxiàn.",
+      "meaning": "Loại năng lượng mới này sẽ đóng góp to lớn cho sự nghiệp bảo vệ môi trường."
+    },
+    {
+      "id": 45,
+      "sentence": "我们需要加强国际合作，共同应对全球性挑战。",
+      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng yìngduì quánqiúxìng tiǎozhàn.",
+      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau đối mặt với những thách thức toàn cầu."
+    },
+    {
+      "id": 46,
+      "sentence": "这项政策将对经济发展产生深远影响。",
+      "pinyin": "Zhè xiàng zhèngcè jiāng duì jīngjì fāzhǎn chǎnshēng shēnyuǎn yǐngxiǎng.",
+      "meaning": "Chính sách này sẽ có ảnh hưởng sâu rộng đến sự phát triển kinh tế."
+    },
+    {
+      "id": 47,
+      "sentence": "我们应该培养批判性思维和创新能力。",
+      "pinyin": "Wǒmen yīnggāi péiyǎng pīpàn xìng sīwéi hé chuàngxīn nénglì.",
+      "meaning": "Chúng ta nên rèn luyện tư duy phản biện và khả năng sáng tạo."
+    },
+    {
+      "id": 48,
+      "sentence": "这个问题的解决需要多方面的协调和努力。",
+      "pinyin": "Zhège wèntí de jiějué xūyào duō fāngmiàn de xiétiáo hé nǔlì.",
+      "meaning": "Việc giải quyết vấn đề này cần sự phối hợp và nỗ lực từ nhiều phía."
+    },
+    {
+      "id": 49,
+      "sentence": "我们应该重视精神文明建设，提高社会道德水平。",
+      "pinyin": "Wǒmen yīnggāi zhòngshì jīngshén wénmíng jiànshè, tígāo shèhuì dàodé shuǐpíng.",
+      "meaning": "Chúng ta nên coi trọng việc xây dựng văn minh tinh thần, nâng cao đạo đức xã hội."
+    },
+    {
+      "id": 50,
+      "sentence": "这项研究成果将为医学领域带来革命性突破。",
+      "pinyin": "Zhè xiàng yánjiū chéngguǒ jiāng wèi yīxué lǐngyù dàilái gémìngxìng tūpò.",
+      "meaning": "Kết quả nghiên cứu này sẽ mang lại bước đột phá mang tính cách mạng cho lĩnh vực y học."
+    }
+  ],
+  "HSK5": [
+    {
+      "id": 51,
+      "sentence": "我们应该积极参与社会公益活动，为社会发展贡献自己的力量。",
+      "pinyin": "Wǒmen yīnggāi jījí cānyù shèhuì gōngyì huódòng, wèi shèhuì fāzhǎn gòngxiàn zìjǐ de lìliàng.",
+      "meaning": "Chúng ta nên tích cực tham gia các hoạt động công ích xã hội, đóng góp sức mình cho sự phát triển của xã hội."
+    },
+    {
+      "id": 52,
+      "sentence": "这种新型教育模式旨在培养学生的全面发展和综合素质。",
+      "pinyin": "Zhè zhǒng xīnxíng jiàoyù móshì zhǐ zài péiyǎng xuéshēng de quánmiàn fāzhǎn hé zònghé sùzhì.",
+      "meaning": "Mô hình giáo dục mới này nhằm mục đích phát triển toàn diện và nâng cao chất lượng tổng thể của học sinh."
+    },
+    {
+      "id": 53,
+      "sentence": "我们需要建立一个更加公平、公正的社会制度。",
+      "pinyin": "Wǒmen xūyào jiànlì yí gè gèng jiā gōngpíng, gōngzhèng de shèhuì zhìdù.",
+      "meaning": "Chúng ta cần xây dựng một hệ thống xã hội công bằng và công chính hơn."
+    },
+    {
+      "id": 54,
+      "sentence": "这项政策的实施将有助于促进经济的可持续发展。",
+      "pinyin": "Zhè xiàng zhèngcè de shíshī jiāng yǒu zhù yú cùjìn jīngjì de kě chíxù fāzhǎn.",
+      "meaning": "Việc thực hiện chính sách này sẽ góp phần thúc đẩy sự phát triển bền vững của nền kinh tế."
+    },
+    {
+      "id": 55,
+      "sentence": "我们应该重视文化传承，弘扬优秀传统文化。",
+      "pinyin": "Wǒmen yīnggāi zhòngshì wénhuà chuánchéng, hóngyáng yōuxiù chuántǒng wénhuà.",
+      "meaning": "Chúng ta nên coi trọng việc kế thừa văn hóa, phát huy nền văn hóa truyền thống tốt đẹp."
+    },
+    {
+      "id": 56,
+      "sentence": "这个问题的解决需要我们从多角度进行深入分析和研究。",
+      "pinyin": "Zhège wèntí de jiějué xūyào wǒmen cóng duō jiǎodù jìnxíng shēnrù fēnxī hé yánjiū.",
+      "meaning": "Việc giải quyết vấn đề này đòi hỏi chúng ta phải phân tích và nghiên cứu sâu sắc từ nhiều góc độ."
+    },
+    {
+      "id": 57,
+      "sentence": "我们应该努力营造一个和谐、包容的社会氛围。",
+      "pinyin": "Wǒmen yīnggāi nǔlì yíngzào yí gè héxié, bāoróng de shèhuì fēnwéi.",
+      "meaning": "Chúng ta nên nỗ lực tạo ra một bầu không khí xã hội hài hòa và bao dung."
+    },
+    {
+      "id": 58,
+      "sentence": "这项技术突破将为人类探索宇宙奥秘提供新的可能性。",
+      "pinyin": "Zhè xiàng jìshù tūpò jiāng wèi rénlèi tànsuǒ yǔzhòu àomì tígōng xīn de kěnéngxìng.",
+      "meaning": "Bước đột phá công nghệ này sẽ mở ra những khả năng mới cho việc khám phá bí ẩn vũ trụ của loài người."
+    },
+    {
+      "id": 59,
+      "sentence": "我们需要加强环境保护意识，推广绿色生活方式。",
+      "pinyin": "Wǒmen xūyào jiāqiáng huánjìng bǎohù yìshi, tuīguǎng lǜsè shēnghuó fāngshì.",
+      "meaning": "Chúng ta cần tăng cường ý thức bảo vệ môi trường và phổ biến lối sống xanh."
+    },
+    {
+      "id": 60,
+      "sentence": "这种新型材料的应用将为工业生产带来革命性变革。",
+      "pinyin": "Zhè zhǒng xīnxíng cáiliào de yìngyòng jiāng wèi gōngyè shēngchǎn dàilái gémìngxìng biàngé.",
+      "meaning": "Việc ứng dụng loại vật liệu mới này sẽ mang lại cuộc cách mạng trong sản xuất công nghiệp."
+    },
+    {
+      "id": 61,
+      "sentence": "我们应该重视心理健康，培养积极乐观的人生态度。",
+      "pinyin": "Wǒmen yīnggāi zhòngshì xīnlǐ jiànkāng, péiyǎng jījí lèguān de rénshēng tàidù.",
+      "meaning": "Chúng ta nên coi trọng sức khỏe tâm lý, rèn luyện thái độ sống tích cực và lạc quan."
+    },
+    {
+      "id": 62,
+      "sentence": "这项研究成果将为解决全球粮食安全问题提供新的思路。",
+      "pinyin": "Zhè xiàng yánjiū chéngguǒ jiāng wèi jiějué quánqiú liángshí ānquán wèntí tígōng xīn de sīlù.",
+      "meaning": "Kết quả nghiên cứu này sẽ cung cấp cách tiếp cận mới để giải quyết vấn đề an ninh lương thực toàn cầu."
+    },
+    {
+      "id": 63,
+      "sentence": "我们需要建立健全的法律体系，维护社会公平正义。",
+      "pinyin": "Wǒmen xūyào jiànlì jiànquán de fǎlǜ tǐxì, wéihù shèhuì gōngpíng zhèngyì.",
+      "meaning": "Chúng ta cần xây dựng một hệ thống pháp luật hoàn chỉnh để bảo vệ công bằng và công lý xã hội."
+    },
+    {
+      "id": 64,
+      "sentence": "这种新型教育理念强调学生的个性化发展和创新能力培养。",
+      "pinyin": "Zhè zhǒng xīnxíng jiàoyù lǐniàn qiángdiào xuéshēng de gèxìnghuà fāzhǎn hé chuàngxīn nénglì péiyǎng.",
+      "meaning": "Lý thuyết giáo dục mới này nhấn mạnh vào sự phát triển cá nhân hóa và bồi dưỡng khả năng sáng tạo của học sinh."
+    },
+    {
+      "id": 65,
+      "sentence": "我们应该积极推动科技创新，提高国家综合竞争力。",
+      "pinyin": "Wǒmen yīnggāi jījí tuīdòng kējì chuàngxīn, tígāo guójiā zònghé jìngzhēnglì.",
+      "meaning": "Chúng ta nên tích cực thúc đẩy đổi mới khoa học công nghệ để nâng cao sức cạnh tranh tổng thể của quốc gia."
+    },
+    {
+      "id": 66,
+      "sentence": "这项政策旨在促进区域经济均衡发展，缩小贫富差距。",
+      "pinyin": "Zhè xiàng zhèngcè zhǐ zài cùjìn qūyù jīngjì jūnhéng fāzhǎn, suōxiǎo pínfù chājù.",
+      "meaning": "Chính sách này nhằm mục đích thúc đẩy sự phát triển kinh tế cân bằng giữa các khu vực và thu hẹp khoảng cách giàu nghèo."
+    },
+    {
+      "id": 67,
+      "sentence": "我们需要加强国际合作，共同应对气候变化带来的挑战。",
+      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng yìngduì qìhòu biànhuà dàilái de tiǎozhàn.",
+      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau đối mặt với những thách thức do biến đổi khí hậu gây ra."
+    },
+    {
+      "id": 68,
+      "sentence": "这种新型能源技术的应用将有助于减少碳排放，保护环境。",
+      "pinyin": "Zhè zhǒng xīnxíng néngyuán jìshù de yìngyòng jiāng yǒu zhù yú jiǎnshǎo tàn pái fàng, bǎohù huánjìng.",
+      "meaning": "Việc ứng dụng công nghệ năng lượng mới này sẽ giúp giảm lượng khí thải carbon và bảo vệ môi trường."
+    },
+    {
+      "id": 69,
+      "sentence": "我们应该重视文化多样性，促进不同文化之间的交流与融合。",
+      "pinyin": "Wǒmen yīnggāi zhòngshì wénhuà duōyàngxìng, cùjìn bùtóng wénhuà zhī jiān de jiāoliú yǔ rónghé.",
+      "meaning": "Chúng ta nên coi trọng sự đa dạng văn hóa, thúc đẩy sự giao lưu và hợp tác giữa các văn hóa khác nhau."
+    },
+    {
+      "id": 70,
+      "sentence": "这项医学突破将为治疗癌症提供新的希望和可能性。",
+      "pinyin": "Zhè xiàng yīxué tūpò jiāng wèi zhìliáo áizhèng tígōng xīn de xīwàng hé kěnéngxìng.",
+      "meaning": "Bước đột phá y học này sẽ mang lại hy vọng và khả năng mới trong việc điều trị ung thư."
+    }
+  ],
+  "HSK6": [
+    {
+      "id": 71,
+      "sentence": "我们应该深入探讨人工智能对未来社会发展的影响，制定相应的政策和法规。",
+      "pinyin": "Wǒmen yīnggāi shēnrù tàntǎo réngōng zhìnéng duì wèilái shèhuì fāzhǎn de yǐngxiǎng, zhìdìng xiāngyìng de zhèngcè hé fǎguī.",
+      "meaning": "Chúng ta nên thảo luận sâu sắc về tác động của trí tuệ nhân tạo đối với sự phát triển xã hội trong tương lai, và xây dựng các chính sách và quy định phù hợp."
+    },
+    {
+      "id": 72,
+      "sentence": "这种新型材料的发明将为航空航天领域带来革命性的变革。",
+      "pinyin": "Zhè zhǒng xīnxíng cáiliào de fāmíng jiāng wèi hángkōng hángtiān lǐngyù dàilái gémìngxìng de biàngé.",
+      "meaning": "Sự phát minh ra loại vật liệu mới này sẽ mang lại cuộc cách mạng trong lĩnh vực hàng không vũ trụ."
+    },
+    {
+      "id": 73,
+      "sentence": "我们需要建立一个更加公平、透明的国际经济秩序。",
+      "pinyin": "Wǒmen xūyào jiànlì yí gè gèng jiā gōngpíng, tòumíng de guójì jīngjì zhìxù.",
+      "meaning": "Chúng ta cần xây dựng một trật tự kinh tế quốc tế công bằng và minh bạch hơn."
+    },
+    {
+      "id": 74,
+      "sentence": "这项研究成果为解决全球能源危机提供了新的思路和方法。",
+      "pinyin": "Zhè xiàng yánjiū chéngguǒ wèi jiějué quánqiú néngyuán wēijī tígōngle xīn de sīlù hé fāngfǎ.",
+      "meaning": "Kết quả nghiên cứu này đã cung cấp những ý tưởng và phương pháp mới để giải quyết cuộc khủng hoảng năng lượng toàn cầu."
+    },
+    {
+      "id": 75,
+      "sentence": "我们应该重视生态文明建设，推动经济社会可持续发展。",
+      "pinyin": "Wǒmen yīnggāi zhòngshì shēngtài wénmíng jiànshè, tuīdòng jīngjì shèhuì kě chíxù fāzhǎn.",
+      "meaning": "Chúng ta nên coi trọng việc xây dựng nền văn minh sinh thái, thúc đẩy sự phát triển bền vững của kinh tế và xã hội."
+    },
+    {
+      "id": 76,
+      "sentence": "这种新型教育模式旨在培养学生的批判性思维和创新能力。",
+      "pinyin": "Zhè zhǒng xīnxíng jiàoyù móshì zhǐ zài péiyǎng xuéshēng de pīpàn xìng sīwéi hé chuàngxīn nénglì.",
+      "meaning": "Mô hình giáo dục mới này nhằm mục đích bồi dưỡng tư duy phản biện và khả năng sáng tạo của học sinh."
+    },
+    {
+      "id": 77,
+      "sentence": "我们需要加强国际合作，共同应对全球性挑战，如气候变化和传染病防控。",
+      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng yìngduì quánqiúxìng tiǎozhàn, rú qìhòu biànhuà hé chuánrǎnbìng fángkòng.",
+      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau đối mặt với những thách thức toàn cầu như biến đổi khí hậu và phòng chống dịch bệnh."
+    },
+    {
+      "id": 78,
+      "sentence": "这项政策旨在促进社会公平正义，缩小贫富差距，实现共同富裕。",
+      "pinyin": "Zhè xiàng zhèngcè zhǐ zài cùjìn shèhuì gōngpíng zhèngyì, suōxiǎo pínfù chājù, shíxiàn gòngtóng fùyù.",
+      "meaning": "Chính sách này nhằm mục đích thúc đẩy công bằng và công lý xã hội, thu hẹp khoảng cách giàu nghèo, và thực hiện sự thịnh vượng chung."
+    },
+    {
+      "id": 79,
+      "sentence": "我们应该重视文化软实力建设，提升国家文化影响力和国际话语权。",
+      "pinyin": "Wǒmen yīnggāi zhòngshì wénhuà ruǎn shílì jiànshè, tíshēng guójiā wénhuà yǐngxiǎnglì hé guójì huàyǔquán.",
+      "meaning": "Chúng ta nên coi trọng việc xây dựng sức mạnh mềm văn hóa, nâng cao ảnh hưởng văn hóa quốc gia và tiếng nói quốc tế."
+    },
+    {
+      "id": 80,
+      "sentence": "这项科技创新将为人类探索宇宙奥秘提供新的可能性和机遇。",
+      "pinyin": "Zhè xiàng kējì chuàngxīn jiāng wèi rénlèi tànsuǒ yǔzhòu àomì tígōng xīn de kěnéngxìng hé jīyù.",
+      "meaning": "Sự đổi mới khoa học công nghệ này sẽ mang lại những khả năng và cơ hội mới cho việc khám phá bí ẩn vũ trụ của loài người."
+    },
+    {
+      "id": 81,
+      "sentence": "我们需要建立健全的社会保障体系，保障公民基本权益，促进社会和谐稳定。",
+      "pinyin": "Wǒmen xūyào jiànlì jiànquán de shèhuì bǎozhàng tǐxì, bǎozhàng gōngmín jīběn quányì, cùjìn shèhuì héxié wěndìng.",
+      "meaning": "Chúng ta cần xây dựng một hệ thống an sinh xã hội hoàn chỉnh để bảo vệ quyền lợi cơ bản của công dân và thúc đẩy sự hài hòa và ổn định xã hội."
+    },
+    {
+      "id": 82,
+      "sentence": "这种新型能源技术的应用将有助于实现碳中和目标，推动绿色发展。",
+      "pinyin": "Zhè zhǒng xīnxíng néngyuán jìshù de yìngyòng jiāng yǒu zhù yú shíxiàn tàn zhōnghé mùbiāo, tuīdòng lǜsè fāzhǎn.",
+      "meaning": "Việc ứng dụng công nghệ năng lượng mới này sẽ giúp đạt được mục tiêu trung hòa carbon và thúc đẩy sự phát triển xanh."
+    },
+    {
+      "id": 83,
+      "sentence": "我们应该深化教育改革，培养适应未来社会需求的创新型人才。",
+      "pinyin": "Wǒmen yīnggāi shēnhuà jiàoyù gǎigé, péiyǎng shìyìng wèilái shèhuì xūqiú de chuàngxīn xíng réncái.",
+      "meaning": "Chúng ta nên đào sâu cải cách giáo dục để đào tạo những nhân tài sáng tạo phù hợp với nhu cầu của xã hội tương lai."
+    },
+    {
+      "id": 84,
+      "sentence": "这项医学突破为攻克难治性疾病提供了新的希望和可能性。",
+      "pinyin": "Zhè xiàng yīxué tūpò wèi gōngkè nán zhì xìng jíbìng tígōngle xīn de xīwàng hé kěnéngxìng.",
+      "meaning": "Bước đột phá y học này đã mang lại hy vọng và khả năng mới trong việc chinh phục các bệnh khó chữa."
+    },
+    {
+      "id": 85,
+      "sentence": "我们需要加强网络安全建设，保护公民个人信息和国家安全。",
+      "pinyin": "Wǒmen xūyào jiāqiáng wǎngluò ānquán jiànshè, bǎohù gōngmín gèrén xìnxī hé guójiā ānquán.",
+      "meaning": "Chúng ta cần tăng cường xây dựng an ninh mạng để bảo vệ thông tin cá nhân của công dân và an ninh quốc gia."
+    },
+    {
+      "id": 86,
+      "sentence": "这种新型材料的发明将为环保产业带来革命性的变革和机遇。",
+      "pinyin": "Zhè zhǒng xīnxíng cáiliào de fāmíng jiāng wèi huánbǎo chǎnyè dàilái gémìngxìng de biàngé hé jīyù.",
+      "meaning": "Sự phát minh ra loại vật liệu mới này sẽ mang lại cuộc cách mạng và cơ hội cho ngành công nghiệp bảo vệ môi trường."
+    },
+    {
+      "id": 87,
+      "sentence": "我们应该推动科技创新与传统产业融合，促进产业升级和经济转型。",
+      "pinyin": "Wǒmen yīnggāi tuīdòng kējì chuàngxīn yǔ chuántǒng chǎnyè rónghé, cùjìn chǎnyè shēngjí hé jīngjì zhuǎnxíng.",
+      "meaning": "Chúng ta nên thúc đẩy sự kết hợp giữa đổi mới khoa học công nghệ và các ngành công nghiệp truyền thống để thúc đẩy nâng cấp công nghiệp và chuyển đổi kinh tế."
+    },
+    {
+      "id": 88,
+      "sentence": "这项政策旨在优化营商环境，激发市场活力，推动高质量发展。",
+      "pinyin": "Zhè xiàng zhèngcè zhǐ zài yōuhuà yíngshāng huánjìng, jīfā shìchǎng huólì, tuīdòng gāo zhìliàng fāzhǎn.",
+      "meaning": "Chính sách này nhằm mục đích tối ưu hóa môi trường kinh doanh, kích thích sức sống của thị trường và thúc đẩy sự phát triển chất lượng cao."
+    },
+    {
+      "id": 89,
+      "sentence": "我们需要加强国际合作，共同维护全球产业链供应链稳定。",
+      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng wéihù quánqiú chǎnyè liàn gōngyìng liàn wěndìng.",
+      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau duy trì sự ổn định của chuỗi công nghiệp và chuỗi cung ứng toàn cầu."
+    },
+    {
+      "id": 90,
+      "sentence": "这项研究成果为解决全球粮食安全问题提供了新的思路和方法。",
+      "pinyin": "Zhè xiàng yánjiū chéngguǒ wèi jiějué quánqiú liángshí ānquán wèntí tígōngle xīn de sīlù hé fāngfǎ.",
+      "meaning": "Kết quả nghiên cứu này đã cung cấp những ý tưởng và phương pháp mới để giải quyết vấn đề an ninh lương thực toàn cầu."
+    }
+  ]
+}

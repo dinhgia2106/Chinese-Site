@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Kết quả kiểm tra từ vựng</h1>
+  <h2>Điểm số của bạn: {{ score|round(2) }}%</h2>
+  <p>
+    Bạn đã trả lời đúng {{ results|selectattr('is_correct', 'equalto',
+    true)|list|length }} trên {{ total_questions }} câu hỏi.
+  </p>
+
+  <h3 class="mt-4">Chi tiết kết quả:</h3>
+  {% for result in results %}
+  <div
+    class="card mb-3 {% if result.is_correct %}border-success{% else %}border-danger{% endif %}"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ result.word }}</h5>
+      <p class="card-text">Câu trả lời của bạn: {{ result.user_answer }}</p>
+      <p class="card-text">Đáp án đúng: {{ result.correct_answer }}</p>
+      {% if result.is_correct %}
+      <p class="text-success">Chính xác!</p>
+      {% else %}
+      <p class="text-danger">Chưa chính xác</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <a href="{{ url_for('vocabulary_test') }}" class="btn btn-primary"
+    >Kiểm tra lại</a
+  >
+</div>
+{% endblock %}

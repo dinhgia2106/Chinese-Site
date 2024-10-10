@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Từ vựng</h1>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Học từ vựng</h5>
+          <p class="card-text">Luyện tập và học từ vựng mới</p>
+          <a href="{{ url_for('vocabulary_learn') }}" class="btn btn-primary"
+            >Bắt đầu học</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Kiểm tra từ vựng</h5>
+          <p class="card-text">Kiểm tra kiến thức từ vựng của bạn</p>
+          <a href="{{ url_for('vocabulary_test') }}" class="btn btn-primary"
+            >Bắt đầu kiểm tra</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

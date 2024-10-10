@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Kiểm tra từ vựng HSK {{ hsk_level }}</h1>
+  <h2>Chọn bộ đề:</h2>
+  <div class="row">
+    {% for i in range(1, num_sets + 1) %}
+    <div class="col-md-3 mb-3">
+      <a
+        href="{{ url_for('vocabulary_test_set', hsk_level=hsk_level, set_number=i) }}"
+        class="btn btn-primary btn-block"
+        >Bộ đề {{ i }}</a
+      >
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -21,6 +21,8 @@ import requests
 from time import time
 import base64
 import re
+import json
+import math
 
 load_dotenv()  # Load biến môi trường từ .env
 
@@ -1263,9 +1265,111 @@ def speaking_practice():
     # GET request: display the page
     return render_template('speaking_practice.html')
 
-@app.route('/static/vocab.json')
+@app.route('/static/speaking.json')
 def serve_vocab():
-    return send_file('static/vocab.json')
+    return send_file('static/speaking.json')
+
+@app.route('/vocabulary')
+def vocabulary_menu():
+    return render_template('vocabulary_menu.html')
+
+@app.route('/vocabulary/learn', methods=['GET', 'POST'])
+def vocabulary_learn():
+    if request.method == 'POST':
+        hsk_level = request.form['hsk_level']
+        # Lấy dữ liệu từ vựng và thứ tự viết từ file JSON
+        with open('static/vocab.json', 'r', encoding='utf-8') as f:
+            vocab_data = json.load(f)
+        with open(f'static/hsk{hsk_level}_stroke_orders.json', 'r', encoding='utf-8') as f:
+            stroke_order_data = json.load(f)
+        
+        # Lọc từ vựng theo bậc HSK
+        hsk_vocab = [word for word in vocab_data if word['HSK'] == int(hsk_level)]
+        
+        # Kết hợp dữ liệu từ vựng và thứ tự viết
+        combined_data = []
+        for word in hsk_vocab:
+            word_data = word.copy()
+            for char in word['Chinese']:
+                stroke_order = next((item for item in stroke_order_data if item['character'] == char), None)
+                if stroke_order:
+                    word_data[f'stroke_order_{char}'] = stroke_order
+            combined_data.append(word_data)
+        
+        return render_template('vocabulary_learn_result.html', words=combined_data)
+    return render_template('vocabulary_learn.html')
+
+@app.route('/vocabulary/test', methods=['GET', 'POST'])
+def vocabulary_test():
+    if request.method == 'POST':
+        hsk_level = request.form['hsk_level']
+        # Lấy dữ liệu từ vựng từ file JSON
+        with open('static/vocab.json', 'r', encoding='utf-8') as f:
+            vocab_data = json.load(f)
+        
+        # Lọc từ vựng theo bậc HSK
+        hsk_vocab = [word for word in vocab_data if word['HSK'] == int(hsk_level)]
+        
+        # Tính số bộ đề có thể tạo ra
+        num_sets = math.floor(len(hsk_vocab) / 30)
+        
+        return render_template('vocabulary_test_sets.html', hsk_level=hsk_level, num_sets=num_sets)
+    return render_template('vocabulary_test.html')
+
+@app.route('/vocabulary/test/<int:hsk_level>/<int:set_number>', methods=['GET', 'POST'])
+def vocabulary_test_set(hsk_level, set_number):
+    with open('static/vocab.json', 'r', encoding='utf-8') as f:
+        vocab_data = json.load(f)
+    
+    hsk_vocab = [word for word in vocab_data if word['HSK'] == hsk_level]
+    
+    # Chọn chính xác 30 từ cho bộ đề hiện tại
+    start_index = (set_number - 1) * 30
+    test_words = hsk_vocab[start_index:start_index + 30]
+    
+    # Tạo câu hỏi cho mỗi từ
+    questions = []
+    for i, word in enumerate(test_words):
+        correct_answer = word['VietnameseMeaning']
+        wrong_answers = random.sample([w['VietnameseMeaning'] for w in hsk_vocab if w != word], 3)
+        answers = wrong_answers + [correct_answer]
+        random.shuffle(answers)
+        
+        questions.append({
+            'id': i,  # Thêm id để dễ dàng xác định câu hỏi
+            'word': word['Chinese'],
+            'pinyin': word['Pinyin'],
+            'answers': answers,
+            'correct_answer': correct_answer
+        })
+    
+    return render_template('vocabulary_test_questions.html', questions=questions, hsk_level=hsk_level, set_number=set_number)
+
+@app.route('/vocabulary/test/result', methods=['POST'])
+def vocabulary_test_result():
+    user_answers = request.form
+    correct_count = 0
+    total_questions = 30
+
+    results = []
+    for i in range(total_questions):
+        word = user_answers.get(f'word_{i}')
+        user_answer = user_answers.get(f'answer_{i}')
+        correct_answer = user_answers.get(f'correct_answer_{i}')
+        
+        is_correct = user_answer == correct_answer
+        if is_correct:
+            correct_count += 1
+        
+        results.append({
+            'word': word,
+            'user_answer': user_answer,
+            'correct_answer': correct_answer,
+            'is_correct': is_correct
+        })
+
+    score = (correct_count / total_questions) * 100
+    return render_template('vocabulary_test_result.html', results=results, score=score, total_questions=total_questions)
 
 if __name__ == '__main__':
     app.run(debug=False)

@@ -1,554 +1,1502 @@
-{
-  "HSK1": [
-    {
-      "id": 1,
-      "sentence": "你好。",
-      "pinyin": "Nǐ hǎo.",
-      "meaning": "Xin chào."
-    },
-    {
-      "id": 2,
-      "sentence": "我是学生。",
-      "pinyin": "Wǒ shì xuéshēng.",
-      "meaning": "Tôi là học sinh."
-    },
-    {
-      "id": 3,
-      "sentence": "他喜欢吃苹果。",
-      "pinyin": "Tā xǐhuan chī píngguǒ.",
-      "meaning": "Anh ấy thích ăn táo."
-    },
-    {
-      "id": 4,
-      "sentence": "今天天气很好。",
-      "pinyin": "Jīntiān tiānqì hěn hǎo.",
-      "meaning": "Hôm nay thời tiết rất đẹp."
-    },
-    {
-      "id": 5,
-      "sentence": "我的朋友很多。",
-      "pinyin": "Wǒ de péngyou hěn duō.",
-      "meaning": "Tôi có nhiều bạn bè."
-    },
-    {
-      "id": 6,
-      "sentence": "这是我的书。",
-      "pinyin": "Zhè shì wǒ de shū.",
-      "meaning": "Đây là sách của tôi."
-    },
-    {
-      "id": 7,
-      "sentence": "你喝茶吗？",
-      "pinyin": "Nǐ hē chá ma?",
-      "meaning": "Bạn uống trà không?"
-    },
-    {
-      "id": 8,
-      "sentence": "我们去学校。",
-      "pinyin": "Wǒmen qù xuéxiào.",
-      "meaning": "Chúng ta đi học."
-    },
-    {
-      "id": 9,
-      "sentence": "她很漂亮。",
-      "pinyin": "Tā hěn piàoliang.",
-      "meaning": "Cô ấy rất xinh đẹp."
-    },
-    {
-      "id": 10,
-      "sentence": "我爱我的家。",
-      "pinyin": "Wǒ ài wǒ de jiā.",
-      "meaning": "Tôi yêu gia đình tôi."
-    }
-  ],
-  "HSK2": [
-    {
-      "id": 11,
-      "sentence": "我每天都去图书馆。",
-      "pinyin": "Wǒ měitiān dōu qù túshūguǎn.",
-      "meaning": "Tôi đi thư viện mỗi ngày."
-    },
-    {
-      "id": 12,
-      "sentence": "你的生日是几月几号？",
-      "pinyin": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
-      "meaning": "Sinh nhật của bạn là ngày mấy tháng mấy?"
-    },
-    {
-      "id": 13,
-      "sentence": "我们周末去看电影吧。",
-      "pinyin": "Wǒmen zhōumò qù kàn diànyǐng ba.",
-      "meaning": "Chúng ta đi xem phim vào cuối tuần nhé."
-    },
-    {
-      "id": 14,
-      "sentence": "这件衣服很便宜。",
-      "pinyin": "Zhè jiàn yīfu hěn piányi.",
-      "meaning": "Bộ quần áo này rất rẻ."
-    },
-    {
-      "id": 15,
-      "sentence": "我喜欢听音乐和跳舞。",
-      "pinyin": "Wǒ xǐhuan tīng yīnyuè hé tiàowǔ.",
-      "meaning": "Tôi thích nghe nhạc và nhảy múa."
-    },
-    {
-      "id": 16,
-      "sentence": "他的汉语说得很好。",
-      "pinyin": "Tā de hànyǔ shuō de hěn hǎo.",
-      "meaning": "Anh ấy nói tiếng Trung rất giỏi."
-    },
-    {
-      "id": 17,
-      "sentence": "我们一起吃晚饭吧。",
-      "pinyin": "Wǒmen yìqǐ chī wǎnfàn ba.",
-      "meaning": "Chúng ta cùng ăn tối nhé."
-    },
-    {
-      "id": 18,
-      "sentence": "你最喜欢什么运动？",
-      "pinyin": "Nǐ zuì xǐhuan shénme yùndòng?",
-      "meaning": "Bạn thích môn thể thao nào nhất?"
-    },
-    {
-      "id": 19,
-      "sentence": "我想去中国旅游。",
-      "pinyin": "Wǒ xiǎng qù Zhōngguó lǚyóu.",
-      "meaning": "Tôi muốn đi du lịch Trung Quốc."
-    },
-    {
-      "id": 20,
-      "sentence": "这个城市很干净。",
-      "pinyin": "Zhège chéngshì hěn gānjìng.",
-      "meaning": "Thành phố này rất sạch sẽ."
-    }
-  ],
-  "HSK3": [
-    {
-      "id": 21,
-      "sentence": "我们应该保护环境。",
-      "pinyin": "Wǒmen yīnggāi bǎohù huánjìng.",
-      "meaning": "Chúng ta nên bảo vệ môi trường."
-    },
-    {
-      "id": 22,
-      "sentence": "这个问题很难回答。",
-      "pinyin": "Zhège wèntí hěn nán huídá.",
-      "meaning": "Câu hỏi này rất khó trả lời."
-    },
-    {
-      "id": 23,
-      "sentence": "我们需要互相帮助。",
-      "pinyin": "Wǒmen xūyào hùxiāng bāngzhù.",
-      "meaning": "Chúng ta cần giúp đỡ lẫn nhau."
-    },
-    {
-      "id": 24,
-      "sentence": "你能给我一些建议吗？",
-      "pinyin": "Nǐ néng gěi wǒ yìxiē jiànyì ma?",
-      "meaning": "Bạn có thể cho tôi một số lời khuyên không?"
-    },
-    {
-      "id": 25,
-      "sentence": "我们应该珍惜时间。",
-      "pinyin": "Wǒmen yīnggāi zhēnxī shíjiān.",
-      "meaning": "Chúng ta nên trân trọng thời gian."
-    },
-    {
-      "id": 26,
-      "sentence": "这个故事很有意思。",
-      "pinyin": "Zhège gùshi hěn yǒu yìsi.",
-      "meaning": "Câu chuyện này rất thú vị."
-    },
-    {
-      "id": 27,
-      "sentence": "我们要互相尊重。",
-      "pinyin": "Wǒmen yào hùxiāng zūnzhòng.",
-      "meaning": "Chúng ta phải tôn trọng lẫn nhau."
-    },
-    {
-      "id": 28,
-      "sentence": "你对这个决定有什么看法？",
-      "pinyin": "Nǐ duì zhège juédìng yǒu shénme kànfǎ?",
-      "meaning": "Bạn có ý kiến gì về quyết định này?"
-    },
-    {
-      "id": 29,
-      "sentence": "我们应该勇于面对困难。",
-      "pinyin": "Wǒmen yīnggāi yǒngyú miànduì kùnnan.",
-      "meaning": "Chúng ta nên dũng cảm đối mặt với khó khăn."
-    },
-    {
-      "id": 30,
-      "sentence": "这个城市的交通很方便。",
-      "pinyin": "Zhège chéngshì de jiāotōng hěn fāngbiàn.",
-      "meaning": "Giao thông của thành phố này rất thuận tiện."
-    }
-  ],
-  "HSK4": [
-    {
-      "id": 31,
-      "sentence": "我们应该培养良好的学习习惯。",
-      "pinyin": "Wǒmen yīnggāi péiyǎng liánghǎo de xuéxí xíguàn.",
-      "meaning": "Chúng ta nên rèn luyện thói quen học tập tốt."
-    },
-    {
-      "id": 32,
-      "sentence": "这项研究对社会发展有重要意义。",
-      "pinyin": "Zhè xiàng yánjiū duì shèhuì fāzhǎn yǒu zhòngyào yìyì.",
-      "meaning": "Nghiên cứu này có ý nghĩa quan trọng đối với sự phát triển xã hội."
-    },
-    {
-      "id": 33,
-      "sentence": "我们需要制定一个长期的发展计划。",
-      "pinyin": "Wǒmen xūyào zhìdìng yí gè chángqī de fāzhǎn jìhuà.",
-      "meaning": "Chúng ta cần lập một kế hoạch phát triển dài hạn."
-    },
-    {
-      "id": 34,
-      "sentence": "这种新技术将彻底改变我们的生活方式。",
-      "pinyin": "Zhè zhǒng xīn jìshù jiāng chèdǐ gǎibiàn wǒmen de shēnghuó fāngshì.",
-      "meaning": "Công nghệ mới này sẽ thay đổi hoàn toàn cách sống của chúng ta."
-    },
-    {
-      "id": 35,
-      "sentence": "我们应该尊重每个人的观点和选择。",
-      "pinyin": "Wǒmen yīnggāi zūnzhòng měi gè rén de guāndiǎn hé xuǎnzé.",
-      "meaning": "Chúng ta nên tôn trọng quan điểm và lựa chọn của mỗi người."
-    },
-    {
-      "id": 36,
-      "sentence": "这个问题需要我们深入思考和讨论。",
-      "pinyin": "Zhège wèntí xūyào wǒmen shēnrù sīkǎo hé tǎolùn.",
-      "meaning": "Vấn đề này cần chúng ta suy nghĩ và thảo luận sâu sắc."
-    },
-    {
-      "id": 37,
-      "sentence": "我们应该珍惜现在拥有的一切。",
-      "pinyin": "Wǒmen yīnggāi zhēnxī xiànzài yǒngyǒu de yíqiè.",
-      "meaning": "Chúng ta nên trân trọng tất cả những gì mình đang có."
-    },
-    {
-      "id": 38,
-      "sentence": "这个城市的文化底蕴非常丰富。",
-      "pinyin": "Zhège chéngshì de wénhuà dǐyùn fēicháng fēngfù.",
-      "meaning": "Nền tảng văn hóa của thành phố này rất phong phú."
-    },
-    {
-      "id": 39,
-      "sentence": "我们需要采取措施来保护濒危物种。",
-      "pinyin": "Wǒmen xūyào cǎiqǔ cuòshī lái bǎohù bīnwēi wùzhǒng.",
-      "meaning": "Chúng ta cần thực hiện các biện pháp để bảo vệ các loài động vật có nguy cơ tuyệt chủng."
-    },
-    {
-      "id": 40,
-      "sentence": "这种新型材料具有很高的实用价值。",
-      "pinyin": "Zhè zhǒng xīnxíng cáiliào jùyǒu hěn gāo de shíyòng jiàzhí.",
-      "meaning": "Loại vật liệu mới này có giá trị thực tiễn rất cao."
-    },
-    {
-      "id": 41,
-      "sentence": "我们应该努力实现自己的梦想。",
-      "pinyin": "Wǒmen yīnggāi nǔlì shíxiàn zìjǐ de mèngxiǎng.",
-      "meaning": "Chúng ta nên cố gắng thực hiện ước mơ của mình."
-    },
-    {
-      "id": 42,
-      "sentence": "这个项目需要大量的人力和物力投入。",
-      "pinyin": "Zhège xiàngmù xūyào dàliàng de rénlì hé wùlì tóurù.",
-      "meaning": "Dự án này cần đầu tư nhiều nhân lực và vật lực."
-    },
-    {
-      "id": 43,
-      "sentence": "我们应该学会换位思考，理解他人。",
-      "pinyin": "Wǒmen yīnggāi xuéhuì huànwèi sīkǎo, lǐjiě tārén.",
-      "meaning": "Chúng ta nên học cách đặt mình vào vị trí của người khác để hiểu họ."
-    },
-    {
-      "id": 44,
-      "sentence": "这种新型能源将为环保事业做出巨大贡献。",
-      "pinyin": "Zhè zhǒng xīnxíng néngyuán jiāng wèi huánbǎo shìyè zuò chū jùdà gòngxiàn.",
-      "meaning": "Loại năng lượng mới này sẽ đóng góp to lớn cho sự nghiệp bảo vệ môi trường."
-    },
-    {
-      "id": 45,
-      "sentence": "我们需要加强国际合作，共同应对全球性挑战。",
-      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng yìngduì quánqiúxìng tiǎozhàn.",
-      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau đối mặt với những thách thức toàn cầu."
-    },
-    {
-      "id": 46,
-      "sentence": "这项政策将对经济发展产生深远影响。",
-      "pinyin": "Zhè xiàng zhèngcè jiāng duì jīngjì fāzhǎn chǎnshēng shēnyuǎn yǐngxiǎng.",
-      "meaning": "Chính sách này sẽ có ảnh hưởng sâu rộng đến sự phát triển kinh tế."
-    },
-    {
-      "id": 47,
-      "sentence": "我们应该培养批判性思维和创新能力。",
-      "pinyin": "Wǒmen yīnggāi péiyǎng pīpàn xìng sīwéi hé chuàngxīn nénglì.",
-      "meaning": "Chúng ta nên rèn luyện tư duy phản biện và khả năng sáng tạo."
-    },
-    {
-      "id": 48,
-      "sentence": "这个问题的解决需要多方面的协调和努力。",
-      "pinyin": "Zhège wèntí de jiějué xūyào duō fāngmiàn de xiétiáo hé nǔlì.",
-      "meaning": "Việc giải quyết vấn đề này cần sự phối hợp và nỗ lực từ nhiều phía."
-    },
-    {
-      "id": 49,
-      "sentence": "我们应该重视精神文明建设，提高社会道德水平。",
-      "pinyin": "Wǒmen yīnggāi zhòngshì jīngshén wénmíng jiànshè, tígāo shèhuì dàodé shuǐpíng.",
-      "meaning": "Chúng ta nên coi trọng việc xây dựng văn minh tinh thần, nâng cao đạo đức xã hội."
-    },
-    {
-      "id": 50,
-      "sentence": "这项研究成果将为医学领域带来革命性突破。",
-      "pinyin": "Zhè xiàng yánjiū chéngguǒ jiāng wèi yīxué lǐngyù dàilái gémìngxìng tūpò.",
-      "meaning": "Kết quả nghiên cứu này sẽ mang lại bước đột phá mang tính cách mạng cho lĩnh vực y học."
-    }
-  ],
-  "HSK5": [
-    {
-      "id": 51,
-      "sentence": "我们应该积极参与社会公益活动，为社会发展贡献自己的力量。",
-      "pinyin": "Wǒmen yīnggāi jījí cānyù shèhuì gōngyì huódòng, wèi shèhuì fāzhǎn gòngxiàn zìjǐ de lìliàng.",
-      "meaning": "Chúng ta nên tích cực tham gia các hoạt động công ích xã hội, đóng góp sức mình cho sự phát triển của xã hội."
-    },
-    {
-      "id": 52,
-      "sentence": "这种新型教育模式旨在培养学生的全面发展和综合素质。",
-      "pinyin": "Zhè zhǒng xīnxíng jiàoyù móshì zhǐ zài péiyǎng xuéshēng de quánmiàn fāzhǎn hé zònghé sùzhì.",
-      "meaning": "Mô hình giáo dục mới này nhằm mục đích phát triển toàn diện và nâng cao chất lượng tổng thể của học sinh."
-    },
-    {
-      "id": 53,
-      "sentence": "我们需要建立一个更加公平、公正的社会制度。",
-      "pinyin": "Wǒmen xūyào jiànlì yí gè gèng jiā gōngpíng, gōngzhèng de shèhuì zhìdù.",
-      "meaning": "Chúng ta cần xây dựng một hệ thống xã hội công bằng và công chính hơn."
-    },
-    {
-      "id": 54,
-      "sentence": "这项政策的实施将有助于促进经济的可持续发展。",
-      "pinyin": "Zhè xiàng zhèngcè de shíshī jiāng yǒu zhù yú cùjìn jīngjì de kě chíxù fāzhǎn.",
-      "meaning": "Việc thực hiện chính sách này sẽ góp phần thúc đẩy sự phát triển bền vững của nền kinh tế."
-    },
-    {
-      "id": 55,
-      "sentence": "我们应该重视文化传承，弘扬优秀传统文化。",
-      "pinyin": "Wǒmen yīnggāi zhòngshì wénhuà chuánchéng, hóngyáng yōuxiù chuántǒng wénhuà.",
-      "meaning": "Chúng ta nên coi trọng việc kế thừa văn hóa, phát huy nền văn hóa truyền thống tốt đẹp."
-    },
-    {
-      "id": 56,
-      "sentence": "这个问题的解决需要我们从多角度进行深入分析和研究。",
-      "pinyin": "Zhège wèntí de jiějué xūyào wǒmen cóng duō jiǎodù jìnxíng shēnrù fēnxī hé yánjiū.",
-      "meaning": "Việc giải quyết vấn đề này đòi hỏi chúng ta phải phân tích và nghiên cứu sâu sắc từ nhiều góc độ."
-    },
-    {
-      "id": 57,
-      "sentence": "我们应该努力营造一个和谐、包容的社会氛围。",
-      "pinyin": "Wǒmen yīnggāi nǔlì yíngzào yí gè héxié, bāoróng de shèhuì fēnwéi.",
-      "meaning": "Chúng ta nên nỗ lực tạo ra một bầu không khí xã hội hài hòa và bao dung."
-    },
-    {
-      "id": 58,
-      "sentence": "这项技术突破将为人类探索宇宙奥秘提供新的可能性。",
-      "pinyin": "Zhè xiàng jìshù tūpò jiāng wèi rénlèi tànsuǒ yǔzhòu àomì tígōng xīn de kěnéngxìng.",
-      "meaning": "Bước đột phá công nghệ này sẽ mở ra những khả năng mới cho việc khám phá bí ẩn vũ trụ của loài người."
-    },
-    {
-      "id": 59,
-      "sentence": "我们需要加强环境保护意识，推广绿色生活方式。",
-      "pinyin": "Wǒmen xūyào jiāqiáng huánjìng bǎohù yìshi, tuīguǎng lǜsè shēnghuó fāngshì.",
-      "meaning": "Chúng ta cần tăng cường ý thức bảo vệ môi trường và phổ biến lối sống xanh."
-    },
-    {
-      "id": 60,
-      "sentence": "这种新型材料的应用将为工业生产带来革命性变革。",
-      "pinyin": "Zhè zhǒng xīnxíng cáiliào de yìngyòng jiāng wèi gōngyè shēngchǎn dàilái gémìngxìng biàngé.",
-      "meaning": "Việc ứng dụng loại vật liệu mới này sẽ mang lại cuộc cách mạng trong sản xuất công nghiệp."
-    },
-    {
-      "id": 61,
-      "sentence": "我们应该重视心理健康，培养积极乐观的人生态度。",
-      "pinyin": "Wǒmen yīnggāi zhòngshì xīnlǐ jiànkāng, péiyǎng jījí lèguān de rénshēng tàidù.",
-      "meaning": "Chúng ta nên coi trọng sức khỏe tâm lý, rèn luyện thái độ sống tích cực và lạc quan."
-    },
-    {
-      "id": 62,
-      "sentence": "这项研究成果将为解决全球粮食安全问题提供新的思路。",
-      "pinyin": "Zhè xiàng yánjiū chéngguǒ jiāng wèi jiějué quánqiú liángshí ānquán wèntí tígōng xīn de sīlù.",
-      "meaning": "Kết quả nghiên cứu này sẽ cung cấp cách tiếp cận mới để giải quyết vấn đề an ninh lương thực toàn cầu."
-    },
-    {
-      "id": 63,
-      "sentence": "我们需要建立健全的法律体系，维护社会公平正义。",
-      "pinyin": "Wǒmen xūyào jiànlì jiànquán de fǎlǜ tǐxì, wéihù shèhuì gōngpíng zhèngyì.",
-      "meaning": "Chúng ta cần xây dựng một hệ thống pháp luật hoàn chỉnh để bảo vệ công bằng và công lý xã hội."
-    },
-    {
-      "id": 64,
-      "sentence": "这种新型教育理念强调学生的个性化发展和创新能力培养。",
-      "pinyin": "Zhè zhǒng xīnxíng jiàoyù lǐniàn qiángdiào xuéshēng de gèxìnghuà fāzhǎn hé chuàngxīn nénglì péiyǎng.",
-      "meaning": "Lý thuyết giáo dục mới này nhấn mạnh vào sự phát triển cá nhân hóa và bồi dưỡng khả năng sáng tạo của học sinh."
-    },
-    {
-      "id": 65,
-      "sentence": "我们应该积极推动科技创新，提高国家综合竞争力。",
-      "pinyin": "Wǒmen yīnggāi jījí tuīdòng kējì chuàngxīn, tígāo guójiā zònghé jìngzhēnglì.",
-      "meaning": "Chúng ta nên tích cực thúc đẩy đổi mới khoa học công nghệ để nâng cao sức cạnh tranh tổng thể của quốc gia."
-    },
-    {
-      "id": 66,
-      "sentence": "这项政策旨在促进区域经济均衡发展，缩小贫富差距。",
-      "pinyin": "Zhè xiàng zhèngcè zhǐ zài cùjìn qūyù jīngjì jūnhéng fāzhǎn, suōxiǎo pínfù chājù.",
-      "meaning": "Chính sách này nhằm mục đích thúc đẩy sự phát triển kinh tế cân bằng giữa các khu vực và thu hẹp khoảng cách giàu nghèo."
-    },
-    {
-      "id": 67,
-      "sentence": "我们需要加强国际合作，共同应对气候变化带来的挑战。",
-      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng yìngduì qìhòu biànhuà dàilái de tiǎozhàn.",
-      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau đối mặt với những thách thức do biến đổi khí hậu gây ra."
-    },
-    {
-      "id": 68,
-      "sentence": "这种新型能源技术的应用将有助于减少碳排放，保护环境。",
-      "pinyin": "Zhè zhǒng xīnxíng néngyuán jìshù de yìngyòng jiāng yǒu zhù yú jiǎnshǎo tàn pái fàng, bǎohù huánjìng.",
-      "meaning": "Việc ứng dụng công nghệ năng lượng mới này sẽ giúp giảm lượng khí thải carbon và bảo vệ môi trường."
-    },
-    {
-      "id": 69,
-      "sentence": "我们应该重视文化多样性，促进不同文化之间的交流与融合。",
-      "pinyin": "Wǒmen yīnggāi zhòngshì wénhuà duōyàngxìng, cùjìn bùtóng wénhuà zhī jiān de jiāoliú yǔ rónghé.",
-      "meaning": "Chúng ta nên coi trọng sự đa dạng văn hóa, thúc đẩy sự giao lưu và hợp tác giữa các văn hóa khác nhau."
-    },
-    {
-      "id": 70,
-      "sentence": "这项医学突破将为治疗癌症提供新的希望和可能性。",
-      "pinyin": "Zhè xiàng yīxué tūpò jiāng wèi zhìliáo áizhèng tígōng xīn de xīwàng hé kěnéngxìng.",
-      "meaning": "Bước đột phá y học này sẽ mang lại hy vọng và khả năng mới trong việc điều trị ung thư."
-    }
-  ],
-  "HSK6": [
-    {
-      "id": 71,
-      "sentence": "我们应该深入探讨人工智能对未来社会发展的影响，制定相应的政策和法规。",
-      "pinyin": "Wǒmen yīnggāi shēnrù tàntǎo réngōng zhìnéng duì wèilái shèhuì fāzhǎn de yǐngxiǎng, zhìdìng xiāngyìng de zhèngcè hé fǎguī.",
-      "meaning": "Chúng ta nên thảo luận sâu sắc về tác động của trí tuệ nhân tạo đối với sự phát triển xã hội trong tương lai, và xây dựng các chính sách và quy định phù hợp."
-    },
-    {
-      "id": 72,
-      "sentence": "这种新型材料的发明将为航空航天领域带来革命性的变革。",
-      "pinyin": "Zhè zhǒng xīnxíng cáiliào de fāmíng jiāng wèi hángkōng hángtiān lǐngyù dàilái gémìngxìng de biàngé.",
-      "meaning": "Sự phát minh ra loại vật liệu mới này sẽ mang lại cuộc cách mạng trong lĩnh vực hàng không vũ trụ."
-    },
-    {
-      "id": 73,
-      "sentence": "我们需要建立一个更加公平、透明的国际经济秩序。",
-      "pinyin": "Wǒmen xūyào jiànlì yí gè gèng jiā gōngpíng, tòumíng de guójì jīngjì zhìxù.",
-      "meaning": "Chúng ta cần xây dựng một trật tự kinh tế quốc tế công bằng và minh bạch hơn."
-    },
-    {
-      "id": 74,
-      "sentence": "这项研究成果为解决全球能源危机提供了新的思路和方法。",
-      "pinyin": "Zhè xiàng yánjiū chéngguǒ wèi jiějué quánqiú néngyuán wēijī tígōngle xīn de sīlù hé fāngfǎ.",
-      "meaning": "Kết quả nghiên cứu này đã cung cấp những ý tưởng và phương pháp mới để giải quyết cuộc khủng hoảng năng lượng toàn cầu."
-    },
-    {
-      "id": 75,
-      "sentence": "我们应该重视生态文明建设，推动经济社会可持续发展。",
-      "pinyin": "Wǒmen yīnggāi zhòngshì shēngtài wénmíng jiànshè, tuīdòng jīngjì shèhuì kě chíxù fāzhǎn.",
-      "meaning": "Chúng ta nên coi trọng việc xây dựng nền văn minh sinh thái, thúc đẩy sự phát triển bền vững của kinh tế và xã hội."
-    },
-    {
-      "id": 76,
-      "sentence": "这种新型教育模式旨在培养学生的批判性思维和创新能力。",
-      "pinyin": "Zhè zhǒng xīnxíng jiàoyù móshì zhǐ zài péiyǎng xuéshēng de pīpàn xìng sīwéi hé chuàngxīn nénglì.",
-      "meaning": "Mô hình giáo dục mới này nhằm mục đích bồi dưỡng tư duy phản biện và khả năng sáng tạo của học sinh."
-    },
-    {
-      "id": 77,
-      "sentence": "我们需要加强国际合作，共同应对全球性挑战，如气候变化和传染病防控。",
-      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng yìngduì quánqiúxìng tiǎozhàn, rú qìhòu biànhuà hé chuánrǎnbìng fángkòng.",
-      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau đối mặt với những thách thức toàn cầu như biến đổi khí hậu và phòng chống dịch bệnh."
-    },
-    {
-      "id": 78,
-      "sentence": "这项政策旨在促进社会公平正义，缩小贫富差距，实现共同富裕。",
-      "pinyin": "Zhè xiàng zhèngcè zhǐ zài cùjìn shèhuì gōngpíng zhèngyì, suōxiǎo pínfù chājù, shíxiàn gòngtóng fùyù.",
-      "meaning": "Chính sách này nhằm mục đích thúc đẩy công bằng và công lý xã hội, thu hẹp khoảng cách giàu nghèo, và thực hiện sự thịnh vượng chung."
-    },
-    {
-      "id": 79,
-      "sentence": "我们应该重视文化软实力建设，提升国家文化影响力和国际话语权。",
-      "pinyin": "Wǒmen yīnggāi zhòngshì wénhuà ruǎn shílì jiànshè, tíshēng guójiā wénhuà yǐngxiǎnglì hé guójì huàyǔquán.",
-      "meaning": "Chúng ta nên coi trọng việc xây dựng sức mạnh mềm văn hóa, nâng cao ảnh hưởng văn hóa quốc gia và tiếng nói quốc tế."
-    },
-    {
-      "id": 80,
-      "sentence": "这项科技创新将为人类探索宇宙奥秘提供新的可能性和机遇。",
-      "pinyin": "Zhè xiàng kējì chuàngxīn jiāng wèi rénlèi tànsuǒ yǔzhòu àomì tígōng xīn de kěnéngxìng hé jīyù.",
-      "meaning": "Sự đổi mới khoa học công nghệ này sẽ mang lại những khả năng và cơ hội mới cho việc khám phá bí ẩn vũ trụ của loài người."
-    },
-    {
-      "id": 81,
-      "sentence": "我们需要建立健全的社会保障体系，保障公民基本权益，促进社会和谐稳定。",
-      "pinyin": "Wǒmen xūyào jiànlì jiànquán de shèhuì bǎozhàng tǐxì, bǎozhàng gōngmín jīběn quányì, cùjìn shèhuì héxié wěndìng.",
-      "meaning": "Chúng ta cần xây dựng một hệ thống an sinh xã hội hoàn chỉnh để bảo vệ quyền lợi cơ bản của công dân và thúc đẩy sự hài hòa và ổn định xã hội."
-    },
-    {
-      "id": 82,
-      "sentence": "这种新型能源技术的应用将有助于实现碳中和目标，推动绿色发展。",
-      "pinyin": "Zhè zhǒng xīnxíng néngyuán jìshù de yìngyòng jiāng yǒu zhù yú shíxiàn tàn zhōnghé mùbiāo, tuīdòng lǜsè fāzhǎn.",
-      "meaning": "Việc ứng dụng công nghệ năng lượng mới này sẽ giúp đạt được mục tiêu trung hòa carbon và thúc đẩy sự phát triển xanh."
-    },
-    {
-      "id": 83,
-      "sentence": "我们应该深化教育改革，培养适应未来社会需求的创新型人才。",
-      "pinyin": "Wǒmen yīnggāi shēnhuà jiàoyù gǎigé, péiyǎng shìyìng wèilái shèhuì xūqiú de chuàngxīn xíng réncái.",
-      "meaning": "Chúng ta nên đào sâu cải cách giáo dục để đào tạo những nhân tài sáng tạo phù hợp với nhu cầu của xã hội tương lai."
-    },
-    {
-      "id": 84,
-      "sentence": "这项医学突破为攻克难治性疾病提供了新的希望和可能性。",
-      "pinyin": "Zhè xiàng yīxué tūpò wèi gōngkè nán zhì xìng jíbìng tígōngle xīn de xīwàng hé kěnéngxìng.",
-      "meaning": "Bước đột phá y học này đã mang lại hy vọng và khả năng mới trong việc chinh phục các bệnh khó chữa."
-    },
-    {
-      "id": 85,
-      "sentence": "我们需要加强网络安全建设，保护公民个人信息和国家安全。",
-      "pinyin": "Wǒmen xūyào jiāqiáng wǎngluò ānquán jiànshè, bǎohù gōngmín gèrén xìnxī hé guójiā ānquán.",
-      "meaning": "Chúng ta cần tăng cường xây dựng an ninh mạng để bảo vệ thông tin cá nhân của công dân và an ninh quốc gia."
-    },
-    {
-      "id": 86,
-      "sentence": "这种新型材料的发明将为环保产业带来革命性的变革和机遇。",
-      "pinyin": "Zhè zhǒng xīnxíng cáiliào de fāmíng jiāng wèi huánbǎo chǎnyè dàilái gémìngxìng de biàngé hé jīyù.",
-      "meaning": "Sự phát minh ra loại vật liệu mới này sẽ mang lại cuộc cách mạng và cơ hội cho ngành công nghiệp bảo vệ môi trường."
-    },
-    {
-      "id": 87,
-      "sentence": "我们应该推动科技创新与传统产业融合，促进产业升级和经济转型。",
-      "pinyin": "Wǒmen yīnggāi tuīdòng kējì chuàngxīn yǔ chuántǒng chǎnyè rónghé, cùjìn chǎnyè shēngjí hé jīngjì zhuǎnxíng.",
-      "meaning": "Chúng ta nên thúc đẩy sự kết hợp giữa đổi mới khoa học công nghệ và các ngành công nghiệp truyền thống để thúc đẩy nâng cấp công nghiệp và chuyển đổi kinh tế."
-    },
-    {
-      "id": 88,
-      "sentence": "这项政策旨在优化营商环境，激发市场活力，推动高质量发展。",
-      "pinyin": "Zhè xiàng zhèngcè zhǐ zài yōuhuà yíngshāng huánjìng, jīfā shìchǎng huólì, tuīdòng gāo zhìliàng fāzhǎn.",
-      "meaning": "Chính sách này nhằm mục đích tối ưu hóa môi trường kinh doanh, kích thích sức sống của thị trường và thúc đẩy sự phát triển chất lượng cao."
-    },
-    {
-      "id": 89,
-      "sentence": "我们需要加强国际合作，共同维护全球产业链供应链稳定。",
-      "pinyin": "Wǒmen xūyào jiāqiáng guójì hézuò, gòngtóng wéihù quánqiú chǎnyè liàn gōngyìng liàn wěndìng.",
-      "meaning": "Chúng ta cần tăng cường hợp tác quốc tế để cùng nhau duy trì sự ổn định của chuỗi công nghiệp và chuỗi cung ứng toàn cầu."
-    },
-    {
-      "id": 90,
-      "sentence": "这项研究成果为解决全球粮食安全问题提供了新的思路和方法。",
-      "pinyin": "Zhè xiàng yánjiū chéngguǒ wèi jiějué quánqiú liángshí ānquán wèntí tígōngle xīn de sīlù hé fāngfǎ.",
-      "meaning": "Kết quả nghiên cứu này đã cung cấp những ý tưởng và phương pháp mới để giải quyết vấn đề an ninh lương thực toàn cầu."
-    }
-  ]
-}
+[
+  {
+    "HSK": 1,
+    "Chinese": "爱",
+    "Pinyin": "ài",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Yêu",
+    "ExampleSentence": "我很爱他。",
+    "ExamplePinyin": "Wǒ hěn ài tā.",
+    "ExampleTranslation": "Tôi rất yêu anh ấy."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "八",
+    "Pinyin": "bā",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 8",
+    "ExampleSentence": "七上八下",
+    "ExamplePinyin": "Qīshàngbāxià",
+    "ExampleTranslation": "Thấp thỏm, không yên"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "爸爸",
+    "Pinyin": "bàba",
+    "PartOfSpeech": "",
+    "VietnameseMeaning": "Bố, ba",
+    "ExampleSentence": "爸爸,我很爱你。",
+    "ExamplePinyin": "bàba,wǒ hěn ài nǐ.",
+    "ExampleTranslation": "Bố ơi, con rất yêu bố."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "杯子",
+    "Pinyin": "bēizi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cốc uống",
+    "ExampleSentence": "星巴克的杯子 超级可爱。",
+    "ExamplePinyin": "Xīngbākè de bēizi chāojí kě’ài.",
+    "ExampleTranslation": "Cốc của starbuck đáng yêu ghê."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "北京",
+    "Pinyin": "Běijīng",
+    "PartOfSpeech": "Tên riêng",
+    "VietnameseMeaning": "Bắc Kinh",
+    "ExampleSentence": "一来中国旅行一定要来北京 。",
+    "ExamplePinyin": "Yì lái Zhōngguó lǚxíng yídìng yào lái Běijīng.",
+    "ExampleTranslation": "Du lịch tới Trung Quốc nhất định phải đến Bắc Kinh."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "本",
+    "Pinyin": "běn",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Cuốn, quyển",
+    "ExampleSentence": "那本书很适合你的儿子。",
+    "ExamplePinyin": "Nà běn shū hěn shìhé nǐ de érzi.",
+    "ExampleTranslation": "Cuốn sách này rất phù hợp với con bạn."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "不客气",
+    "Pinyin": "bú kèqi",
+    "PartOfSpeech": "",
+    "VietnameseMeaning": "Đừng khách khí, đừng ngại",
+    "ExampleSentence": "我没事，不客气 。",
+    "ExamplePinyin": "Wǒ méishì,bú kèqi .",
+    "ExampleTranslation": "Tôi không sao cả, đừng ngại."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "不",
+    "Pinyin": "bù",
+    "PartOfSpeech": "Danh từ, Trạng ngữ",
+    "VietnameseMeaning": "Không",
+    "ExampleSentence": "你不用担心",
+    "ExamplePinyin": "Nǐ bú yòng dānxīn.",
+    "ExampleTranslation": "Bạn không cần lo lắng."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "菜",
+    "Pinyin": "cài",
+    "PartOfSpeech": "Danh từ, Lượng từ",
+    "VietnameseMeaning": "Món (ăn)",
+    "ExampleSentence": "你做几菜餐呢？",
+    "ExamplePinyin": "Nǐ zuò jǐ cài cān ne?",
+    "ExampleTranslation": "Bạn làm mấy món vậy?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "茶",
+    "Pinyin": "chá",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trà",
+    "ExampleSentence": "我很喜欢喝珍珠奶茶 。",
+    "ExamplePinyin": "Wǒ hěn xǐhuān hē zhēnzhū nǎichá .",
+    "ExampleTranslation": "Tôi rất thích uống trà sữa chân trâu."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "吃",
+    "Pinyin": "chī",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ăn",
+    "ExampleSentence": "你想吃什么？",
+    "ExamplePinyin": "Nǐ xiǎng chī shénme?",
+    "ExampleTranslation": "Bạn muốn ăn gì?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "出租车",
+    "Pinyin": "chūzūchē",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Xe thuê, Xe taxi",
+    "ExampleSentence": "这次旅行我们借辆出租车吧。",
+    "ExamplePinyin": "Zhè cì lǚxíng wǒmen jiè liàng chūzūchē ba.",
+    "ExampleTranslation": "Lần du lịch này chúng mình thuê xe đi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "打电话",
+    "Pinyin": "dǎ diànhuà",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Gọi điện thoại",
+    "ExampleSentence": "等我一下，我给老张打个电话吧。",
+    "ExamplePinyin": "Děng wǒ yíxià, wǒ gěi Lǎozhāng dǎ gè diànhuà ba.",
+    "ExampleTranslation": "Đợi mình một chút, mình gọi điện cho thầy Trương đã."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "大",
+    "Pinyin": "dà",
+    "PartOfSpeech": "Tính từ, Danh từ",
+    "VietnameseMeaning": "To, lớn",
+    "ExampleSentence": "这双鞋有点大 。",
+    "ExamplePinyin": "Zhè shuāng xié yǒudiǎn dà.",
+    "ExampleTranslation": "Đôi giày này hơi to chút."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "的",
+    "Pinyin": "de",
+    "PartOfSpeech": "Trợ từ, Danh từ",
+    "VietnameseMeaning": "Cái gì đó, vật gì đó, việc gì đó của ai đó, cái gi đó…..",
+    "ExampleSentence": "我的书。",
+    "ExamplePinyin": "Wǒ de shū.",
+    "ExampleTranslation": "Sách của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "点",
+    "Pinyin": "diǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Giờ",
+    "ExampleSentence": "现在几点了？9点了。",
+    "ExamplePinyin": "Xiànzài jǐ diǎn le ? Jiǔ diǎn le.",
+    "ExampleTranslation": "Bây giờ mấy giờ rồi? 9 giờ."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "电脑",
+    "Pinyin": "diànnǎo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Máy vi tính",
+    "ExampleSentence": "我喜欢这台电脑 。",
+    "ExamplePinyin": "Wǒ xǐhuān zhè tái diànnǎo .",
+    "ExampleTranslation": "Tôi rất thích cỗ/bộ máy tính này."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "电视",
+    "Pinyin": "diànshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ti vi, vô tuyến",
+    "ExampleSentence": "你家有电视 吗？",
+    "ExamplePinyin": "Nǐ jiā yǒu diànshì ma?",
+    "ExampleTranslation": "Nhà bạn có ti vi không?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "电影",
+    "Pinyin": "diànyǐng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phim điện ảnh",
+    "ExampleSentence": "我想去看电影。",
+    "ExamplePinyin": "Wǒ xiǎng qù kàn diànyǐng.",
+    "ExampleTranslation": "Tôi muốn đi xem phim."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "东西",
+    "Pinyin": "dōngxi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đồ vật",
+    "ExampleSentence": "你带的是什么东西 ？",
+    "ExamplePinyin": "Nǐ dài de shì shénme dōngxi ?",
+    "ExampleTranslation": "Bạn đem đến đồ (vật) gì vậy?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "都",
+    "Pinyin": "dōu",
+    "PartOfSpeech": "Trạng từ",
+    "VietnameseMeaning": "Đều",
+    "ExampleSentence": "不管是白天还是黑夜我都很想你。",
+    "ExamplePinyin": "Bùguǎn shì báitiān háishì hēiyè wǒ dōu hěn xiǎng nǐ.",
+    "ExampleTranslation": "Không kể ngày hay đêm, mình đều rất nhớ cậu."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "读",
+    "Pinyin": "dú",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đọc",
+    "ExampleSentence": "你的阅读课怎么样？",
+    "ExamplePinyin": "Nǐ de yuè dú kè zěnme yàng?",
+    "ExampleTranslation": "Tiết học đọc của cậu như thế nào?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "对不起",
+    "Pinyin": "duìbuqǐ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Xin lỗi",
+    "ExampleSentence": "对不起，我知道我的错了。",
+    "ExamplePinyin": "Duìbuqǐ, wǒ zhīdào wǒ de cuòle.",
+    "ExampleTranslation": "Xin lỗi, mình biết lỗi của mình rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "多",
+    "Pinyin": "duō",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nhiều, thừa, Quá",
+    "ExampleSentence": "你买太多 了。",
+    "ExamplePinyin": "Nǐ mǎi tài duō le.",
+    "ExampleTranslation": "Bạn mua nhiều quá rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "多少",
+    "Pinyin": "duōshao",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Bao nhiêu",
+    "ExampleSentence": "你想买多少 呢·？",
+    "ExamplePinyin": "Nǐ xiǎng mǎi duōshao ne?",
+    "ExampleTranslation": "Bạn muốn mua bao nhiêu ?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "儿子",
+    "Pinyin": "érzi",
+    "PartOfSpeech": "Danh từ, Đại từ",
+    "VietnameseMeaning": "Con cái",
+    "ExampleSentence": "这是我的儿子。",
+    "ExamplePinyin": "Zhè shì wǒ de érzi .",
+    "ExampleTranslation": "Đây là con trai của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "二",
+    "Pinyin": "èr",
+    "PartOfSpeech": "Sô từ",
+    "VietnameseMeaning": "Số 2",
+    "ExampleSentence": "第二是…..",
+    "ExamplePinyin": "Dì èr shì…..",
+    "ExampleTranslation": "(Người/cái) Thứ 2 là……"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "饭馆",
+    "Pinyin": "fàngguǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cửa hàng ăn",
+    "ExampleSentence": "今天去哪个饭馆呢？",
+    "ExamplePinyin": "Jīntiān qù nǎge fàngguǎn ne?",
+    "ExampleTranslation": "Hôm nay ăn hàng cơm nào?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "飞机",
+    "Pinyin": "fēijī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Máy bay",
+    "ExampleSentence": "我想乘飞机 。",
+    "ExamplePinyin": "Wǒ xiǎng chéng fēijī.",
+    "ExampleTranslation": "Tôi muốn đi máy bay."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "分钟",
+    "Pinyin": "fēnzhōng",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Phút",
+    "ExampleSentence": "现在5点30分钟。",
+    "ExamplePinyin": "Xiànzài wǔ diǎn sānshí fēnzhōng.",
+    "ExampleTranslation": "Bây giờ 5 giờ 30 phút."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "高兴",
+    "Pinyin": "gāoxìng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Vui vẻ, hào hứng",
+    "ExampleSentence": "见到你我很高兴 。",
+    "ExamplePinyin": "Jiàn dào nǐ wǒ hěn gāoxìng.",
+    "ExampleTranslation": "Gặp được bạn mình rất vui."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "个",
+    "Pinyin": "gè",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Cái",
+    "ExampleSentence": "你买几个 ？",
+    "ExamplePinyin": "Nǐ mǎi jǐ gè ?",
+    "ExampleTranslation": "Bạn mua mấy cái?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "工作",
+    "Pinyin": "gōngzuò",
+    "PartOfSpeech": "Danh từ, Động từ",
+    "VietnameseMeaning": "Công việc, Làm việc",
+    "ExampleSentence": "最近你工作 怎么样？",
+    "ExamplePinyin": "Zuìjìn nǐ gōngzuò zěnme yàng?",
+    "ExampleTranslation": "Dạo này công việc của bạn thế nào rồi?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "狗",
+    "Pinyin": "gǒu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Chó",
+    "ExampleSentence": "我家有一只狗。",
+    "ExamplePinyin": "Wǒjiā yǒu yì zhī gǒu.",
+    "ExampleTranslation": "Nhà mình có 1 chú chó."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "汉语",
+    "Pinyin": "Hànyǔ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tiếng Hán",
+    "ExampleSentence": "你认为汉语 难吗?",
+    "ExamplePinyin": "Nǐ rènwéi Hànyǔ nán ma?",
+    "ExampleTranslation": "Bạn thấy tiếng Trung khó không?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "好",
+    "Pinyin": "hǎo",
+    "PartOfSpeech": "Danh từ, Động từ, Trạng từ",
+    "VietnameseMeaning": "Tốt, Ok, Yêu thích",
+    "ExampleSentence": "你的作业很好。我的爱好是唱歌。",
+    "ExamplePinyin": "Nǐ de zuòyè hěn hǎo. Wǒ de àihào shì chànggē.",
+    "ExampleTranslation": "Bài tập về nhà của bạn rất tốt. Sở thích của tôi là ca hát."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "喝",
+    "Pinyin": "hē",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Uống",
+    "ExampleSentence": "我喜欢喝果汁。",
+    "ExamplePinyin": "Wǒ xǐhuān hē guǒzhī.",
+    "ExampleTranslation": "Tôi thích uống nước ép trái cây."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "和",
+    "Pinyin": "hé",
+    "PartOfSpeech": "Danh từ, Liên từ",
+    "VietnameseMeaning": "Và, Hòa",
+    "ExampleSentence": "越南和中国是邻居。",
+    "ExamplePinyin": "Yuènán hé Zhōngguó shì línjū.",
+    "ExampleTranslation": "Việt Nam và Trung Quốc là láng giềng."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "很",
+    "Pinyin": "hěn",
+    "PartOfSpeech": "Trạng từ",
+    "VietnameseMeaning": "Rất",
+    "ExampleSentence": "今天天气很 冷。",
+    "ExamplePinyin": "Jīntiān tiānqì hěn lěng.",
+    "ExampleTranslation": "Thời tiết hôm nay rất lạnh."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "后面",
+    "Pinyin": "hòumiàn",
+    "PartOfSpeech": "Danh từ, Phương vị từ",
+    "VietnameseMeaning": "Phía sau",
+    "ExampleSentence": "我家是在学校后面。",
+    "ExamplePinyin": "Wǒjiā shì zài xuéxiào hòumiàn.",
+    "ExampleTranslation": "Nhà tôi ở phía sau trường."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "回",
+    "Pinyin": "huí",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Quay lại, trở về",
+    "ExampleSentence": "今年的春运很多人回 家。",
+    "ExamplePinyin": "Jīn nían de chūnyùn hěn duō rén huí jiā.",
+    "ExampleTranslation": "Xuân vận năm nay rất nhiều người trở về nhà."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "会",
+    "Pinyin": "huì",
+    "PartOfSpeech": "Động từ, Danh từ",
+    "VietnameseMeaning": "Sẽ, Hội (họp), Gặp mặt",
+    "ExampleSentence": "我一定会做的。",
+    "ExamplePinyin": "Wǒ yīdìng huì zuò de.",
+    "ExampleTranslation": "Tôi nhất định sẽ làm."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "火车站",
+    "Pinyin": "huǒchēzhàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bến tàu hỏa",
+    "ExampleSentence": "附近有火车站吗？",
+    "ExamplePinyin": "Fùjìn yǒu huǒchēzhàn ma?",
+    "ExampleTranslation": "Gần đây có ga tàu hỏa không?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "几",
+    "Pinyin": "jǐ",
+    "PartOfSpeech": "Trạng từ, Số từ",
+    "VietnameseMeaning": "Mấy, Vài",
+    "ExampleSentence": "你家有几 口人？",
+    "ExamplePinyin": "Nǐ jiā yǒu jǐ kǒu rén?",
+    "ExampleTranslation": "Nhà bạn có mấy người?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "家",
+    "Pinyin": "jiā",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nhà, Gia đình",
+    "ExampleSentence": "我家有四口人。",
+    "ExamplePinyin": "Wǒ jiā yǒu sì kǒu rén.",
+    "ExampleTranslation": "Nhà tôi có 4 người."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "叫",
+    "Pinyin": "jiào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Gọi",
+    "ExampleSentence": "你叫我干嘛呀？",
+    "ExamplePinyin": "Nǐ jiào wǒ gàn mǎ yā?",
+    "ExampleTranslation": "Bạn gọi tôi có việc gì đấy?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "今天",
+    "Pinyin": "jīntiān",
+    "PartOfSpeech": "Danh từ chỉ thời gian",
+    "VietnameseMeaning": "Hôm nay",
+    "ExampleSentence": "今天你去哪？",
+    "ExamplePinyin": "Jīntiān nǐ qù nǎ?",
+    "ExampleTranslation": "Hôm nay cậu đi đâu đấy?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "九",
+    "Pinyin": "jiǔ",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 9",
+    "ExampleSentence": "今天上午九点上课。",
+    "ExamplePinyin": "Jīntiān shàngwǔ jiǔ diǎn shàngkè.",
+    "ExampleTranslation": "Sáng nay 9 giờ vào lớp."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "开",
+    "Pinyin": "kāi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Mở",
+    "ExampleSentence": "我在外面，你开 门吧。",
+    "ExamplePinyin": "Wǒ zài wàimiàn, nǐ kāi mén ba.",
+    "ExampleTranslation": "Tôi ở bên ngoài, bạn mở cửa đi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "看",
+    "Pinyin": "kàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Xem, Nhìn",
+    "ExampleSentence": "你想看什么呢？",
+    "ExamplePinyin": "Nǐ xiǎng kàn shénme ne?",
+    "ExampleTranslation": "Bạn muốn xem gì?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "看见",
+    "Pinyin": "kànjiàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nhìn thấy",
+    "ExampleSentence": "你看见了没？",
+    "ExamplePinyin": "Nǐ kànjiàn le méi?",
+    "ExampleTranslation": "Cậu nhìn thấy gì chưa?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "块",
+    "Pinyin": "kuài",
+    "PartOfSpeech": "Danh từ, Lượng từ",
+    "VietnameseMeaning": "Đồng, Khoảnh, Miếng",
+    "ExampleSentence": "这个三 钱。",
+    "ExamplePinyin": "Zhège sān kuài qián.",
+    "ExampleTranslation": "Cái này 3 đồng."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "来",
+    "Pinyin": "lái",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đến",
+    "ExampleSentence": "我来了。",
+    "ExamplePinyin": "Wǒ lái le.",
+    "ExampleTranslation": "Tôi đến rồi đây."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "老师",
+    "Pinyin": "lǎoshī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Giáo viên, Thầy giáo, cô giáo",
+    "ExampleSentence": "张老师是我的老师。",
+    "ExamplePinyin": "Zhāng lǎoshī shì wǒ de lǎoshī.",
+    "ExampleTranslation": "Thầy Trương là thầy giáo của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "了",
+    "Pinyin": "le",
+    "PartOfSpeech": "Trợ từ ngữ khí",
+    "VietnameseMeaning": "Đã, rồi",
+    "ExampleSentence": "我做了。",
+    "ExamplePinyin": "Wǒ zuò le.",
+    "ExampleTranslation": "Tôi làm rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "冷",
+    "Pinyin": "lěng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Lạnh",
+    "ExampleSentence": "遇到寒冷的天气。",
+    "ExamplePinyin": "Yù dào hánlěng de tiānqì.",
+    "ExampleTranslation": "Gặp phải thời tiết giá lạnh."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "里",
+    "Pinyin": "lǐ",
+    "PartOfSpeech": "Danh từ, Phương vị từ",
+    "VietnameseMeaning": "Mét, Bên trong, Họ: Lí",
+    "ExampleSentence": "我坐在家里 。",
+    "ExamplePinyin": "Wǒ zuò zàijiā lǐ .",
+    "ExampleTranslation": "Tôi ngồi ở trong nhà."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "零",
+    "Pinyin": "líng",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 0",
+    "ExampleSentence": "这个零字很难写。",
+    "ExamplePinyin": "Zhège líng zì hěn nán xiě.",
+    "ExampleTranslation": "Chữ số 0 này thật khó viết."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "六",
+    "Pinyin": "liù",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 6",
+    "ExampleSentence": "中国人很喜欢六 字。",
+    "ExamplePinyin": "Zhōngguó rén hěn xǐhuān liù zì.",
+    "ExampleTranslation": "Người Trung Quốc rất thích số 6."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "妈妈",
+    "Pinyin": "māma",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mẹ, má",
+    "ExampleSentence": "妈妈是我最爱的人。",
+    "ExamplePinyin": "Māma shì wǒ zuì ài de rén.",
+    "ExampleTranslation": "Người tôi yêu nhất là mẹ."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "吗",
+    "Pinyin": "ma",
+    "PartOfSpeech": "Trợ từ ngữ khí",
+    "VietnameseMeaning": "Ừ, À, Chưa",
+    "ExampleSentence": "你喜欢我吗？",
+    "ExamplePinyin": "Nǐ xǐhuān wǒ ma?",
+    "ExampleTranslation": "Bạn có thích tôi không?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "买",
+    "Pinyin": "mǎi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Mua",
+    "ExampleSentence": "你想买几口？",
+    "ExamplePinyin": "Nǐ xiǎng mǎi jǐ kǒu?",
+    "ExampleTranslation": "Bạn muốn mua mấy cái?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "猫",
+    "Pinyin": "māo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mèo",
+    "ExampleSentence": "我家的第五个成员是小猫咪。",
+    "ExamplePinyin": "Wǒjiā de dì wǔ gè chéngyuán shì xiǎo māomī.",
+    "ExampleTranslation": "Thành viên thứ 5 của gia đình tôi chính là chú mèo."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "没",
+    "Pinyin": "méi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chưa, Không ….(sở hữu,lí do) ….",
+    "ExampleSentence": "我还没到家。",
+    "ExamplePinyin": "Wǒ hái méi dàojiā.",
+    "ExampleTranslation": "Tôi chưa về đến nhà."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "没关系",
+    "Pinyin": "méi guānxi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Không liên quan, Không sao, Đừng ngại",
+    "ExampleSentence": "这件事跟那件事真的没关系。",
+    "ExamplePinyin": "Zhè jiàn shì gēn nà jiàn shì zhēn de méi guānxi .",
+    "ExampleTranslation": "2 việc này không có liên quan gì hết."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "米饭",
+    "Pinyin": "mǐfàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cơm",
+    "ExampleSentence": "你想吃什么？我想吃米饭 。",
+    "ExamplePinyin": "Nǐ xiǎng chī shénme? Wǒ xiǎng chī mǐfàn .",
+    "ExampleTranslation": "Bạn muốn ăn gì? Tôi muốn ăn cơm."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "明天",
+    "Pinyin": "míngtiān",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Ngày mai",
+    "ExampleSentence": "明天去看电影吧。",
+    "ExamplePinyin": "Míngtiān  qù kàn diànyǐng ba.",
+    "ExampleTranslation": "Mai đi xem phim đi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "名字",
+    "Pinyin": "míngzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tên",
+    "ExampleSentence": "你叫什么名字 ？",
+    "ExamplePinyin": "Nǐ jiào shénme míngzi ?",
+    "ExampleTranslation": "Bạn tên là gì?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "哪(哪儿)",
+    "Pinyin": "nǎ (nǎr)",
+    "PartOfSpeech": "Danh từ, Liên từ",
+    "VietnameseMeaning": "Ở đâu",
+    "ExampleSentence": "你家在哪(哪儿) 呀？",
+    "ExamplePinyin": "Nǐ jiā zài nǎ (nǎr) ya?",
+    "ExampleTranslation": "Nhà bạn ở đâu?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "那(那儿)",
+    "Pinyin": "nà (nàr)",
+    "PartOfSpeech": "Danh từ, Liên từ, Đại từ",
+    "VietnameseMeaning": "Ở kia, Họ: Na",
+    "ExampleSentence": "这本书在那(那儿) 边。",
+    "ExamplePinyin": "Zhè běn shū zài nà (nàr) biān.",
+    "ExampleTranslation": "Cuốn sách này ở bên kia."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "呢",
+    "Pinyin": "ne",
+    "PartOfSpeech": "Trợ từ ngữ khí",
+    "VietnameseMeaning": "Thế, nhỉ, vậy, mà, nhé",
+    "ExampleSentence": "你呢？",
+    "ExamplePinyin": "Nǐ ne?",
+    "ExampleTranslation": "Bạn thì sao?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "能",
+    "Pinyin": "néng",
+    "PartOfSpeech": "Động từ, Danh từ",
+    "VietnameseMeaning": "Có thể, Năng (lượng, lực)",
+    "ExampleSentence": "我能做得到的。",
+    "ExamplePinyin": "Wǒ néng zuò dédào de.",
+    "ExampleTranslation": "Tôi có thể làm được."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "你",
+    "Pinyin": "nǐ",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Bạn",
+    "ExampleSentence": "我爱你。",
+    "ExamplePinyin": "Wǒ ài nǐ.",
+    "ExampleTranslation": "Tôi yêu bạn."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "年",
+    "Pinyin": "nián",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Năm, Niên",
+    "ExampleSentence": "他是我的童年。",
+    "ExamplePinyin": "Tā shì wǒ de tóng nián.",
+    "ExampleTranslation": "Anh ta là bạn đồng niên của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "女儿",
+    "Pinyin": "nǚér",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Con gái",
+    "ExampleSentence": "我喜欢有女儿。",
+    "ExamplePinyin": "Wǒ xǐhuān yǒu nǚér.",
+    "ExampleTranslation": "Tôi thích có con gái."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "朋友",
+    "Pinyin": "péngyou",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bạn bè",
+    "ExampleSentence": "他是我的男朋友。",
+    "ExamplePinyin": "Tā shì wǒ de nán péngyou.",
+    "ExampleTranslation": "Anh ấy là bạn trai của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "漂亮",
+    "Pinyin": "piàoliang",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Xinh đẹp",
+    "ExampleSentence": "她很漂亮 。",
+    "ExamplePinyin": "Tā hěn piàoliang.",
+    "ExampleTranslation": "Cô ấy thật xinh đẹp."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "苹果",
+    "Pinyin": "píngguǒ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quả táo",
+    "ExampleSentence": "圣诞节送苹果。",
+    "ExamplePinyin": "Shèngdàn jié sòng píngguǒ.",
+    "ExampleTranslation": "Noel tặng táo."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "七",
+    "Pinyin": "qī",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 7",
+    "ExampleSentence": "现在七点。",
+    "ExamplePinyin": "Xiànzài qī diǎn.",
+    "ExampleTranslation": "Bây giờ 7 giờ."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "钱",
+    "Pinyin": "qián",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tiền",
+    "ExampleSentence": "谁不爱钱呢？",
+    "ExamplePinyin": "Shéi bú ài qián ne?",
+    "ExampleTranslation": "Ai mà chả yêu tiền chứ?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "前面",
+    "Pinyin": "qiánmiàn",
+    "PartOfSpeech": "Danh từ, Động từ, Phương vị từ",
+    "VietnameseMeaning": "Phía trước",
+    "ExampleSentence": "前面是我的学校。",
+    "ExamplePinyin": "qiánmiàn shì wǒ de xuéxiào.",
+    "ExampleTranslation": "Phía trước là nhà của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "请",
+    "Pinyin": "qǐng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Mời",
+    "ExampleSentence": "我想请你去吃饭。",
+    "ExamplePinyin": "Wǒ xiǎng qǐng nǐ qù chīfàn.",
+    "ExampleTranslation": "Tôi muốn mời bạn đi ăn."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "去",
+    "Pinyin": "qù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đi",
+    "ExampleSentence": "你去哪呀？",
+    "ExamplePinyin": "Nǐ qù nǎ ya?",
+    "ExampleTranslation": "Bạn đi đâu đấy?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "热",
+    "Pinyin": "rè",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Nóng",
+    "ExampleSentence": "今天好热啊。",
+    "ExamplePinyin": "Jīntiān hǎo rè a.",
+    "ExampleTranslation": "Hôm nay nóng thật đó."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "人",
+    "Pinyin": "rén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Người",
+    "ExampleSentence": "这个人是谁？",
+    "ExamplePinyin": "Zhège rén shì shéi?",
+    "ExampleTranslation": "Người này là ai đó?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "认识",
+    "Pinyin": "rènshi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nhận biết, Quen",
+    "ExampleSentence": "我不认识她。",
+    "ExamplePinyin": "Wǒ bú rènshi tā.",
+    "ExampleTranslation": "Tôi không quen anh ấy."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "日",
+    "Pinyin": "rì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ngày, Mặt trời, thái dương",
+    "ExampleSentence": "今天是2020年2月2日",
+    "ExamplePinyin": "Jīntiān shì 2020 nián 2 yuè 2 rì",
+    "ExampleTranslation": "Hôm nay là ngày 2 tháng 2 năm 2020."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "三",
+    "Pinyin": "sān",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 3",
+    "ExampleSentence": "三 点了你还干嘛呀？",
+    "ExamplePinyin": "sān diǎnle nǐ hái gàn mǎ ya?",
+    "ExampleTranslation": "3 giờ rồi bạn còn làm gì đấy?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "商店",
+    "Pinyin": "shāngdiàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cửa hàng/ tiệm",
+    "ExampleSentence": "这是你姐的商店 ，对吗？",
+    "ExamplePinyin": "Zhè shì nǐ jiě de shāngdiàn , duì ma?",
+    "ExampleTranslation": "Đây là cửa hàng của chị bạn hả?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "上",
+    "Pinyin": "shàng",
+    "PartOfSpeech": "Danh từ, Động từ, Phương vị từ",
+    "VietnameseMeaning": "Phía trên",
+    "ExampleSentence": "你的儿子在上 面。",
+    "ExamplePinyin": "Nǐ de érzi zài shàng miàn.",
+    "ExampleTranslation": "Con trai bạn ở bên trên."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "上午",
+    "Pinyin": "shàngwǔ",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Buổi trưa",
+    "ExampleSentence": "上午去工作。",
+    "ExamplePinyin": "Shàngwǔ qù gōngzuò.",
+    "ExampleTranslation": "Buổi sáng đi làm việc."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "少",
+    "Pinyin": "shǎo",
+    "PartOfSpeech": "Động từ, Danh từ, Đại từ",
+    "VietnameseMeaning": "Ít, thiếu, Thiếu (niên), Trẻ, Họ: Thiếu",
+    "ExampleSentence": "我缺少了时间，所以做不到的。",
+    "ExamplePinyin": "Wǒ quē shǎo le shíjiān, suǒyǐ zuò bú dào de.",
+    "ExampleTranslation": "Tôi thiếu thời gian nên không làm được việc rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "谁",
+    "Pinyin": "shéi",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Ai",
+    "ExampleSentence": "你是谁？",
+    "ExamplePinyin": "Nǐ shì shéi?",
+    "ExampleTranslation": "Bạn là ai?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "什么",
+    "Pinyin": "shénme",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Cái gì?",
+    "ExampleSentence": "这是什么？",
+    "ExamplePinyin": "Zhè shì shénme?",
+    "ExampleTranslation": "Đây là cái gì?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "十",
+    "Pinyin": "shí",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 10",
+    "ExampleSentence": "十\\块钱一份。",
+    "ExamplePinyin": "Shí kuài qián yī fèn.",
+    "ExampleTranslation": "10 đồng 1 phần."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "时候",
+    "Pinyin": "shíhou",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Lúc nào, Khoảng thời gian",
+    "ExampleSentence": "我小时候很喜欢你。",
+    "ExamplePinyin": "Wǒ xiǎo shíhou hěn xǐhuān nǐ.",
+    "ExampleTranslation": "Tôi lúc bé rất thích bạn."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "是",
+    "Pinyin": "shì",
+    "PartOfSpeech": "Danh từ, Động từ, Đại từ",
+    "VietnameseMeaning": "Là, Đúng, chính xác, Phải, vâng, Như vậy, vậy",
+    "ExampleSentence": "我是你的小宝贝。",
+    "ExamplePinyin": "Wǒ shì nǐ de xiǎo bǎobèi.",
+    "ExampleTranslation": "Mình là bảo bối của bạn."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "书",
+    "Pinyin": "shū",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sách",
+    "ExampleSentence": "这是你的书。",
+    "ExamplePinyin": "Zhè shì nǐ de shū.",
+    "ExampleTranslation": "Đây là sách của cậu."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "水",
+    "Pinyin": "shuǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nước",
+    "ExampleSentence": "我喝矿泉水。",
+    "ExamplePinyin": "Wǒ hē kuàngquán shuǐ .",
+    "ExampleTranslation": "Tôi uống nước khoáng."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "水果",
+    "Pinyin": "shuǐguǒ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hoa quả",
+    "ExampleSentence": "你喜欢哪种水果 呢？",
+    "ExamplePinyin": "Nǐ xǐhuān nǎ zhǒng shuǐguǒ ne?",
+    "ExampleTranslation": "Bạn thích loại hoa quả nào?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "睡觉",
+    "Pinyin": "shuìjiào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ngủ",
+    "ExampleSentence": "我喜欢睡觉。",
+    "ExamplePinyin": "Wǒ xǐhuān shuìjiào.",
+    "ExampleTranslation": "Tôi thích đi ngủ."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "说话",
+    "Pinyin": "shuōhuà",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nói chuyện",
+    "ExampleSentence": "你别说废话。",
+    "ExamplePinyin": "Nǐ bié shuō fèihuà.",
+    "ExampleTranslation": "Bạn đừng nói tầm bậy tầm bạ nữa."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "四",
+    "Pinyin": "sì",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 4",
+    "ExampleSentence": "四月我打算来河内。",
+    "ExamplePinyin": "sì yuè wǒ dǎsuàn lái Hénèi.",
+    "ExampleTranslation": "Tháng 4 này tôi định đi Hà Nội."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "岁",
+    "Pinyin": "suì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tuổi",
+    "ExampleSentence": "你今年多少岁 ？",
+    "ExamplePinyin": "Nǐ jīnnián duōshǎosuì?",
+    "ExampleTranslation": "Năm nay bạn bao bao nhiêu tuổi?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "他",
+    "Pinyin": "tā",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Anh",
+    "ExampleSentence": "他是谁？",
+    "ExamplePinyin": "Tā shì shéi?",
+    "ExampleTranslation": "Anh ấy là ai?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "她",
+    "Pinyin": "tā",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Cô",
+    "ExampleSentence": "你猜猜她是谁？",
+    "ExamplePinyin": "Nǐ cāi cāi tā shì shéi?",
+    "ExampleTranslation": "Bạn đoán xem cô ấy là ai?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "太",
+    "Pinyin": "tài",
+    "PartOfSpeech": "Danh từ, Trạng từ",
+    "VietnameseMeaning": "Cao, to, lớn, Quá",
+    "ExampleSentence": "我太可爱了。",
+    "ExamplePinyin": "Wǒ tài kě’àile.",
+    "ExampleTranslation": "Tôi quá đáng yêu đi mà."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "天气",
+    "Pinyin": "tiānqi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thời tiết",
+    "ExampleSentence": "这几天天气 很好。",
+    "ExamplePinyin": "Zhè jǐ tiān tiānqi hěn hǎo.",
+    "ExampleTranslation": "Mấy hôm nay thời tiết rất đẹp."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "听",
+    "Pinyin": "tīng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nghe",
+    "ExampleSentence": "你听什么歌？",
+    "ExamplePinyin": "Nǐ tīng shénme gē?",
+    "ExampleTranslation": "Bạn nghe bài hát gì đó?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "同学",
+    "Pinyin": "tóngxué",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bạn học",
+    "ExampleSentence": "这是我老同学。",
+    "ExamplePinyin": "Zhè shì wǒ lǎo tóngxué .",
+    "ExampleTranslation": "Đây là bạn học cũ của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "喂",
+    "Pinyin": "wèi",
+    "PartOfSpeech": "Từ cảm thán",
+    "VietnameseMeaning": "Alo, Này",
+    "ExampleSentence": "喂，请问王老师在吗？",
+    "ExamplePinyin": "Wèi, qǐngwèn Wáng lǎoshī zài ma?",
+    "ExampleTranslation": "Alo, xin hỏi có phải là thầy Vương không?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "我",
+    "Pinyin": "wǒ",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Tôi",
+    "ExampleSentence": "我 是….",
+    "ExamplePinyin": "Wǒ shì….",
+    "ExampleTranslation": "Tôi là …"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "我们",
+    "Pinyin": "wǒmen",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Chúng tôi",
+    "ExampleSentence": "我们是国家大学的学生。",
+    "ExamplePinyin": "Wǒmen shì Guójiā dàxué de xuéshēng.",
+    "ExampleTranslation": "Chúng tôi là sinh viên trường Đại học Quốc Gia."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "五",
+    "Pinyin": "wǔ",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 5",
+    "ExampleSentence": "我在国外工作五 年了。",
+    "ExamplePinyin": "Wǒ zài guówài gōngzuò wǔ niánle.",
+    "ExampleTranslation": "Tôi ở nước ngoài công tác 5 năm rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "喜欢",
+    "Pinyin": "xǐhuan",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Thích",
+    "ExampleSentence": "我喜欢唱歌。",
+    "ExamplePinyin": "Wǒ xǐhuan chànggē.",
+    "ExampleTranslation": "Tôi thích hát."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "下",
+    "Pinyin": "xià",
+    "PartOfSpeech": "Danh từ, Động từ, Phương vị từ",
+    "VietnameseMeaning": "Phía dưới",
+    "ExampleSentence": "钱包在包子下面。",
+    "ExamplePinyin": "Qiánbāo zài bāozi xiàmiàn.",
+    "ExampleTranslation": "Ví tiền ở phía dưới túi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "下午",
+    "Pinyin": "xiàwǔ",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Buổi chiều",
+    "ExampleSentence": "下午去玩吗？",
+    "ExamplePinyin": "Xiàwǔ qù wán ma?",
+    "ExampleTranslation": "Buổi chiều đi đâu chơi không?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "下雨",
+    "Pinyin": "xià yǔ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đổ mưa",
+    "ExampleSentence": "突然下雨了！",
+    "ExamplePinyin": "Tūrán xià yǔle!",
+    "ExampleTranslation": "Đột nhiên mưa rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "先生",
+    "Pinyin": "xiānsheng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quý ông",
+    "ExampleSentence": "张先生，欢迎光临。",
+    "ExamplePinyin": "Zhāng xiānsheng, huānyíng guānglín.",
+    "ExampleTranslation": "Ngài Trương, hoan nghênh ngài tới thăm."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "现在",
+    "Pinyin": "xiànzài",
+    "PartOfSpeech": "Danh từ chỉ thời gian",
+    "VietnameseMeaning": "Hiện tại, Hiện nay",
+    "ExampleSentence": "现在几点了？",
+    "ExamplePinyin": "Xiànzàijǐ diǎnle?",
+    "ExampleTranslation": "Bây giờ mấy giờ rồi?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "想",
+    "Pinyin": "xiǎng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Muốn, Nhớ, Nghĩ rằng",
+    "ExampleSentence": "我想去玩。 我想你错了。",
+    "ExamplePinyin": "Wǒ xiǎng qù wán. Wǒ xiǎng nǐ cuòle.",
+    "ExampleTranslation": "Tôi muốn đi chơi. Tôi nghĩ bạn sai rồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "小",
+    "Pinyin": "xiǎo",
+    "PartOfSpeech": "Tính từ, Danh từ",
+    "VietnameseMeaning": "Bé, nhỏ, …. Bé, Tiểu",
+    "ExampleSentence": "我是小可爱。",
+    "ExamplePinyin": "Wǒ shì xiǎokě’ài.",
+    "ExampleTranslation": "Tôi là cục cưng đáng yêu."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "小姐",
+    "Pinyin": "xiǎojiě",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quý cô, Tiểu thư",
+    "ExampleSentence": "小姐好。",
+    "ExamplePinyin": "Xiǎojiěhǎo.",
+    "ExampleTranslation": "Chào tiểu thư. Chào cô."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "些",
+    "Pinyin": "xiē",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Một ít/ vài, …. Một chút",
+    "ExampleSentence": "这些东西是谁买的？",
+    "ExamplePinyin": "Zhè xiēdōngxī shì shéi mǎi de?",
+    "ExampleTranslation": "Những món đồ này do ai mua đó?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "写",
+    "Pinyin": "xiě",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Viết",
+    "ExampleSentence": "你写的汉字很好。",
+    "ExamplePinyin": "Nǐ xiěde Hànzì hěn hǎo.",
+    "ExampleTranslation": "Bạn viết chữ Hán rất đẹp."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "谢谢",
+    "Pinyin": "xièxie",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cảm ơn",
+    "ExampleSentence": "谢谢你的帮助。",
+    "ExamplePinyin": "Xièxienǐ de bāngzhù.",
+    "ExampleTranslation": "Cám ơn bạn đã giúp tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "星期",
+    "Pinyin": "xīngqī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thứ …., Chủ nhật (tên gọi tắt)",
+    "ExampleSentence": "今天星期二。",
+    "ExamplePinyin": "Jīntiān xīngqī èr.",
+    "ExampleTranslation": "Hôm nay là thứ 3."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "学生",
+    "Pinyin": "xuésheng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Học sinh",
+    "ExampleSentence": "这是我的学生。",
+    "ExamplePinyin": "Zhè shì wǒ de xuésheng.",
+    "ExampleTranslation": "Đây là học sinh của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "学习",
+    "Pinyin": "xuéxí",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Học tập",
+    "ExampleSentence": "学生要好好学习。",
+    "ExamplePinyin": "Xuéshēng yào hǎohāo xuéxí.",
+    "ExampleTranslation": "Học sinh cần tập trung học tập."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "学校",
+    "Pinyin": "xuéxiào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trường học",
+    "ExampleSentence": "这是我的学校。",
+    "ExamplePinyin": "Zhè shì wǒ de xuéxiào.",
+    "ExampleTranslation": "Đây là trường học của tôi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "一",
+    "Pinyin": "yī",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 1",
+    "ExampleSentence": "第一是….",
+    "ExamplePinyin": "Dì yīshì…",
+    "ExampleTranslation": "Thứ 1 là …"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "衣服",
+    "Pinyin": "yīfu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quần áo, Trang/ Y phục",
+    "ExampleSentence": "我喜欢这件衣服。",
+    "ExamplePinyin": "Wǒ xǐhuān zhè jiàn yīfu.",
+    "ExampleTranslation": "Tôi rất thích bộ quần áo này."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "医生",
+    "Pinyin": "yīshēng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bác sĩ",
+    "ExampleSentence": "那位医生很照顾我。",
+    "ExamplePinyin": "Nà wèi yīshēng hěn zhàogù wǒ.",
+    "ExampleTranslation": "Vị bác sĩ kia chăm sóc tôi rất chu đáo."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "医院",
+    "Pinyin": "yīyuàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bệnh viện",
+    "ExampleSentence": "这是….医院。",
+    "ExamplePinyin": "Zhè shì….yīyuàn.",
+    "ExampleTranslation": "Đây là bệnh viện…."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "椅子",
+    "Pinyin": "yǐzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cái ghế",
+    "ExampleSentence": "你可以到家具店买你喜欢的椅子。",
+    "ExamplePinyin": "Nǐ kěyǐ dào jiājù diàn mǎi nǐ xǐhuān de yǐzi.",
+    "ExampleTranslation": "Bạn có thể đến cửa hàng nội thất mua chiếc ghế mà bạn yêu thích."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "有",
+    "Pinyin": "yǒu",
+    "PartOfSpeech": "Danh từ, Động từ",
+    "VietnameseMeaning": "Có",
+    "ExampleSentence": "我有五个好朋友。",
+    "ExamplePinyin": "Wǒ yǒu wǔ gè hǎo péngyǒu.",
+    "ExampleTranslation": "Tôi có 5 người bạn tốt."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "月",
+    "Pinyin": "yuè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tháng, Mặt trăng",
+    "ExampleSentence": "我打算五月去旅行。",
+    "ExamplePinyin": "Wǒ dǎsuàn wǔ yuè qù lǚxíng.",
+    "ExampleTranslation": "Tôi định tháng 5 này đi du lịch."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "在",
+    "Pinyin": "zài",
+    "PartOfSpeech": "Động từ, Danh từ, Giới từ",
+    "VietnameseMeaning": "Tại, Có mặt",
+    "ExampleSentence": "有我在。",
+    "ExamplePinyin": "Yǒu wǒ zài.",
+    "ExampleTranslation": "Có tôi ở đây."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "再见",
+    "Pinyin": "zàijiàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hẹn gặp lại",
+    "ExampleSentence": "拜拜，再见。",
+    "ExamplePinyin": "Bàibài, zàijiàn.",
+    "ExampleTranslation": "Tạm biệt, hẹn gặp lại."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "怎么",
+    "Pinyin": "zěnme",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Thế nào, làm sao, Thế, Lắm",
+    "ExampleSentence": "你怎么了？",
+    "ExamplePinyin": "Nǐzěnmele?",
+    "ExampleTranslation": "Bạn sao đó?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "怎么样",
+    "Pinyin": "zěnmeyàng",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Sao vậy, như thế nào",
+    "ExampleSentence": "怎么样治疗癌症呢？",
+    "ExamplePinyin": "Zěnmeyàng zhìliáo áizhèng ne?",
+    "ExampleTranslation": "Trị ung thư như thế nào đây?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "这(这儿)",
+    "Pinyin": "zhè (zhèr)",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Ở đây",
+    "ExampleSentence": "这(这儿)是怎么回事？",
+    "ExamplePinyin": "Zhè(r)shì zěnme huí shì?",
+    "ExampleTranslation": "Đây là chuyện gì thế này?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "中国",
+    "Pinyin": "Zhōngguó",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trung Quốc (tên tắt)",
+    "ExampleSentence": "你想来中国留学。",
+    "ExamplePinyin": "Nǐ xiǎnglái Zhōngguó liúxué.",
+    "ExampleTranslation": "Bạn muốn đến Trung Quốc du học."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "中午",
+    "Pinyin": "zhōngwǔ",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Buổi trưa",
+    "ExampleSentence": "中午你吃啥？",
+    "ExamplePinyin": "Zhōngwǔnǐ chī shǎ?",
+    "ExampleTranslation": "Buổi trưa bạn ăn gì?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "住",
+    "Pinyin": "zhù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ở tại, sống tại",
+    "ExampleSentence": "我住在宿舍。",
+    "ExamplePinyin": "Wǒ zhùzài sùshè.",
+    "ExampleTranslation": "Tôi sống ở kí túc xá."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "桌子",
+    "Pinyin": "zhuōzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cái bàn",
+    "ExampleSentence": "这个桌子是什么品牌的？",
+    "ExamplePinyin": "Zhège zhuōzi shì shénme pǐnpái de?",
+    "ExampleTranslation": "Cái bàn này của hãng/ nhãn hàng nào thế?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "字",
+    "Pinyin": "zì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tự, Chữ",
+    "ExampleSentence": "你叫什么名字？",
+    "ExamplePinyin": "Nǐ jiào shénme míngzì?",
+    "ExampleTranslation": "Bạn tên là gì?"
+  },
+  {
+    "HSK": 1,
+    "Chinese": "昨天",
+    "Pinyin": "zuótiān",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Hôm qua",
+    "ExampleSentence": "昨天我才回来。",
+    "ExamplePinyin": "Zuótiān wǒ cái huílái.",
+    "ExampleTranslation": "Hôm qua tôi trở về."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "坐",
+    "Pinyin": "zuò",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ngồi, Đi, đáp ..(phương tiện)…",
+    "ExampleSentence": "请坐。",
+    "ExamplePinyin": "Qǐngzuò.",
+    "ExampleTranslation": "Mời ngồi."
+  },
+  {
+    "HSK": 1,
+    "Chinese": "做",
+    "Pinyin": "zuò",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Làm",
+    "ExampleSentence": "我做好我的事了。",
+    "ExamplePinyin": "Wǒ zuòhǎo wǒ de shìle.",
+    "ExampleTranslation": "Tôi đã làm xong việc của mình rồi."
+  }
+]
