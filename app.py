@@ -1381,21 +1381,21 @@ def dictionary():
     return render_template('dictionary.html')
 
 def process_meanings(raw_meaning):
-    # Remove newlines and extra spaces
-    raw_meaning = raw_meaning.replace('\n', '').strip()
-    
-    # Use a regular expression to split based on numbers followed by a period
-    # Ensure that the period is followed by a non-digit character
-    main_meanings = re.split(r'\d+\.\s*', raw_meaning)
-    
-    processed_meanings = []
-    for meaning in main_meanings:
-        if meaning.strip():
-            # Strip leading and trailing spaces
-            meaning = meaning.strip()
-            processed_meanings.append(meaning)
-    
-    return processed_meanings
+  # Remove newlines and extra spaces
+  raw_meaning = raw_meaning.replace('\n', '').strip()
+  
+  # Use a regular expression to split based on numbers followed by a period
+  # Ensure that the period is followed by a non-digit character
+  main_meanings = re.split(r'\d+\.\s*', raw_meaning)
+  
+  processed_meanings = []
+  for meaning in main_meanings:
+      if meaning.strip():
+          # Strip leading and trailing spaces
+          meaning = meaning.strip()
+          processed_meanings.append(meaning)
+  
+  return processed_meanings
 
 def get_hannom_info(character):
   url = f"https://hvdic.thivien.net/whv/{character}"
@@ -1405,24 +1405,32 @@ def get_hannom_info(character):
   result = {
       'character': character,
       'han_viet': None,
+      'pinyin': None,  # Add Pinyin field
       'total_strokes': None,
       'radical': None,
       'meanings': None,
       'found': False
   }
 
-  # Kiểm tra xem có kết quả hay không
+  # Check if there is a result
   info_div = soup.find('div', class_='info')
   if info_div and "Có 1 kết quả:" in info_div.text:
       result['found'] = True
       hvres_div = soup.find('div', class_='hvres')
       if hvres_div:
-          # Lấy âm Hán Việt
+          # Get Han Viet reading
           han_viet = hvres_div.find('a', class_='hvres-goto-link')
           if han_viet:
               result['han_viet'] = han_viet.text.strip()
 
-          # Lấy ý nghĩa
+          # Get Pinyin
+          pinyin_tag = hvres_div.find(string=lambda x: x and 'Âm Pinyin:' in x)
+          if pinyin_tag:
+              pinyin_element = pinyin_tag.find_next('a')
+              if pinyin_element:
+                  result['pinyin'] = pinyin_element.text.strip()
+
+          # Get meanings
           meaning_div = hvres_div.find('div', class_='hvres-meaning')
           if meaning_div:
               raw_meaning = meaning_div.text.strip()
@@ -1434,7 +1442,7 @@ def get_hannom_info(character):
       main_hvres = hvres_divs[0]
       main_details = main_hvres.find('div', class_='hvres-details')
       if main_details:
-          # Tìm "Âm Hán Việt:"
+          # Find "Âm Hán Việt:"
           av_tag = main_details.find(string=lambda x: x and 'Âm Hán Việt:' in x)
           if av_tag:
               parent = av_tag.parent
@@ -1442,14 +1450,21 @@ def get_hannom_info(character):
               readings = [span.get_text(strip=True) for span in spans]
               result['han_viet'] = ', '.join(readings)
 
-          # Tìm "Tổng nét:"
+          # Find "Pinyin:"
+          pinyin_tag = main_details.find(string=lambda x: x and 'Âm Pinyin:' in x)
+          if pinyin_tag:
+              pinyin_element = pinyin_tag.find_next('a')
+              if pinyin_element:
+                  result['pinyin'] = pinyin_element.text.strip()
+
+          # Find "Tổng nét:"
           tn_tag = main_details.find(string=lambda x: x and 'Tổng nét:' in x)
           if tn_tag:
               tn_text = tn_tag.strip()
               tn = tn_text.split('Tổng nét:')[-1].strip()
               result['total_strokes'] = tn
 
-          # Tìm "Bộ:"
+          # Find "Bộ:"
           b_tag = main_details.find(string=lambda x: x and 'Bộ:' in x)
           if b_tag:
               a_tag = b_tag.find_next('a')
@@ -1460,7 +1475,7 @@ def get_hannom_info(character):
                       radical += ' ' + extra_info.strip()
                   result['radical'] = radical
 
-      # Xử lý phần ý nghĩa
+      # Process meanings
       meanings = []
       for hvres in hvres_divs:
           details = hvres.find('div', class_='hvres-details')
@@ -1484,44 +1499,43 @@ def get_hannom_info(character):
   return result
 
 def get_stroke_order(character):
-    url = f"https://www.strokeorder.com/chinese/{character}"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
+  url = f"https://www.strokeorder.com/chinese/{character}"
+  response = requests.get(url)
+  soup = BeautifulSoup(response.content, 'html.parser')
 
-    result = {
-        'character': character,
-        'pinyin': '',
-        'wubi': '',
-        'cangjie': '',
-        'zhengma': '',
-        'four_corner': '',
-        'unicode': '',
-        'stroke_order_animation': '',
-        'stroke_order_diagrams': []
-    }
+  result = {
+      'character': character,
+      'wubi': '',
+      'cangjie': '',
+      'zhengma': '',
+      'four_corner': '',
+      'unicode': '',
+      'stroke_order_animation': '',
+      'stroke_order_diagrams': []
+  }
 
-    # Extract input method information
-    input_method_items = soup.find_all('div', class_='stroke-hanzi-item')
-    for item in input_method_items:
-        left = item.find('span', class_='stroke-hanzi-info-left')
-        right = item.find('span', class_='stroke-hanzi-info-right')
-        if left and right:
-            key = left.text.strip().lower()
-            value = right.text.strip()
-            if key in result:
-                result[key] = value
+  # Extract input method information
+  input_method_items = soup.find_all('div', class_='stroke-hanzi-item')
+  for item in input_method_items:
+      left = item.find('span', class_='stroke-hanzi-info-left')
+      right = item.find('span', class_='stroke-hanzi-info-right')
+      if left and right:
+          key = left.text.strip().lower()
+          value = right.text.strip()
+          if key in result:
+              result[key] = value
 
-    # Extract stroke order animation
-    animation = soup.find('img', alt=f"{character} Stroke Order Animation")
-    if animation:
-        result['stroke_order_animation'] = 'https://www.strokeorder.com' + animation['src']
+  # Extract stroke order animation
+  animation = soup.find('img', alt=f"{character} Stroke Order Animation")
+  if animation:
+      result['stroke_order_animation'] = 'https://www.strokeorder.com' + animation['src']
 
-    # Extract stroke order diagrams
-    diagrams = soup.find_all('img', alt=f"{character} Stroke Order Diagrams")
-    for diagram in diagrams:
-        result['stroke_order_diagrams'].append('https://www.strokeorder.com' + diagram['src'])
+  # Extract stroke order diagrams
+  diagrams = soup.find_all('img', alt=f"{character} Stroke Order Diagrams")
+  for diagram in diagrams:
+      result['stroke_order_diagrams'].append('https://www.strokeorder.com' + diagram['src'])
 
-    return result
+  return result
 
 def get_combined_info(character):
     hannom_info = get_hannom_info(character)
