@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Từ điển Hán Tự</h1>
+  <form action="{{ url_for('dictionary') }}" method="post" class="mb-4">
+    <div class="form-group">
+      <label for="character">Nhập ký tự Hán:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="character"
+        name="character"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Tra cứu</button>
+  </form>
+
+  <h2 class="mb-4">Kết quả tra cứu: {{ info.character }}</h2>
+
+  {% if info.found %}
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="fs-4">Thông tin cơ bản</h3>
+      {% if info.han_viet %}
+      <p class="fs-5"><strong>Hán Việt:</strong> {{ info.han_viet }}</p>
+      {% endif %} {% if info.total_strokes %}
+      <p class="fs-5"><strong>Tổng nét:</strong> {{ info.total_strokes }}</p>
+      {% endif %} {% if info.radical %}
+      <p class="fs-5"><strong>Bộ:</strong> {{ info.radical }}</p>
+      {% endif %} {% if info.pinyin %}
+      <p class="fs-5"><strong>Pinyin:</strong> {{ info.pinyin }}</p>
+      {% endif %} {% if info.meanings %}
+      <h3 class="fs-4">Ý nghĩa</h3>
+      <ol class="fs-5">
+        {% for meaning in info.meanings %}
+        <li>{{ meaning }}</li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="fs-4">Thứ tự viết</h3>
+      {% if info.stroke_order_animation %}
+      <img
+        src="{{ info.stroke_order_animation }}"
+        alt="Stroke Order Animation"
+        class="img-fluid mb-3"
+        style="max-width: 50%"
+      />
+      {% endif %}
+      <div style="max-width: 50%">
+        {% for diagram in info.stroke_order_diagrams %}
+        <img
+          src="{{ diagram }}"
+          alt="Stroke Order Diagram"
+          class="img-fluid mb-3"
+        />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p class="fs-5">Không tìm thấy từ này trong từ điển.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="mb-4">Từ điển Hán Tự</h1>
+  <form action="{{ url_for('dictionary') }}" method="post">
+    <div class="form-group">
+      <label for="character">Nhập ký tự Hán:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="character"
+        name="character"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Tra cứu</button>
+  </form>
+</div>
+{% endblock %}

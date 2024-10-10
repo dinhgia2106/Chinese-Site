@@ -808,3 +808,48 @@ h6 {
 .text-danger {
   color: #dc3545 !important;
 }
+
+.dictionary-result {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.dictionary-result h2 {
+  color: #8a2be2;
+  border-bottom: 1px solid #8a2be2;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.dictionary-result ul {
+  padding-left: 20px;
+}
+
+.dictionary-result img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #8a2be2;
+  border-radius: 5px;
+}
+
+.stroke-order-animation {
+  cursor: pointer;
+}
+
+.stroke-order-steps {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Tạo container hình vuông */
+}
+
+.stroke-order-step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
