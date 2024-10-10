@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from tqdm import tqdm
 
 def get_stroke_order(character):
     url = f"https://www.strokeorder.com/chinese/{character}"
@@ -47,19 +48,23 @@ def get_stroke_order(character):
 with open('static/vocab.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
 
-# Lấy thông tin thứ tự viết cho các ký tự HSK1
-hsk1_stroke_orders = []
-for item in data:
-    if item['HSK'] == 1:
-        characters = item['Chinese']
-        for char in characters:
-            if char.strip():  # Bỏ qua khoảng trắng
-                stroke_order_info = get_stroke_order(char)
-                hsk1_stroke_orders.append(stroke_order_info)
-                time.sleep(1)  # Đợi 1 giây giữa các yêu cầu để tránh quá tải máy chủ
+# Lấy danh sách các ký tự HSK3
+hsk3_characters = [char for item in data if item['HSK'] == 3 for char in item['Chinese'] if char.strip()]
+
+# Đếm và in ra số lượng từ vựng HSK3
+hsk3_vocab_count = len(set(hsk3_characters))
+print(f"Số lượng từ vựng trong HSK3: {hsk3_vocab_count}")
+
+# Lấy thông tin thứ tự viết cho các ký tự HSK3
+hsk3_stroke_orders = []
+
+for char in tqdm(hsk3_characters, desc="Đang xử lý ký tự HSK3"):
+    stroke_order_info = get_stroke_order(char)
+    hsk3_stroke_orders.append(stroke_order_info)
+    time.sleep(1)  # Đợi 1 giây giữa các yêu cầu để tránh quá tải máy chủ
 
 # Lưu kết quả vào file JSON
-with open('hsk1_stroke_orders.json', 'w', encoding='utf-8') as file:
-    json.dump(hsk1_stroke_orders, file, ensure_ascii=False, indent=2)
+with open('hsk3_stroke_orders.json', 'w', encoding='utf-8') as file:
+    json.dump(hsk3_stroke_orders, file, ensure_ascii=False, indent=2)
 
-print("Đã lưu thông tin thứ tự viết vào file hsk1_stroke_orders.json")
+print("Đã lưu thông tin thứ tự viết vào file hsk3_stroke_orders.json")

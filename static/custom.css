@@ -853,3 +853,75 @@ h6 {
   object-fit: contain;
   display: none;
 }
+
+.flashcard {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.flashcard .radical {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.flashcard .meaning {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.flashcard-container {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 0 0; /* 50px margin trên, 0px margin dưới */
+}
+
+.flashcard {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+.flashcard .radical {
+  font-size: 80px;
+}
+
+.flashcard .meaning {
+  font-size: 24px;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.result-container {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}

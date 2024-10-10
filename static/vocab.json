@@ -1498,5 +1498,4465 @@
     "ExampleSentence": "我做好我的事了。",
     "ExamplePinyin": "Wǒ zuòhǎo wǒ de shìle.",
     "ExampleTranslation": "Tôi đã làm xong việc của mình rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "吧",
+    "Pinyin": "ba",
+    "PartOfSpeech": "Từ cảm thán",
+    "VietnameseMeaning": "Thôi",
+    "ExampleSentence": "好吧！",
+    "ExamplePinyin": "Hǎo ba!",
+    "ExampleTranslation": "Được thôi!"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "白",
+    "Pinyin": "bái",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Màu trắng\nHọ: Bạch",
+    "ExampleSentence": "我喜欢白色。",
+    "ExamplePinyin": "Wǒ xǐhuān báisè.",
+    "ExampleTranslation": "Tôi thích màu trắng."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "百",
+    "Pinyin": "bǎi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trăm\nTên : Bách",
+    "ExampleSentence": "这个产品的价格是一百块钱。",
+    "ExamplePinyin": "Zhège chǎnpǐn de jiàgé shì yībǎi kuài qián.",
+    "ExampleTranslation": "Giá của sản phẩm này là 100 đồng."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "帮助",
+    "Pinyin": "bāngzhù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Giúp đỡ",
+    "ExampleSentence": "我可以帮助你吗？",
+    "ExamplePinyin": "Wǒ kěyǐ bāngzhù nǐ ma?",
+    "ExampleTranslation": "Tôi có thể giúp gì được cho bạn ?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "报纸",
+    "Pinyin": "bàozhǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Báo giấy",
+    "ExampleSentence": "与电子报相比，我更喜欢报纸。",
+    "ExamplePinyin": "Yǔ diànzǐ bào xiāng bǐ, wǒ gèng xǐhuān kàn bàozhǐ.",
+    "ExampleTranslation": "So với báo mạng, tôi thích đọc báo giấy hơn."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "比",
+    "Pinyin": "bǐ",
+    "PartOfSpeech": "Danh từ\nGiới từ\nĐộng từ",
+    "VietnameseMeaning": "So, so với",
+    "ExampleSentence": "我比他高。",
+    "ExamplePinyin": "Wǒ bǐ tā gāo.",
+    "ExampleTranslation": "Tôi cao hơn anh ta."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "别",
+    "Pinyin": "bié",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Khác",
+    "ExampleSentence": "我可以看别的颜色吗？",
+    "ExamplePinyin": "Wǒ kěyǐ kàn bié de yánsè ma?",
+    "ExampleTranslation": "Có thể cho tôi xem màu sắc khác được không?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "长",
+    "Pinyin": "cháng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Dài",
+    "ExampleSentence": "十年的时间并不算怎么长。",
+    "ExamplePinyin": "Shí nián de shíjiān bìng bú suàn zěnme cháng.",
+    "ExampleTranslation": "Thời gian 10 năm kể cũng không phải là dài."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "唱歌",
+    "Pinyin": "chànggē",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hát",
+    "ExampleSentence": "他唱歌唱得好听。",
+    "ExamplePinyin": "Tā chànggē chàng dé hǎotīng.",
+    "ExampleTranslation": "Anh ấy hát rất hay."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "出",
+    "Pinyin": "chū",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ra",
+    "ExampleSentence": "这个世纪出了许多大事情。",
+    "ExamplePinyin": "Zhège shìjì chūle xǔduō dà shì qíng.",
+    "ExampleTranslation": "Thế kỷ này xảy ra rất nhiều sự việc đáng chú ý."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "穿",
+    "Pinyin": "chuān",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Mặc",
+    "ExampleSentence": "你试试穿这条裙子吧。",
+    "ExamplePinyin": "Nǐ shì shì chuān zhè tiáo qúnzi ba.",
+    "ExampleTranslation": "Bạn mặc thử chiếc váy này đi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "船",
+    "Pinyin": "chuán",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thuyền",
+    "ExampleSentence": "顺水推船",
+    "ExamplePinyin": "Shùnshuǐ tuī chuán.",
+    "ExampleTranslation": "Thuận nước đẩy thuyền, biết thời biết thế"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "次",
+    "Pinyin": "cì",
+    "PartOfSpeech": "Tính từ\nLượng từ",
+    "VietnameseMeaning": "Lần",
+    "ExampleSentence": "三番五次",
+    "ExamplePinyin": "Sānfān wǔcì.",
+    "ExampleTranslation": "5 lần 7 lượt"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "从",
+    "Pinyin": "cóng",
+    "PartOfSpeech": "Động từ\nGiới từ",
+    "VietnameseMeaning": "Từ",
+    "ExampleSentence": "从善而流",
+    "ExamplePinyin": "cóngshànérliú",
+    "ExampleTranslation": "Biết nghe lời phải, biết phục thiện"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "错",
+    "Pinyin": "cuò",
+    "PartOfSpeech": "Danh từ\nĐộng từ",
+    "VietnameseMeaning": "Sai",
+    "ExampleSentence": "阴差阳错",
+    "ExamplePinyin": "yīnchā yángcuò",
+    "ExampleTranslation": "Sai sót ngẫu nhiên"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "打篮球",
+    "Pinyin": "dǎ lánqiú",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đánh bóng rổ",
+    "ExampleSentence": "我的爱好是打篮球。",
+    "ExamplePinyin": "Wǒ de àihào shì dǎ lánqiú.",
+    "ExampleTranslation": "Sở thích của mình là chơi bóng rổ."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "大家",
+    "Pinyin": "dàjiā",
+    "PartOfSpeech": "Danh từ\nĐại từ",
+    "VietnameseMeaning": "Mọi người",
+    "ExampleSentence": "大家喜欢春节去旅游。",
+    "ExamplePinyin": "Dàjiā xǐhuān chūnjié qù lǚyóu.",
+    "ExampleTranslation": "Mọi người đều thích đi du lịch vào mùa xuân."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "但是",
+    "Pinyin": "dànshì",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Nhưng mà",
+    "ExampleSentence": "但是病情让国家损失了一大笔钱。",
+    "ExamplePinyin": "Dànshì bìngqíng ràng guójiā sǔnshīle yí dà bǐ qián.",
+    "ExampleTranslation": "Nhưng bệnh tình khiến quốc gia tổn thất một khoản tiền lớn."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "到",
+    "Pinyin": "dào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đến",
+    "ExampleSentence": "马到成功",
+    "ExamplePinyin": "Mǎdàochénggōng",
+    "ExampleTranslation": "Mã đáo thành công"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "得",
+    "Pinyin": "dé",
+    "PartOfSpeech": "Trợ động từ",
+    "VietnameseMeaning": "",
+    "ExampleSentence": "我得不到他的爱。",
+    "ExamplePinyin": "Wǒ dé bú dào tā de ài",
+    "ExampleTranslation": "Tôi không có được tình yêu của cô ý."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "等",
+    "Pinyin": "děng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đợi",
+    "ExampleSentence": "三六九等",
+    "ExamplePinyin": "sānliùjiǔ děng",
+    "ExampleTranslation": "Nhiều loại, đủ loại"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "弟弟",
+    "Pinyin": "dìdì",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Em trai",
+    "ExampleSentence": "小弟弟可乖啊。",
+    "ExamplePinyin": "xiǎo dìdì kě guāi a.",
+    "ExampleTranslation": "Em trai thật ngoan quá đi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "第一",
+    "Pinyin": "dì yī",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Thứ nhất\nLần đầu",
+    "ExampleSentence": "这次考试，他考了第一名。",
+    "ExamplePinyin": "Zhè cì kǎoshì, tā kǎole dì yī míng.",
+    "ExampleTranslation": "Lần thi này tôi đứng thứ nhất."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "懂",
+    "Pinyin": "dǒng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hiểu",
+    "ExampleSentence": "不懂装懂",
+    "ExamplePinyin": "Bù dǒng zhuāng dǒng",
+    "ExampleTranslation": "Không hiểu vờ như hiểu"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "对",
+    "Pinyin": "duì",
+    "PartOfSpeech": "Giới từ\nĐộng từ\nDanh từ",
+    "VietnameseMeaning": "Đúng",
+    "ExampleSentence": "对牛弹琴",
+    "ExamplePinyin": "duìniútánqín",
+    "ExampleTranslation": "Đàn gảy tai trâu"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "房间",
+    "Pinyin": "fángjiān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Căn phòng",
+    "ExampleSentence": "你进入房间吧。",
+    "ExamplePinyin": "Nǐ jìnrù fángjiān ba.",
+    "ExampleTranslation": "Bạn vào phòng đi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "非常",
+    "Pinyin": "fēicháng",
+    "PartOfSpeech": "Phó từ chỉ mức độ",
+    "VietnameseMeaning": "Cực kì",
+    "ExampleSentence": "非常完美",
+    "ExamplePinyin": "Fēicháng wánměi",
+    "ExampleTranslation": "Phi thường hoàn mỹ"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "服务员",
+    "Pinyin": "fúwùyuán",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nhân Viên phục vụ",
+    "ExampleSentence": "服务员向我们说明了产品的用途。",
+    "ExamplePinyin": "Fúwùyuán xiàng wǒmen shuōmíngle chǎnpǐn de yòngtú.",
+    "ExampleTranslation": "Phục vụ hướng dẫn chúng tôi cách sử dụng sản phẩm."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "高",
+    "Pinyin": "gāo",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Cao",
+    "ExampleSentence": "步步登高",
+    "ExamplePinyin": "Bù bù dēnggāo",
+    "ExampleTranslation": "Ngày càng thăng tiến"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "告诉",
+    "Pinyin": "gàosù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nói cho biết\nBáo cho",
+    "ExampleSentence": "老师告诉我们留学生所学校的规定。",
+    "ExamplePinyin": "Lǎoshī  gàosù wǒmen liúxuéshēng suǒ xuéxiào de guīdìng.",
+    "ExampleTranslation": "Thầy giáo nói với lưu học sinh về quy định của nhà trường."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "哥哥",
+    "Pinyin": "gēgē",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Anh trai",
+    "ExampleSentence": "每个月我都跟留学的哥哥互通音信。",
+    "ExamplePinyin": "Měi gè yuè wǒ dōu gēn liúxué de gēgē hùtōng yīnxìn",
+    "ExampleTranslation": "Mỗi tháng tôi đều cùng anh trai đang đi du học trao đổi thư từ."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "给",
+    "Pinyin": "gěi\njǐ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đưa cho ….",
+    "ExampleSentence": "我寄给他一封信。\n自给自足",
+    "ExamplePinyin": "Wǒ jì gěi tā yì fēng xìn.\nzìjǐzìzú",
+    "ExampleTranslation": "Tôi gửi cho anh ta 1 phong thư.\nTự cung tự cấp"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "公共汽车",
+    "Pinyin": "gōnggòng qìchē",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Xe buýt, bus",
+    "ExampleSentence": "这辆公共汽车出了故障，不能开动了。",
+    "ExamplePinyin": "Zhè liàng gōnggòng qìchē chūle gùzhàng, bùnéng kāidòngle.",
+    "ExampleTranslation": "Chiếc xe buýt này gặp sự cố không thể khởi động được."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "公斤\n=\n千克",
+    "Pinyin": "gōngjīn\n=\nqiānkè",
+    "PartOfSpeech": "",
+    "VietnameseMeaning": "Kg",
+    "ExampleSentence": "我买了五公斤的苹果。",
+    "ExamplePinyin": "Wǒ mǎile wǔ gōngjīn de píngguǒ.",
+    "ExampleTranslation": "Tôi mua 5 kg táo."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "公司",
+    "Pinyin": "gōngsī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Công ty",
+    "ExampleSentence": "这个公司又开发了一种新产品。",
+    "ExamplePinyin": "Zhège gōngsī yòu kāifāle yì zhǒng xīn chǎnpǐn.",
+    "ExampleTranslation": "Công ty này vừa mở ra 1 dòng sản phẩm mới."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "贵",
+    "Pinyin": "guì",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Đắt",
+    "ExampleSentence": "荣华富贵\n母以子贵",
+    "ExamplePinyin": "Rónghuá fùguì\nMǔyǐzǐguì",
+    "ExampleTranslation": "Vinh hoa phú quý Mẹ quý nhờ con"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "过",
+    "Pinyin": "guò",
+    "PartOfSpeech": "Động từ\nTrạng từ",
+    "VietnameseMeaning": "Qua",
+    "ExampleSentence": "过眼云烟",
+    "ExamplePinyin": "guòyǎnyúnyān",
+    "ExampleTranslation": "Thoáng qua như phù du"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "还",
+    "Pinyin": "hái\nhuán",
+    "PartOfSpeech": "Động từ\nTrạng từ",
+    "VietnameseMeaning": "Với\nTrả về ….",
+    "ExampleSentence": "这个还是那个?\n衣锦还乡\n返老还童",
+    "ExamplePinyin": "Zhège háishì nàgè?\nYījǐnhuánxiāng Fǎnlǎohuántóng",
+    "ExampleTranslation": "Cái này hay cái kia.\nÁo gấm về quê\nCải lão hoàn đồng"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "孩子",
+    "Pinyin": "Háizi",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Trẻ con",
+    "ExampleSentence": "对待两个儿子，父母不能厚此薄彼。",
+    "ExamplePinyin": "Duìdài liǎng gè érzi, fùmǔ bùnéng hòucǐbóbǐ.",
+    "ExampleTranslation": "Đối xử với 2 người con, cha mẹ không nên bên trọng  bên khinh."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "好吃",
+    "Pinyin": "hào chī\nhǎochī",
+    "PartOfSpeech": "Tính  từ",
+    "VietnameseMeaning": "Sành ăn; ham ăn\nNgon",
+    "ExampleSentence": "好吃懒做的货。\n这东西真好吃。",
+    "ExamplePinyin": "Hàochīlǎnzuò de huò.\nZhè dōngxi zhēn hǎochī.",
+    "ExampleTranslation": "Cái loại ham ăn lười làm.\nmón này ngon thật."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "号",
+    "Pinyin": "hào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Số\nHiệu",
+    "ExampleSentence": "五号\n国号",
+    "ExamplePinyin": "wǔ hào\nguó hào",
+    "ExampleTranslation": "Số 5.\nquốc hiệu"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "黑",
+    "Pinyin": "hēi",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Màu đen",
+    "ExampleSentence": "起早摸黑",
+    "ExamplePinyin": "qǐ zǎomōhēi",
+    "ExampleTranslation": "Dậy sớm ngủ muộn; thức khuya dậy sớm"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "红",
+    "Pinyin": "hóng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Màu đỏ",
+    "ExampleSentence": "红男绿女\n大红大紫",
+    "ExamplePinyin": "hóngnánlǜnǚ\ndàhóng dàzǐ",
+    "ExampleTranslation": "Trai thanh gái lịch\nĐỏ tía"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "欢迎",
+    "Pinyin": "huānyíng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chào đón",
+    "ExampleSentence": "欢迎光临",
+    "ExamplePinyin": "Huānyíng guānglín.",
+    "ExampleTranslation": "Hoan nghênh ghé thăm."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "回答",
+    "Pinyin": "huídá",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Trả lời",
+    "ExampleSentence": "老师要求学生回答老师的问题。",
+    "ExamplePinyin": "Lǎoshī yàoqiú xuéshēng huídá lǎoshī de wèntí.",
+    "ExampleTranslation": "Thầy giáo yêu cầu học sinh trả lời câu hỏi của thầy."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "机场",
+    "Pinyin": "jīchǎng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sân bay",
+    "ExampleSentence": "哥哥要出国留学，我们到机场去送别。",
+    "ExamplePinyin": "Gēgē yào chūguó liúxué, wǒmen dào jīchǎng qù sòngbié.",
+    "ExampleTranslation": "Anh trai đi nước ngoài du học, mọi người đến sân bay tiễn."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "鸡蛋",
+    "Pinyin": "jīdàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quả trứng",
+    "ExampleSentence": "拿鸡蛋跟石头碰，真是不自量力！",
+    "ExamplePinyin": "Ná jīdàn gēn shítou pèng, zhēnshì bú zì liànglì!",
+    "ExampleTranslation": "Lấy trứng chọi với đá, thật không biết tự lượng sức mình."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "件",
+    "Pinyin": "jiàn",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Chiếc, kiện, …",
+    "ExampleSentence": "你帮我几件事可以吗？",
+    "ExamplePinyin": "Nǐ bāng wǒ jǐ jiàn shì kěyǐ ma?",
+    "ExampleTranslation": "Bạn giúp tôi vài việc được không?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "教室",
+    "Pinyin": "jiàoshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phòng học",
+    "ExampleSentence": "清晨，教室里传出朗读的读书声。",
+    "ExamplePinyin": "Qīngchén, jiàoshì lǐ chuán chū lǎngdú de dúshū shēng.",
+    "ExampleTranslation": "Sáng sớm, phòng học vang lên tiếng học sinh đọc bài."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "姐姐",
+    "Pinyin": "jiějie",
+    "PartOfSpeech": "Danh từ\nĐại  từ",
+    "VietnameseMeaning": "Chị gái",
+    "ExampleSentence": "姐姐能否考上大学。",
+    "ExamplePinyin": "Jiějiě néng fǒu kǎo shàng dàxué.",
+    "ExampleTranslation": "Chị gái có thể thi đỗ đại học không."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "介绍",
+    "Pinyin": "jièshào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Giới thiệu",
+    "ExampleSentence": "请你自我介绍。",
+    "ExamplePinyin": "Qǐng nǐ zìwǒ jièshào.",
+    "ExampleTranslation": "Mời bạn tự giới thiệu bản thân."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "进",
+    "Pinyin": "jìn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tiến (vào)",
+    "ExampleSentence": "不进则退",
+    "ExamplePinyin": "bújìnzétuì",
+    "ExampleTranslation": "Không tiến thì phải lùi"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "近",
+    "Pinyin": "jìn",
+    "PartOfSpeech": "Động từ\nTrạng từ",
+    "VietnameseMeaning": "Gần",
+    "ExampleSentence": "远近闻名",
+    "ExamplePinyin": "yuǎnjìn wénmíng",
+    "ExampleTranslation": "Tiếng thơm vang xa"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "就",
+    "Pinyin": "jiù",
+    "PartOfSpeech": "Động từ\nTrạng từ\nGiới từ",
+    "VietnameseMeaning": "Đến, bắt đầu\nHoàn thành, thành tựu.",
+    "ExampleSentence": "我早就说那不是你的主意。",
+    "ExamplePinyin": "Wǒ zǎo jiù shuō nà búshì nǐ de zhǔyì.",
+    "ExampleTranslation": "Tôi đã sớm bảo đó không phải ý của cậu mà."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "觉得",
+    "Pinyin": "juédé",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cảm thấy, cho rằng",
+    "ExampleSentence": "穿上妈妈做的衣服，觉得挺舒服的。",
+    "ExamplePinyin": "Chuān shàng māmā zuò de yīfú, juédé tǐng shūfú de.",
+    "ExampleTranslation": "Mặc đồ mà mẹ làm cho cảm thấy thật thoải mái."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "咖啡",
+    "Pinyin": "kāfēi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cà phê",
+    "ExampleSentence": "他们一边喝咖啡一边聊天。",
+    "ExamplePinyin": "Tāmen yìbiān hē kāfēi yìbiān liáotiān.",
+    "ExampleTranslation": "Anh ta vừa uống cà phê 1 vừa chuyện."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "开始",
+    "Pinyin": "kāishǐ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Bắt đầu",
+    "ExampleSentence": "此事既然已经开始，只好一不做，二不休。",
+    "ExamplePinyin": "Cǐ shì jìrán yǐjīng kāishǐ, zhǐhǎo yī bú zuò, èr bùxiū.",
+    "ExampleTranslation": "Chuyện này cũng đã xảy ra như vậy rồi, chỉ đành chăm chỉ làm thôi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "考试",
+    "Pinyin": "kǎoshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Kì thi\nKiểm tra",
+    "ExampleSentence": "这次考试分笔试和口试两部分。",
+    "ExamplePinyin": "Zhè cì kǎoshì fēn bǐshì hé kǒushì liǎng bùfen.",
+    "ExampleTranslation": "Kì thi lần này chia làm hai phần gồm thi nói và thi viết."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "可能",
+    "Pinyin": "kěnéng",
+    "PartOfSpeech": "Danh từ\nĐộng từ",
+    "VietnameseMeaning": "Có khả năng\nCó lẽ, chắc là",
+    "ExampleSentence": "老师的脸色很难看，可能又跟谁生气了。",
+    "ExamplePinyin": "Lǎoshī de liǎnsè hěn nánkàn, kěnéng yòu gēn shéi shēngqìle.",
+    "ExampleTranslation": "Sắc mặt của thầy rất khó coi, khả năng là lại cãi nhau với ai rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "可以",
+    "Pinyin": "kěyǐ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Có thể",
+    "ExampleSentence": "公司可以为客户提供多种服务。",
+    "ExamplePinyin": "Gōngsī kěyǐ wèi kèhù tígōng duō zhǒng fúwù.",
+    "ExampleTranslation": "Công ty có thể cung cấp rất nhiều dịch vụ cho khách hàng."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "课",
+    "Pinyin": "kè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Môn học\nGiờ học; tiết học",
+    "ExampleSentence": "日程月课",
+    "ExamplePinyin": "rìchéng yuèkè",
+    "ExampleTranslation": "Lịch trình cụ thể"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "快",
+    "Pinyin": "kuài",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Nhanh",
+    "ExampleSentence": "快言快语",
+    "ExamplePinyin": "kuài yánkuàiyǔ",
+    "ExampleTranslation": "Lời nói rõ ràng"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "快乐",
+    "Pinyin": "kuàilè",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Vui vẻ",
+    "ExampleSentence": "学习难苦的，但是也充满了快乐。",
+    "ExamplePinyin": "Xuéxí nán kǔ de, dànshì yě chōngmǎnle kuàilè.",
+    "ExampleTranslation": "Học hành gian khổ, nhưng lại đầy ắp niềm vui."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "累",
+    "Pinyin": "lèi",
+    "PartOfSpeech": "Động từ\nTính từ",
+    "VietnameseMeaning": "Mệt",
+    "ExampleSentence": "长年累月",
+    "ExamplePinyin": "chángniánlěiyuè",
+    "ExampleTranslation": "Quanh năm suốt tháng"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "离",
+    "Pinyin": "lí",
+    "PartOfSpeech": "Tính từ\nGiới từ",
+    "VietnameseMeaning": "Ly (biệt)\n(cách) ly",
+    "ExampleSentence": "流离失所\n隔离",
+    "ExamplePinyin": "liúlíshīsuǒ\ngélí",
+    "ExampleTranslation": "Trôi dạt khắp nơi\nCách ly"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "两",
+    "Pinyin": "liǎng",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Số 2",
+    "ExampleSentence": "一举两得",
+    "ExamplePinyin": "yìjǔliǎngdé",
+    "ExampleTranslation": "1 mũi tên trúng 2 đích"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "路",
+    "Pinyin": "lù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đường",
+    "ExampleSentence": "一路平安",
+    "ExamplePinyin": "yílù píng’ān",
+    "ExampleTranslation": "Thuận lộ bình an"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "旅游",
+    "Pinyin": "lǚyóu",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Du lịch",
+    "ExampleSentence": "春节前夕，我们家全部到香港旅游。",
+    "ExamplePinyin": "Chūnjié qiánxī, wǒmen jiā quánbù dào Xiānggǎng lǚyóu.",
+    "ExampleTranslation": "Trước giao thừa, cả gia đình chúng tôi đều đi du lịch HongKong."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "卖",
+    "Pinyin": "mài",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Bán",
+    "ExampleSentence": "挂头羊卖狗肉。",
+    "ExamplePinyin": "Guà tóuyáng mài gǒuròu.",
+    "ExampleTranslation": "Treo đầu dê bán thịt chó."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "慢",
+    "Pinyin": "màn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Chậm",
+    "ExampleSentence": "不紧不慢",
+    "ExamplePinyin": "bùjǐnbú màn",
+    "ExampleTranslation": "Không nhanh không chậm"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "忙",
+    "Pinyin": "máng",
+    "PartOfSpeech": "Động từ\nTính từ",
+    "VietnameseMeaning": "Bận",
+    "ExampleSentence": "忙里偷闲",
+    "ExamplePinyin": "mánglǐtōuxián",
+    "ExampleTranslation": "Tranh thủ thời gian"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "每",
+    "Pinyin": "měi",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Mỗi",
+    "ExampleSentence": "每饭不忘",
+    "ExamplePinyin": "měifàn búwàng",
+    "ExampleTranslation": "Luôn luôn ghi nhớ"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "妹妹",
+    "Pinyin": "mèimei",
+    "PartOfSpeech": "Đại từ\nDanh từ",
+    "VietnameseMeaning": "Em gái",
+    "ExampleSentence": "妹妹去国外留学三年了。",
+    "ExamplePinyin": "Mèimei qù guówài liúxué sān niánle.",
+    "ExampleTranslation": "Em gái đi du học đã 3 năm rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "门",
+    "Pinyin": "mén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cửa",
+    "ExampleSentence": "五花八门",
+    "ExamplePinyin": "wǔhuābāmén",
+    "ExampleTranslation": "Đa dạng"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "男人",
+    "Pinyin": "nánrén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đàn ông",
+    "ExampleSentence": "这世界上最爱我的男人是爸爸。",
+    "ExamplePinyin": "Zhè shìjiè shàng zuì ài wǒ de nánrén shì bàba.",
+    "ExampleTranslation": "Người đàn ông tôi yêu nhất trên đời này là bố."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "您",
+    "Pinyin": "nín",
+    "PartOfSpeech": "Đại từ",
+    "VietnameseMeaning": "Ngài",
+    "ExampleSentence": "您好!",
+    "ExamplePinyin": "Nín hǎo!",
+    "ExampleTranslation": "Xin chào!"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "牛奶",
+    "Pinyin": "niúnǎi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sữa",
+    "ExampleSentence": "牛奶中蛋白质的含量很高。",
+    "ExamplePinyin": "Niúnǎi zhōng dànbáizhí de hánliàng hěn gāo.",
+    "ExampleTranslation": "Hàm lượng protein bên trong sữa rất cao."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "女人",
+    "Pinyin": "nǚrén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phụ nữ",
+    "ExampleSentence": "泛称成年女子。",
+    "ExamplePinyin": "Fànchēng chéngnián nǚzǐ.",
+    "ExampleTranslation": "Gọi chung là người phụ nữ trưởng thành."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "旁边",
+    "Pinyin": "pángbiān",
+    "PartOfSpeech": "Phương vị từ",
+    "VietnameseMeaning": "Bên cạnh",
+    "ExampleSentence": "学校的旁边是书店。",
+    "ExamplePinyin": "Xuéxiào de pángbiān shì shūdiàn.",
+    "ExampleTranslation": "Bên cạnh trường học là hiệu sách."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "跑步",
+    "Pinyin": "pǎobù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chạy bộ",
+    "ExampleSentence": "我每天早上都跟老公一起跑步。",
+    "ExamplePinyin": "Wǒ měitiān zǎoshang dōu gēn lǎogōng yìqǐ pǎobù.",
+    "ExampleTranslation": "Tôi mỗi ngày đều cùng chồng  đi bộ."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "便宜",
+    "Pinyin": "piányi",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Rẻ",
+    "ExampleSentence": "买东西千万不要图便宜。",
+    "ExamplePinyin": "Mǎi dōngxī qiān wàn bùyào tú piányí.",
+    "ExampleTranslation": "Mua đồ đừng bao giờ nhìn giá rẻ."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "票",
+    "Pinyin": "piào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Vé",
+    "ExampleSentence": "很快就到春节了。你买火车票了没？",
+    "ExamplePinyin": "Hěn kuài jiù dào chūnjiéle. Nǐ mǎi huǒchē piàole méi?",
+    "ExampleTranslation": "Sắp tới kì nghỉ tết rồi. Bạn mua vé tàu chưa?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "妻子",
+    "Pinyin": "qīzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Vợ",
+    "ExampleSentence": "他钱包丢了，他妻子安慰他不要难过。",
+    "ExamplePinyin": "Tā qiánbāo diūle, tā qīzi ānwèi tā búyào nánguò.",
+    "ExampleTranslation": "Ví tiền của anh ta mất rồi, vợ anh ấy an ủi rằng đừng buồn."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "起床",
+    "Pinyin": "qǐchuáng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Dậy",
+    "ExampleSentence": "爷爷通常五点钟起床。",
+    "ExamplePinyin": "Yéye tōngcháng wǔ diǎn zhōng qǐchuáng.",
+    "ExampleTranslation": "Ông nội thường dậy lúc 5 giờ."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "千",
+    "Pinyin": "qiān",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Ngàn",
+    "ExampleSentence": "千方百计",
+    "ExamplePinyin": "qiānfāngbǎijì.",
+    "ExampleTranslation": "trăm phương nghìn kế."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "晴",
+    "Pinyin": "qíng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Trời trong",
+    "ExampleSentence": "雨过晴天。",
+    "ExamplePinyin": "Yǔguò qíngtiān.",
+    "ExampleTranslation": "Qua cơn mưa trời lại sáng."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "去年",
+    "Pinyin": "qùnián",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Năm trước\nNăm ngoái",
+    "ExampleSentence": "妹妹去年去留学了。",
+    "ExamplePinyin": "Mèimei qùnián qù liúxuéle.",
+    "ExampleTranslation": "Em gái năm trước đi du học rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "让",
+    "Pinyin": "ràng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Khiến\nNhường",
+    "ExampleSentence": "行者让路。\n我可以让步一下。",
+    "ExamplePinyin": "Xíngzhě rànglù.\nWǒ kěyǐ ràngbù yíxià.",
+    "ExampleTranslation": "Người đi đường nhường đường.\nTôi có thể nhượng bộ 1 chút."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "上班",
+    "Pinyin": "shàngbān",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đi làm",
+    "ExampleSentence": "她每天早上八点上班。",
+    "ExamplePinyin": "Tā měitiān zǎoshang bā diǎn shàngbān.",
+    "ExampleTranslation": "Cô ấy mỗi ngày 8 giờ dậy đi làm."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "身体",
+    "Pinyin": "shēntǐ",
+    "PartOfSpeech": "danh  từ",
+    "VietnameseMeaning": "Cơ thể",
+    "ExampleSentence": "外婆每天五点起床到公园锻炼身体。",
+    "ExamplePinyin": "Wàipó měitiān wǔ diǎn qǐchuáng dào gōngyuán duànliàn shēntǐ.",
+    "ExampleTranslation": "Mỗi ngày 5 giờ bà ngoại đều đến công viên tập thể dục."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "生病",
+    "Pinyin": "shēngbìng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Sinh bệnh\nỐm",
+    "ExampleSentence": "小明今天没来上学，可能是生病了。",
+    "ExamplePinyin": "Xiǎomíng jīntiān méi lái shàngxué, kěnéng shì shēngbìngle.",
+    "ExampleTranslation": "Hôm nay Tiểu Minh vẫn chưa đến lớp, có thể là do ốm rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "生日",
+    "Pinyin": "shēngrì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sinh nhật",
+    "ExampleSentence": "我的生日恰好在“六一”儿童节这天。",
+    "ExamplePinyin": "Wǒ de shēngrì qiàhǎo zài “liùyī” értóng jié zhè tiān.",
+    "ExampleTranslation": "Sinh nhật của mình vừa đúng vàongày 1 tháng 6 tết thiếu nhi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "时间",
+    "Pinyin": "shíjiān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thời gian",
+    "ExampleSentence": "时间过得真快，不知不觉一年又过去了。",
+    "ExamplePinyin": "Shíjiānguò dé zhēn kuài, bùzhī bùjué yì nián yòu guòqùle.",
+    "ExampleTranslation": "Thời gian trôi qua thật nhanh, bất giác 1 năm lại đã qua rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "事情",
+    "Pinyin": "shìqíng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sự tình; sự việc\nCông việc",
+    "ExampleSentence": "别火上浇油把事情闹大了！",
+    "ExamplePinyin": "Bié huǒshàngjiāo yóu bǎ shìqíng nào dàle!",
+    "ExampleTranslation": "Đừng thêm dầu vào lửa khiến sự việc thêm nghiêm trọng trọng nữa!"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "手表",
+    "Pinyin": "shǒubiǎo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đồng hồ",
+    "ExampleSentence": "这块手表已经没有修理价值，该报废了。",
+    "ExamplePinyin": "Zhè kuài shǒubiǎo yǐjīng méiyǒu xiūlǐ jiàzhí, gāi bàofèile.",
+    "ExampleTranslation": "Cái đồng hồ này đã không thể sửa được nữa rồi, nên bỏ đi thôi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "手机",
+    "Pinyin": "shǒujī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Điện thoại",
+    "ExampleSentence": "这台手机是最先进的手机之一。",
+    "ExamplePinyin": "Zhè tái shǒujī shì zuì xiānjìn de shǒujī zhī yī.",
+    "ExampleTranslation": "Đây là một trong những mẫu điện thoại tiên tiến nhất."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "送",
+    "Pinyin": "sòng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tặng",
+    "ExampleSentence": "雪中送炭",
+    "ExamplePinyin": "xuězhōngsòngtàn",
+    "ExampleTranslation": "giúp người khi gặp nạn"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "所以",
+    "Pinyin": "suǒyǐ",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Vì thế\nVì vậy",
+    "ExampleSentence": "因为今天我忙，所以没有去。",
+    "ExamplePinyin": "Yīnwèi jīntiān wǒ máng，suǒyǐ méiyǒu qù.\n.",
+    "ExampleTranslation": "Bởi vì hôm nay tôi bận, cho nên không đi.."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "它",
+    "Pinyin": "tā",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nó",
+    "ExampleSentence": "至死靡它",
+    "ExamplePinyin": "zhìsǐmítā",
+    "ExampleTranslation": "Đến chết cũng không đổi"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "踢足球",
+    "Pinyin": "tī zúqiú",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đá bóng",
+    "ExampleSentence": "我每个星期日都跟朋友一起去踢足球。",
+    "ExamplePinyin": "Wǒ měi gè xīngqīrì dōu gēn péngyou yìqǐ qù tī zúqiú.",
+    "ExampleTranslation": "Mỗi chủ nhật tôi đều cùng bạn đi đá bóng."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "题",
+    "Pinyin": "tí",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đề (bài, mục)",
+    "ExampleSentence": "小题大做",
+    "ExamplePinyin": "xiǎotídàzuò",
+    "ExampleTranslation": "Việc bé xé ra to"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "跳舞",
+    "Pinyin": "tiàowǔ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Khiêu vũ\nNhảy",
+    "ExampleSentence": "跳舞是我的爱好。",
+    "ExamplePinyin": "Tiàowǔ shì wǒ de àihào.",
+    "ExampleTranslation": "Khiêu vũ là sở thích của tôi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "外",
+    "Pinyin": "wài",
+    "PartOfSpeech": "Phương vị từ",
+    "VietnameseMeaning": "Ngoài\nNgoại",
+    "ExampleSentence": "古今中外/\n外婆",
+    "ExamplePinyin": "gǔjīn zhōngwài.\nwàipó.",
+    "ExampleTranslation": "Từ cổ chí kim\nBà ngoại"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "玩",
+    "Pinyin": "wán",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chơi",
+    "ExampleSentence": "一考完试，小明就忘乎所以地玩。",
+    "ExamplePinyin": "Yì kǎo wán shì, xiǎomíng jiù wànghūsuǒyǐ de wán.",
+    "ExampleTranslation": "Thi xong, Tiểu Minh gần như quên hết mọi thứ rồi chơi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "完",
+    "Pinyin": "wán",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Xong",
+    "ExampleSentence": "没完没了",
+    "ExamplePinyin": "méiwán méiliǎo",
+    "ExampleTranslation": "Vô cùng tận"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "晚上",
+    "Pinyin": "wǎnshàng",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Buổi tối",
+    "ExampleSentence": "晚上一起吃顿饭吧。",
+    "ExamplePinyin": "Wǎnshàng yīqǐ chī dùn fàn ba.",
+    "ExampleTranslation": "Tối nay cùng nhau ăn bữa cơm đi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "为什么",
+    "Pinyin": "wèishéme",
+    "PartOfSpeech": "Từ để hỏi/Đại từ nghi vấn",
+    "VietnameseMeaning": "Vì sao",
+    "ExampleSentence": "不知道为什么小李进来事情就这么惨呢？",
+    "ExamplePinyin": "Bù zhīdào wèishéme Xiǎolǐ jìnlái shìqíng jiù zhème cǎn ne?",
+    "ExampleTranslation": "Không biết tại sao khi Tiểu Lý bước vào tình hình lại trở nên tồi tệ như vậy?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "问",
+    "Pinyin": "wèn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hỏi",
+    "ExampleSentence": "一问三不知",
+    "ExamplePinyin": "yí wèn sānbùzhī",
+    "ExampleTranslation": "Cái gì cũng không biết"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "问题",
+    "Pinyin": "wèntí",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Câu hỏi",
+    "ExampleSentence": "这个问题恐怕我解决不了了。",
+    "ExamplePinyin": "Zhège wèntí kǒngpà wǒ jiějué bùliǎole.",
+    "ExampleTranslation": "Vấn đề này e là tôi cũng không giải quyết được rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "西瓜",
+    "Pinyin": "xīguā",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Dưa hấu",
+    "ExampleSentence": "我最喜欢喝西瓜汁。",
+    "ExamplePinyin": "Wǒ zuì xǐhuān hē xīguāzhī.",
+    "ExampleTranslation": "Tôi thích nhất uống nước ép dưa hấu."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "希望",
+    "Pinyin": "xīwàng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hy vọng",
+    "ExampleSentence": "亲爱的妈妈爸爸，我不会辜负你们的希望。",
+    "ExamplePinyin": "Qīn’ài de māma bàba, wǒ bú huì gūfù nǐmen de xīwàng.",
+    "ExampleTranslation": "Bố mẹ thân yêu của con, con sẽ không phụ sự kỳ vọng của mọi người."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "洗",
+    "Pinyin": "xǐ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Rửa",
+    "ExampleSentence": "碧空如洗",
+    "ExamplePinyin": "bìkōngrúxǐ",
+    "ExampleTranslation": "Sáng trong như ngọc"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "向",
+    "Pinyin": "xiàng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hướng đến ai",
+    "ExampleSentence": "晕头传向",
+    "ExamplePinyin": "yūntóu chuánxiàng.",
+    "ExampleTranslation": "Đầu óc choáng váng"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "小时",
+    "Pinyin": "xiǎoshí",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Giờ; tiếng đồng hồ",
+    "ExampleSentence": "他一做就做到八个小时才休息。",
+    "ExamplePinyin": "Tā yí zuò jiù zuò dào bā gè xiǎoshí cái xiūxi.",
+    "ExampleTranslation": "Một khi anh ấy đã làm thì phải 8 giờ sau mới nghỉ."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "笑",
+    "Pinyin": "xiào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cười",
+    "ExampleSentence": "哭笑不得",
+    "ExamplePinyin": "kūxiàobùdé",
+    "ExampleTranslation": "Dở khóc dở cười"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "新",
+    "Pinyin": "xīn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Mới",
+    "ExampleSentence": "日新月异",
+    "ExamplePinyin": "rìxīnyuèyì",
+    "ExampleTranslation": "Biến chuyển từng ngày, thay đổi từng ngày"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "姓",
+    "Pinyin": "xìng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Họ",
+    "ExampleSentence": "请问您贵姓？",
+    "ExamplePinyin": "Qǐngwèn nín guìxìng?",
+    "ExampleTranslation": "Xin hỏi họ của ngài là gì?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "休息",
+    "Pinyin": "xiūxi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nghỉ ngơi",
+    "ExampleSentence": "走累了，找个地方休息休息。",
+    "ExamplePinyin": "Zǒulèi le，zhǎogè dìfāng xīuxi xīuxi",
+    "ExampleTranslation": "Điện thoại là phương tiện truyền gửi thông tin.Đi mệt rồi, tìm chỗ nào nghỉ ngơi một tý."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "雪",
+    "Pinyin": "xuě",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tuyết",
+    "ExampleSentence": "雪中送炭",
+    "ExamplePinyin": "xuězhōngsòngtàn",
+    "ExampleTranslation": "Giúp người khi gặp nạn"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "颜色",
+    "Pinyin": "yánsè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Màu sắc",
+    "ExampleSentence": "你喜欢什么颜色？",
+    "ExamplePinyin": "Nǐ xǐhuān shénme yánsè?",
+    "ExampleTranslation": "Bạn thích màu nào?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "眼睛",
+    "Pinyin": "yǎnjīng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đôi mắt",
+    "ExampleSentence": "小姑娘长着两只水灵灵的眼睛。",
+    "ExamplePinyin": "Xiǎo gūniang zhǎng zhe liǎng zhī shuǐlínglíng de yǎnjīng.",
+    "ExampleTranslation": "Cô gáicó đôi mắt đẹp long lanh."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "羊肉",
+    "Pinyin": "yángròu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thịt Dê",
+    "ExampleSentence": "挂羊肉买狗头。",
+    "ExamplePinyin": "Guà yángròu mǎi gǒutóu.",
+    "ExampleTranslation": "Treo đầu dê bán thịt chó."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "要",
+    "Pinyin": "yào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Muốn\nCần",
+    "ExampleSentence": "要言不烦",
+    "ExamplePinyin": "yàoyá bù fán",
+    "ExampleTranslation": "Rõ ràng khúc chiết"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "药",
+    "Pinyin": "yào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thuốc",
+    "ExampleSentence": "中药/ 西药/\n良药苦口",
+    "ExamplePinyin": "zhōngyào/ xīyào/\nLiángyào kǔkǒu",
+    "ExampleTranslation": "Thuốc Đông y\nThuốc Tây y\nThuốc đắng giã tật."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "也",
+    "Pinyin": "yě",
+    "PartOfSpeech": "Trợ từ ngữ khí",
+    "VietnameseMeaning": "Cũng",
+    "ExampleSentence": "之乎者也",
+    "ExamplePinyin": "zhīhūzhěyě",
+    "ExampleTranslation": "Diễn tả bài văn hoặc lời nói không rõ ràng"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "已经",
+    "Pinyin": "yǐjīng",
+    "PartOfSpeech": "Phó  từ",
+    "VietnameseMeaning": "Đã\nRồi",
+    "ExampleSentence": "这张照片已经模糊不清，无法辨认了。",
+    "ExamplePinyin": "Zhè zhāng zhàopiàn yǐjīng móhú bù qīng, wúfǎ biànrènle.",
+    "ExampleTranslation": "Bức ảnh đã mờ nhòe rồi, không còn nhận rõ ai nữa."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "一起",
+    "Pinyin": "Yìqǐ",
+    "PartOfSpeech": "Trạng  từ",
+    "VietnameseMeaning": "Cùng với\nCùng nhau",
+    "ExampleSentence": "我们在一起了。",
+    "ExamplePinyin": "Wǒmen zài yīqǐle.",
+    "ExampleTranslation": "Chúng tôi ở bên nhau rồi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "意思",
+    "Pinyin": "yìsi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ý nghĩa",
+    "ExampleSentence": "你是什么意思？",
+    "ExamplePinyin": "Nǐ shì shénme yìsi?",
+    "ExampleTranslation": "Ý của bạn là gì?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "阴",
+    "Pinyin": "yīn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Âm",
+    "ExampleSentence": "阴差阳错",
+    "ExamplePinyin": "yīnchāyángcuò",
+    "ExampleTranslation": "Sai sót ngẫu ngẫu nhiên"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "因为",
+    "Pinyin": "yīnwèi",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Bởi vì",
+    "ExampleSentence": "因为我知道你在想什么。",
+    "ExamplePinyin": "Yīnwèi wǒ zhīdào nǐ zài xiǎng shénme.",
+    "ExampleTranslation": "Bởi vì tôi biết cậu đang nghĩ gì."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "游泳",
+    "Pinyin": "yóuyǒng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Bơi lội",
+    "ExampleSentence": "这个暑假，我除了读书就是游泳。",
+    "ExamplePinyin": "Zhège shǔjià, wǒ chúle dúshū jiùshì yóuyǒng.",
+    "ExampleTranslation": "Kỳ nghỉ hè lần này, mình ngoại trừ đọc sách ra thì chỉ có đi bơi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "右边",
+    "Pinyin": "yòubiān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bên phải",
+    "ExampleSentence": "我坐在老王的右边。",
+    "ExamplePinyin": "Wǒ zuò zài lǎo Wáng de yòubian.",
+    "ExampleTranslation": "Tôi ngồi bên phải của lão Vương."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "鱼",
+    "Pinyin": "yú",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cá",
+    "ExampleSentence": "鱼贯而入/出",
+    "ExamplePinyin": "yúguàn ér rù/chū.",
+    "ExampleTranslation": "Nối đuôi nhau đi/vào"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "元",
+    "Pinyin": "yuán",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đồng\nHọ: Nguyên",
+    "ExampleSentence": "一元复始",
+    "ExamplePinyin": "yīyuánfù shǐ.",
+    "ExampleTranslation": "Khởi đầu vạn sự"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "远",
+    "Pinyin": "yuǎn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Xa",
+    "ExampleSentence": "远近闻名",
+    "ExamplePinyin": "yuǎnjìn wénmíng",
+    "ExampleTranslation": "Danh tiếng vang xa"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "运动",
+    "Pinyin": "yùndòng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Vận động",
+    "ExampleSentence": "你太偷懒了，快去运动吧。",
+    "ExamplePinyin": "Nǐ tài tōulǎnle, kuài qù yùndòng ba.",
+    "ExampleTranslation": "Bạn lười quá rồi, nhanh dậy vận động đi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "再",
+    "Pinyin": "zài",
+    "PartOfSpeech": "Phó từ",
+    "VietnameseMeaning": "Lại lần nữa",
+    "ExampleSentence": "你再说一遍吧。",
+    "ExamplePinyin": "Nǐ zàishuō yībiàn ba.",
+    "ExampleTranslation": "Bạn nói lại lần nữa đi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "早上",
+    "Pinyin": "zǎoshang",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Buổi sáng",
+    "ExampleSentence": "明天早上去跑步吗？",
+    "ExamplePinyin": "Míngtiān zǎoshang qù pǎobù ma?",
+    "ExampleTranslation": "Buổi sáng ngày mai đi chạy bộ không?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "张",
+    "Pinyin": "zhāng",
+    "PartOfSpeech": "Lượng từ\nHọ",
+    "VietnameseMeaning": "Trang\nHọ: Trương",
+    "ExampleSentence": "张三李四",
+    "ExamplePinyin": "zhāngsānlǐsì",
+    "ExampleTranslation": "Ông A bà B"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "丈夫",
+    "Pinyin": "zhàngfu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Chồng",
+    "ExampleSentence": "明天早上我跟丈夫去旅游了。",
+    "ExamplePinyin": "Míngtiān zǎoshang wǒ gēn zhàngfū qù lǚyóule.",
+    "ExampleTranslation": "Sáng mai tôi đi du lịch cùng chồng."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "找",
+    "Pinyin": "zhǎo",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tìm, tìm kiếm",
+    "ExampleSentence": "骑马找马",
+    "ExamplePinyin": "qímǎzhǎo mǎ",
+    "ExampleTranslation": "Đứng núi này trông núi nọ"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "着",
+    "Pinyin": "zhe",
+    "PartOfSpeech": "Trợ từ",
+    "VietnameseMeaning": "Đang",
+    "ExampleSentence": "小姑娘长着两只水灵灵的眼睛。",
+    "ExamplePinyin": "Xiǎo gūniang zhǎng zhe liǎng zhī shuǐlíng líng de yǎnjīng.",
+    "ExampleTranslation": "Cô gái có đôi mắt đẹp long lanh."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "真",
+    "Pinyin": "zhēn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Thật; chính xác",
+    "ExampleSentence": "千真万确",
+    "ExamplePinyin": "qiānzhēnwànquè",
+    "ExampleTranslation": "Cực kỳ chính xác"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "正在",
+    "Pinyin": "zhèngzài",
+    "PartOfSpeech": "Trạng từ chỉ thời gian",
+    "VietnameseMeaning": "Đang\nVẫn đang",
+    "ExampleSentence": "他正在准备移民。",
+    "ExamplePinyin": "Tā zhèngzài zhǔnbèi yímín.",
+    "ExampleTranslation": "Anh ý đang chuẩn bị di cư."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "知道",
+    "Pinyin": "zhīdào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Biết",
+    "ExampleSentence": "你明明知道，为什么还问我呢？",
+    "ExamplePinyin": "Nǐ míngmíng zhīdào, wèishéme hái wèn wǒ ne?",
+    "ExampleTranslation": "Bạn rõ ràng đã biết, tại sao vẫn cứ hỏi mình chứ?"
+  },
+  {
+    "HSK": 2,
+    "Chinese": "准备",
+    "Pinyin": "zhǔnbèi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chuẩn bị",
+    "ExampleSentence": "我准备好了老师。",
+    "ExamplePinyin": "Wǒ zhǔnbèi hǎole lǎoshī.",
+    "ExampleTranslation": "Em chuẩn bị ổn thỏa rồi thưa thầy."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "自行车",
+    "Pinyin": "zìxíngchē",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Xe đạp",
+    "ExampleSentence": "每天我都乘自行车上课。",
+    "ExamplePinyin": "Měitiān wǒ dōu chéng zìxíngchē shàngkè.",
+    "ExampleTranslation": "Mỗi ngày tôi đều đạp xe tới trường."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "走",
+    "Pinyin": "zǒu",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đi",
+    "ExampleSentence": "一起走吧!",
+    "ExamplePinyin": "Yìqǐ zǒu ba!",
+    "ExampleTranslation": "Đi cùng nhau thôi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "最",
+    "Pinyin": "zuì",
+    "PartOfSpeech": "Phó từ chỉ mức độ",
+    "VietnameseMeaning": "Nhất",
+    "ExampleSentence": "你最最最重要。",
+    "ExamplePinyin": "Nǐ zuì zuì zuì zhòngyào.",
+    "ExampleTranslation": "Bạn cực kì cực kì cực kì quan trọng với tôi."
+  },
+  {
+    "HSK": 2,
+    "Chinese": "左边",
+    "Pinyin": "zuǒbiān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bên trái",
+    "ExampleSentence": "老王坐在我左边。",
+    "ExamplePinyin": "Lǎo Wáng zuò zài wǒ zuǒbian.",
+    "ExampleTranslation": "Lão Vương ngồi bên trái tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "阿姨",
+    "Pinyin": "āyí",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Dì",
+    "ExampleSentence": "阿姨，现在我明白那是下流的，可是我本来没打算干那种事。",
+    "ExamplePinyin": "Āyí, xiànzài wǒ míngbái nà shì xiàliú de, kěshì wǒ běnlái méi dǎsuàn gàn nà zhǒng shì.",
+    "ExampleTranslation": "Dì à, giờ thì cháu hiểu rằng điều đó thật khó chịu, nhưng cháu vốn dĩ không định làm chuyện đó."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "啊",
+    "Pinyin": "a",
+    "PartOfSpeech": "Từ cảm thán",
+    "VietnameseMeaning": "A",
+    "ExampleSentence": "他真是个忸忸怩怩的人啊！",
+    "ExamplePinyin": "Tā zhēnshi gè niǔ niǔní ní de rén a!",
+    "ExampleTranslation": "Anh ấy thực sự là một kẻ ngốc a !"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "矮",
+    "Pinyin": "ǎi",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Thấp, lùn",
+    "ExampleSentence": "你那匹矮种马养在哪儿？",
+    "ExamplePinyin": "Nǐ nà pǐ ǎi zhǒng mǎ yǎng zài nǎ’er?",
+    "ExampleTranslation": "Cai lô ngựa chân ngắn này  của bạn nuôi ở đâu?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "爱好",
+    "Pinyin": "àihào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sở thích",
+    "ExampleSentence": "你有什么爱好？",
+    "ExamplePinyin": "Nǐ yǒu shénme àihào?",
+    "ExampleTranslation": "Bạn có sở thích gì?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "安静",
+    "Pinyin": "ānjìng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Yên tĩnh\nIm lặng\nLặng lẽ",
+    "ExampleSentence": "我要安安静静地离开人间。",
+    "ExamplePinyin": "Wǒ yào ān ānjìng jìng de líkāi rénjiān.",
+    "ExampleTranslation": "Tôi muốn lặng lẽ rời khỏi chốn trần gian này"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "把",
+    "Pinyin": "bǎ\nbà",
+    "PartOfSpeech": "Động từ\nLương từ",
+    "VietnameseMeaning": "Làm\nCầm nắm",
+    "ExampleSentence": "他把小费放在盘子下面了。",
+    "ExamplePinyin": "Tā bǎ xiǎofèi fàng zài pánzi xiàmiànle.",
+    "ExampleTranslation": "Tôi bỏ phí tip đặt dưới đĩa nhé."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "班",
+    "Pinyin": "bān",
+    "PartOfSpeech": "Lượng từ\nDanh từ",
+    "VietnameseMeaning": "Lớp\nChuyến\nĐi làm",
+    "ExampleSentence": "我得了流感，不能去上班。",
+    "ExamplePinyin": "Wǒ déle liúgǎn, bùnéng qù shàngbān.",
+    "ExampleTranslation": "Tôi bị cúm và không thể đi làm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "搬",
+    "Pinyin": "bān",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Di chuyển",
+    "ExampleSentence": "你是自己搬的这些家具吗？",
+    "ExamplePinyin": "Nǐ shì zìjǐ bān de zhèxiē jiājù ma?",
+    "ExampleTranslation": "Bạn tự mình chuyển hết chỗ đồ này ư?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "半",
+    "Pinyin": "bàn",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Nửa\nBán",
+    "ExampleSentence": "走到半路，天色暗了下来。",
+    "ExamplePinyin": "Zǒu dào bànlù, tiānsè ànle xiàlái.",
+    "ExampleTranslation": "Đi được nửa đường, trời tối sầm lại."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "办法",
+    "Pinyin": "bànfǎ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phương pháp\nCách giải quyết",
+    "ExampleSentence": "他的心里乱得不得了，怎么也找不到解决这件事的办法。",
+    "ExamplePinyin": "Tā de xīnlǐ luàn dé bùdéliǎo, zěnme yě zhǎo bù dào jiějué zhè jiàn shì de bànfǎ.",
+    "ExampleTranslation": "Lòng anh rối bời không tìm ra giải pháp cho chuyện này."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "办公室",
+    "Pinyin": "bàngōng\nshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phòng làm việc",
+    "ExampleSentence": "他急匆匆地走进办公室，又匆匆离去了。",
+    "ExamplePinyin": "Tā jícōngcōng de zǒu jìn bàngōngshì, yòu cōngcōng lí qùle.",
+    "ExampleTranslation": "Anh vội vã bước vào văn phòng rồi vội vã rời đi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "帮忙",
+    "Pinyin": "bāngmáng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Giúp đỡ",
+    "ExampleSentence": "请别人帮忙，就要站在对方的立场考虑问题。",
+    "ExamplePinyin": "Qǐng biérén bāngmáng, jiù yào zhàn zài duìfāng de lìchǎng kǎolǜ wèntí.",
+    "ExampleTranslation": "Nhờ người khác giúp đỡ, bạn phải xem xét vấn đề từ quan điểm của phía bên kia."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "包",
+    "Pinyin": "bāo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Túi\nBao\nBóp",
+    "ExampleSentence": "他碰得一个大包。",
+    "ExamplePinyin": "Tā pèng dé dà bāo.",
+    "ExampleTranslation": "Anh ấy đụng vào một cái túi lớn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "饱",
+    "Pinyin": "bǎo",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "No",
+    "ExampleSentence": "为了去旅行，我们早餐都吃得饱饱的。",
+    "ExamplePinyin": "Wèile qù lǚxíng, wǒmen zǎocān dōu chī dé bǎo bǎo de.",
+    "ExampleTranslation": "Để đi du lịch, tất cả chúng tôi đều ăn sáng đầy đủ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "北方",
+    "Pinyin": "běifāng",
+    "PartOfSpeech": "Từ chỉ phương hướng",
+    "VietnameseMeaning": "Phương Bắc\nPhía Bắc",
+    "ExampleSentence": "我就很快有机会去北方了。",
+    "ExamplePinyin": "Wǒ jiù hěn kuài yǒu jīhuì qù běifāngle.",
+    "ExampleTranslation": "Tôi sẽ sớm có cơ hội ra Bắc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "被",
+    "Pinyin": "bèi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Bị …",
+    "ExampleSentence": "我被带到后台去会见演员。",
+    "ExamplePinyin": "Wǒ bèi dài dào hòutái qù huìjiàn yǎnyuán.",
+    "ExampleTranslation": "Tôi được đưa vào hậu trường để gặp gỡ các diễn viên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "比较",
+    "Pinyin": "bǐjiào",
+    "PartOfSpeech": "Động từ\nTrạng từ",
+    "VietnameseMeaning": "So sánh",
+    "ExampleSentence": "两种办法各有得失，但比较而言，还是第一种办法得大于失。",
+    "ExamplePinyin": "Liǎng zhǒng bànfǎ gè yǒu déshī, dàn bǐjiào ér yán, háishì dì yī zhǒng bànfǎ dé dàyú shī.",
+    "ExampleTranslation": "Cả hai phương pháp đều có lãi và lỗ riêng, nhưng nếu so sánh thì phương pháp đầu tiên có lãi nhiều hơn lỗ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "比赛",
+    "Pinyin": "bǐsài",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cuộc thi\nThi đấu",
+    "ExampleSentence": "我才不管这场比赛谁胜呢。",
+    "ExamplePinyin": "Wǒ cái bùguǎn zhè chǎng bǐsài shéi shèng ne.",
+    "ExampleTranslation": "Tôi không quan tâm ai thắng trận đấu này."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "必须",
+    "Pinyin": "Bìxū",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cần thiết\nKhông thể thiếu",
+    "ExampleSentence": "我们必须乐观地面对未来。",
+    "ExamplePinyin": "Wǒmen bìxū lèguān dì miàn duì wèilái.",
+    "ExampleTranslation": "Chúng ta phải lạc quan đối mặt với tương lai."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "变化",
+    "Pinyin": "biànhuà",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Biến hóa",
+    "ExampleSentence": "她的模样起了惊人的变化。",
+    "ExamplePinyin": "Tā de múyàng qǐle jīngrén de biànhuà",
+    "ExampleTranslation": "Vẻ ngoài của cô thay đổi một cách đáng ngạc nhiên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "表示",
+    "Pinyin": "biǎoshì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Biểu thị\nBày tỏ\nPhô ra",
+    "ExampleSentence": "她向我们表示了虚假的热情。",
+    "ExamplePinyin": "Tā xiàng wǒmen biǎoshìle xūjiǎ de rèqíng.",
+    "ExampleTranslation": "Cô ấy bày tỏ sự nhiệt tình giả tạo với chúng tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "表演",
+    "Pinyin": "biǎoyǎn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Biểu diễn",
+    "ExampleSentence": "观众对艺术家的精彩表演赞不绝口。",
+    "ExamplePinyin": "Guānzhòng duì yìshùjiā de jīngcǎi biǎoyǎn zàn bù juékǒu.",
+    "ExampleTranslation": "Khán giả hết lời khen ngợi màn trình diễn tuyệt vời của nghệ sĩ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "别人",
+    "Pinyin": "biérén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Người khác",
+    "ExampleSentence": "别人准以为我缺少家教呢。",
+    "ExamplePinyin": "Biérén zhǔn yǐwéi wǒ quēshǎo jiājiào ne.",
+    "ExampleTranslation": "Mọi người vốn nghĩ rằng tôi thiếu gia sư."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "宾馆",
+    "Pinyin": "bīnguǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nhà nghỉ\nNhà trọ\nKhách sạn ít sao",
+    "ExampleSentence": "我们住在一家临近海边的宾馆里。",
+    "ExamplePinyin": "Wǒmen zhù zài yījiā línjìn hǎibiān de bīnguǎn lǐ.",
+    "ExampleTranslation": "Chúng tôi ở trong một khách sạn gần biển."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "冰箱",
+    "Pinyin": "bīngxiāng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tủ lạnh",
+    "ExampleSentence": "他一进门就扔下书包，还没换鞋就去开冰箱找冷饮。",
+    "ExamplePinyin": "Tā yī jìnmén jiù rēng xià shūbāo, hái méi huàn xié jiù qù kāi bīngxiāng zhǎo lěngyǐn.",
+    "ExampleTranslation": "Anh ta ném cặp sách xuống ngay khi bước vào cửa, xong mở tủ lạnh tìm đồ uống lạnh trước khi thay giày."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "才",
+    "Pinyin": "cái",
+    "PartOfSpeech": "Động từ\nHọ, tên",
+    "VietnameseMeaning": "Mới\nTài",
+    "ExampleSentence": "都是妈妈每天陪我跑步，我才减肥成功。",
+    "ExamplePinyin": "Dōu shì māmā měitiān péi wǒ pǎobù, wǒ cái jiǎnféi chénggōng",
+    "ExampleTranslation": "Chính mẹ là người cùng tôi chạy bộ mỗi ngày nên tôi mới giảm được cân."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "菜单",
+    "Pinyin": "càidān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thực đơn",
+    "ExampleSentence": "给我菜单好吗，小姐？",
+    "ExamplePinyin": "Gěi wǒ càidān hǎo ma, xiǎojiě?",
+    "ExampleTranslation": "Cô có thể cho tôi thực đơn được không?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "参加",
+    "Pinyin": "cānjiā",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tham gia",
+    "ExampleSentence": "高考是汇百万人参加的一场考试。",
+    "ExamplePinyin": "Gāokǎo shì huì bǎi wàn rén cānjiā de yīchǎng kaoshì.",
+    "ExampleTranslation": "Kỳ thi tuyển sinh đại học là một kì thi với hàng triệu thí sinh tham gia.."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "草",
+    "Pinyin": "cǎo",
+    "PartOfSpeech": "Danh từ\nHọ, tên",
+    "VietnameseMeaning": "Cỏ\nThảo",
+    "ExampleSentence": "她一下午都在花园里拔草。",
+    "ExamplePinyin": "Tā yī xiàwǔ dōu zài huāyuán lǐ bá cǎo.",
+    "ExampleTranslation": "Cô ấy đã nhổ cỏ trong vườn cả buổi chiều."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "层",
+    "Pinyin": "céng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tầng",
+    "ExampleSentence": "原子核形变证实壳层结构。",
+    "ExamplePinyin": "Yuánzǐhé xíngbiàn zhèngshí ké céng jiégòu.",
+    "ExampleTranslation": "Biến dạng nguyên tử xác nhận cấu trúc vỏ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "差",
+    "Pinyin": "chà",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Kém",
+    "ExampleSentence": "你是否克服了时差综合症？",
+    "ExamplePinyin": "Nǐ shìfǒu kèfúle shíchā zònghé zhèng?",
+    "ExampleTranslation": "Bạn đã vượt qua hội chứng jet lag( lệch múi giờ) chưa?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "超市",
+    "Pinyin": "chāoshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Siêu thị",
+    "ExampleSentence": "昨天九点钟我们到超市买东西了。",
+    "ExamplePinyin": "Zuótiān jiǔ diǎn zhōng wǒmen dào chāoshì mǎi dōngxīle.",
+    "ExampleTranslation": "Chúng tôi đến siêu thị mua đồ vào lúc 9 giờ ngày hôm qua."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "衬衫",
+    "Pinyin": "chènshān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sơ mi",
+    "ExampleSentence": "他为自己定做了三件衬衫。",
+    "ExamplePinyin": "Tā wèi zìjǐ dìngzuòle sān jiàn chènshān.",
+    "ExampleTranslation": "Anh đã đặt may ba chiếc áo cho mình."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "成绩",
+    "Pinyin": "chéngjī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thành tích",
+    "ExampleSentence": "要在文化上有成绩，则非韧不可。",
+    "ExamplePinyin": "Yào zài wénhuà shàng yǒu chéngjī, zé fēi rèn bùkě.",
+    "ExampleTranslation": "Để thành công về mặt văn hóa, cần phải có sự kiên trì."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "城市",
+    "Pinyin": "chéngshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thành phố",
+    "ExampleSentence": "这个城市对我来说很陌生。",
+    "ExamplePinyin": "Zhègè chéngshì duì wǒ lái shuō hěn mòshēng.",
+    "ExampleTranslation": "Thành phố này rất xa lạ đối với tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "迟到",
+    "Pinyin": "chídào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Muộn",
+    "ExampleSentence": "今天开会又有人迟到了。",
+    "ExamplePinyin": "Jīntiān kāihuì yòu yǒurén chídàole.",
+    "ExampleTranslation": "Hôm nay lại có người đến họp muộn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "出现",
+    "Pinyin": "chūxiàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Xuất hiện",
+    "ExampleSentence": "懂得出现在什么场合着什么服装。",
+    "ExamplePinyin": "Dǒngdé chūxiàn zài shénme chǎnghézhù shénme fúzhuāng.",
+    "ExampleTranslation": "Biết  mặc quần áo vào những dịp nào."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "厨房",
+    "Pinyin": "chúfáng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phòng bếp",
+    "ExampleSentence": "你到厨房里自己弄点吃的。",
+    "ExamplePinyin": "Nǐ dào chúfáng lǐ zìjǐ nòng diǎn chī de.",
+    "ExampleTranslation": "Bạn vào bếp và làm cho mình một cái gì đó để ăn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "除了",
+    "Pinyin": "chúle",
+    "PartOfSpeech": "Giới từ",
+    "VietnameseMeaning": "Trừ …ra",
+    "ExampleSentence": "除了我，其他人都去参加了音乐会。",
+    "ExamplePinyin": "Chúle wǒ, qítā rén dōu qù cānjiāle yīnyuè huì.",
+    "ExampleTranslation": "Ngoại trừ tôi, tất cả những người khác đã đến buổi hòa nhạc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "春",
+    "Pinyin": "chūn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mùa xuân",
+    "ExampleSentence": "春天的黄昏总是又阴又冷。",
+    "ExamplePinyin": "Chūntiān de huánghūn zǒng shì yòu yīn yòu lěng.",
+    "ExampleTranslation": "Buổi tối mùa xuân luôn nhiều mây và lạnh."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "词语",
+    "Pinyin": "cíyǔ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Từ ngữ",
+    "ExampleSentence": "作文时要尽量避免使用方言词语。",
+    "ExamplePinyin": "Zuòwén shí yào jǐnliàng bìmiǎn shǐyòng fāngyán cíyǔ.",
+    "ExampleTranslation": "Cố gắng tránh sử dụng các từ phương ngữ (từ địa phương) khi viết."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "聪明",
+    "Pinyin": "cōngmíng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Thông minh",
+    "ExampleSentence": "天才在于积累，聪明在于勤奋。",
+    "ExamplePinyin": "Tiāncái zàiyú jīlěi, cōngmíng zàiyú qínfèn.",
+    "ExampleTranslation": "Thiên tài nằm ở sự tích lũy, thông minh nằm ở sự chăm chỉ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "打扫",
+    "Pinyin": "dǎsǎo",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Dọn dẹp",
+    "ExampleSentence": "教室被打扫得一干二净。",
+    "ExamplePinyin": "Jiàoshì bèi dǎsǎo dé yīgān èr jìng.",
+    "ExampleTranslation": "Phòng học đã được dọn dẹp sạch sẽ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "打算",
+    "Pinyin": "dǎsuàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Dự định\nĐịnh",
+    "ExampleSentence": "我从来没打算退缩，我的字典没有妥协。",
+    "ExamplePinyin": "Wǒ cónglái méi dǎsuàn tuìsuō, wǒ de zìdiǎn méiyǒu tuǒxié.",
+    "ExampleTranslation": "Tôi không bao giờ có ý định lùi bước, từ điển của tôi không thỏa hiệp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "带",
+    "Pinyin": "dài",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đem theo",
+    "ExampleSentence": "行李带的多了，是个累赘。",
+    "ExamplePinyin": "Xínglǐ dài de duōle, shìgè léizhui.",
+    "ExampleTranslation": "Quá nhiều hành lý là một gánh nặng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "担心",
+    "Pinyin": "dānxīn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Lo lắng",
+    "ExampleSentence": "你不要担心。",
+    "ExamplePinyin": "Nǐ bùyào dānxīn.",
+    "ExampleTranslation": "Đừng lo lắng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "蛋糕",
+    "Pinyin": "dàngāo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bánh gato",
+    "ExampleSentence": "那蛋糕的样子很吸引人。",
+    "ExamplePinyin": "Nà dàngāo de yàngzi hěn xīyǐn rén.",
+    "ExampleTranslation": "Bánh trông rất hấp dẫn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "当然",
+    "Pinyin": "dāngrán",
+    "PartOfSpeech": "Trạng từ",
+    "VietnameseMeaning": "Đương nhiên",
+    "ExampleSentence": "当然我不会检查你的行李！",
+    "ExamplePinyin": "Dāngrán wǒ bù huì jiǎnchá nǐ de xínglǐ!",
+    "ExampleTranslation": "Tất nhiên tôi sẽ không kiểm tra hành lý của bạn!"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "地",
+    "Pinyin": "de\ndì",
+    "PartOfSpeech": "Trợ từ",
+    "VietnameseMeaning": "Địa",
+    "ExampleSentence": "他一拳就把对手打倒在地。",
+    "ExamplePinyin": "Tā yī quán jiù bǎ duìshǒu dǎdǎo zài dì.",
+    "ExampleTranslation": "Anh ta hạ gục đối thủ bằng một cú đấm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "灯",
+    "Pinyin": "dēng",
+    "PartOfSpeech": "Danh từ\nHọ, tên",
+    "VietnameseMeaning": "Đèn\nĐăng",
+    "ExampleSentence": "几乎所有的灯火已经熄灭。",
+    "ExamplePinyin": "Jīhū suǒyǒu de dēnghuǒ yǐjīng xímiè.",
+    "ExampleTranslation": "Hầu như tất cả các đèn đã tắt."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "低",
+    "Pinyin": "dī",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Thấp",
+    "ExampleSentence": "彤云密布的天穹低得出奇。",
+    "ExamplePinyin": "Tóngyún mìbù de tiānqióng dī dé chūqí.",
+    "ExampleTranslation": "Bầu trời đầy mây thấp một cách đáng ngạc nhiên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "地方",
+    "Pinyin": "dìfāng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Địa phương",
+    "ExampleSentence": "她根本不想去那个脏地方。",
+    "ExamplePinyin": "Tā gēnběn bùxiǎng qù nàgè zàng dìfāng.",
+    "ExampleTranslation": "Cô không muốn đến nơi bẩn thỉu đó chút nào."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "地铁",
+    "Pinyin": "dìtiě",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tàu điện ngầm",
+    "ExampleSentence": "我打赌地铁也是那么挤，是不是？",
+    "ExamplePinyin": "Wǒ dǎdǔ dìtiě yěshì nàme jǐ, shì bùshì?",
+    "ExampleTranslation": "Tôi cá là tàu điện ngầm rất đông, phải không?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "地图",
+    "Pinyin": "dìtú",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bản đồ",
+    "ExampleSentence": "目录是一篇长文档的地图。",
+    "ExamplePinyin": "Mùlù shì yī piān zhǎng wéndàng dì dìtú.",
+    "ExampleTranslation": "Mục lục là một bản đồ của một tài liệu dài."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "电梯",
+    "Pinyin": "diàntī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thang máy",
+    "ExampleSentence": "这可能是电梯坠毁的结果。",
+    "ExamplePinyin": "Zhè kěnéng shì diàntī zhuìhuǐ de jiéguǒ.",
+    "ExampleTranslation": "Đây có thể là kết quả của sự cố thang máy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "电子邮箱",
+    "Pinyin": "diànzǐ yóuxiāng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Email\nHòm thư điện tử",
+    "ExampleSentence": "网址和电子邮箱地址保持不变。",
+    "ExamplePinyin": "Wǎngzhǐ hé diànzǐ yóuxiāng dìzhǐ bǎochí bù biàn.",
+    "ExampleTranslation": "Địa chỉ trang web và địa chỉ email vẫn không thay đổi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "东",
+    "Pinyin": "dōng",
+    "PartOfSpeech": "Từ chỉ phương hướng\nPhương vị từ",
+    "VietnameseMeaning": "Phía Đông",
+    "ExampleSentence": "五月，我到东部去拜访他。",
+    "ExamplePinyin": "Wǔ yuè, wǒ dào dōngbù qù bàifǎng tā.",
+    "ExampleTranslation": "Tháng năm, tôi về phía Đông thăm anh."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "冬",
+    "Pinyin": "dōng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mùa đông",
+    "ExampleSentence": "这些苹果储存起来冬天吃。",
+    "ExamplePinyin": "Zhèxiē píngguǒ chúcún qǐlái dōngtiān chī.",
+    "ExampleTranslation": "Những quả táo này được lưu trữ cho mùa đông."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "动物",
+    "Pinyin": "dòng wù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Động vật",
+    "ExampleSentence": "这些动物只在夜晚出来。",
+    "ExamplePinyin": "Zhèxiē dòngwù zhǐ zài yèwǎn chūlái.",
+    "ExampleTranslation": "Những con vật này chỉ xuất hiện vào ban đêm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "短",
+    "Pinyin": "duǎn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Ngắn",
+    "ExampleSentence": "她穿着一件红色的短上衣。",
+    "ExamplePinyin": "Tā chuānzhuó yī jiàn hóngsè de duǎn shàngyī.",
+    "ExampleTranslation": "Cô ấy đang mặc một chiếc áo khoác ngắn màu đỏ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "段",
+    "Pinyin": "duàn",
+    "PartOfSpeech": "Lương từ",
+    "VietnameseMeaning": "Đoạn",
+    "ExampleSentence": "他应该仔细考虑一段时间。",
+    "ExamplePinyin": "Tā yīnggāi zǐxì kǎolǜ yīduànshíjiān.",
+    "ExampleTranslation": "Anh ấy nên suy nghĩ kỹ một lúc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "锻炼",
+    "Pinyin": "duànliàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Luyện tập",
+    "ExampleSentence": "爷爷通常五点钟起床，到公园锻炼身体。",
+    "ExamplePinyin": "Yéyé tōngcháng wǔ diǎn zhōng qǐchuáng, dào gōngyuán duànliàn shēntǐ.",
+    "ExampleTranslation": "Ông nội thường dậy lúc năm giờ đến công viên để tập thể dục."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "多么",
+    "Pinyin": "duōme",
+    "PartOfSpeech": "Trợ từ",
+    "VietnameseMeaning": "Bao nhiêu",
+    "ExampleSentence": "不管天气多么冷，雪下得多么大，我们都要按时到校。",
+    "ExamplePinyin": "Bùguǎn tiānqì duōme lěng, xuě xià dé duōme dà, wǒmen dōu yào àn shí dào xiào.",
+    "ExampleTranslation": "Dù thời tiết lạnh giá hay tuyết rơi dày đến đâu, chúng ta cũng phải đến trường đúng giờ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "饿",
+    "Pinyin": "è",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đói",
+    "ExampleSentence": "她想到儿童挨饿就受不了。",
+    "ExamplePinyin": "Tā xiǎngdào értóng āi è jiù shòu bùliǎo.",
+    "ExampleTranslation": "Cô ấy nghĩ tới trẻ em sẽ đói là không thể chịu được."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "而且",
+    "Pinyin": "érqiě",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Hơn nữa",
+    "ExampleSentence": "他不但学习成绩好，而且还乐于助人。",
+    "ExamplePinyin": "Tā bùdàn xuéxí chéngjī hǎo, érqiě hái lèyú zhùrén.",
+    "ExampleTranslation": "Không chỉ có thành tích học tập tốt mà anh ấy còn rất hay giúp đỡ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "耳朵",
+    "Pinyin": "ěrduǒ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tai",
+    "ExampleSentence": "他竖起耳朵，仔细听了听树林里的动静。",
+    "ExamplePinyin": "Tā shù qǐ ěrduǒ, zǐxì tīngle tīng shùlín lǐ de dòngjìng.",
+    "ExampleTranslation": "Anh ta dỏng tai lên nghe mọi động tĩnh trong rừng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "发烧",
+    "Pinyin": "fāshāo",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Phát sốt\nSốt",
+    "ExampleSentence": "这孩子每晚发烧，这使他父母非常焦急。",
+    "ExamplePinyin": "Zhè háizi měi wǎn fāshāo, zhè shǐ tā fùmǔ fēicháng jiāojí.",
+    "ExampleTranslation": "Con bị sốt hàng đêm khiến bố mẹ rất lo lắng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "发现",
+    "Pinyin": "fāxiàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Phát hiện",
+    "ExampleSentence": "妈妈发现天阴下来了，马上把窗户关了起来。",
+    "ExamplePinyin": "Māmā fāxiàn tiān yīn xiàláile, mǎshàng bǎ chuānghù guānle qǐlái.",
+    "ExampleTranslation": "Mẹ thấy trời u ám, liền đóng cửa sổ lại."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "方便",
+    "Pinyin": "fāngbiàn",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Thuận tiện\nTiện lợi",
+    "ExampleSentence": "公共场所，给人行方便，特别是老人家。",
+    "ExamplePinyin": "Gōnggòng chǎngsuǒ, jǐ rénxíng fāngbiàn, tèbié shì lǎorénjiā.",
+    "ExampleTranslation": "Nơi công cộng thuận tiện cho người dân, đặc biệt là người cao tuổi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "放",
+    "Pinyin": "fàng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đặt đó\nĐể đó",
+    "ExampleSentence": "他把小费放在盘子下面了。",
+    "ExamplePinyin": "Tā bǎ xiǎofèi fàng zài pánzi xiàmiànle.",
+    "ExampleTranslation": "Anh ta đặt tiền tip dưới đĩa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "放心",
+    "Pinyin": "fàngxīn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Yên tâm",
+    "ExampleSentence": "用我的细心，耐心和爱心，换你的安心，放心和舒心。",
+    "ExamplePinyin": "Yòng wǒ de xìxīn, nàixīn hé àixīn, huàn nǐ de ānxīn, fàngxīn hé shūxīn.",
+    "ExampleTranslation": "Với tính cẩn thận, kiên nhẫn và tình yêu của mình, tôi đánh đổi sự yên tâm, thoải mái cho bạn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "分",
+    "Pinyin": "fēn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phút\nPhần\nĐiểm",
+    "ExampleSentence": "我们期望海军分遣队到来。",
+    "ExamplePinyin": "Wǒmen qīwàng hǎijūn fēnqiǎn duì dàolái.",
+    "ExampleTranslation": "Chúng tôi mong chờ sự xuất hiện của đội hải quân."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "附近",
+    "Pinyin": "fùjìn",
+    "PartOfSpeech": "Từ chỉ phương hướng",
+    "VietnameseMeaning": "Lân cận\nGần đây",
+    "ExampleSentence": "我家附近有个美丽的公园。",
+    "ExamplePinyin": "Wǒjiā fùjìn yǒu gè měilì de gōngyuán.",
+    "ExampleTranslation": "Có một công viên đẹp gần nhà của tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "复习",
+    "Pinyin": "fùxí",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ôn tập",
+    "ExampleSentence": "要中考了,同学们正抓紧时间复习。",
+    "ExamplePinyin": "Yào zhōngkǎole, tóngxuémen zhèng zhuājǐn shíjiān fùxí.",
+    "ExampleTranslation": "Kỳ thi tuyển sinh THPT sắp đến gần, các bạn học sinh đang gấp rút ôn tập."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "干净",
+    "Pinyin": "gānjìng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Sạch sẽ",
+    "ExampleSentence": "我们把校园的每个角落都打扫得干干净净。",
+    "ExamplePinyin": "Wǒmen bǎ xiàoyuán de měi gè jiǎoluò dōu dǎsǎo dé gàn gānjìng jìng.",
+    "ExampleTranslation": "Chúng tôi đã dọn dẹp mọi ngóc ngách trong khuôn viên trường."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "敢",
+    "Pinyin": "gǎn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Dám",
+    "ExampleSentence": "我们要把她吓得不敢报警。",
+    "ExamplePinyin": "Wǒmen yào bǎ tā xià dé bù gǎn bàojǐng.",
+    "ExampleTranslation": "Chúng tôi muốn dọa cô ấy khỏi gọi cảnh sát."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "感冒",
+    "Pinyin": "gǎnmào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cảm",
+    "ExampleSentence": "青春是一场大雨，即使感冒，还想回头再淋一次。",
+    "ExamplePinyin": "Qīngchūn shì yī chǎng dàyǔ, jíshǐ gǎnmào, hái xiǎng huítóu zài lín yīcì.",
+    "ExampleTranslation": "Tuổi thanh xuân là cơn mưa rào, dù có bị cảm, em vẫn muốn tắm 1 lần."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "刚才",
+    "Pinyin": "gāngcái",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Vừa mới",
+    "ExampleSentence": "我刚才看见了他。",
+    "ExamplePinyin": "Wǒ gāngcái kànjiànle tā.",
+    "ExampleTranslation": "Tôi mới nhìn thấy anh ta."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "跟",
+    "Pinyin": "gēn",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Cùng …",
+    "ExampleSentence": "今天我跟上司大吵了一顿。",
+    "ExamplePinyin": "Jīntiān wǒ gēn shàngsi dà chǎole yī dùn.",
+    "ExampleTranslation": "Tôi đã có một cuộc cãi vã lớn với sếp của tôi hôm nay."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "根据",
+    "Pinyin": "gēnjù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Dựa theo….",
+    "ExampleSentence": "这个结论没有事实根据，不能成立。",
+    "ExamplePinyin": "Zhège jiélùn méiyǒu shìshí gēnjù, bùnéng chénglì.",
+    "ExampleTranslation": "Kết luận này không có cơ sở thực tế và không thể được thiết lập."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "更",
+    "Pinyin": "gèng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Thêm ….",
+    "ExampleSentence": "我不是酒鬼，更不是嫖客。",
+    "ExamplePinyin": "Wǒ bùshì jiǔguǐ, gèng bùshì piáokè.",
+    "ExampleTranslation": "Tôi không phải là một kẻ say xỉn chứ đừng nói đến một cô gái không con sạch."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "公园",
+    "Pinyin": "gōngyuán",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Công viên",
+    "ExampleSentence": "弟弟在公园的湖里玩着一个西瓜似的水球。",
+    "ExamplePinyin": "Dìdì zài gōngyuán de hú lǐ wánzhe yīgè xīguā shì de shuǐqiú.",
+    "ExampleTranslation": "Em trai đang chơi quả bóng nước giống quả dưa hấu ở hồ nước trong công viên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "故事",
+    "Pinyin": "gùshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sự cố",
+    "ExampleSentence": "他的故事没有一点真实性。",
+    "ExamplePinyin": "Tā de gùshì méiyǒu yīdiǎn zhēnshí xìng.",
+    "ExampleTranslation": "Không có sự thật trong câu chuyện của mình."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "刮风",
+    "Pinyin": "guā fēng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cạo gió",
+    "ExampleSentence": "北方不比南方，春天老刮风。",
+    "ExamplePinyin": "Běifāng bùbǐ nánfāng, chūntiān lǎo guā fēng.",
+    "ExampleTranslation": "Phương bắc không hơn phương nam, mùa xuân luôn lộng gió."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "关",
+    "Pinyin": "guān",
+    "PartOfSpeech": "Danh từ\nĐộng từ",
+    "VietnameseMeaning": "Quan\nCửa …",
+    "ExampleSentence": "我们脸色冷峻，漠不关心。",
+    "ExamplePinyin": "Wǒmen liǎnsè lěngjùn, mòbùguānxīn.",
+    "ExampleTranslation": "Khuôn mặt chúng tôi dữ tợn và thờ ơ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "关系",
+    "Pinyin": "guānxì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quan hệ",
+    "ExampleSentence": "我和那个家伙断绝关系了。",
+    "ExamplePinyin": "Wǒ hé nàgè jiāhuo duànjué guānxìle.",
+    "ExampleTranslation": "Tôi đã chia tay với gã đó."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "关心",
+    "Pinyin": "guānxīn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Quan tâm",
+    "ExampleSentence": "我们脸色冷峻，漠不关心。",
+    "ExamplePinyin": "Wǒmen liǎnsè lěngjùn, mòbùguānxīn.",
+    "ExampleTranslation": "Khuôn mặt chúng tôi dữ tợn và thờ ơ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "关于",
+    "Pinyin": "guānyú",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Liên quan đến…\nĐối với ….",
+    "ExampleSentence": "关于供应物资的答复怎样？",
+    "ExamplePinyin": "Guānyú gōngyìng wùzī de dáfù zěnyàng?",
+    "ExampleTranslation": "Câu trả lời về nguồn cung cấp là gì?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "国家",
+    "Pinyin": "guójiā",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quốc gia",
+    "ExampleSentence": "他是国家的知识分子精英。",
+    "ExamplePinyin": "Tā shì guójiā de zhīshì fēnzǐ jīngyīng.",
+    "ExampleTranslation": "Anh là tầng lớp trí thức ưu tú của đất nước."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "果汁",
+    "Pinyin": "guǒzhī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nước ép",
+    "ExampleSentence": "汤已售完现只供应果汁。",
+    "ExamplePinyin": "Tāng yǐ shòu wán xiàn zhǐ gōngyìng guǒzhī.",
+    "ExampleTranslation": "Súp đã được bán hết và bây giờ chỉ có nước trái cây."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "过去",
+    "Pinyin": "guòqù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Qua rồi",
+    "ExampleSentence": "他的家在教堂过去几步远。",
+    "ExamplePinyin": "Tā de jiā zài jiàotáng guòqù jǐ bù yuǎn.",
+    "ExampleTranslation": "Nhà anh cách nhà thờ vài bước chân."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "还是",
+    "Pinyin": "háishì",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Hay là\nHoặc là",
+    "ExampleSentence": "不管是刮风还是下雨，他从未迟到过。",
+    "ExamplePinyin": "Bùguǎn shì guā fēng háishì xià yǔ, tā cóng wèi chídàoguò.",
+    "ExampleTranslation": "Dù trời mưa gió, anh ấy chưa bao giờ đến muộn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "害怕",
+    "Pinyin": "hàipà",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Sợ hãi",
+    "ExampleSentence": "天黑了,小飞开始害怕起来。",
+    "ExamplePinyin": "Tiān hēile, xiǎo fēi kāishǐ hàipà qǐlái.",
+    "ExampleTranslation": "Trời sắp tối, Tiểu Phi trở nên sợ hãi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "河",
+    "Pinyin": "hé",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Sông\nHồ",
+    "ExampleSentence": "对于这个我不会信口开河。",
+    "ExamplePinyin": "Duìyú zhège wǒ bù huì xìnkǒukāihé.",
+    "ExampleTranslation": "Tôi sẽ không nói về nó."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "黑板",
+    "Pinyin": "hēibǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bảng đen",
+    "ExampleSentence": "她的名字已从黑板上划掉。",
+    "ExamplePinyin": "Tā de míngzì yǐ cóng hēibǎn shàng huà diào.",
+    "ExampleTranslation": "Tên của cô ấy đã bị gạch bỏ trên bảng đen."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "护照",
+    "Pinyin": "hù zhào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hộ chiếu",
+    "ExampleSentence": "请你填上护照号码并签名。",
+    "ExamplePinyin": "Qǐng nǐ tián shàng hùzhào hàomǎ bìng qiānmíng.",
+    "ExampleTranslation": "Vui lòng điền số hộ chiếu của bạn và ký tên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "花",
+    "Pinyin": "huā",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hoa",
+    "ExampleSentence": "她真是个水性杨花的女人！",
+    "ExamplePinyin": "Tā zhēnshi gè shuǐxìngyánghuā de nǚrén!",
+    "ExampleTranslation": "Cô ấy thật là một người phụ nữ xinh đẹp!"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "花园",
+    "Pinyin": "huāyuán",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Vườn hoa\nHoa viên\nVườn tược",
+    "ExampleSentence": "她一下午都在花园里拔草。",
+    "ExamplePinyin": "Tā yī xiàwǔ dōu zài huāyuán lǐ bá cǎo.",
+    "ExampleTranslation": "Cô ấy đã nhổ cỏ trong vườn cả buổi chiều."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "画",
+    "Pinyin": "huà",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tranh",
+    "ExampleSentence": "她的画博得了老师的赞扬。",
+    "ExamplePinyin": "Tā de huà bódéle lǎoshī de zànyáng.",
+    "ExampleTranslation": "Bức tranh của cô đã giành được lời khen ngợi từ giáo viên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "坏",
+    "Pinyin": "huài",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Hỏng",
+    "ExampleSentence": "那批玻璃器皿损坏了很多。",
+    "ExamplePinyin": "Nà pī bōlí qìmǐn sǔnhuàile hěnduō.",
+    "ExampleTranslation": "Lô đồ thủy tinh đó bị hư hỏng rất nhiều."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "还",
+    "Pinyin": "h\nhuán",
+    "PartOfSpeech": "Liên từ\nĐộng từ",
+    "VietnameseMeaning": "Hoặc là\nĐổi",
+    "ExampleSentence": "那个小坏蛋还只有十九岁。",
+    "ExamplePinyin": "Nàgè xiǎo huàidàn hái zhǐyǒu shíjiǔ suì.",
+    "ExampleTranslation": "Tên phản diện nhỏ đó mới mười chín tuổi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "环境",
+    "Pinyin": "huánjìng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Môi trường\nHoàn cảnh",
+    "ExampleSentence": "我姐姐在环境部担任要职。",
+    "ExamplePinyin": "Wǒ jiějiě zài huánjìng bù dānrèn yàozhí.",
+    "ExampleTranslation": "Em gái tôi giữ một vị trí quan trọng trong Bộ Môi trường."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "换",
+    "Pinyin": "huàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đổi",
+    "ExampleSentence": "客饭固定的午餐不能换菜。",
+    "ExamplePinyin": "Kèfàn gùdìng de wǔcān bùnéng huàn cài.",
+    "ExampleTranslation": "Bữa trưa cố định không thể thay đổi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "黄",
+    "Pinyin": "huáng",
+    "PartOfSpeech": "Danh từ\nTính từ\nHọ, tên",
+    "VietnameseMeaning": "Màu vàng\nHoàng",
+    "ExampleSentence": "黄山山景，处处可以入画。",
+    "ExamplePinyin": "Huángshān shān jǐng, chùchù kěyǐ rùhuà.",
+    "ExampleTranslation": "Phong cảnh núi Hoàng Sơn có thể được vẽ ở khắp mọi nơi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "会议",
+    "Pinyin": "huìyì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hội ý",
+    "ExampleSentence": "此事推迟到下次会议解决。",
+    "ExamplePinyin": "Cǐ shì tuīchí dào xià cì huìyì jiějué.",
+    "ExampleTranslation": "Vấn đề đã được hoãn lại cuộc họp tiếp theo."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "或者",
+    "Pinyin": "huòzhě",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hoặc là",
+    "ExampleSentence": "或者他只是一分钟热度，或者他是真的下定了决心。",
+    "ExamplePinyin": "Huòzhě tā zhǐshì yī fēnzhōng rèdù, huòzhě tā shì zhēn de xiàdìngle juéxīn.",
+    "ExampleTranslation": "Hoặc anh ấy chỉ là một phút nóng nảy, hoặc anh ấy thực sự hạ quyết tâm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "机会",
+    "Pinyin": "jīhuì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cơ hội",
+    "ExampleSentence": "现在，正是有志青年大显身手的好机会。",
+    "ExamplePinyin": "Xiànzài, zhèng shì yǒuzhì qīngnián dàxiǎnshēnshǒu de hǎo jīhuì.",
+    "ExampleTranslation": "Giờ đây, là cơ hội tốt để những người trẻ có khát vọng thể hiện tài năng của mình."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "几乎",
+    "Pinyin": "jīhū",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Dường như",
+    "ExampleSentence": "几乎所有的游客都是外国人。",
+    "ExamplePinyin": "Jīhū suǒyǒu de yóukè dōu shì wàiguó rén.",
+    "ExampleTranslation": "Hầu hết tất cả khách du lịch là người nước ngoài."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "极",
+    "Pinyin": "jí",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cấp độ\nLevel",
+    "ExampleSentence": "一时我又垂头丧气之极了。",
+    "ExamplePinyin": "Yīshí wǒ yòu chuítóusàngqì zhī jíle.",
+    "ExampleTranslation": "Trong một thời gian, tôi lại thất vọng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "记得",
+    "Pinyin": "jìdé",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ghi nhớ\nNhớ",
+    "ExampleSentence": "我记得她给过我那把钥匙。",
+    "ExamplePinyin": "Wǒ jìdé tā gěiguò wǒ nà bǎ yàoshi.",
+    "ExampleTranslation": "Tôi nhớ cô ấy đã đưa tôi chìa khóa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "季节",
+    "Pinyin": "jìjié",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mùa",
+    "ExampleSentence": "秋天是毛织品畅销的季节。",
+    "ExamplePinyin": "Qiūtiān shì máozhīpǐn chàngxiāo de jìjié.",
+    "ExampleTranslation": "Mùa thu là mùa bán chạy nhất của các loại vải len."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "检查",
+    "Pinyin": "jiǎnchá",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Kiểm tra",
+    "ExampleSentence": "定期去检查身体吧，别等最后别人送你去。",
+    "ExamplePinyin": "Dìngqí qù jiǎnchá shēntǐ ba, bié děng zuìhòu biérén sòng nǐ qù.",
+    "ExampleTranslation": "Thường xuyên đi khám định kỳ, đừng đợi ai đó đưa bạn đến đó."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "简单",
+    "Pinyin": "jiǎndān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đơn giản",
+    "ExampleSentence": "这次考试很简单，可是由于我的粗心，只考了95。",
+    "ExamplePinyin": "Zhè cì kǎoshì hěn jiǎndān, kěshì yóuyú wǒ de cūxīn, zhǐ kǎole 95.",
+    "ExampleTranslation": "Đề thi rất đơn giản nhưng do bất cẩn nên tôi chỉ thi được 95."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "健康",
+    "Pinyin": "jiànkāng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Khỏe mạnh",
+    "ExampleSentence": "健康是成功的命脉，是成功的本钱。",
+    "ExamplePinyin": "Jiànkāng shì chénggōng de mìngmài, shì chénggōng de běnqián.",
+    "ExampleTranslation": "Sức khỏe là huyết mạch của thành công và là vốn của thành công."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "见面",
+    "Pinyin": "jiànmiàn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Gặp mặt",
+    "ExampleSentence": "那么，我们明天此时见面。",
+    "ExamplePinyin": "Nàme, wǒmen míngtiān cǐ shí jiànmiàn.",
+    "ExampleTranslation": "Vì vậy, chúng ta sẽ gặp nhau vào thời điểm này vào ngày mai."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "讲",
+    "Pinyin": "jiǎng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Giảng\nNói\nDạy bảo/ dỗ",
+    "ExampleSentence": "他考虑要讲一句严厉的话。",
+    "ExamplePinyin": "Tā kǎolǜ yào jiǎng yījù yánlì dehuà.",
+    "ExampleTranslation": "Anh ấy coi là một lời nói khó nghe."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "教",
+    "Pinyin": "jiào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Dạy",
+    "ExampleSentence": "他的家在教堂过去几步远。",
+    "ExamplePinyin": "Tā de jiā zài jiàotáng guòqù jǐ bù yuǎn.",
+    "ExampleTranslation": "Nhà anh cách nhà thờ vài bước chân."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "角",
+    "Pinyin": "jiǎo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Góc, xó",
+    "ExampleSentence": "我的胳膊肘撞着桌子角了。",
+    "ExamplePinyin": "Wǒ de gēbó zhǒu zhuàngzhe zhuōzi jiǎole.",
+    "ExampleTranslation": "Khuỷu tay của tôi đập vào góc bàn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "脚",
+    "Pinyin": "jiǎo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Chân",
+    "ExampleSentence": "他踢足球时扭伤了脚脖子。",
+    "ExamplePinyin": "Tā tī zúqiú shí niǔshāngle jiǎo bózi.",
+    "ExampleTranslation": "Anh ấy bị bong gân mắt cá chân khi chơi bóng đá."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "接",
+    "Pinyin": "jiē",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đón, tiếp",
+    "ExampleSentence": "他们提议接受布里托为王。",
+    "ExamplePinyin": "Tāmen tíyì jiēshòu bù lǐ tuō wèi wáng.",
+    "ExampleTranslation": "Họ đề nghị chấp nhận Brito làm vua."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "街道",
+    "Pinyin": "jiēdào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đường phố\nĐịa đạo (hầm)",
+    "ExampleSentence": "那个阳台伸出于街道上方。",
+    "ExamplePinyin": "Nàgè yángtái shēn chū yú jiēdào shàngfāng.",
+    "ExampleTranslation": "Ban công nhô ra ngoài đường."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "结婚",
+    "Pinyin": "jiéhūn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Kết hôn",
+    "ExampleSentence": "她结婚的消息来得很突然。",
+    "ExamplePinyin": "Tā jiéhūn de xiāoxī láidé hěn túrán.",
+    "ExampleTranslation": "Tin cô kết hôn đến bất ngờ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "结束",
+    "Pinyin": "jiéshù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Kết thúc",
+    "ExampleSentence": "有怎样的开始，就有怎样的结束。",
+    "ExamplePinyin": "Yǒu zěnyàng de kāishǐ, jiù yǒu zěnyàng de jiéshù.",
+    "ExampleTranslation": "Dù có bắt đầu thì cũng có kết thúc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "节目",
+    "Pinyin": "jiémù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tiết mục",
+    "ExampleSentence": "音乐节目被知趣地撤消了。",
+    "ExamplePinyin": "Yīnyuè jiémù bèi zhīqù de chèxiāole.",
+    "ExampleTranslation": "Buổi biểu diễn âm nhạc đã bị hủy bỏ một cách khôn ngoan."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "节日",
+    "Pinyin": "jiérì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ngày lễ",
+    "ExampleSentence": "节日的天安门广场花团锦簇，令人赏心悦目。",
+    "ExamplePinyin": "Jiérì de tiān’ānmén guǎngchǎng huātuánjǐncù, lìng rén shǎngxīnyuèmù.",
+    "ExampleTranslation": "Quảng trường Thiên An Môn lễ hội rực rỡ sắc hoa, đẹp mắt."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "解决",
+    "Pinyin": "jiějué",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Giải quyết",
+    "ExampleSentence": "你有解决这问题的办法吗？",
+    "ExamplePinyin": "Nǐ yǒu jiějué zhè wèntí de bànfǎ ma?",
+    "ExampleTranslation": "Bạn có một giải pháp cho vấn đề này?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "借",
+    "Pinyin": "jiè",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Mượn",
+    "ExampleSentence": "这个小王借了我的笔,久假不归,真讨厌。",
+    "ExamplePinyin": "Zhège xiǎo wáng jièle wǒ de bǐ, jiǔ jiǎ bù guī, zhēn tǎoyàn.",
+    "ExampleTranslation": "Tiểu Vương  mượn bút của tôi, đã lâu không có trả, thật là khó chịu."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "经常",
+    "Pinyin": "jīngcháng",
+    "PartOfSpeech": "Trạng từ",
+    "VietnameseMeaning": "Thường xuyên",
+    "ExampleSentence": "我们尽量经常地打扫卫生。",
+    "ExamplePinyin": "Wǒmen jǐnliàng jīngcháng de dǎsǎo wèishēng.",
+    "ExampleTranslation": "Chúng tôi cố gắng làm sạch thường xuyên nhất có thể."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "经过",
+    "Pinyin": "jīngguò",
+    "PartOfSpeech": "Trạng từ",
+    "VietnameseMeaning": "Trải qua\nTrôi qua\n(thực sự đã trải qua)",
+    "ExampleSentence": "经过争论之后她愤然离开。",
+    "ExamplePinyin": "Jīngguò zhēnglùn zhīhòu tā fènrán líkāi.",
+    "ExampleTranslation": "Sau một hồi tranh cãi, cô ấy giận dữ bỏ đi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "经历",
+    "Pinyin": "jīnglì",
+    "PartOfSpeech": "Động từ\nDanh từ",
+    "VietnameseMeaning": "Từng trải\nTrải qua",
+    "ExampleSentence": "教育和经历使他眼界开阔。",
+    "ExamplePinyin": "Jiàoyù hé jīnglì shǐ tā yǎnjiè kāikuò.",
+    "ExampleTranslation": "Học vấn và kinh nghiệm đã mở rộng tầm nhìn của anh ấy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "久",
+    "Pinyin": "jiǔ",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Lâu",
+    "ExampleSentence": "这一次打仗打得又凶又久。",
+    "ExamplePinyin": "Zhè yīcì dǎzhàng dǎ dé yòu xiōng yòu jiǔ.",
+    "ExampleTranslation": "Lần này chiến tranh ác liệt và kéo dài."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "旧",
+    "Pinyin": "jiù",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Cũ",
+    "ExampleSentence": "多数旧电影片都是黑白的。",
+    "ExamplePinyin": "Duōshù jiù diànyǐng piàn dōu shì hēibái de.",
+    "ExampleTranslation": "Hầu hết các bộ phim cũ là đen trắng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "举行",
+    "Pinyin": "jǔxíng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cử hành\nTổ chức, thực hiện …",
+    "ExampleSentence": "他们举行晚会以庆祝胜利。",
+    "ExamplePinyin": "Tāmen jǔxíng wǎnhuì yǐ qìngzhù shènglì.",
+    "ExampleTranslation": "Họ tổ chức tiệc ăn mừng chiến thắng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "句子",
+    "Pinyin": "jùzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Câu",
+    "ExampleSentence": "每个句子都有一个规范推导。",
+    "ExamplePinyin": "Měi gè jùzi dōu yǒu yīgè guīfàn tuīdǎo.",
+    "ExampleTranslation": "Mỗi câu đều có một dẫn xuất chính tắc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "决定",
+    "Pinyin": "juédìng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Quyết định",
+    "ExampleSentence": "一旦做出决定就不要拖延。",
+    "ExamplePinyin": "Yīdàn zuò chū juédìng jiù bùyào tuōyán.",
+    "ExampleTranslation": "Đừng trì hoãn một khi quyết định được đưa ra."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "课",
+    "Pinyin": "kè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Giờ, giờ học\nMôn\nTiết học",
+    "ExampleSentence": "舞蹈课使她腿部肌肉发达。",
+    "ExamplePinyin": "Wǔdǎo kè shǐ tā tuǐ bù jīròu fādá.",
+    "ExampleTranslation": "Lớp học khiêu vũ khiến đôi chân của cô trở nên cơ bắp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "可爱",
+    "Pinyin": "kě’ài",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Đáng yêu",
+    "ExampleSentence": "一个个红石榴小姑娘绽放出可爱的笑脸，躲在树枝间。",
+    "ExamplePinyin": "Yīgè gè hóng shíliú xiǎo gūniáng zhànfàng chū kě’ài de xiàoliǎn, duǒ zài shùzhī jiān.",
+    "ExampleTranslation": "Những cô bé hoa lựu đỏ hé nở với khuôn mặt tươi cười dễ thương, ẩn hiện giữa những cành cây."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "刻",
+    "Pinyin": "kè",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Khắc",
+    "ExampleSentence": "刚才的恐怖立刻被忘却了。",
+    "ExamplePinyin": "Gāngcái de kǒngbù lìkè bèi wàngquèle.",
+    "ExampleTranslation": "Sự kinh hoàng vừa rồi lập tức bị quên đi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "客人",
+    "Pinyin": "kèrén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Khách",
+    "ExampleSentence": "我们这位客人要看轻你了。",
+    "ExamplePinyin": "Wǒmen zhè wèi kèrén yào kànqīng nǐle.",
+    "ExampleTranslation": "Khách của chúng tôi sẽ coi thường bạn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "空调",
+    "Pinyin": "kòngtiáo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Điều hòa",
+    "ExampleSentence": "她调整了一下空调器。",
+    "ExamplePinyin": "Tā tiáozhěngle yīxià kòngtiáo qì.",
+    "ExampleTranslation": "Cô điều chỉnh máy lạnh."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "口",
+    "Pinyin": "kǒu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mồm\nMiệng",
+    "ExampleSentence": "他夸口他是最高的得分手。",
+    "ExamplePinyin": "Tā kuākǒu tā shì zuìgāo de défēn shǒu.",
+    "ExampleTranslation": "Anh khoe rằng mình là người ghi bàn nhiều nhất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "哭",
+    "Pinyin": "kū",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Khóc",
+    "ExampleSentence": "我可并不想让你哭鼻子呀。",
+    "ExamplePinyin": "Wǒ kě bìng bùxiǎng ràng nǐ kū bízi ya.",
+    "ExampleTranslation": "Tôi không muốn bạn khóc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "裤子",
+    "Pinyin": "kùzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quần",
+    "ExampleSentence": "当裤子失去皮带，才懂得什么叫做依赖。",
+    "ExamplePinyin": "Dāng kùzi shīqù pídài, cái dǒngdé shénme jiàozuò yīlài.",
+    "ExampleTranslation": "Khi quần mất đai, họ hiểu thế nào là lệ thuộc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "筷子",
+    "Pinyin": "kuàizi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đũa",
+    "ExampleSentence": "他用筷子不大熟练。",
+    "ExamplePinyin": "Tā yòng kuàizi bù dà shúliàn.",
+    "ExampleTranslation": "Anh ấy không thành thạo sử dụng đũa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "蓝",
+    "Pinyin": "lán",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Màu xanh",
+    "ExampleSentence": "我们头顶上是蔚蓝的天空。",
+    "ExamplePinyin": "Wǒmen tóudǐng shàng shì wèilán de tiānkōng.",
+    "ExampleTranslation": "Phía trên chúng ta là bầu trời xanh."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "老",
+    "Pinyin": "lǎo",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Già\nCũ\nLâu năm",
+    "ExampleSentence": "可是我认为你是个老混蛋。",
+    "ExamplePinyin": "Kěshì wǒ rènwéi nǐ shìgè lǎo húndàn.",
+    "ExampleTranslation": "Nhưng tôi nghĩ bạn là một tên khốn già."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "离开",
+    "Pinyin": "líkāi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Rời xa",
+    "ExampleSentence": "他转过身去，离开了房间。",
+    "ExamplePinyin": "Tā zhuǎnguò shēn qù, líkāile fángjiān.",
+    "ExampleTranslation": "Anh quay người rời khỏi phòng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "礼物",
+    "Pinyin": "lǐwù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quà tặng\nLễ vật",
+    "ExampleSentence": "我也给你预备了一件礼物。",
+    "ExamplePinyin": "Wǒ yě gěi nǐ yùbèile yī jiàn lǐwù.",
+    "ExampleTranslation": "Tôi cũng đã chuẩn bị một món quà cho bạn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "历史",
+    "Pinyin": "lìshǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Lịch sử",
+    "ExampleSentence": "有些历史书籍长达百余卷。",
+    "ExamplePinyin": "Yǒuxiē lìshǐ shūjí zhǎng dá bǎi yú juǎn.",
+    "ExampleTranslation": "Một số sách lịch sử hơn trăm quyển."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "脸",
+    "Pinyin": "liǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mặt",
+    "ExampleSentence": "越用心想他的脸崩得越紧。",
+    "ExamplePinyin": "Yuè yòngxīn xiǎng tā de liǎn bēng dé yuè jǐn.",
+    "ExampleTranslation": "Càng nghĩ về điều đó, mặt anh càng sụp xuống."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "练习",
+    "Pinyin": "liànxí",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Luyện tập",
+    "ExampleSentence": "练习就是中考，中考就是练习。",
+    "ExamplePinyin": "Liànxí jiùshì zhōngkǎo, zhōngkǎo jiùshì liànxí.",
+    "ExampleTranslation": "Thực hành là kỳ thi tuyển sinh trung học, và kỳ thi tuyển sinh trung học là thực hành."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "辆",
+    "Pinyin": "liàng",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Cỗ",
+    "ExampleSentence": "我修我这辆汽车可费劲了。",
+    "ExamplePinyin": "Wǒ xiū wǒ zhè liàng qìchē kě fèijìngle.",
+    "ExampleTranslation": "Tôi đang đấu tranh để sửa chữa chiếc xe của tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "了解",
+    "Pinyin": "liǎojiě",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hiểu",
+    "ExampleSentence": "他会说，他了解得最清楚。",
+    "ExamplePinyin": "Tā huì shuō, tā liǎojiě dé zuì qīngchǔ.",
+    "ExampleTranslation": "Anh ấy sẽ nói rằng anh ấy biết rõ nhất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "邻居",
+    "Pinyin": "línjū",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hàng xóm\nLáng giềng",
+    "ExampleSentence": "白发苍苍的邻居张奶奶拄着拐杖，脸上笑得像一朵绽开的菊花。",
+    "ExamplePinyin": "Bái fà cāngcāng de línjū zhāng nǎinai zhǔzhe guǎizhàng, liǎn shàng xiào dé xiàng yī duǒ zhànkāi de júhuā.",
+    "ExampleTranslation": "Bà Trương hàng xóm tóc bạc phơ chống gậy, cười tươi như hoa cúc nở."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "楼",
+    "Pinyin": "lóu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tầng",
+    "ExampleSentence": "我让她住在楼下免得碍事。",
+    "ExamplePinyin": "Wǒ ràng tā zhù zài lóu xià miǎndé àishì.",
+    "ExampleTranslation": "Tôi để cô ấy sống ở tầng dưới để khỏi cản đường."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "马",
+    "Pinyin": "mǎ",
+    "PartOfSpeech": "Danh từ\nHọ, tên",
+    "VietnameseMeaning": "Con ngựa\nMã",
+    "ExampleSentence": "房间里马上变得暗淡无光。",
+    "ExamplePinyin": "Fángjiān lǐ mǎshàng biàn dé àndàn wú guāng.",
+    "ExampleTranslation": "Căn phòng ngay lập tức trở nên mờ mịt."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "马上",
+    "Pinyin": "mǎshàng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Lập tức",
+    "ExampleSentence": "命令一下达，大家马上行动起来。",
+    "ExamplePinyin": "Mìnglìng yīxià dá, dàjiā mǎshàng xíngdòng qǐlái.",
+    "ExampleTranslation": "Khi đơn hàng được giao, mọi người sẽ hành động ngay lập tức."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "满意",
+    "Pinyin": "mǎnyì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hài lòng\nVừa ý",
+    "ExampleSentence": "假使不满意的话,可以退货。",
+    "ExamplePinyin": "Jiǎshǐ bu mǎnyì dehuà, kěyǐ tuìhuò.",
+    "ExampleTranslation": "Nếu không hài lòng có thể đổi trả hàng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "帽子",
+    "Pinyin": "màozi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mũ",
+    "ExampleSentence": "那人找到了帽子就安心了。",
+    "ExamplePinyin": "Nà rén zhǎodàole màozi jiù ānxīnle.",
+    "ExampleTranslation": "Người đàn ông cảm thấy nhẹ nhõm khi tìm thấy chiếc mũ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "米",
+    "Pinyin": "mǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cơm\nGạo\nMễ",
+    "ExampleSentence": "我们在塌塌米上盘腿而坐。",
+    "ExamplePinyin": "Wǒmen zài tā tā mǐ shàng pántuǐ ér zuò.",
+    "ExampleTranslation": "Chúng tôi ngồi xếp bằng trên chiếu tatami."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "面包",
+    "Pinyin": "miànbāo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bánh mì",
+    "ExampleSentence": "他们把面包和干酪当饭吃。",
+    "ExamplePinyin": "Tāmen bǎ miànbāo hé gānlào dāng fàn chī.",
+    "ExampleTranslation": "Họ ăn bánh mì và pho mát."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "面条",
+    "Pinyin": "miàntiáo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mì sợi",
+    "ExampleSentence": "他确实饿极了,一会儿将两大碗面条狼吞虎咽般吃得一干二净。",
+    "ExamplePinyin": "Tā quèshí è jíle, yīhuǐ’er jiāng liǎng dà wǎn miàntiáo lángtūnhǔyàn bān chī dé yīgān èr jìng.",
+    "ExampleTranslation": "Anh thực sự rất đói, trong phút chốc anh đã ngấu nghiến hai tô mì lớn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "明白",
+    "Pinyin": "míngbái",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hiểu rõ",
+    "ExampleSentence": "他终于开始明白了实情。",
+    "ExamplePinyin": "Tā zhōngyú kāishǐ míngbáile shíqíng.",
+    "ExampleTranslation": "Cuối cùng anh cũng bắt đầu hiểu ra sự thật."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "拿",
+    "Pinyin": "ná",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cầm, nắm",
+    "ExampleSentence": "你的丈夫去拿干净衣服了。",
+    "ExamplePinyin": "Nǐ de zhàngfū qù ná gānjìng yīfúle.",
+    "ExampleTranslation": "Chồng bạn đi lấy quần áo sạch."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "奶奶",
+    "Pinyin": "nǎinai",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bà nội",
+    "ExampleSentence": "他是由他奶奶带大的。",
+    "ExamplePinyin": "Tā shì yóu tā nǎinai dài dà de.",
+    "ExampleTranslation": "Anh ấy được nuôi dưỡng bởi bà của mình."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "南",
+    "Pinyin": "nán",
+    "PartOfSpeech": "Phương vị từ",
+    "VietnameseMeaning": "Phía Nam",
+    "ExampleSentence": "他的兄弟考取了南洋大学。",
+    "ExamplePinyin": "Tā de xiōngdì kǎoqǔle nányáng dàxué.",
+    "ExampleTranslation": "Anh trai của anh đã được nhận vào Đại học Nam Dương."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "难",
+    "Pinyin": "nán",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Khó",
+    "ExampleSentence": "大家都被这个问题难住了。",
+    "ExamplePinyin": "Dàjiā dōu bèi zhège wèntí nán zhùle.",
+    "ExampleTranslation": "Mọi người đều bối rối trước câu hỏi này."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "难过",
+    "Pinyin": "nánguò",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Buồn rầu\nKhó chịu",
+    "ExampleSentence": "你不要太难过，因为我一直都在；你不会太寂寞，因为我不曾离开。",
+    "ExamplePinyin": "Nǐ bùyào tài nánguò, yīnwèi wǒ yīzhí dōu zài; nǐ bù huì tài jìmò, yīnwèi wǒ bùcéng líkāi.",
+    "ExampleTranslation": "Đừng quá buồn, vì tôi luôn ở đó, bạn sẽ không quá cô đơn, vì tôi chưa bao giờ rời đi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "年级",
+    "Pinyin": "niánjí",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Lớp",
+    "ExampleSentence": "校园南边是一年级小同学的地方。",
+    "ExamplePinyin": "Xiàoyuán nánbian shì yī niánjí xiǎo tóngxué dì dìfāng.",
+    "ExampleTranslation": "Phía nam của khuôn viên là nơi dành cho học sinh đầu cấp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "年轻",
+    "Pinyin": "niánqīng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Trẻ\nTrẻ tuổi",
+    "ExampleSentence": "老师今天显得很年轻，简直和平时判若两人。",
+    "ExamplePinyin": "Lǎoshī jīntiān xiǎndé hěn niánqīng, jiǎnzhí hé píngshí pàn ruò liǎng rén.",
+    "ExampleTranslation": "Cô giáo hôm nay trông rất trẻ, gần như hai người đang yên bề gia thất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "鸟",
+    "Pinyin": "niǎo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Chim",
+    "ExampleSentence": "今天我上爷爷家去玩，爷爷给我捉了一只小鸟。",
+    "ExamplePinyin": "Jīntiān wǒ shàng yéyé jiā qù wán, yéyé gěi wǒ zhuōle yī zhǐ xiǎo niǎo.",
+    "ExampleTranslation": "Hôm nay, tôi đến chơi nhà ông, và ông đã bắt được một con chim."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "努力",
+    "Pinyin": "nǔlì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chăm chỉ\nNỗ lực",
+    "ExampleSentence": "我们要努力完成领导交给的任务。",
+    "ExamplePinyin": "Wǒmen yào nǔlì wánchéng lǐngdǎo jiāo gěi de rènwù.",
+    "ExampleTranslation": "Chúng tôi phải nỗ lực để hoàn thành nhiệm vụ mà ban lãnh đạo giao cho."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "爬山",
+    "Pinyin": "páshān",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Leo núi",
+    "ExampleSentence": "没有人爬山只为爬到山腰。",
+    "ExamplePinyin": "Méiyǒu rén páshān zhǐ wèi pá dào shānyāo.",
+    "ExampleTranslation": "Không ai leo núi chỉ để leo lên sườn núi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "盘子",
+    "Pinyin": "pánzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cái đĩa, mâm",
+    "ExampleSentence": "他把小费放在盘子下面了。",
+    "ExamplePinyin": "Tā bǎ xiǎofèi fàng zài pánzi xiàmiànle.",
+    "ExampleTranslation": "Anh ta đặt tiền boa dưới đĩa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "胖",
+    "Pinyin": "pàng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Mũm mĩm",
+    "ExampleSentence": "莫森的胖脸上堆满了笑容。",
+    "ExamplePinyin": "Mò sēn de pàng liǎn shàng duī mǎnle xiàoróng.",
+    "ExampleTranslation": "Khuôn mặt mũm mĩm của Mawson nở nụ cười."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "啤酒",
+    "Pinyin": "píjiǔ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bia",
+    "ExampleSentence": "啤酒受到压力从桶中流出。",
+    "ExamplePinyin": "Píjiǔ shòudào yālì cóng tǒng zhōng liúchū.",
+    "ExampleTranslation": "Bia chảy ra khỏi thùng dưới áp suất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "葡萄",
+    "Pinyin": "pútáo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Nho",
+    "ExampleSentence": "四瓶葡萄酒不够二十人喝。",
+    "ExamplePinyin": "Sì píng pútáojiǔ bùgòu èrshí rén hē.",
+    "ExampleTranslation": "Bốn chai rượu không đủ cho hai mươi người."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "普通话",
+    "Pinyin": "pǔtōnghuà",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tiếng phổ thông",
+    "ExampleSentence": "面向现代化，推广普通话。",
+    "ExamplePinyin": "Miànxiàng xiàndàihuà, tuīguǎng pǔtōnghuà.",
+    "ExampleTranslation": "Đối mặt với hiện đại hóa, thúc đẩy tiếng phổ thông."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "骑",
+    "Pinyin": "qí",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cưỡi",
+    "ExampleSentence": "他骑着一匹深赤褐色的马。",
+    "ExamplePinyin": "Tā qízhe yī pǐ shēn chìhésè de mǎ.",
+    "ExampleTranslation": "Anh ta đang cưỡi một con ngựa màu nâu sẫm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "其实",
+    "Pinyin": "qíshí",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Kỳ thật\nThật ra",
+    "ExampleSentence": "我找的书其实就在我面前。",
+    "ExamplePinyin": "Wǒ zhǎo de shū qíshí jiù zài wǒ miànqián.",
+    "ExampleTranslation": "Cuốn sách tôi đang tìm kiếm thực sự đã ở ngay trước mặt tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "其他",
+    "Pinyin": "qítā",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Cái khác",
+    "ExampleSentence": "给我一些其他的吧。",
+    "ExamplePinyin": "Gěi wǒ yīxiē qítā de ba.",
+    "ExampleTranslation": "Đưa cho tôi một số người khác."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "奇怪",
+    "Pinyin": "qíguài",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Kì quái",
+    "ExampleSentence": "一种奇怪的感觉一直困扰着他。",
+    "ExamplePinyin": "Yī zhǒng qíguài de gǎnjué yīzhí kùnrǎozhe tā.",
+    "ExampleTranslation": "Một cảm giác kỳ lạ đã và đang ám ảnh anh."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "铅笔",
+    "Pinyin": "qiānbǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bút máy",
+    "ExampleSentence": "你的铅笔差点戳了我的眼睛。",
+    "ExamplePinyin": "Nǐ de qiānbǐ chàdiǎn chuōle wǒ de yǎnjīng.",
+    "ExampleTranslation": "Cây bút chì của bạn suýt chọc vào mắt tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "清楚",
+    "Pinyin": "qīngchǔ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Rõ ràng",
+    "ExampleSentence": "想要什么，想清楚，选择，珍惜，一如对你的婚姻。",
+    "ExamplePinyin": "Xiǎng yào shénme, xiǎng qīngchǔ, xuǎnzé, zhēnxī, yī rú duì nǐ de hūnyīn.",
+    "ExampleTranslation": "Những gì bạn muốn, suy nghĩ rõ ràng, lựa chọn và trân trọng, giống như cuộc hôn nhân của bạn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "秋",
+    "Pinyin": "qiū",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mùa thu",
+    "ExampleSentence": "别计较我这么老气横秋的。",
+    "ExamplePinyin": "Bié jìjiào wǒ zhème lǎoqìhéngqiū de.",
+    "ExampleTranslation": "Đừng quan tâm đến việc tôi quá cổ hủ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "裙子",
+    "Pinyin": "qúnzi",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Váy",
+    "ExampleSentence": "这条裙子的腰身需要缩小。",
+    "ExamplePinyin": "Zhè tiáo qúnzi de yāoshēn xūyào suōxiǎo.",
+    "ExampleTranslation": "Phần eo của váy này cần được giảm bớt."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "然后",
+    "Pinyin": "ránhòu",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Sau đó",
+    "ExampleSentence": "一个人对社会，要先做出贡献，然后才能索取。",
+    "ExamplePinyin": "Yīgè rén duì shèhuì, yào xiān zuò chū gòngxiàn, ránhòu cáinéng suǒqǔ.",
+    "ExampleTranslation": "Một người phải đóng góp cho xã hội sau đó anh ta mới có thể yêu cầu nó."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "热情",
+    "Pinyin": "rèqíng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nhiệt tình",
+    "ExampleSentence": "我们对翻然改进的人,应热情欢迎,不纠缠历史旧账。",
+    "ExamplePinyin": "Wǒmen duì fānrán gǎijìn de rén, yīng rèqíng huānyíng, bù jiūchán lìshǐ jiùzhàng.",
+    "ExampleTranslation": "Chúng ta nên nhiệt liệt hoan nghênh những người đã có những cải tiến, và không nên vướng vào những câu chuyện lịch sử."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "认为",
+    "Pinyin": "rènwéi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cho rằng\nThấy rằng (mục đích, suy nghĩ, tiên đoán thường đúng với kết quả xảy ra)",
+    "ExampleSentence": "鲁迅先生认为，文学起源于劳动。",
+    "ExamplePinyin": "Lǔxùn xiānshēng rènwéi, wénxué qǐyuán yú láodòng.",
+    "ExampleTranslation": "Ông Lỗ Tấn cho rằng văn học bắt nguồn từ lao động."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "认真",
+    "Pinyin": "rènzhēn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chăm chỉ",
+    "ExampleSentence": "对待生命要认真，对待生活要活泼。",
+    "ExamplePinyin": "Duìdài shēngmìng yào rènzhēn, duìdài shēnghuó yào huópō.",
+    "ExampleTranslation": "Hãy sống một cách nghiêm túc và sôi nổi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "容易",
+    "Pinyin": "róngyì",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Dễ dàng\ndễ",
+    "ExampleSentence": "好人很多的时候，坏人容易成事。",
+    "ExamplePinyin": "Hǎorén hěnduō de shíhòu, huàirén róngyì chéngshì.",
+    "ExampleTranslation": "Khi có nhiều người tốt, người xấu rất dễ làm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "如果",
+    "Pinyin": "rúguǒ",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Nếu như",
+    "ExampleSentence": "如果明天下雨，我们就不去春游了。",
+    "ExamplePinyin": "Rúguǒ míngtiān xià yǔ, wǒmen jiù bù qù chūnyóule.",
+    "ExampleTranslation": "Nếu ngày mai trời mưa, chúng ta sẽ không đi chơi xuân."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "伞",
+    "Pinyin": "sǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cái ô",
+    "ExampleSentence": "我的雨伞给吹得翻过去了。",
+    "ExamplePinyin": "Wǒ de yǔsǎn gěi chuī dé fān guòqùle.",
+    "ExampleTranslation": "Chiếc ô của tôi đã bị thổi bay."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "上网",
+    "Pinyin": "shàngwǎng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Lên mạng",
+    "ExampleSentence": "穷人不上网，既是穷的结果，又成了更穷的原因。",
+    "ExamplePinyin": "Qióngrén bù shàngwǎng, jìshì qióng de jiéguǒ, yòu chéngle gèng qióng de yuányīn.",
+    "ExampleTranslation": "Việc người nghèo không sử dụng Internet không chỉ là kết quả của việc nghèo, mà còn là lý do để trở nên nghèo hơn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "生气",
+    "Pinyin": "shēngqì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tức giận\nGiận",
+    "ExampleSentence": "不敢生气的是懦夫，不去生气的才是智。",
+    "ExamplePinyin": "Bù gǎn shēngqì de shì nuòfū, bù qù shēngqì de cái shì zhì.",
+    "ExampleTranslation": "Không dám tức giận là kẻ nhát gan, không đi bực tức là người biết nghĩ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "声音",
+    "Pinyin": "shēngyīn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Âm thanh",
+    "ExampleSentence": "该影片画面与声音不同步。",
+    "ExamplePinyin": "Gāi yǐngpiàn huàmiàn yǔ shēngyīn bù tóngbù.",
+    "ExampleTranslation": "Màn hình video và âm thanh không đồng bộ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "使",
+    "Pinyin": "shǐ",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Khiến, làm cho",
+    "ExampleSentence": "读书使我感到快乐，分享使我多了朋友，工作使我富有创意。",
+    "ExamplePinyin": "Dúshū shǐ wǒ gǎndào kuàilè, fēnxiǎng shǐ wǒ duōle péngyǒu, gōngzuò shǐ wǒ fùyǒu chuàngyì.",
+    "ExampleTranslation": "Đọc sách khiến tôi vui vẻ, chia sẻ giúp tôi có thêm nhiều bạn và công việc khiến tôi sáng tạo."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "世界",
+    "Pinyin": "shìjiè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thế giới",
+    "ExampleSentence": "世界上到处都是罪恶横行。",
+    "ExamplePinyin": "Shìjiè shàng dàochù dōu shì zuì’è héngxíng.",
+    "ExampleTranslation": "Thế giới đầy rẫy những điều xấu xa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "瘦",
+    "Pinyin": "shòu",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Gầy",
+    "ExampleSentence": "你不必节食就已经够瘦的了。",
+    "ExamplePinyin": "Nǐ bùbì jiéshí jiù yǐjīng gòu shòu dele.",
+    "ExampleTranslation": "Bạn không cần phải ăn kiêng để đủ gầy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "舒服",
+    "Pinyin": "shūfú",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Thoải mái\nDễ chịu",
+    "ExampleSentence": "爸爸，住在饭店里真舒服。",
+    "ExamplePinyin": "Bàba, zhù zài fàndiàn lǐ zhēn shūfú.",
+    "ExampleTranslation": "Bố, thật sự rất thoải mái khi sống trong một nhà hàng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "叔叔",
+    "Pinyin": "shūshu",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Chú",
+    "ExampleSentence": "叔叔秀气的鼻梁上架着一副金边眼镜，显得文质彬彬，英俊潇洒。",
+    "ExamplePinyin": "Shūshu xiùqì de bíliáng shàngjiàzhe yī fù jīnbiān yǎnjìng, xiǎndé wénzhìbīnbīn, yīngjùn xiāosǎ.",
+    "ExampleTranslation": "Với cặp kính gọng vàng trên sống mũi thanh tú, ông chú trông thật hiền lành và điển trai."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "树",
+    "Pinyin": "shù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cây",
+    "ExampleSentence": "画中左边那棵树不合比例。",
+    "ExamplePinyin": "Huà zhōng zuǒbiān nà kē shù bùhé bǐlì.",
+    "ExampleTranslation": "Cây bên trái trong hình là không đúng tỷ lệ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "数学",
+    "Pinyin": "shùxué",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Môn toán học",
+    "ExampleSentence": "她在数学成绩最好的班上。",
+    "ExamplePinyin": "Tā zài shùxué chéngjī zuì hǎo de bān shàng.",
+    "ExampleTranslation": "Cô ấy học giỏi môn Toán nhất lớp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "刷牙",
+    "Pinyin": "shuāyá",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đánh răng",
+    "ExampleSentence": "我们要养成天天刷牙漱口的良好习惯。",
+    "ExamplePinyin": "Wǒmen yào yǎng chéng tiāntiān shuāyá shù kǒu de liánghǎo xíguàn.",
+    "ExampleTranslation": "Chúng ta phải hình thành một thói quen tốt là đánh răng và súc miệng mỗi ngày."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "双",
+    "Pinyin": "shuāng",
+    "PartOfSpeech": "Từ chỉ số lượng\nLượng từ",
+    "VietnameseMeaning": "Đôi\nĐôi ….",
+    "ExampleSentence": "你穿的两只袜子不是一双。",
+    "ExamplePinyin": "Nǐ chuān de liǎng zhī wàzi bùshì yīshuāng.",
+    "ExampleTranslation": "Hai chiếc tất bạn mang không phải là một đôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "水平",
+    "Pinyin": "shuǐpíng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trình độ",
+    "ExampleSentence": "这个水平是渐近地逼近的。",
+    "ExamplePinyin": "Zhège shuǐpíng shì jiàn jìn dì bījìn de.",
+    "ExampleTranslation": "Mức này đang tiếp cận dần dần."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "司机",
+    "Pinyin": "sījī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tài xế",
+    "ExampleSentence": "司机启动车子沿大街开去。",
+    "ExamplePinyin": "Sījī qǐdòng chēzi yán dàjiē kāi qù.",
+    "ExampleTranslation": "Tài xế khởi động xe chạy dọc phố."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "虽然",
+    "Pinyin": "suīrán",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Mặc dù",
+    "ExampleSentence": "他们虽然穷，但很有骨气。",
+    "ExamplePinyin": "Tāmen suīrán qióng, dàn hěn yǒu gǔqì.",
+    "ExampleTranslation": "Tuy nghèo nhưng họ rất có cốt cách."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "太阳",
+    "Pinyin": "tàiyáng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mặt trời",
+    "ExampleSentence": "早晨，我迎着初升的太阳去上学。",
+    "ExamplePinyin": "Zǎochén, wǒ yíngzhe chū shēng de tàiyáng qù shàngxué.",
+    "ExampleTranslation": "Buổi sáng, tôi đến trường đối diện với mặt trời mọc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "糖",
+    "Pinyin": "táng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đường",
+    "ExampleSentence": "我急忙到邻居家去借些糖。",
+    "ExamplePinyin": "Wǒ jímáng dào línjū jiā qù jiè xiē táng.",
+    "ExampleTranslation": "Tôi vội sang nhà hàng xóm mượn ít đường."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "特别",
+    "Pinyin": "tèbié",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Đặc biệt",
+    "ExampleSentence": "她的作品特别华丽而灵活。",
+    "ExamplePinyin": "Tā de zuòpǐn tèbié huálì ér línghuó.",
+    "ExampleTranslation": "Các tác phẩm của cô ấy đặc biệt lộng lẫy và linh hoạt."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "疼",
+    "Pinyin": "téng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Đau",
+    "ExampleSentence": "母亲对她和他都一样疼爱。",
+    "ExamplePinyin": "Mǔqīn duì tā hé tā dōu yīyàng téng’ài.",
+    "ExampleTranslation": "Mẹ yêu cô ấy nhiều như anh ấy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "提高",
+    "Pinyin": "tígāo",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nâng cao",
+    "ExampleSentence": "提高全民安全素质必须从娃娃抓起。",
+    "ExamplePinyin": "Tígāo quánmín ānquán sùzhì bìxū cóng wáwá zhuā qǐ.",
+    "ExampleTranslation": "Nâng cao sự an toàn của toàn dân phải bắt đầu từ em bé."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "体育",
+    "Pinyin": "tǐyù",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thể dục",
+    "ExampleSentence": "她不过是个体育教师而已。",
+    "ExamplePinyin": "Tā bùguò shìgè tǐyù jiàoshī éryǐ.",
+    "ExampleTranslation": "Cô ấy chỉ là một giáo viên dạy thể dục."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "甜",
+    "Pinyin": "Tián",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Ngọt",
+    "ExampleSentence": "他尝遍了人生的酸甜苦辣。",
+    "ExamplePinyin": "Tā cháng biànle rénshēng de suāntiánkǔlà.",
+    "ExampleTranslation": "Anh đã nếm trải những thăng trầm của cuộc đời."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "条",
+    "Pinyin": "tiáo",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Dây, dải",
+    "ExampleSentence": "这条船是作为游艇建造的。",
+    "ExamplePinyin": "Zhè tiáo chuán shì zuòwéi yóutǐng jiànzào de.",
+    "ExampleTranslation": "Chiếc thuyền này được đóng như một chiếc du thuyền."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "同事",
+    "Pinyin": "tóngshì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Cộng sự\nĐồng nghiệp",
+    "ExampleSentence": "他不顾同事的劝告辞了职。",
+    "ExamplePinyin": "Tā bùgù tóngshì de quàngào cíle zhí.",
+    "ExampleTranslation": "Anh từ chức bất chấp lời khuyên của các đồng nghiệp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "同意",
+    "Pinyin": "tóngyì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Đồng ý",
+    "ExampleSentence": "绝不同意为了成功而不择手段，刻薄成家，理无久享。",
+    "ExamplePinyin": "Jué bù tóngyì wèile chénggōng ér bùzéshǒuduàn, kèbó chéngjiā, lǐ wú jiǔ xiǎng.",
+    "ExampleTranslation": "Đừng bao giờ đồng ý rằng muốn thành công thì phải lập gia thất, hưởng phúc lâu dài."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "头发",
+    "Pinyin": "tóufǎ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tóc",
+    "ExampleSentence": "她那一头剪短了的头发乱蓬蓬的，像个孵蛋的母鸡尾巴。",
+    "ExamplePinyin": "Tā nà yītóu jiǎn duǎnle de tóufǎ luànpéngpéng de, xiàng gè fū dàn de mǔ jī wěibā.",
+    "ExampleTranslation": "Mái tóc cắt tỉa của cô ấy bù xù, giống như đuôi gà mái đang ấp trứng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "突然",
+    "Pinyin": "túrán",
+    "PartOfSpeech": "Từ nối",
+    "VietnameseMeaning": "Đột nhiên, bất thình lình",
+    "ExampleSentence": "你最好与前面的车保持相当的距离，以防它突然停下来。",
+    "ExamplePinyin": "Nǐ zuì hǎo yǔ qiánmiàn de chē bǎochí xiāngdāng de jùlí, yǐ fáng tā túrán tíng xiàlái.",
+    "ExampleTranslation": "Tốt hơn hết bạn nên giữ một khoảng cách đáng kể với xe phía trước đề phòng xe dừng đột ngột."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "图书馆",
+    "Pinyin": "túshū guǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thư viện",
+    "ExampleSentence": "世界上最壮丽的宫殿是藏书最多的图书馆。",
+    "ExamplePinyin": "Shìjiè shàng zuì zhuànglì de gōngdiàn shì cángshū zuìduō de túshū guǎn.",
+    "ExampleTranslation": "Cung điện tráng lệ nhất thế giới là thư viện có bộ sưu tập sách lớn nhất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "腿",
+    "Pinyin": "tuǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Đùi",
+    "ExampleSentence": "我的两腿僵硬，行动不便。",
+    "ExamplePinyin": "Wǒ de liǎng tuǐ jiāngyìng, xíngdòng bùbiàn.",
+    "ExampleTranslation": "Chân tôi bị cứng và tôi không thể di chuyển dễ dàng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "完成",
+    "Pinyin": "wánchéng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Hoàn thành",
+    "ExampleSentence": "当天的作业要当天完成，不容拖延。",
+    "ExamplePinyin": "Dàngtiān de zuòyè yào dàngtiān wánchéng, bùróng tuōyán.",
+    "ExampleTranslation": "Bài tập trong ngày phải hoàn thành ngay trong ngày, không để chậm trễ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "碗",
+    "Pinyin": "wǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bát",
+    "ExampleSentence": "请把桌上的盘碗垫擦一下。",
+    "ExamplePinyin": "Qǐng bǎ zhuō shàng de pán wǎn diàn cā yīxià.",
+    "ExampleTranslation": "Vui lòng lau thảm rửa chén trên bàn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "万",
+    "Pinyin": "wàn",
+    "PartOfSpeech": "Số từ",
+    "VietnameseMeaning": "Vạn",
+    "ExampleSentence": "你一到那边，千万要来信。",
+    "ExamplePinyin": "Nǐ yī dào nà biān, qiān wàn yào láixìn.",
+    "ExampleTranslation": "Khi bạn đến đó, ngàn vạn đừng gửi thư về."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "忘记",
+    "Pinyin": "wàngjì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Quên mất",
+    "ExampleSentence": "她从不忘记每周给我写信。",
+    "ExamplePinyin": "Tā cóng bù wàngjì měi zhōu gěi wǒ xiě xìn.",
+    "ExampleTranslation": "Cô ấy không bao giờ quên viết thư cho tôi mỗi tuần."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "位",
+    "Pinyin": "wèi",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Vị, ngài",
+    "ExampleSentence": "我们这位客人要看轻你了。",
+    "ExamplePinyin": "Wǒmen zhè wèi kèrén yào kànqīng nǐle.",
+    "ExampleTranslation": "Khách của chúng tôi sẽ coi thường bạn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "为",
+    "Pinyin": "wèi",
+    "PartOfSpeech": "Động từ\nN",
+    "VietnameseMeaning": "Vì, bởi vì, do",
+    "ExampleSentence": "举国悼念为国死难的烈士。",
+    "ExamplePinyin": "Jǔguó dàoniàn wèi guó sǐnàn de lièshì.",
+    "ExampleTranslation": "Cả nước thương tiếc các liệt sĩ đã hy sinh vì đất nước."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "为了",
+    "Pinyin": "wèile",
+    "PartOfSpeech": "Từ nối\nĐộng từ",
+    "VietnameseMeaning": "Vì ….",
+    "ExampleSentence": "我们是为了活命才打仗的。",
+    "ExamplePinyin": "Wǒmen shì wèile huómìng cái dǎzhàng de.",
+    "ExampleTranslation": "Chúng tôi đã chiến đấu để tồn tại."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "文化",
+    "Pinyin": "wénhuà",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Văn hóa",
+    "ExampleSentence": "夜晚，江南文化园就更美了！",
+    "ExamplePinyin": "Yèwǎn, jiāngnán wénhuà yuán jiù gèng měile!",
+    "ExampleTranslation": "Về đêm, công viên văn hóa Giang Nam càng đẹp hơn!"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "西",
+    "Pinyin": "xī",
+    "PartOfSpeech": "Phương vị từ\nHọ, tên",
+    "VietnameseMeaning": "Tây",
+    "ExampleSentence": "露西根本不愿听这样的话。",
+    "ExamplePinyin": "Lù xī gēnběn bù yuàn tīng zhèyàng dehuà.",
+    "ExampleTranslation": "Lucy không muốn nghe những lời như vậy chút nào."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "习惯",
+    "Pinyin": "Xíguàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thói quen\nTập quán",
+    "ExampleSentence": "所有的魅力在“习惯”面前都将无色。",
+    "ExamplePinyin": "Suǒyǒu de mèilì zài “xíguàn” miànqián dōu jiāng wú sè.",
+    "ExampleTranslation": "Mọi sự quyến rũ sẽ không màu khi đối mặt với “thói quen”."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "洗手间",
+    "Pinyin": "xǐshǒujiān",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Phòng rửa tay\nNhà WC",
+    "ExampleSentence": "只有坐在窗口的旅客才会起来上洗手间。",
+    "ExamplePinyin": "Zhǐyǒu zuò zài chuāngkǒu de lǚkè cái huì qǐlái shàng xǐshǒujiān.",
+    "ExampleTranslation": "Chỉ có những hành khách ngồi bên cửa sổ mới đứng dậy đi vệ sinh."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "洗澡",
+    "Pinyin": "xǐzǎo",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tắm rửa",
+    "ExampleSentence": "他洗澡时想出了这个主意。",
+    "ExamplePinyin": "Tā xǐzǎo shí xiǎng chūle zhège zhǔyì.",
+    "ExampleTranslation": "Anh ấy nảy ra ý tưởng này khi đang tắm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "喜欢",
+    "Pinyin": "xǐhuān",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Thích",
+    "ExampleSentence": "我不喜欢凌驾于他们之上。",
+    "ExamplePinyin": "Wǒ bù xǐhuān língjià yú tāmen zhī shàng.",
+    "ExampleTranslation": "Tôi không thích ở trên họ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "现",
+    "Pinyin": "xiàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hiện (nay)",
+    "ExampleSentence": "我们现有的力量不能分散。",
+    "ExamplePinyin": "Wǒmen xiàn yǒu de lìliàng bùnéng fēnsàn.",
+    "ExampleTranslation": "Sức mạnh hiện có của chúng ta không thể bị phân tán."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "香蕉",
+    "Pinyin": "xiāngjiāo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Quả chuối",
+    "ExampleSentence": "坚持每天做一件相同的事，很能锻炼我们，试试便知。",
+    "ExamplePinyin": "Jiānchí měitiān zuò yī jiàn xiāngtóng de shì, hěn néng duànliàn wǒmen, shì shì biàn zhī.",
+    "ExampleTranslation": "Hãy kiên trì thực hiện cùng một việc hàng ngày, nó có thể rèn luyện sức khỏe cho chúng ta rất nhiều, hãy thử rồi biết."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "相同",
+    "Pinyin": "xiāngtóng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tương đồng",
+    "ExampleSentence": "坚持每天做一件相同的事，很能锻炼我们，试试便知。",
+    "ExamplePinyin": "Jiānchí měitiān zuò yī jiàn xiāngtóng de shì, hěn néng duànliàn wǒmen, shì shì biàn zhī.",
+    "ExampleTranslation": "Hãy kiên trì thực hiện cùng một việc hàng ngày, nó có thể rèn luyện sức khỏe cho chúng ta rất nhiều, hãy thử rồi biết."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "相信",
+    "Pinyin": "xiāngxìn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tin tưởng",
+    "ExampleSentence": "他们相信电荷载体是质子。",
+    "ExamplePinyin": "Tāmen xiāngxìn diànhè zàitǐ shì zhízǐ.",
+    "ExampleTranslation": "Họ tin rằng vật mang điện tích là proton."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "像",
+    "Pinyin": "xiàng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ảnh, tượng",
+    "ExampleSentence": "她希望像水那般。",
+    "ExamplePinyin": "Tā xīwàng xiàng shuǐ nà bān.",
+    "ExampleTranslation": "Cô ấy hy vọng sẽ giống như nước."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "小心",
+    "Pinyin": "xiǎoxīn",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cẩn thận",
+    "ExampleSentence": "我一辈子全靠谨慎小心，才躲过了许多奇灾异难。",
+    "ExamplePinyin": "Wǒ yībèizi quán kào jǐnshèn xiǎoxīn, cái duǒguòle xǔduō qí zāiyì nán.",
+    "ExampleTranslation": "Tôi đã sống sót qua nhiều phép lạ và thảm họa trong suốt cuộc đời mình nhờ sự thận trọng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "校长",
+    "Pinyin": "xiàozhǎng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hiệu trưởng",
+    "ExampleSentence": "校长表彰了全优生和三好生。",
+    "ExamplePinyin": "Xiàozhǎng biǎozhāngle quán yōushēng hé sān hào shēng.",
+    "ExampleTranslation": "Hiệu trưởng tuyên dương tất cả học sinh giỏi và ba học sinh giỏi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "鞋",
+    "Pinyin": "xié",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Giày",
+    "ExampleSentence": "她被一条树根绊住了雪鞋。",
+    "ExamplePinyin": "Tā bèi yītiáo shù gēn bàn zhùle xuě xié.",
+    "ExampleTranslation": "Cô bị một gốc cây mắc vào móng tuyết."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "新闻",
+    "Pinyin": "xīnwén",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tin mới\nTin tức mới",
+    "ExampleSentence": "新闻报道必须真实，不许有半点虚假。",
+    "ExamplePinyin": "Xīnwén bàodào bìxū zhēnshí, bùxǔ yǒu bàndiǎn xūjiǎ.",
+    "ExampleTranslation": "Các bản tin phải đúng sự thật và không được phép sai sự thật."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "新鲜",
+    "Pinyin": "xīnxiān",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Tươi mới",
+    "ExampleSentence": "雨后，校园里的花开得格外新鲜。",
+    "ExamplePinyin": "Yǔ hòu, xiàoyuán lǐ de huā kāi dé géwài xīnxiān.",
+    "ExampleTranslation": "Sau cơn mưa, hoa trong khuôn viên trường nở rất tươi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "信",
+    "Pinyin": "xìn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Thư\nTin",
+    "ExampleSentence": "当前没有可用的冲突信息。",
+    "ExamplePinyin": "Dāngqián méiyǒu kěyòng de chōngtú xìnxī.",
+    "ExampleTranslation": "Hiện tại không có thông tin xung đột có sẵn."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "行李箱",
+    "Pinyin": "xínglǐxiāng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Hành lý\nvali",
+    "ExampleSentence": "他无可奈何地插上钥匙，打开行李箱。",
+    "ExamplePinyin": "Tā wúkěnàihé de chā shàng yàoshi, dǎkāi xínglǐ xiāng.",
+    "ExampleTranslation": "Anh miễn cưỡng tra chìa khóa và mở vali."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "兴趣",
+    "Pinyin": "xìngqù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Cảm hứng\nHứng thú",
+    "ExampleSentence": "我们对这一论题极感兴趣。",
+    "ExamplePinyin": "Wǒmen duì zhè yī lùntí jí gǎn xìngqù.",
+    "ExampleTranslation": "Chúng tôi vô cùng quan tâm đến chủ đề này."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "熊猫",
+    "Pinyin": "xióngmāo",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Gấu trúc",
+    "ExampleSentence": "大熊猫身子胖，尾巴短，毛很光滑。",
+    "ExamplePinyin": "Dà xióngmāo shēnzi pàng, wěibā duǎn, máo hěn guānghuá.",
+    "ExampleTranslation": "Gấu trúc khổng lồ béo, có đuôi ngắn và lông mượt."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "需要",
+    "Pinyin": "xūyào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Yêu cầu",
+    "ExampleSentence": "当政客你需要一张厚脸皮。",
+    "ExamplePinyin": "Dāng zhèngkè nǐ xūyào yī zhāng hòu liǎnpí.",
+    "ExampleTranslation": "Bạn cần một sự táo bạo để trở thành một chính trị gia."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "选择",
+    "Pinyin": "xuǎnzé",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chọn lựa",
+    "ExampleSentence": "我们要做好人生的每一个选择。",
+    "ExamplePinyin": "Wǒmen yào zuò hǎo rénshēng de měi yīgè xuǎnzé.",
+    "ExampleTranslation": "Chúng ta phải thực hiện mọi lựa chọn trong cuộc sống."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "眼镜",
+    "Pinyin": "yǎnjìng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mắt kính",
+    "ExampleSentence": "眼镜后面的眼珠子突凸出来。",
+    "ExamplePinyin": "Yǎnjìng hòumiàn de yǎnzhū zi tū tú chūlái.",
+    "ExampleTranslation": "Nhãn cầu sau cặp kính lồi ra."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "要求",
+    "Pinyin": "yāoqiú",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Yêu cầu",
+    "ExampleSentence": "此产品要求8MB 或更多内存。",
+    "ExamplePinyin": "Cǐ chǎnpǐn yāoqiú 8MB huò gèng duō nèicún.",
+    "ExampleTranslation": "Sản phẩm này yêu cầu RAM 8MB trở lên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "爷爷",
+    "Pinyin": "yéyé",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ông nội",
+    "ExampleSentence": "今天我上爷爷家去玩，爷爷给我捉了一只小鸟。",
+    "ExamplePinyin": "Jīntiān wǒ shàng yéyé jiā qù wán, yéyé gěi wǒ zhuōle yī zhǐ xiǎo niǎo.",
+    "ExampleTranslation": "Hôm nay, tôi đến chơi nhà ông nội, và ông đã bắt được một con chim cho tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一定",
+    "Pinyin": "yīdìng",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Nhất định",
+    "ExampleSentence": "我们一定要得到这些东西。",
+    "ExamplePinyin": "Wǒmen yīdìng yào dédào zhèxiē dōngxī.",
+    "ExampleTranslation": "Chúng ta phải có được những thứ này."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一共",
+    "Pinyin": "yīgòng",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Tổng cộng",
+    "ExampleSentence": "他先后一共当了十年校长。",
+    "ExamplePinyin": "Tā xiānhòu yīgòng dāngle shí nián xiàozhǎng.",
+    "ExampleTranslation": "Anh ấy đã là hiệu trưởng được mười năm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一会儿",
+    "Pinyin": "yīhuǐ’er",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Một lát nữa",
+    "ExampleSentence": "金鱼一会儿浮在水面，一会儿放在水中，一会儿沉在水底。",
+    "ExamplePinyin": "Jīnyú yīhuǐ’er fú zài shuǐmiàn, yīhuǐ’er fàng zài shuǐzhōng, yīhuǐ’er chén zài shuǐdǐ.",
+    "ExampleTranslation": "Cá vàng nổi trên mặt nước một lúc, thả vào nước một lúc thì chìm xuống đáy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一样",
+    "Pinyin": "yīyàng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Như đúc,\nGiống nhau",
+    "ExampleSentence": "我得到自由，就像鸟儿得到蓝天一样！",
+    "ExamplePinyin": "Wǒ dédào zìyóu, jiù xiàng niǎo er dédào lántiān yīyàng!",
+    "ExampleTranslation": "Tôi có được tự do, giống như một con chim được bầu trời xanh!"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "以后",
+    "Pinyin": "yǐhòu",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Sau này",
+    "ExampleSentence": "他死了以后，他太太疯了。",
+    "ExamplePinyin": "Tā sǐle yǐhòu, tā tàitài fēngle.",
+    "ExampleTranslation": "Sau khi anh chết, vợ anh như phát điên."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "以前",
+    "Pinyin": "yǐqián",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Trước đây",
+    "ExampleSentence": "我是从以前的立场后退了。",
+    "ExamplePinyin": "Wǒ shì cóng yǐqián de lìchǎng hòutuìle.",
+    "ExampleTranslation": "Tôi rút lui khỏi vị trí cũ của mình."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "以为",
+    "Pinyin": "yǐwéi",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Cho rằng (nhận định chủ quan, thường sẽ không đúng)",
+    "ExampleSentence": "别人准以为我缺少家教呢。",
+    "ExamplePinyin": "Biérén zhǔn yǐwéi wǒ quēshǎo jiājiào ne.",
+    "ExampleTranslation": "Mọi người phải nghĩ rằng tôi thiếu gia sư."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一般",
+    "Pinyin": "yībān",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Thông thường",
+    "ExampleSentence": "水珠在海面上如同可爱的小精灵一般，上下飞跃。",
+    "ExamplePinyin": "Shuǐ zhū zài hǎimiàn shàng rútóng kě’ài de xiǎo jīnglíng yībān, shàngxià fēiyuè.",
+    "ExampleTranslation": "Những giọt nước chồm lên nhảy xuống như một chú yêu tinh dễ thương trên biển."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一边",
+    "Pinyin": "yībiān",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Một bên",
+    "ExampleSentence": "爷爷一边看着的考卷，一边表扬我。",
+    "ExamplePinyin": "Yéyé yībiān kànzhe wǒ de kǎojuàn, yībiān biǎoyáng wǒ.",
+    "ExampleTranslation": "Ông nội khen tôi khi nhìn vào tờ giấy thi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "一直",
+    "Pinyin": "yīzhí",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Vẫn luôn",
+    "ExampleSentence": "他多年来一直欺骗税收员。",
+    "ExamplePinyin": "Tā duōnián lái yīzhí qīpiàn shuìshōu yuán.",
+    "ExampleTranslation": "Anh ta đã lừa dối những người thu thuế trong nhiều năm."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "音乐",
+    "Pinyin": "yīnyuè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Âm nhạc",
+    "ExampleSentence": "音乐就是我的生命，感谢你们承认我的生命。",
+    "ExamplePinyin": "Yīnyuè jiùshì wǒ de shēngmìng, gǎnxiè nǐmen chéngrèn wǒ de shēngmìng.",
+    "ExampleTranslation": "Âm nhạc là cuộc sống của tôi, cảm ơn bạn đã công nhận cuộc sống của tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "银行",
+    "Pinyin": "yínháng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ngân hàng",
+    "ExampleSentence": "我的银行存款余额不多了。",
+    "ExamplePinyin": "Wǒ de yínháng cúnkuǎn yú’é bù duōle.",
+    "ExampleTranslation": "Số dư ngân hàng của tôi sắp hết."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "应该",
+    "Pinyin": "yīnggāi",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Nên",
+    "ExampleSentence": "他应该仔细考虑一段时间。",
+    "ExamplePinyin": "Tā yīnggāi zǐxì kǎolǜ yīduàn shíjiān.",
+    "ExampleTranslation": "Anh ấy nên suy nghĩ kỹ một lúc."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "影响",
+    "Pinyin": "yǐngxiǎng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Ảnh hưởng",
+    "ExampleSentence": "随着这些的发生，应该看到这些事件对价格的影响正在逆转。",
+    "ExamplePinyin": "Suízhe zhèxiē de fǎ shēng, yīnggāi kàn dào zhèxiē shìjiàn duì jiàgé de yǐngxiǎng zhèngzài nìzhuǎn.",
+    "ExampleTranslation": "Khi những điều này xảy ra, chúng ta sẽ thấy rằng tác động của những sự kiện này lên giá đang đảo ngược."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "用",
+    "Pinyin": "yòng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Dùng",
+    "ExampleSentence": "1970年英国已改用公制货币。",
+    "ExamplePinyin": "1970 Nián yīngguó yǐ gǎi yòng gōngzhì huòbì.",
+    "ExampleTranslation": "Năm 1970, Anh đã chuyển sang tiền tệ hệ mét."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "游戏",
+    "Pinyin": "yóuxì",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trò chơi",
+    "ExampleSentence": "这个游戏的难点就在这里。",
+    "ExamplePinyin": "Zhège yóuxì de nándiǎn jiù zài zhèlǐ.",
+    "ExampleTranslation": "Khó khăn của trò chơi này là ở đây."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "又",
+    "Pinyin": "yòu",
+    "PartOfSpeech": "Phó từ",
+    "VietnameseMeaning": "Lại (lặp lại nhiều hơn 2 lần trở lên)",
+    "ExampleSentence": "孩子们又活泼又漂亮，就像春天里的花蕾。",
+    "ExamplePinyin": "Háizimen yòu huópō yòu piàoliang, jiù xiàng chūntiān lǐ de huālěi.",
+    "ExampleTranslation": "Các em sinh động, xinh tươi như nụ hoa mùa xuân."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "有名",
+    "Pinyin": "yǒumíng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Có tiếng, nổi tiếng\nCó danh, nổi danh",
+    "ExampleSentence": "1492年是历史上有名的一年。",
+    "ExamplePinyin": "1492 Nián shì lìshǐ shàng yǒumíng de yī nián.",
+    "ExampleTranslation": "Năm 1492 là một năm nổi tiếng trong lịch sử."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "遇到",
+    "Pinyin": "yù dào",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Gặp gỡ, gặp được",
+    "ExampleSentence": "但愿我再也别遇到这类事。",
+    "ExamplePinyin": "Dàn yuàn wǒ zài yě bié yù dào zhè lèi shì.",
+    "ExampleTranslation": "Tôi hy vọng mình sẽ không bao giờ gặp phải chuyện như thế này nữa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "月亮",
+    "Pinyin": "yuèliàng",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mặt trăng",
+    "ExampleSentence": "凝望夜空，是否只见月亮和她的眼泪呢？",
+    "ExamplePinyin": "Níngwàng yèkōng, shìfǒu zhǐ jiàn yuèliàng hé tā de yǎnlèi ne?",
+    "ExampleTranslation": "Nhìn chằm chằm bầu trời đêm, bạn chỉ nhìn thấy trăng và nước mắt của cô ấy?"
+  },
+  {
+    "HSK": 3,
+    "Chinese": "云",
+    "Pinyin": "yún",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Mây",
+    "ExampleSentence": "雨和雪通常都是来自雨云。",
+    "ExamplePinyin": "Yǔ hé xuě tōngcháng dōu shì láizì yǔ yún.",
+    "ExampleTranslation": "Mưa và tuyết thường đến từ những đám mây mưa."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "站",
+    "Pinyin": "Zhàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Trạm, bến",
+    "ExampleSentence": "我站在有风吹日晒的地方。",
+    "ExamplePinyin": "Wǒ zhàn zài yǒu fēng chuī rì shài dìdìfāng.",
+    "ExampleTranslation": "Tôi đang đứng ở nơi có gió và nắng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "长",
+    "Pinyin": "zhǎng",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Dài",
+    "ExampleSentence": "目录是一篇长文档的地图。",
+    "ExamplePinyin": "Mùlù shì yī piān zhǎng wéndàng dì dìtú.",
+    "ExampleTranslation": "Thư mục là một bản đồ của các tài liệu dài."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "着急",
+    "Pinyin": "zhāojí",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Gấp gáp, sốt ruột",
+    "ExampleSentence": "看着弟弟着急的样子，他忽然笑了起来。",
+    "ExamplePinyin": "Kànzhe dì dì zhāojí de yàngzi, tā hūrán xiàole qǐlái.",
+    "ExampleTranslation": "Thấy em trai vội vàng, anh chợt bật cười."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "照顾",
+    "Pinyin": "zhàogù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chăm sóc",
+    "ExampleSentence": "今晚请你照顾我的孩子们。",
+    "ExamplePinyin": "Jīn wǎn qǐng nǐ zhàogù wǒ de háizimen.",
+    "ExampleTranslation": "Hãy chăm sóc các con của tôi đêm nay."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "照片",
+    "Pinyin": "zhàopiàn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Ảnh",
+    "ExampleSentence": "这几张照片具有独到之处。",
+    "ExamplePinyin": "Zhè jǐ zhāng zhàopiàn jùyǒu dúdào zhī chù.",
+    "ExampleTranslation": "Những bức ảnh này là duy nhất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "照相机",
+    "Pinyin": "zhàoxiàngjī",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Máy ảnh",
+    "ExampleSentence": "古有西门庆，今有陈冠希；小西见小希，亮出照相机。",
+    "ExamplePinyin": "Gǔ yǒu xīmén qìng, jīn yǒu chénguānxī; xiǎoxī jiàn xiǎo xī, liàng chū zhàoxiàngjī.",
+    "ExampleTranslation": "Thời xa xưa có Tây Môn Khánh và Edison Chen bây giờ; Tiểu Tây nhìn thấy Tiểu Hy và khoe máy ảnh của anh ấy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "只",
+    "Pinyin": "zhǐ",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Chỉ",
+    "ExampleSentence": "那个小坏蛋还只有十九岁。",
+    "ExamplePinyin": "Nàgè xiǎo huàidàn hái zhǐyǒu shíjiǔ suì.",
+    "ExampleTranslation": "Tên phản diện nhỏ đó mới mười chín tuổi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "中间",
+    "Pinyin": "Zhōngjiān",
+    "PartOfSpeech": "Phương vị từ",
+    "VietnameseMeaning": "Ở giữa",
+    "ExampleSentence": "他在会议中间悄悄离开了。",
+    "ExamplePinyin": "Tā zài huìyì zhōngjiān qiāoqiāo líkāile.",
+    "ExampleTranslation": "Anh lặng lẽ bỏ đi giữa cuộc họp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "终于",
+    "Pinyin": "zhōngyú",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Cuối cùng",
+    "ExampleSentence": "运动会上，我咬牙坚持，终于跑到了终点。",
+    "ExamplePinyin": "Yùndònghuì shàng, wǒ yǎoyá jiānchí, zhōngyú pǎo dàole zhōngdiǎn.",
+    "ExampleTranslation": "Đến đại hội thể thao, tôi nghiến răng cố chấp, cuối cùng cũng chạy về đích."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "种",
+    "Pinyin": "zhǒng",
+    "PartOfSpeech": "Lượng từ",
+    "VietnameseMeaning": "Loại, chủng,",
+    "ExampleSentence": "甚至总统亦否认此种谣传。",
+    "ExamplePinyin": "Shènzhì zǒngtǒng yì fǒurèn cǐ zhǒng yáochuán.",
+    "ExampleTranslation": "Ngay cả tổng thống cũng phủ nhận những tin đồn như vậy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "重要",
+    "Pinyin": "zhòngyào",
+    "PartOfSpeech": "Tính từ",
+    "VietnameseMeaning": "Quan trọng",
+    "ExampleSentence": "今天的会很重要，请你务必按时参加。",
+    "ExamplePinyin": "Jīntiān de huì hěn zhòngyào, qǐng nǐ wùbì ànshí cānjiā.",
+    "ExampleTranslation": "Buổi họp hôm nay rất quan trọng, hãy nhớ đến tham dự đúng giờ."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "主要",
+    "Pinyin": "zhǔyào",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Chủ yếu",
+    "ExampleSentence": "它的主要缺点是无吸收性。",
+    "ExamplePinyin": "Tā de zhǔyào quēdiǎn shì wú xīshōu xìng.",
+    "ExampleTranslation": "Nhược điểm chính của nó là không thấm hút."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "周末",
+    "Pinyin": "zhōumò",
+    "PartOfSpeech": "Từ chỉ thời gian",
+    "VietnameseMeaning": "Cuối tuần",
+    "ExampleSentence": "一到周末我总是手头很紧。",
+    "ExamplePinyin": "Yī dào zhōumò wǒ zǒng shì shǒutóu hěn jǐn.",
+    "ExampleTranslation": "Tôi luôn luôn chặt tay vào cuối tuần."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "祝",
+    "Pinyin": "zhù",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chúc",
+    "ExampleSentence": "我们要给她开生日庆祝会。",
+    "ExamplePinyin": "Wǒmen yào gěi tā kāi shēngrì qìngzhù huì.",
+    "ExampleTranslation": "Chúng tôi sẽ tổ chức sinh nhật cho cô ấy."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "注意",
+    "Pinyin": "zhùyì",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Chủ ý",
+    "ExampleSentence": "上课时要注意听讲不要四处张望。",
+    "ExamplePinyin": "Shàngkè shí yào zhùyì tīngjiǎng bùyào sìchù zhāngwàng.",
+    "ExampleTranslation": "Hãy cẩn thận không nhìn xung quanh khi bạn ở trong lớp."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "字典",
+    "Pinyin": "zìdiǎn",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Tự điển",
+    "ExampleSentence": "你当然可以用我的字典了。",
+    "ExamplePinyin": "Nǐ dāngrán kěyǐ yòng wǒ de zìdiǎnle.",
+    "ExampleTranslation": "Tất nhiên bạn có thể sử dụng từ điển của tôi."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "自己",
+    "Pinyin": "zìjǐ",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bản thân",
+    "ExampleSentence": "他吃力地签上自己的名字。",
+    "ExamplePinyin": "Tā chīlì dì qiān shàng zìjǐ de míngzì.",
+    "ExampleTranslation": "Anh đấu tranh để ký tên của mình."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "总是",
+    "Pinyin": "zǒng shì",
+    "PartOfSpeech": "Liên từ",
+    "VietnameseMeaning": "Luôn luôn, lúc nào cũng",
+    "ExampleSentence": "生活中总是有一些不开心的事，我们要笑着面对。",
+    "ExamplePinyin": "Shēnghuó zhōng zǒng shì yǒu yīxiē bù kāixīn de shì, wǒmen yào xiàozhe miàn duì.",
+    "ExampleTranslation": "Trong cuộc sống luôn có những điều không vui, và chúng ta phải mỉm cười đối mặt với chúng."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "最近",
+    "Pinyin": "zuìjìn",
+    "PartOfSpeech": "Phương vị từ",
+    "VietnameseMeaning": "Gần đây",
+    "ExampleSentence": "最困苦的时候，往往是离成功最近的时候。",
+    "ExamplePinyin": "Zuì kùnkǔ de shíhòu, wǎngwǎng shì lí chénggōng zuìjìn de shíhòu.",
+    "ExampleTranslation": "Khoảng thời gian khó khăn nhất thường là lúc gần thành công nhất."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "作业",
+    "Pinyin": "zuòyè",
+    "PartOfSpeech": "Danh từ",
+    "VietnameseMeaning": "Bài tập về nhà",
+    "ExampleSentence": "交作业前一定要仔细检查。",
+    "ExamplePinyin": "Jiāo zuòyè qián yīdìng yào zǐxì jiǎnchá.",
+    "ExampleTranslation": "Nhớ kiểm tra kỹ trước khi giao bài."
+  },
+  {
+    "HSK": 3,
+    "Chinese": "作用",
+    "Pinyin": "zuòyòng",
+    "PartOfSpeech": "Động từ",
+    "VietnameseMeaning": "Tác dụng",
+    "ExampleSentence": "环化作用本身是慢的一步。",
+    "ExamplePinyin": "Huán huà zuòyòng běnshēn shì màn de yībù.",
+    "ExampleTranslation": "Bản thân chu trình là một bước chậm."
   }
 ]
