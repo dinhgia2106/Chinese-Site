@@ -7,6 +7,7 @@
       description="Bạn học tiếng Trung? Lộ trình không có? Đến với chúng tôi sẽ giúp bạn học tiếng Trung một cách dễ dàng và nhanh chóng với các bài học, bài kiểm tra, từ điển, tích hợp AI và nhiều hơn nữa."
     />
     <title>{% block title %}Tiếng Trung TG{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
@@ -146,7 +147,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('translate') }}">Dịch</a>
+              <a class="nav-link" href="{{ url_for('translate_route') }}"
+                >Dịch</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('speaking_practice') }}"
@@ -207,7 +210,7 @@
 
       <!-- Footer -->
       <footer>
-        <p class="mb-0">GrazT</p>
+        <p class="mb-0">GrazT - Trần Đình Gia</p>
       </footer>
     </div>
 

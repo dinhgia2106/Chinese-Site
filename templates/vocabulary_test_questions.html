@@ -1,48 +1,155 @@
-{% extends "base.html" %} {% block content %}
-<div class="container">
-  <h1 class="mb-4">
-    Kiểm tra từ vựng HSK {{ hsk_level }} - Bộ đề {{ set_number }}
+{% extends "base.html" %} {% block title %}Kiểm tra từ vựng HSK {{ hsk_level }}
+- Bộ đề {{ set_number }}{% endblock %} {% block content %}
+<div class="test-container">
+  <h1 class="text-center mb-4">
+    Bài Kiểm Tra - Bộ đề {{ set_number }} - Nghĩa
   </h1>
-  <form action="{{ url_for('vocabulary_test_result') }}" method="post">
-    {% for question in questions %}
-    <div class="card mb-3">
-      <div class="card-body">
-        <h5 class="card-title">
-          {{ loop.index }}. {{ question.word }} ({{ question.pinyin }})
-        </h5>
-        <p class="card-text">Chọn nghĩa đúng:</p>
-        {% for answer in question.answers %}
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="answer_{{ question.id }}"
-            id="answer_{{ question.id }}_{{ loop.index }}"
-            value="{{ answer }}"
-            required
-          />
-          <label
-            class="form-check-label"
-            for="answer_{{ question.id }}_{{ loop.index }}"
-          >
-            {{ answer }}
-          </label>
+
+  <div class="test-content">
+    <div class="question-list">
+      <h2>Danh sách câu hỏi:</h2>
+      <div class="question-grid">
+        {% for question in test_data.questions %}
+        <a
+          href="{{ url_for('vocabulary_test_set', hsk_level=hsk_level, set_number=set_number, q=loop.index) }}"
+          class="question-item {% if question.selected_choice %}answered{% endif %} {% if question.is_marked %}marked{% endif %}"
+        >
+          {{ loop.index }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="current-question">
+      <h2>
+        Câu {{ current_question.index }}: {{ current_question.word }} ({{
+        current_question.pinyin }})
+      </h2>
+      <p>Chọn nghĩa đúng của từ này:</p>
+      <form id="question-form" method="post">
+        {% for choice in current_question.choices %}
+        <div class="choice">
+          <input type="radio" name="selected_choice" value="{{ choice }}"
+          id="choice{{ loop.index }}" {% if current_question.selected_choice ==
+          choice %}checked{% endif %}>
+          <label for="choice{{ loop.index }}">{{ choice }}</label>
         </div>
         {% endfor %}
         <input
           type="hidden"
-          name="word_{{ question.id }}"
-          value="{{ question.word }}"
+          name="question_index"
+          value="{{ current_question.index }}"
         />
-        <input
-          type="hidden"
-          name="correct_answer_{{ question.id }}"
-          value="{{ question.correct_answer }}"
-        />
+        <input type="hidden" name="action" value="save_answer" />
+      </form>
+      <div class="question-actions">
+        <button id="clear-answer-button" class="nav-button">
+          Xóa câu trả lời
+        </button>
+        <button
+          id="mark-question-button"
+          class="nav-button {% if current_question.is_marked %}marked{% endif %}"
+        >
+          {% if current_question.is_marked %}Bỏ đánh dấu{% else %}Đánh dấu câu
+          hỏi{% endif %}
+        </button>
       </div>
     </div>
-    {% endfor %}
-    <button type="submit" class="btn btn-primary">Nộp bài</button>
+  </div>
+
+  <form
+    action="{{ url_for('vocabulary_test_result', hsk_level=hsk_level, set_number=set_number) }}"
+    method="post"
+    class="submit-form"
+  >
+    <input type="hidden" name="action" value="submit_test" />
+    <button type="submit" class="button submit-button">Nộp bài</button>
   </form>
 </div>
+
+<script>
+  document
+    .querySelectorAll('input[name="selected_choice"]')
+    .forEach(function (input) {
+      input.addEventListener("change", function () {
+        let questionIndex = document.querySelector(
+          'input[name="question_index"]'
+        ).value;
+
+        // Cập nhật giao diện ngay lập tức
+        document
+          .querySelector(`.question-item:nth-child(${questionIndex})`)
+          .classList.add("answered");
+
+        let formData = new FormData();
+        formData.append("action", "save_answer");
+        formData.append("question_index", questionIndex);
+        formData.append("selected_choice", this.value);
+
+        fetch(window.location.href, { method: "POST", body: formData })
+          .then((response) => response.json())
+          .catch((error) => console.error("Lỗi:", error));
+      });
+    });
+
+  document
+    .getElementById("mark-question-button")
+    .addEventListener("click", function () {
+      let questionIndex = document.querySelector(
+        'input[name="question_index"]'
+      ).value;
+      let questionItem = document.querySelector(
+        `.question-item:nth-child(${questionIndex})`
+      );
+
+      // Cập nhật giao diện ngay lập tức
+      if (this.classList.contains("marked")) {
+        this.classList.remove("marked");
+        this.textContent = "Đánh dấu câu hỏi";
+        questionItem.classList.remove("marked");
+      } else {
+        this.classList.add("marked");
+        this.textContent = "Bỏ đánh dấu";
+        questionItem.classList.add("marked");
+      }
+
+      let formData = new FormData();
+      formData.append("action", "mark_question");
+      formData.append("question_index", questionIndex);
+
+      fetch(window.location.href, { method: "POST", body: formData })
+        .then((response) => response.json())
+        .catch((error) => console.error("Lỗi:", error));
+    });
+
+  document
+    .getElementById("clear-answer-button")
+    .addEventListener("click", function () {
+      let questionIndex = document.querySelector(
+        'input[name="question_index"]'
+      ).value;
+      let questionItem = document.querySelector(
+        `.question-item:nth-child(${questionIndex})`
+      );
+
+      // Bỏ chọn tất cả các radio button
+      document
+        .querySelectorAll('input[name="selected_choice"]')
+        .forEach((input) => {
+          input.checked = false;
+        });
+
+      // Xóa lớp "answered" khỏi câu hỏi trong danh sách
+      questionItem.classList.remove("answered");
+
+      // Gửi yêu cầu xóa câu trả lời đến máy chủ
+      let formData = new FormData();
+      formData.append("action", "clear_answer");
+      formData.append("question_index", questionIndex);
+
+      fetch(window.location.href, { method: "POST", body: formData })
+        .then((response) => response.json())
+        .catch((error) => console.error("Lỗi:", error));
+    });
+</script>
 {% endblock %}

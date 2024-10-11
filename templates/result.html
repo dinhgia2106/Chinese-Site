@@ -1,14 +1,34 @@
-{% extends "base.html" %} {% block title %}Kết Quả{% endblock %} {% block
-content %}
-<h1>
-  Kết Quả Kiểm Tra - {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{%
-  endif %}
-</h1>
-<p>Điểm số của bạn: {{ score }}/{{ total }}</p>
-<a
-  href="{{ url_for('review', answers=answers|tojson, test_type=test_type) }}"
-  class="button"
-  >Xem lại câu trả lời</a
->
-<a href="{{ url_for('test') }}" class="button">Kiểm tra lại</a>
+{% extends "base.html" %} {% block title %}Kết Quả Kiểm Tra{% endblock %} {%
+block content %}
+<div class="container">
+  <h1 class="mb-4">
+    Kết Quả Kiểm Tra - {% if test_type == 'meaning' %}Nghĩa{% else %}Pinyin{%
+    endif %}
+  </h1>
+  <h2>Điểm số của bạn: {{ score }}/{{ total }}</h2>
+  <p>
+    Bạn đã trả lời đúng {{ answers|selectattr('is_correct', 'equalto',
+    true)|list|length }} trên {{ total }} câu hỏi.
+  </p>
+
+  <h3 class="mt-4">Chi tiết kết quả:</h3>
+  {% for answer in answers %}
+  <div
+    class="card mb-3 {% if answer.is_correct %}border-success{% else %}border-danger{% endif %}"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ answer.radical }}</h5>
+      <p class="card-text">Câu trả lời của bạn: {{ answer.selected }}</p>
+      <p class="card-text">Đáp án đúng: {{ answer.correct }}</p>
+      {% if answer.is_correct %}
+      <p class="text-success">Chính xác!</p>
+      {% else %}
+      <p class="text-danger">Chưa chính xác</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <a href="{{ url_for('test') }}" class="btn btn-primary">Kiểm tra lại</a>
+</div>
 {% endblock %}

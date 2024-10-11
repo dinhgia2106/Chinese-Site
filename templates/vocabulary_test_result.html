@@ -1,6 +1,9 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block title %}Kết Quả Kiểm Tra Từ Vựng HSK {{
+hsk_level }} - Bộ đề {{ set_number }}{% endblock %} {% block content %}
 <div class="container">
-  <h1 class="mb-4">Kết quả kiểm tra từ vựng</h1>
+  <h1 class="mb-4">
+    Kết quả kiểm tra từ vựng HSK {{ hsk_level }} - Bộ đề {{ set_number }}
+  </h1>
   <h2>Điểm số của bạn: {{ score|round(2) }}%</h2>
   <p>
     Bạn đã trả lời đúng {{ results|selectattr('is_correct', 'equalto',
@@ -13,7 +16,7 @@
     class="card mb-3 {% if result.is_correct %}border-success{% else %}border-danger{% endif %}"
   >
     <div class="card-body">
-      <h5 class="card-title">{{ result.word }}</h5>
+      <h5 class="card-title">{{ result.word }} ({{ result.pinyin }})</h5>
       <p class="card-text">Câu trả lời của bạn: {{ result.user_answer }}</p>
       <p class="card-text">Đáp án đúng: {{ result.correct_answer }}</p>
       {% if result.is_correct %}

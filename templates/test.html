@@ -5,40 +5,42 @@
   href="{{ url_for('static', filename='test_selection.css') }}"
 />
 {% endblock %} {% block content %}
-<div class="test-selection-container">
-  <div class="test-selection-options">
-    <div class="test-selection-section">
-      <h2 class="test-selection-subtitle">Kiểm tra theo bộ đề:</h2>
-      <div class="test-selection-grid">
-        {% for i in range(1, total_sets + 1) %}
+<div class="container">
+  <h2 class="mb-3">Kiểm tra theo bộ đề:</h2>
+  <div class="row">
+    {% for i in range(1, total_sets + 1) %}
+    <div class="col-md-3 mb-3">
+      <div class="d-flex flex-column">
         <a
           href="{{ url_for('test_set', set_number=i, test_type='meaning') }}"
-          class="test-selection-button test-selection-button-primary"
+          class="btn btn-primary mb-2"
           >Bộ đề {{ i }} - Nghĩa</a
         >
         <a
           href="{{ url_for('test_set', set_number=i, test_type='pinyin') }}"
-          class="test-selection-button test-selection-button-secondary"
+          class="btn btn-secondary"
           >Bộ đề {{ i }} - Pinyin</a
         >
-        {% endfor %}
       </div>
     </div>
+    {% endfor %}
+  </div>
 
-    <div class="test-selection-section">
-      <h2 class="test-selection-subtitle">Kiểm tra ngẫu nhiên:</h2>
-      <div class="test-selection-grid">
-        <a
-          href="{{ url_for('test_random', test_type='meaning') }}"
-          class="test-selection-button test-selection-button-primary"
-          >Kiểm tra ngẫu nhiên - Nghĩa</a
-        >
-        <a
-          href="{{ url_for('test_random', test_type='pinyin') }}"
-          class="test-selection-button test-selection-button-secondary"
-          >Kiểm tra ngẫu nhiên - Pinyin</a
-        >
-      </div>
+  <h2 class="mt-5 mb-3">Kiểm tra ngẫu nhiên:</h2>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <a
+        href="{{ url_for('test_random', test_type='meaning') }}"
+        class="btn btn-primary btn-block"
+        >Kiểm tra ngẫu nhiên - Nghĩa</a
+      >
+    </div>
+    <div class="col-md-3 mb-3">
+      <a
+        href="{{ url_for('test_random', test_type='pinyin') }}"
+        class="btn btn-secondary btn-block"
+        >Kiểm tra ngẫu nhiên - Pinyin</a
+      >
     </div>
   </div>
 </div>
